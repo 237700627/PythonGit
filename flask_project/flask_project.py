@@ -8,17 +8,11 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import Required
 # 创建一个flask对象app
 app = Flask(__name__)
-
-
-# 定义一个表单类
-class NameForm(Form):
-    name = StringField('what is your name?', validators=[Required()])
-    submit = SubmitField('Submit')
-
+app.config['SECRET_KEY'] = 'hard to guess string'
 
 # 定义一个首页模板
 @app.route('/index/')
-def index():
+def index_page():
     return render_template('index.html')
 
 
@@ -85,7 +79,7 @@ def user_pic(name):
 
 # 使用url_for来通过视图函数名打印路由地址
 with app.test_request_context():
-    print url_for('index')
+    print url_for('index_page')
     print url_for('use_list', name='malingjun')
     print url_for('hello_int', number=5)
     print url_for('hello_float', number=12.0)
@@ -93,6 +87,22 @@ with app.test_request_context():
 # 打印flask对象app中的映射关系
 a = app.url_map
 print (a)
+
+
+# 定义一个表单类
+class NameForm(Form):
+    name = StringField('what is your name?', validators=[Required()])
+    submit = SubmitField('Submit')
+
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    name = None
+    form = NameForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        form.name.data = ''
+    return render_template('hello.html', form=form, name=name)
 
 manager = Manager(app)
 print (manager)
