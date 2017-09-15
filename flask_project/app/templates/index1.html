@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test</title>
+    </head>
+    <body>
+        <p>测试</p>
+        <p>直接输出姓名：{{name}}</p>
+        {#这是注释：判断是否存在age#}
+        {%if age%}
+        <p>年龄：{{age}}</p>
+        {%else%}
+        <p>不存在年龄</p>
+        {%endif%}
+    </body>
+</html>
