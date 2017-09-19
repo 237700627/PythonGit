@@ -1,12 +1,5 @@
-<html>
-<head>
-    {% block head %}
-    <title>{% block title %}{% endblock %} - My Application</title>
-    {% endblock %}
-</head>
-<body>
-    {% block body %}
-        123
-    {% endblock %}
-</body>
-</html>
+<form method="POST">
+{{ form.hidden_tag() }}
+{{ form.name.label }} {{ form.name(id='my-text-field') }}
+{{ form.submit() }}
+</form>

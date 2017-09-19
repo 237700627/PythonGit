@@ -6,11 +6,12 @@ __author__ = 'quyong'
 # 引入Form基类
 from flask.ext.wtf import Form
 # 引入Form元素父类
-from wtforms import StringField, PasswordField
+from wtforms import StringField, PasswordField, SubmitField
 # 引入Form验证父类
-from wtforms.validators import DataRequired, Length
+from wtforms.validators import DataRequired, Length, Required
 
 __author__ = 'kikay'
+
 
 # 登录表单类,继承与Form类
 class BaseLogin(Form):
@@ -19,4 +20,9 @@ class BaseLogin(Form):
         , Length(10, 20, message=u'长度位于10~20之间')], render_kw = {'placeholder': u'输入用户名'})
     # 密码
     password = PasswordField('password', validators=[DataRequired(message = u"密码不能为空")
-        ,Length(10,20, message = u'长度位于10~20之间')], render_kw = {'placeholder': u'输入密码'})
+        , Length(10, 20, message = u'长度位于10~20之间')], render_kw = {'placeholder': u'输入密码'})
+
+
+class NameForm(Form):
+    name = StringField('What is your name', validators = [DataRequired()])
+    submit = SubmitField('Submit')

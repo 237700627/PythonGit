@@ -1,5 +1,6 @@
 # !usr/bin/python
 # -*- coding: utf-8 -*-
+import os
 
 __author__ = 'quyong'
 
@@ -7,7 +8,7 @@ from app import app
 from flask import render_template, flash, redirect, session
 from flask import url_for
 # 导入定义的BaseLogin
-from app.forms import BaseLogin
+from app.forms import BaseLogin, NameForm
 from datetime import datetime
 
 
@@ -32,6 +33,12 @@ def bootstrap():
         ]
     }
     return render_template('bootstrap.html', author=author, title='Bootstrap')
+
+
+@app.route('/momentTest/')
+def momenttest():
+    current_time = datetime.utcnow()
+    return render_template('momentTest.html', current_time=current_time)
 
 
 # 定义处理函数和路由规则，接收GET和POST请求
@@ -68,7 +75,15 @@ def baselogin2():
     return render_template('baselogin.html', form=form)
 
 
-@app.route('/momentTest/')
-def momenttest():
-    current_time = datetime.utcnow()
-    return render_template('momentTest.html', current_time=current_time)
+@app.route('/123/', methods=['GET', 'POST'])
+def index():
+    name = None
+    form = NameForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        form.name.data = ''
+    return render_template('123.html', form=form, name=name)
+
+
+
+
