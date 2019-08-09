@@ -1,0 +1,179 @@
+config:
+    name: C端新建订单，H5作业提交，PC端核审通过
+    base_url: ${base_url()}
+    variables:
+        #pc登录系统的用户信息
+        companyName: '华安财产保险股份有限公司云南分公司'  #录单人所在保险公司
+        creatorName: '自动化测试'  #录单人姓名
+        email: 'qiucaixia@cias.cn' #录单人邮箱
+        creatorMobile: '18618561458'  #录单人电话
+        userId: 77 #录单人id
+        permission: '管理员'
+#        userName: 'AutoTest'  #录单人用户名
+#        userPwd: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: 'tude'
+
+        #pc新建订单需要的相关数据
+        L1: ['1','3']
+        L2: ['黑','B']
+        L3: []
+        caseNo: ${random_Num(9)}
+        ownerPhone: ${random_Num(9, $L1)}
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: '13200780881'
+        visitorPhone: '19999999999'  #探视员手机号
+        visitorSignature: '小数点'  #探视员签名
+        injuredSignature: '伤者的名字'  #伤者签名
+
+        birthday: 541526400000  #1987-03-01
+        phone: '18681461457'
+        beginDate: 1555344000000 #2019-04-16
+        endDate: 1556035200000  #2019-04-24
+        hospitalizedDate: 1554694924000
+        leaveDate: 1554694924000
+        accTime: '1554694924000'
+        otherIllegal: '02'
+        censusRegisterType_depended: '02'
+        dependCount: 4
+        age: '4'
+testcases:
+    0、pc增加订单 -- 待作业的订单h5直接提交:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_addOrder_submitTask.yaml
+
+    1、pc增加订单 -- 待作业的订单h5直接审核通过:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_addOrder_auditPass.yaml
+
+    2、pc增加订单 -- 待作业的订单h5直接审核不通过:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_addOrder_auditFail.yaml
+
+    3、pc增加订单 -- 待作业的订单pc重新派单:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        #这个流程有bug，已提单跟踪
+        testcase: testcases/flowcase/flow_abnormal_addOrder_resend.yaml
+
+    4、pc增加订单 -- 作业中的订单h5直接审核通过:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_beginTask_auditPass.yaml
+
+    5、pc增加订单 -- 作业中的订单h5直接审核不通过:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_beginTask_auditFail.yaml
+
+    6、pc增加订单 -- 作业中的订单h5重新派单: #该场景有问题，作业中的订单可以重新派单，已提单跟踪
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_beginTask_resend.yaml
+
+
+    7、pc增加订单 -- 待审核的订单h5重新派单:
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_auditTask_resend.yaml
+
+    8、pc增加订单 -- 审核通过的订单h5重新派单: #该场景有问题，待审核的订单可以重新派单，已提单跟踪
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_auditPass_resend.yaml
+
+
+    9、pc增加订单 -- 审核不通过的订单h5重新派单: #该场景有问题，审核不通过的订单可以重新派单，已提单跟踪
+#        parameters:
+#            #伤者/伤情/交通事故参数化
+#            idType-idNo-sex-treatment-treatWays-referralWays-censusRegisterType_injured-mentalStatus-isIllegal-injuryType-travelModel-position:
+#                - ['02','123456789',0,'01','01','02','01','01','01','01','01','01']
+#                #- ['05','789456145',1,'02','02','01','01','01','04'.'02','01','01']
+#
+#            #被护理人/工作经历/居住经历/被扶养人参数化
+#            hasCaregivers-caregiversIdentity-orderNum_caregivers-hasWork-wageType-orderNum_work-hasFamily-dependType-typeDesc-age-orderNum_depend:
+#                - ['0','','','1','01','0','1','01','18岁以下子女','17','0']
+        testcase: testcases/flowcase/flow_abnormal_auditFail_resend.yaml
+
+    10、已完成的订单申请取消:
+
+        testcase: testcases/flowcase/flow_abnormal_finishedApplyCancel.yaml
+
+    11、正在作业的订单撤单审核通过:
+        testcase: testcases/flowcase/flow_abnormal_working_auditCancel.yaml
+
+    12、正在作业审核的订单撤单审核通过:
+        testcase: testcases/flowcase/flow_abnormal_auditing_auditCancel.yaml
+
+    13、正在作业审核的订单发起撤单申请:
+        testcase: testcases/flowcase/flow_abnormal_auditingApplyCancel.yaml
+
+    14、待作业的订单撤单审核通过:
+        testcase: testcases/flowcase/flow_abnormal_waitingWork_auditCancel.yaml
+
+

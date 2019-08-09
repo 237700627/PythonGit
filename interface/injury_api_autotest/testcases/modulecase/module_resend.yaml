@@ -1,0 +1,8 @@
+#pc重新派单
+- test:
+    name: pc重新派单
+    api: api/pc/resend.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code,$code]
+        - eq: [content.status, $req_status]

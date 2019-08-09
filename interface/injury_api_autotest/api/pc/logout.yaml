@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testrsapp.cias.cn/injury/user/logout   退出当前登录
+    api_path: api/injury/user/logout.yaml
+    uri: /injury/user/logout
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri

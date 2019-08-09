@@ -1,0 +1,28 @@
+name: 救援订单提交  # 接口描述
+variables:  # 变量
+  phone:
+  carNo:
+  productType:
+  longitude:
+  latitude:
+  provinceCode:
+  cityCode:
+  areaCode:
+  address:
+
+request:
+  url: $uri/wxapp/rescue/order/submit
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    phone: $phone  # 手机号码
+    carNo: $carNo  # 车牌号
+    productType: $productType  # 产品类型
+    longitude: $longitude  # 经度
+    latitude: $latitude  # 纬度
+    provinceCode: $provinceCode  # 省编码
+    cityCode: $cityCode  # 城市编码
+    areaCode: $areaCode  # 区编码
+    address: $address  # 地址
+

@@ -1,0 +1,302 @@
+- config:
+    name: 标准产品创建/更新，全局变量：base_url,userName,password
+    base_url: ${get_config(web_url)}
+    variables:
+      userName: ${get_config(cms_login_name)}
+      password: ${get_config(cms_login_pwd)}
+
+- test:
+    name: 获取登录token/密钥：token/signKey
+    testcase: testcases/module_case/pc_user_login.yaml
+    output:
+      - token
+      - signKey
+
+- test:
+    name: 标准产品创建
+    api: api/manage/product/save.yaml
+    variables:
+      id: ""
+      productName: ${get_customize_name(自动化产品新增三十字)}
+      areaCode: ["440304"]
+      productType: "0100"
+      basePrice: 50
+      remark: 自动化产品test
+      autoDispatch: True
+      enable: True
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_vas_test.t_product, product_name, $productName, product_name)}", $productName]
+
+- test:
+    name: 标准产品修改
+    api: api/manage/product/save.yaml
+    variables:
+      id: 100
+      productName: ${get_customize_name(自动化产品修改)}
+      areaCode: ["440305"]
+      productType: "0300"
+      basePrice: 500
+      remark: 自动化产品修改test
+      autoDispatch: False
+      enable: False
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_vas_test.t_product, product_name, $productName, product_name)}", $productName]
+
+- test:
+    name: id校验：用已有id，则是标准产品更新
+    api: api/manage/product/save.yaml
+    variables:
+      id: 100
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: id校验：id类型不正确：a
+    api: api/manage/product/save.yaml
+    variables:
+      id: a
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: productName校验：新建已存在的productName
+    api: api/manage/product/save.yaml
+    variables:
+      id:
+      productName: 道路救援就选我
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "指定的产品名称已存在,不能重复创建"]
+
+- test:
+    name: productName校验：修改为已存在的productName
+    api: api/manage/product/save.yaml
+    variables:
+      productName: 道路救援就选我
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "指定的产品名称已存在,不能重复创建"]
+
+- test:
+    name: productName校验：新建productName为空
+    api: api/manage/product/save.yaml
+    variables:
+      id:
+      productName:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "产品名称不能为空"]
+
+- test:
+    name: productName校验：新建productName超长21个字符
+    api: api/manage/product/save.yaml
+    variables:
+      id:
+      productName: 测试字符长度测试字符长度测试字符长度二十一
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "产品名称长度不能超过20个字符"]
+
+- test:
+    name: areaCode校验：新建areaCode不存在
+    api: api/manage/product/save.yaml
+    variables:
+      id:
+      productName: ${get_customize_name(自动化产品)}
+      areaCode: ["888888"]
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "区域编码不合法"]
+
+- test:
+    name: productType校验：新建productType不存在：9999
+    api: api/manage/product/save.yaml
+    variables:
+      id:
+      productName: ${get_customize_name(自动化产品)}
+      productType: "9999"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "产品类型错误"]
+
+- test:
+    name: basePrice校验：修改basePrice为空
+    api: api/manage/product/save.yaml
+    variables:
+      basePrice:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "基础价格不能为空"]
+
+- test:
+    name: basePrice校验：修改basePrice为负数
+    api: api/manage/product/save.yaml
+    variables:
+      basePrice: -50
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "基础价格不能为负数"]
+
+- test:
+    name: basePrice校验：修改basePrice为：888888888.88
+    api: api/manage/product/save.yaml
+    variables:
+      basePrice: 888888888.88
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "基础价格超出限定范围"]
+
+- test:
+    name: basePrice校验：修改basePrice为：88888888.88
+    api: api/manage/product/save.yaml
+    variables:
+      basePrice: 88888888.88
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: basePrice校验：修改basePrice为：0
+    api: api/manage/product/save.yaml
+    variables:
+      basePrice: 0
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: remark校验：修改remark为：空
+    api: api/manage/product/save.yaml
+    variables:
+      remark:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: remark校验：修改remark为：空
+    api: api/manage/product/save.yaml
+    variables:
+      remark:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: remark校验：修改remark为：一
+    api: api/manage/product/save.yaml
+    variables:
+      remark: 一
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: remark校验：修改remark为：100个任意字符
+    api: api/manage/product/save.yaml
+    variables:
+      remark: ！@#￥%……&*（!@#$%^&*()-={};'[],./<>?'678901234567890aB 测试678901234567890123456789012345678901234567890
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: remark校验：修改remark为：101个任意字符
+    api: api/manage/product/save.yaml
+    variables:
+      remark: ！@#￥%……&*（!@#$%^&*()-={};'[],./<>?'678901234567890aB 测试6789012345678901234567890123456789012345678901
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "备注超过100字符"]
+
+- test:
+    name: autoDispatch校验：修改autoDispatch为：False
+    api: api/manage/product/save.yaml
+    variables:
+      autoDispatch: False
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: autoDispatch校验：修改autoDispatch为：test
+    api: api/manage/product/save.yaml
+    variables:
+      autoDispatch: test
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: enable校验：修改enable为：False
+    api: api/manage/product/save.yaml
+    variables:
+      enable: False
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: enable校验：修改enable为：test
+    api: api/manage/product/save.yaml
+    variables:
+      enable: test
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]

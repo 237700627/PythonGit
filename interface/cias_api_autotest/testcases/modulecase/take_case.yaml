@@ -1,0 +1,21 @@
+- test:
+    name: 派单
+    api: api/case_center/takeCase.yaml
+    variables:
+      company_id: $company_id
+      subordinate_code: $subordinate_code
+      task_type: $task_type
+      scene_type: $scene_type
+      report_type: $report_type
+      work_address: $work_address
+      longitude: $longitude
+      latitude: $latitude
+      loss_type: $loss_type
+      uri: $base_url_out
+    setup_hooks:
+      - ${get_security_code($request)}
+    teardown_hooks:
+      - ${is_order_taked($report_no)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.status", $status]

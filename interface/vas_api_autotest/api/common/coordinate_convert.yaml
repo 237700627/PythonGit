@@ -1,0 +1,19 @@
+name: 地图经纬度转换  # 接口描述
+variables:  # 变量
+  sourceCooType:
+  targetCooType:
+  longitude:
+  latitude:
+
+request:
+  url: $uri/common/coordinate/convert
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    sourceCooType: $sourceCooType  # 坐标系类型：spark - 火星，baidu - 百度
+    targetCooType: $targetCooType  # 坐标系类型：spark - 火星，baidu - 百度
+    longitude: $longitude  # 经度
+    latitude: $latitude  # 纬度
+
+

@@ -1,0 +1,13 @@
+name: 享权车辆详情  # 接口描述
+variables:  # 变量
+  carNo:
+
+request:
+  url: /manage/right/car/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    carNo: $carNo   #车牌号

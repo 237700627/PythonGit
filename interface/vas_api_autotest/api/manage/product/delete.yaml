@@ -1,0 +1,11 @@
+name: 标准产品删除
+varialbes:
+  ids:
+
+request:
+  url: $uri/manage/product/delete
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    ids: $ids  # 产品ID列表

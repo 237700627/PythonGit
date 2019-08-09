@@ -1,0 +1,24 @@
+- config:
+    name: PC端的统一登录接口：全局变量定义
+    base_url: ${get_config(web_url)}
+    variables:
+      userName: ${get_config(cms_login_name)}
+      password: ${get_config(cms_login_pwd)}
+
+- test:
+    name: PC端的统一登录接口
+    api: api/common/user_login.yaml
+    variables:
+      pc_login_name: ${get_base_64_code($userName)}
+      pc_login_pwd: ${get_base_64_code($password)}
+    setup_hooks:
+      - ${sign_api(param=$request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    extract:
+      - token: content.data.token
+      - signKey: content.data.signKey
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]

@@ -1,0 +1,40 @@
+#上传或替换图片
+variables: #变量
+      orderNo:
+      operationTypeBODY: '0'
+      token:
+      userId:
+      imgId: '0'
+      imgName: '556096702583291.jpg'
+      tagId: '0101'
+      imgUrl: '6c651b470d6e48dca7a32b8356496eac'
+      thumbUrl: '6c651b470d6e48dca7a32b8356496eac'
+      seq: '1'
+request:
+  url: /zbcf-web-order/order/parttime/saveOrUpdatePhoto.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: $originType
+    token: $token
+    userId: $userId
+  json:
+    orderNo: $orderNo
+    operationType: $operationType
+    imgId: $imgId
+    imgName: $imgName
+    tagId: $tagId
+    imgUrl: $imgUrl
+    seq: $seq
+    thumbUrl: $thumbUrl
+    width: 1080
+    height: 1440
+    customImgTypeId: ""
+    accidentObject: ""
+    imageLongitude: 114.07931
+    imageLatitude: 22.554126
+    imageTime: 1557022397000
+    imageAddress: "中国广东省深圳市福田区笋岗西路4003号"
+    imageSource: "is-app-online"
+    vagueValue: null
+    vagueStatus: normal

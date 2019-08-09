@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/verifyCode   获取验证码
+    api_path: api/injury/user/verifyCode.yaml
+    uri: /injury/user/verifyCode
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri

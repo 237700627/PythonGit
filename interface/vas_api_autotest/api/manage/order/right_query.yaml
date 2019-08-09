@@ -1,0 +1,13 @@
+name: 权益查询
+varialbes:
+  carNo:
+  vinNo:
+
+request:
+  url: $uri/manage/right/query
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    carNo: $carNo  # 非必填，车牌号
+    vinNo: $vinNo  # 非必填，车架号,和车牌号二选一

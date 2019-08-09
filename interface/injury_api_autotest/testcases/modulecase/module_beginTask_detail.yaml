@@ -1,0 +1,11 @@
+#h5开始作业任务
+- test:
+    name: 7-h5开始作业任务
+    variables:
+        id: $operationId
+    api: api/h5/beginTask.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code,$code]
+        - eq: [content.message, $message]
+        - eq: [content.status, $req_status]

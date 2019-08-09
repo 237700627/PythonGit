@@ -1,0 +1,11 @@
+- test:
+    name: 案件进行终审
+    api: api/case_center/reviewResult.yaml
+    variables:
+      companyId: $company_id
+      uri: $base_url_out
+      orderNo: ${get_order_no($report_no)}
+    setup_hooks:
+      - ${get_security_code($request)}
+    validate:
+      - eq: ["${get_order_status($report_no)}", $status]

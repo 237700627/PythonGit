@@ -1,0 +1,26 @@
+#证件是否提供
+variables: #变量
+  orderNo:
+  hasDriverLicenNo: false
+  token:
+  userId:
+  originType: APP
+  hasDrivingLicenNo: false
+  hasIdCard: false
+  hasBankCard: false
+request:
+  url: /zbcf-web-order/order/parttime/checkedUnavailable.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: $originType
+    token: $token
+    userId: $userId
+  json:
+    orderNo: $orderNo
+    hasDriverLicenNo: $hasDriverLicenNo
+    hasDrivingLicenNo: $hasDrivingLicenNo
+    hasIdCard: $hasIdCard
+    hasBankCard: $hasBankCard
+    isInjured: false
+    isLoss: false

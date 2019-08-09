@@ -1,0 +1,11 @@
+name: 字典查询  # 接口描述
+variables:  # 变量
+  dictCode:
+
+request:
+  url: $uri/common/dict/query
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    dictCode: $dictCode  # 必填 ，长度1~30字符，字典编码

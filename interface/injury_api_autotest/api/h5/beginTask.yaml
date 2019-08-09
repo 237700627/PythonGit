@@ -1,0 +1,13 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/beginTask   订单任务开始作业接口
+    api_path: api/injury/task/beginTask.yaml
+    uri: /injury/task/beginTask
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $h5_token
+    method: POST
+    url: $uri
+    json:
+        id: $id
+        orderId: $orderId

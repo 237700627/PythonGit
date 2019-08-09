@@ -1,0 +1,13 @@
+name: 代驾订单详情
+variables:
+  orderNo:
+
+request:
+  url: /manage/order/driving/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    orderNo: $orderNo  # 订单编号

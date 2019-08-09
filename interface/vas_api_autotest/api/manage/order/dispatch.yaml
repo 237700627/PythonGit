@@ -1,0 +1,13 @@
+name: 订单分派
+varialbes:
+  orderNo:
+  providerCompanyId:
+
+request:
+  url: $uri/manage/order/dispatch
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderNo: $orderNo  # 订单编号
+    providerCompanyId: $providerCompanyId # 服务商id

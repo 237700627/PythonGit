@@ -1,0 +1,12 @@
+#pc取消任务
+- test:
+    name: pc初审
+    api: api/pc/checkTaskInfo.yaml
+    variables:
+#        reason: '无效的订单，不需要作业，故取消(自动化测试)'
+        token: $pc_suptoken
+    validate:
+        -   eq: [status_code, 200]
+        -   eq: [content.code, $code]
+#        -   eq: [content.message, $message]
+#        -   eq: [content.status, $req_status]

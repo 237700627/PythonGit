@@ -1,0 +1,28 @@
+#获取验收码
+- test:
+    name: 4-获取验证码
+    api: api/h5/sendValidateCode.yaml
+    variables:
+        wait_1m: 62
+        wait1m_desc: '手机获取验证码1分钟只能获取一次'
+#    setup_hooks:
+#        - ${sleep($wait_1m,$wait1m_desc)} #手机获取验证码1分钟只能获取一次
+    validate:
+        -   eq: [status_code, 200]
+
+
+#h5登录
+- test:
+    name: 5-h5登录
+    variables:
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+        -   eq: [content.code, 200]
+        -   eq: [content.message, '处理成功']
+        -   eq: [content.status, 'success']
+    extract:
+        -   h5_token: json.data.token
+        -   orderId: json.data.orderId
+        -   operationId: json.data.operationId

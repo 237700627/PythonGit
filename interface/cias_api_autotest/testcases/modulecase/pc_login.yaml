@@ -1,0 +1,13 @@
+
+- test:
+    name: 获取中台登录账号token
+    api: api/web_order/pc/gateWay.yaml
+    variables:
+      login_str: $pc_login
+      login_pass: $login_pass
+      timestamp: ${get_current_time()}
+    extract:
+      - pc_session_token: content.resultObject.loginToken
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", $result_msg]

@@ -1,0 +1,19 @@
+- config:
+    name: 顺丰接单
+    variables:
+      userPhone:
+      reportno:
+
+- test:
+    name: 顺丰调度回传成功
+    variables:
+      taskId_partner: ${get_partner_taskid($reportno)}
+      userId: $userPhone
+    api: api/partner/callBackScheduleResult.yaml
+    setup_hooks:
+      - ${sf_encrypt($request)}
+    validate:
+    - eq: ["status_code", 200]
+    - eq: ["content.state","success"]
+
+

@@ -1,0 +1,377 @@
+- config:
+    name: 标准产品列表，全局变量：base_url,userName,password
+    base_url: ${get_config(web_url)}
+    variables:
+      userName: ${get_config(cms_login_name)}
+      password: ${get_config(cms_login_pwd)}
+
+- test:
+    name: 获取登录token/密钥：token/signKey
+    testcase: testcases/module_case/pc_user_login.yaml
+    output:
+      - token
+      - signKey
+
+- test:
+    name: 查询标准产品列表
+    api: api/manage/product/list.yaml
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["content.data.list.0.productName", "陕西送水-song"]
+
+- test:
+    name: productName 校验：productName 输入一个字符
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - contains: ["content.data.list.0.productName", "自"]
+
+- test:
+    name: productName 校验：productName 输入20个字符
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自动化产品201907091708293
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["content.data.list.0.productName", "自动化产品201907091708293"]
+
+- test:
+    name: productName 校验：productName 输入31个字符
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 2019071116401034123454545454121
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "产品名称长度不能超过30字符"]
+
+- test:
+    name: productId 校验：productId 输入存在的
+    api: api/manage/product/list.yaml
+    variables:
+      productId: 85
+      searchType: 2
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.0.productName", "自动化"]
+
+- test:
+    name: productId 校验：productId 输入不存在的
+    api: api/manage/product/list.yaml
+    variables:
+      productId: 1
+      searchType: 2
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.data.list", []]
+
+- test:
+    name: searchType 校验：searchType 不输入，productName和productId搜索条件无效
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自动化
+      productId: 85
+      searchType:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.data.list.0.productName", "陕西送水-song"]
+
+- test:
+    name: searchType 校验：searchType 输入：1，productId搜索条件无效
+    api: api/manage/product/list.yaml
+    variables:
+      productId: 85
+      searchType: 1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.data.list.0.productName", "陕西送水-song"]
+
+- test:
+    name: searchType 校验：searchType 输入：2，productName搜索条件无效
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自动化
+      searchType: 2
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.data.list.0.productName", "陕西送水-song"]
+
+- test:
+    name: searchType 校验：searchType 输入：1，只有productName搜索条件有效
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自动化
+      productId: 1
+      searchType: 1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.0.productName", "自动化"]
+
+- test:
+    name: searchType 校验：searchType 输入：2，只有productId搜索条件有效
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 陕西
+      productId: 85
+      searchType: 2
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.0.productName", "自动化"]
+
+- test:
+    name: searchType 校验：searchType 输入不存在的：5，productName和productId搜索条件无效
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自动化
+      productId: 86
+      searchType: 5
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "关键字类型不合法"]
+
+- test:
+    name: searchType 校验：searchType 输入：a
+    api: api/manage/product/list.yaml
+    variables:
+      searchType: a
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: areaCode 校验：areaCode 输入广东省级：440000
+    api: api/manage/product/list.yaml
+    variables:
+      areaCode: 440000
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.0.productName", "深圳"]
+
+- test:
+    name: areaCode 校验：areaCode 输入深圳市级：440300
+    api: api/manage/product/list.yaml
+    variables:
+      areaCode: 440300
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.0.productName", "深圳"]
+
+
+- test:
+    name: areaCode 校验：areaCode 输入南山区级：440304
+    api: api/manage/product/list.yaml
+    variables:
+      areaCode: 440304
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.1.productName", "自动化"]
+
+- test:
+    name: areaCode,productName,searchType 联合校验：areaCode 输入南山区级：440304,
+    api: api/manage/product/list.yaml
+    variables:
+      productName: 自动化产品
+      searchType: 1
+      areaCode: 440304
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - contains: ["content.data.list.0.productName", "自动化"]
+
+- test:
+    name: areaCode,productId,searchType 联合校验：areaCode 输入南山区级：440304,
+    api: api/manage/product/list.yaml
+    variables:
+      productId: 96
+      searchType: 2
+      areaCode: 440304
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.data.total", 1]
+
+- test:
+    name: pageNum校验：pageNum输入0
+    api: api/manage/product/list.yaml
+    variables:
+      pageNum: 0
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "页码不能小于1"]
+
+- test:
+    name: pageNum校验：pageNum输入6.6
+    api: api/manage/product/list.yaml
+    variables:
+      pageNum: 6.6
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: pageNum校验：pageNum输入a
+    api: api/manage/product/list.yaml
+    variables:
+      pageNum: a
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: pageNum校验：pageNum输入9999，比总页数pages大
+    api: api/manage/product/list.yaml
+    variables:
+      pageNum: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: pageSize校验：pageSize输入0
+    api: api/manage/product/list.yaml
+    variables:
+      pageSize: 0
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "每页数目不能小于1"]
+
+- test:
+    name: pageSize校验：pageSize输入5.8
+    api: api/manage/product/list.yaml
+    variables:
+      pageSize: 5.8
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: pageSize校验：pageSize输入a
+    api: api/manage/product/list.yaml
+    variables:
+      pageSize: a
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: pageSize校验：pageSize输入9999
+    api: api/manage/product/list.yaml
+    variables:
+      pageSize: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+
+
+

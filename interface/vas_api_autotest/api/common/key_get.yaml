@@ -1,0 +1,21 @@
+name: 获取秘钥  # 接口描述
+variables:  # 变量
+  requestId: ${get_uuid()}
+  requestTime: ${get_local_time_format()}
+  appType: '1'
+  version: '1.0'
+  code: 0
+  message: 请求成功
+
+request:
+  url: common/key/get
+  method: GET
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: $appType
+  params:
+    requestId: $requestId  # 必填 ，长度1~30字符，字典编码
+    requestTime: $requestTime  # 请求时间，取当前系统时间
+    version: $version  # 版本号，字符串
+    data: "{}"

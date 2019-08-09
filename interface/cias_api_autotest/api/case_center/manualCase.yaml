@@ -1,0 +1,23 @@
+name: 中台手工派单
+request:
+  method: POST
+  url: zbcf-web-order/order/parttime/manualCase.jhtml
+  headers:
+    userId: $userId
+    token: $token
+    originType: $originType
+    Content-Type: application/json
+  json:
+    caseNo: $caseNo
+    insureId: $insureId
+    insureName: $insureName
+    carNo: $carNo
+    accidentTime: $accidentTime
+    accidentLinkMan: $accidentLinkMan
+    accidentLinkTel: $accidentLinkTel
+    accidentAddress: $accidentAddress
+    accidentLongitude: $accidentLongitude
+    accidentLatitude: $accidentLatitude
+    headInsureId: $headInsureId
+    headInsureName: $headInsureName
+    reportType: $reportType

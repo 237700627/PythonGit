@@ -1,0 +1,124 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      login_name: ${get_config(oss_login_name)}
+      login_pwd: ${get_config(oss_login_pwd)}
+      cookie: ${get_cookie($login_name, $login_pwd)}
+
+- test:
+    name: 获取秘钥
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    extract:
+      - aesKey: content.data.aesKey
+      - signKey: content.data.signKey
+
+- test:
+    name: 服务商详情  # 正常流程
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "1"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", 0]
+     - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 服务商详情id非空校验  # 字段为空校验
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: " "
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "ID不能为空"]
+
+- test:
+    name: 服务商详情id为负值  # id字段为负数校验
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "-1"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "ID必须大于0"]
+
+- test:
+    name: 服务商详情id为0  # id字段为0 校验
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "0"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "ID必须大于0"]
+
+- test:
+    name: 服务商详情id不存在  # 输入不存在的服务商id
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "666"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "未找到相关公司信息"]
+
+- test:
+    name: 服务商详情id为特殊字符  # 输入id为特殊字符
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "@#￥！"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 服务商详情id为字母  # 输入id为字母
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "阿布v"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 服务商详情id超出最大输入范围  # 输入id超出最大输入范围
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: 123456789112345678911
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 服务商详情id为小数  # 输入id为小数
+    api: api/manage/provider/company_detail.yaml
+    variables:
+      id: "1.1"
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.code", -1]
+     - eq: ["content.message", "服务器异常"]

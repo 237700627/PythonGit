@@ -1,0 +1,13 @@
+name: 小程序登录  # 接口描述
+variables:  # 变量
+  wxCode:
+
+request:
+  url: $uri/wxapp/client/login
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    wxCode: $wxCode  # 微信登录code
+
+

@@ -1,0 +1,11 @@
+name: 手机号绑定  # 接口描述
+variables:  # 变量
+  orderDetailId:
+
+request:
+  url: $uri/wxapp/client/bindMobile
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    mobile: $mobile  # 必填，手机号

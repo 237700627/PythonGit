@@ -1,0 +1,16 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/add   添加用户
+    api_path: api/injury/user/add.yaml
+    uri: /injury/user/add
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri
+    json:
+        userName: $userName
+        name: $name
+        mobile: $mobile
+        roleCodes: $roleCodes
+        companyId: $companyId

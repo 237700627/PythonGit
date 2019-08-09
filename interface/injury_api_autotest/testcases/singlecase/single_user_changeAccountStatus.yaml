@@ -1,0 +1,66 @@
+- config:
+    name: pc修改账号状态case
+    base_url: ${base_url()}
+
+- test:
+    name: 前置条件1-pc登录
+    testcase: testcases/modulecase/module_pc_login.yaml
+    output:
+        - pc_token
+
+#- test:
+#    name: 正常场景_pc修改账号状态(停用)成功
+#    variables:
+#        enable: 0
+#    api: api/pc/user/changeAccountStatus.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+
+#- test:
+#    name: 正常场景_pc修改账号状态(启用)成功
+#    api: api/pc/user/changeAccountStatus.yaml
+#    variables:
+#        enable: 1
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#
+#- test:
+#    name: 异场场景_userId为空修改账号状态成功
+#    api: api/pc/user/changeAccountStatus.yaml
+#    variables:
+#        userId: ''
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+
+
+- test:
+    name: 异场场景_enable为空修改账号状态成功
+    api: api/pc/user/changeAccountStatus.yaml
+    variables:
+        enable: 1
+    validate:
+        - eq: [status_code, 400]
+        - eq: [content.code, 503]
+        - eq: [content.message, '请检查输入内容，内容不符合要求']
+        - eq: [content.status, 'error']
+
+- test:
+    name: 异场场景_enable和useId都为空修改账号状态成功
+    api: api/pc/user/changeAccountStatus.yaml
+    variables:
+        userId: ''
+        enable: ''
+    validate:
+        - eq: [status_code, 400]
+        - eq: [content.code, 503]
+        - eq: [content.message, '请检查输入内容，内容不符合要求']
+        - eq: [content.status, 'error']

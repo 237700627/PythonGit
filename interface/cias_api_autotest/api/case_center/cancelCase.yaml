@@ -1,0 +1,19 @@
+#保险公司销案接口
+variables: #变量
+      companyId: HAIC
+      requestTime: "2019-02-22 18:00:00"
+      cancelTime: "2019-02-22 18:00:00"
+      cancelReason: '04'
+
+request:
+  url: $uri/zbcf-casecenter/public/case/cancelCase
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    requestTime: $requestTime
+    companyId: $company_id
+    initiator: autotest
+    reportNo: $report_no
+    cancelTime: $cancel_time
+    cancelReason: $cancel_reason

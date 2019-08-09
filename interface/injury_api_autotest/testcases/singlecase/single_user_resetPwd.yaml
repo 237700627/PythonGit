@@ -1,0 +1,29 @@
+- config:
+    name: pc重置密码case
+    base_url: ${base_url()}
+
+- test:
+    name: 前置条件-pc登录
+    testcase: testcases/modulecase/module_pc_login.yaml
+    output:
+        - pc_token
+
+- test:
+    name: 正常场景_pc重置密码成功
+    api: api/pc/user/resetPwd.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '成功']
+        - eq: [content.status, 'success']
+
+- test:
+    name: 异场场景_userName为空重置密码 --- userName为什么没有为空?
+    api: api/pc/user/resetPwd.yaml
+    variables:
+        userName: ''
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 503]
+        - eq: [content.message, '成功']
+        - eq: [content.status, 'error']

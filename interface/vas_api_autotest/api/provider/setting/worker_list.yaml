@@ -1,0 +1,22 @@
+name: 服务人员列表  # 接口描述
+variables:  # 变量
+  appType: '1'
+  pageNum: 1
+  pageSize: 20
+
+request:
+  url: provider/worker/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: $appType
+  json:
+    pageNum: $pageNum  # 非必填，页码，从1开始
+    pageSize: $pageSize  # 非必填，每页最大返回数目，默认20
+#    order: $order  # 非必填，排序，asc-升序，desc-降序
+#    orderField: $orderField  # 非必填，排序字段
+
+
+
+

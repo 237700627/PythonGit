@@ -1,0 +1,11 @@
+name: 订单导出
+varialbes:
+  orderStatus:
+
+request:
+  url: $uri/manage/order/export
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderStatus: $orderStatus  # 非必填，订单状态 00待派单、01处理中、02待初审、03初审退回、04待终审、05终审通过、06已办结

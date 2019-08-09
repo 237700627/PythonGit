@@ -1,0 +1,13 @@
+name: 服务商详情  # 接口描述
+variables:  # 变量
+  id:
+
+request:
+  url: manage/provider/company/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    cookie: ${get_cookie_str($token)}
+    appType: "1"  # "1" 为PC登陆  "0"为APP登陆
+  json:
+    id: $id  # 必填，长整型，服务商ID

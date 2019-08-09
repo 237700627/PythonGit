@@ -1,0 +1,17 @@
+#中台审核结果
+variables: #变量
+  orderNo:
+  operationType: 0:新增完成拍摄 1:补拍完成拍摄 2:完成作业（最后一步
+  token:
+  userId:
+request:
+  url: /zbcf-web-order/order/parttime/compeletedImage.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: $originType
+    token: $token
+    userId: $userId
+  json:
+    operationType: $operationType
+    orderNo: $orderNo

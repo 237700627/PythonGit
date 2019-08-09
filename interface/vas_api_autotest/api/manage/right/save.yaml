@@ -1,0 +1,28 @@
+name: 权益创建/更新  # 接口描述
+variables:  # 变量
+  id:
+  rightName:
+  productId:
+  channelCompanyId:
+  rightType:
+  cycleType:
+  rightDiscount:
+  times:
+
+request:
+  url: /manage/right/save
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    id: $id
+    rightName: $rightName  # 非必填，权益ID
+    productId: $productId  # 必填，长度64字符，权益名称
+    channelCompanyId: $channelCompanyId  # 必填
+    rightType: $rightType  # 0必填，1 全免 02	金额 03	公里数 字典表：RIGHT_TYPE
+    cycleType: $cycleType  # 必填，01	一天一次 02	一周一次 03	一周两次 04	一月一次 字典表：CYCLE_TYPE
+    rightDiscount: $rightDiscount   #非必填，优惠数值
+    times: $times   #必填，优惠次数
+

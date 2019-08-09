@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/expireToken  维护系统的token有效期
+    api_path: api/injury/resource/expireToken.yaml
+    uri: /injury/resource/expireToken?orderNo=$orderNO&userType=$userType
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri

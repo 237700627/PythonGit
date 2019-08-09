@@ -1,0 +1,24 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/order/add  新增任务
+    api_path: api/injury/order/add.yaml
+    uri: /injury/order/add
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        caseNo: $caseNo
+        ownerName: $ownerName
+        ownerPhone: $ownerPhone
+        carNo: $carNo
+        provinceCode: $provinceCode
+        cityCode: $cityCode
+        countryCode: $countryCode
+        hospital: $hospital
+        department: $department
+        injuredName: $injuredName'
+        injuredPhone: $injuredPhone
+        visitRequest: $visitRequest
+        taskType: $taskType

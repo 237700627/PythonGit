@@ -1,0 +1,16 @@
+name: 取消订单接口  # 接口描述
+variables:  # 变量
+  taskId:
+  cancelReason: '01' #取消原因 01	超出可服务范围 02	客户不满意服务 03 我方原因取消订单 04	其他
+  Cookie:
+
+request:
+  url: /app/order/cancel
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    taskId: $taskId  # 任务id
+    cancelReason: $cancelReason #取消原因

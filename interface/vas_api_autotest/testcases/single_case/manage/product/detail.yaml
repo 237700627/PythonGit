@@ -1,0 +1,52 @@
+- config:
+    name: 标准产品详情，全局变量：base_url,userName,password
+    base_url: ${get_config(web_url)}
+    variables:
+      userName: ${get_config(cms_login_name)}
+      password: ${get_config(cms_login_pwd)}
+
+- test:
+    name: 获取登录token/密钥：token/signKey
+    testcase: testcases/module_case/pc_user_login.yaml
+    output:
+      - token
+      - signKey
+
+- test:
+    name: 标准产品详情
+    api: api/manage/product/detail.yaml
+    variables:
+      id: 35
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["content.data.id", $id]
+
+- test:
+    name: id校验：id输入不存在的
+    api: api/manage/product/detail.yaml
+    variables:
+      id: 1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 2003]
+      - eq: ["content.message", "该产品ID不存在"]
+
+- test:
+    name: id校验：id输入空
+    api: api/manage/product/detail.yaml
+    variables:
+      id:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "产品ID不能为空"]

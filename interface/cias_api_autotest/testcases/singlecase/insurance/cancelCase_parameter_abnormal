@@ -1,0 +1,64 @@
+- config:
+   name: 参数合法性校验
+   base_url:
+
+
+- test:
+    name: requestTime字段为空校验
+    api: api/insurancce_api/cancelCase.yaml
+    variables:
+      requestTime: ""
+
+    validate:
+      - eq: ["resultCode",200]
+      - eq: ["json.code",503]
+      - eq: ["json.status",'error']
+
+- test:
+    name: companyId字段为空校验
+    api: api/insurancce_api/cancelCase.yaml
+    variables:
+      companyId: ""
+    validate:
+      - eq: ["resultCode",200]
+      - eq: ["json.code",503]
+      - eq: ["json.status",'error']
+- test:
+    name: initiator字段为空校验
+    api: api/insurancce_api/cancelCase.yaml
+    variables:
+      initiator: ""
+    validate:
+      - eq: ["resultCode",200]
+      - eq: ["json.code",503]
+      - eq: ["json.status",'error']
+
+- test:
+    name: reportNo字段为空校验
+    api: api/insurancce_api/cancelCase.yaml
+    variables:
+      reportNo: ""
+    validate:
+      - eq: ["resultCode",200]
+      - eq: ["json.code",503]
+      - eq: ["json.status",'error']
+
+- test:
+    name: cancelTime字段为空校验
+    api: api/insurancce_api/cancelCase.yaml
+    variables:
+      cancelTime: ""
+    validate:
+      - eq: ["resultCode",200]
+      - eq: ["json.code",503]
+      - eq: ["json.status",'error']
+
+- test:
+    name: cancelReason字段为空校验
+    api: api/insurancce_api/cancelCase.yaml
+    variables:
+      cancelReason: ""
+    validate:
+      - eq: ["resultCode",200]
+      - eq: ["json.code",503]
+      - eq: ["json.status",'error']

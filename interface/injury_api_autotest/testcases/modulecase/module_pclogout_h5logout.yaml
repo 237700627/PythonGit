@@ -1,0 +1,13 @@
+- config:
+    name: pc退出，h5退出
+
+#pc和h5的退出是同一个接口
+- test:
+    name: pc退出
+    api: api/pc/logout.yaml
+    validate:
+        -   eq: [status_code, 200]
+        -   eq: [content.code, 200]
+        -   eq: [content.message, '处理成功']
+        -   eq: [content.status, 'success']
+

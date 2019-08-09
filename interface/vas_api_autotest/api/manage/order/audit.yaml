@@ -1,0 +1,15 @@
+name: 订单审核
+varialbes:
+  orderNo:
+  auditStatus:
+  auditRemark:
+
+request:
+  url: $uri/manage/order/audit
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderNo: $orderNo  # 订单编号
+    auditStatus: $auditStatus  # 审核状态 1通过 0不通过
+    auditRemark: $auditRemark  # 非必填，审核备注

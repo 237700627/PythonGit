@@ -1,0 +1,16 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/checkTaskInfo   审核接口
+    api_path: api/injury/task/checkTaskInfo.yaml
+    uri: /injury/task/checkTaskInfo
+    pass: 1
+    comment : 'default审核通过~'
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_suptoken
+    method: POST
+    url: $uri
+    json:
+        orderId: $orderId
+        pass: $pass
+        comment: $comment

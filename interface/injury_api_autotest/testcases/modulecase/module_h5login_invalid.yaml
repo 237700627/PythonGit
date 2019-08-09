@@ -1,0 +1,21 @@
+#获取验收码
+- test:
+    name: 4-获取验证码
+    api: api/h5/sendValidateCode.yaml
+    variables:
+        wait_1m: 62
+        wait1m_desc: '手机获取验证码1分钟只能获取一次'
+#    setup_hooks:
+#        - ${sleep($wait_1m,$wait1m_desc)} #手机获取验证码1分钟只能获取一次
+#    validate:
+#        -   eq: [status_code, 200]
+
+#h5登录
+- test:
+    name: 无效的登录码登录h5
+    api: api/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+        -   eq: [content.code, $code]
+        -   eq: [content.message, $message]
+        -   eq: [content.status, $req_status]

@@ -1,0 +1,19 @@
+#调度坐席认领案件，并强派公估
+- test:
+    name: 坐席认领案件
+    api: api/callcenter/task_accept.yaml
+    variables:
+      Cookie: $cookies
+      report_no:  $report_no
+
+
+- test:
+    name: 坐席线下强派公估师案件
+    api: api/callcenter/ordersend.yaml
+    variables:
+      Cookie: $cookies
+      report_no:  $report_no
+      mobile: $app_login
+    validate:
+    - eq: ["status_code", 200]
+    - eq: ["content.resultMsg", "成功"]

@@ -1,0 +1,27 @@
+name: 服务商列表  # 接口描述
+variables:  # 变量
+  areaCode:
+  page:
+  limit:
+  order:
+  orderField:
+  companySubNo:
+  companyName:
+  companyNo:
+
+request:
+  url: manage/provider/company/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    cookie: ${get_cookie_str($token)}
+    appType: "1"
+  json:
+    areaCode: $areaCode
+    page: $page
+    limit: $limit
+    order: $order
+    orderField: $orderField
+    companySubNo: $companySubNo
+    companyName: $companyName
+    companyNo: $companyNo

@@ -1,0 +1,12 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/visitor/evaluateInfo  探视员评分信息
+    api_path: api/injury/visitor/evaluateInfo.yaml
+    uri: /injury/visitor/evaluateInfo
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        visitorPhone: $visitorPhone

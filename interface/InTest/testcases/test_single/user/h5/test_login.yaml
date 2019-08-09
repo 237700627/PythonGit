@@ -1,0 +1,84 @@
+- config:
+    name: 单接口测试 test_login.yaml  H5登录接口
+        variables:
+    orderId: ${queryOrderId()}
+        base_url: ${base_url()}
+
+#   入参检查
+
+- test:
+    name: 入参正确
+    variables:
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# 入参为空
+- test:
+    name: 入参accessCode为空
+    variables:
+        accessCode: ''
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# 入参不存在
+- test:
+    name: 入参accessCode不存在
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+
+
+# 其他情况下出参检查
+
+
+# message检查
+- test:
+    name: H5_login
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# code 0000 返回码检查
+- test:
+    name: H5_login
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# code B001 返回码检查
+- test:
+    name: H5_login
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# status 状态检查
+- test:
+    name: H5_login
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# responseTime检查
+- test:
+    name: H5_login
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# 用户登录信息检查
+- test:
+    name: H5_login
+    variables:
+        accessCode: '123456'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]

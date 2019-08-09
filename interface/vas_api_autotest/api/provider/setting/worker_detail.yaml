@@ -1,0 +1,12 @@
+name: 服务人员详情  # 接口描述
+variables:  # 变量
+  id:
+
+request:
+  url: $uri/provider/worker/detail
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    id: $id  # 必填，长整型，服务人员ID
+

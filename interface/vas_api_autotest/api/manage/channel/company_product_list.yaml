@@ -1,0 +1,23 @@
+name: 渠道商产品列表  # 接口描述
+variables:  # 变量
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+  companyId:
+
+request:
+  url: /manage/channel/company/product/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    pageNum: $pageNum
+    pageSize: $pageSize
+    order: $order
+    orderField: $orderField
+    companyId: $companyId  # 渠道商ID
+
+

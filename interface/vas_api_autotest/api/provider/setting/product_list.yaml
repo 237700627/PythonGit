@@ -1,0 +1,17 @@
+name: 服务商产品查询  # 服务商关联产品查询
+variables:  # 变量
+    pageNum:
+    pageSize:
+    order:
+    orderField:
+
+request:
+  url: $uri/provider/product/list
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    pageNum: $pageNum
+    pageSize: $pageSize
+    order: $order
+    orderField: $orderField

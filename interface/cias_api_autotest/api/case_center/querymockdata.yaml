@@ -1,0 +1,9 @@
+#查询保险公司mock数据
+variables: #变量
+      queryurl: /call42/zbcf/schedulingBackWrite #需要查询的数据的url
+
+request:
+  url: $uri/query/$queryurl
+  method: GET
+  headers:
+    Content-Type: application/json

@@ -1,0 +1,26 @@
+# 调度坐席线下强派案件到公估
+variables: #变量
+  report_no:
+  taskid: ${get_task_id($report_no)}
+  mobile:  #公估师电话
+  userId: ${get_member_id($mobile)}
+
+request:
+  url: http://testchakan.cias.cn/zbcf-web-callcenter/ordersend/send.jhtml
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    Cookie: $Cookie
+
+  data:
+    connName: 自动化先生
+    connPhone: '13144835618'
+    longtitude: '114.076888'
+    latitude: '22.562457'
+    address: '深圳市福田区笔架山公园'
+    caseNo: $report_no
+    taskId: $taskid
+    taskType: '0'
+    handoutType: OFFLINE
+    source: '0'
+    sellerJson: "[{'negoId':0,'userId':'$userId','userType':'0','workDistance':0,'mobile':'$mobile'}]"

@@ -1,0 +1,69 @@
+#pc端查看任务详情
+- test:
+      name: pc端查看任务详情
+      api: api/pc/detail.yaml
+      validate:
+          -   eq: [status_code, 200]
+          -   eq: [content.code, $code]
+          -   eq: [content.message, $message]
+          -   eq: [content.status, $req_status]
+          -   eq: [json.data.order.orderStatus,$orderStatus] #订单状态：01待调度，02-待作业，03-作业中，04-待审核，05-已完成，06-已取消，07-已关单
+          -   eq: [json.data.order.operationStatus,$operationStatus] #任务状态：01-待作业，02-作业中，03-待审核，04-已完成
+          #-   eq: [json.data.order.orderNo,$orderNo]
+ #         - eq: [json.data.order.operationId,$operationId]
+
+          #订单信息
+          #- eq: [content.data.order.orderNo,$orderNo]  #订单号
+#          - eq: [content.data.order.operationId,$operationId]  #任务ID
+          - eq: [content.data.order.carNo,$carNo] #车牌号
+          - eq: [content.data.order.caseNo,$caseNo] #报案号
+          - eq: [content.data.order.ownerPhone,$ownerPhone] #车主电话
+          - eq: [content.data.order.injuredPhone,$injuredPhone] #伤者电话
+          #录单人信息
+          - eq: [content.data.order.contactPhone,$creatorMobile] #录单人的电话
+          - eq: [content.data.order.creator,$userId] #录单人id
+          - eq: [content.data.order.company,$companyName] #录单人所在保险公司
+          - eq: [content.data.order.creatorName,$creatorName] #录单人姓名
+
+          - eq: [content.data.injured.visitorInfo.visitorPhone,$visitorPhone] #探视员电话
+          - eq: [content.data.injured.visitorInfo.visitorSignature,$visitorSignature]  #探视员姓名
+          #伤者信息
+#          - eq: [content.data.injured.birthday,$birthday] #伤者出生日期
+#          - eq: [content.data.injured.censusRegisterType,$censusRegisterType_injured] #伤者户籍类型
+#          - eq: [content.data.injured.idType,$idType] #伤者证件类型
+#          - eq: [content.data.injured.idNo,$idNo] #伤者证件号码
+#          - eq: [content.data.injured.injuredInfo.mentalStatus,$mentalStatus] #伤者精神状态
+#          - eq: [content.data.injured.injuredInfo.hospitalizedDate,$hospitalizedDate] #伤者入院时间
+#          - eq: [content.data.injured.injuredInfo.leaveDate,$leaveDate] #伤者出院时间
+#          - eq: [content.data.injured.injuredSignature,$injuredSignature] #伤者姓名
+#          - eq: [content.data.injured.phone,$phone] #h5维护的伤者电话
+#          - eq: [content.data.injured.sex,$sex] #伤者性别
+#          - eq: [content.data.injured.referralWays,$referralWays] #伤者送诊方式
+#          - eq: [content.data.injured.treatWays,$treatWays] #伤者治疗方式
+#          - eq: [content.data.injured.treatment,$treatment] #伤者治疗情况
+
+          #交通事故
+##          - eq: [content.data.injured.accidentInfo.injuryType,$injuryType] #伤者身份
+#          - eq: [content.data.injured.accidentInfo.isIllegal,$isIllegal] #自身有无违章
+#          - eq: [content.data.injured.accidentInfo.otherIllegal,$otherIllegal] #对方有无违章
+#          - eq: [content.data.injured.accidentInfo.position,$position] #位置
+#          - eq: [content.data.injured.accidentInfo.travelModel,$travelModel] #出行方式
+#          #工作信息
+#          - eq: [content.data.injured.work.hasWork,$hasWork] #有无工作：有
+#          - eq: [content.data.injured.work.workInfoList.0.wageType,$wageType] #工作发放形式
+#
+#          #居住信息的省市区断言待完善
+#
+#          #护理人
+#          - eq: [content.data.injured.caregiversDto.hasCaregivers,$hasCaregivers] #有无护理人
+#          - eq: [content.data.injured.caregiversDto.caregiversInfoList.0.caregiversIdentity,$caregiversIdentity] #护理人身份
+#          #被扶养人
+#          - eq: [content.data.injured.familyDto.hasFamily,$hasFamily] #无有被扶养人
+#          - eq: [content.data.injured.familyDto.familyInfoList.0.dependType,$dependType] #被扶养人类型
+#          - eq: [content.data.injured.familyDto.familyInfoList.0.typeDesc,$typeDesc] #被扶养人描述
+#          - eq: [content.data.injured.age,$age] #年龄
+##          - eq: [content.data.injured.familyDto.familyInfoList.0.censusRegisterType,$censusRegisterType_depended] #被扶养人户籍类型
+#          - eq: [content.data.injured.familyDto.familyInfoList.0.dependCount,$dependCount] #共同扶养人数
+
+      extract:
+          -   operationId: json.data.order.operationId

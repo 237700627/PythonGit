@@ -1,0 +1,91 @@
+#专业公估作业完整信息提交
+variables: #变量
+  caseNo:
+  orderNo: ${get_order_no($caseNo)}
+  orderType: '0'  #订单类型 0-查勘 1- 定损（标的） 2 - 定损（三者） 3 - 物损
+  token:
+  userId:
+  originType: APP
+  accidentType: "0" #事故类型0-单方,1-多方,2-玻璃,3-盗抢,4-自燃,5-水淹,6-其他,7-双方,8-划痕,9-自然灾害
+  isInjured: "0" #是否人伤
+  isLoss: "0" #是否物损
+  workid:  #专业作业ID  表T_wk_survey_model
+  carid:  #标的车id  表T_wk_car_model
+  injuredList: [] #人伤列表
+  simpleDamageList: [] #物损列表
+
+request:
+  url: /zbcf-web-order/order/saveOrderInfo.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: $originType
+    token: $token
+    userId: $userId
+  json:
+    orderNo: $orderNo
+    orderType: $orderType
+    userId: $userId
+    isTemporary: false
+    surveyModel:
+      orderNo: $orderNo
+      id: $workid
+      carNo: ""
+      isVin: "2"
+      isDrivingLicense: "2"
+      isCarmodel: "2"
+      isDriverCard: "2"
+      surveyPlace: "广东省深圳市福田区购物公园"
+      accidentType: $accidentType
+      accidentDuty: "0"
+      dutyPercent: "100"
+      lossDesp: "自动化测试损失描述是这个样子的"
+      caseNo: $caseNo
+      isInjured: $isInjured
+      isLoss: $isLoss
+      isCali: "0"
+      isLiveCheck: "1"
+      estimateLossAmount: "4999"
+      surveyDespType: "2"
+      surveyDesp: "查勘描述"
+    mainCarModel:
+      id: $carid
+      caseNo: $caseNo
+      orderNo: $orderNo
+      carNo: "粤A38312"
+      carType: "ct-other"
+      driverRelation: "dr-self"
+      garageName: "福田修理厂"
+      garageAddress: "深圳市福田区笋岗西路188号"
+      isGarage: "1"
+      driverName: "自动化测试专业"
+      driverPhone: "15875875956"
+      isMain: "1"
+      vinNo: "LFMARE0C070003247"
+      engineNo: "453453543543453001"
+      driverLicenNo: "110101200403072337"
+      driverType: "C1"
+      isDetain: "0"
+      driverCardLink: ""
+      licenseCardLink: ""
+      lossEstimate: "3565"
+    injuredList: $injuredList
+    simpleDamageList: $simpleDamageList
+    threeCarList: []
+    auditModel:
+      orderNo: $orderNo
+      reply: ""
+      auditOpinion: ""
+    saveClaimDTO:
+      claimList: [{"claimDicCode": "01003"}, {"claimDicCode": "01005"}]
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,225 @@
+- config:
+    name: pc新建订单单接口case
+    base_url: ${base_url()}
+    variables:
+        #pc新建订单需要的相关数据
+        L1: ['1','5']
+        L2: ['黑','B']
+        L3: []
+
+- test:
+    name: 前置条件-pc登录
+    testcase: testcases/modulecase/module_pc_login.yaml
+    output:
+        - pc_token
+
+#- test:
+#    name: 正常场景_pc新建订单
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#
+####报案号校验
+#- test:
+#    name: 异常场景_报案号为空新建订单
+#    variables:
+#        caseNo: ''
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'报案号caseNo不能为空']
+#
+#####车主姓名检验
+#- test:
+#    name: 异常场景_车主姓名为空新建订单
+#    variables:
+#        ownerName: ''
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'车主姓名不能为空']
+#
+- test:
+    name: 异常场景_车主姓名为9个汉字新建订单--有bug，应该要限制最大
+    variables:
+        ownerName: '测试车主姓名只为八'  #姓名为2-8个汉字或4-16个英文字符
+    api: api/pc/add.yaml
+    validate:
+        - eq: [status_code, 400]
+        - eq: [content.code, 503]
+        - eq: [content.message, '服务器异常']
+        - eq: [content.status, 'error']
+
+#- test:
+#    name: 异常场景_车主姓名为1个汉字新建订单
+#    variables:
+#        ownerName: '测'  #姓名为2-8个汉字或4-16个英文字符
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#
+#- test:
+#    name: 异常场景_车主姓名为3个字母新建订单
+#    variables:
+#        ownerName: 'acb'  #姓名为2-8个汉字或4-16个英文字符
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#
+#- test:
+#    name: 异常场景_车主姓名为17个字母新建订单
+#    variables:
+#        ownerName: 'acbedfgtrbhjuikmj'  #姓名为2-8个汉字或4-16个英文字符
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '服务器异常']
+#        - eq: [content.status, 'error']
+#
+####车主电话检验
+#- test:
+#    name: 异常场景_车主电话为空新建订单
+#    variables:
+#        ownerPhone: '' #车主手机号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+##        - eq: [content.data.0.message,'手机号码长度需要为11位'] #因为这二个字段的值在list的位置会变化
+##        - eq: [content.data.1.message,'车主电话ownerPhone不能为空']
+#
+#- test:
+#    name: 异常场景_车主电话为12位新建订单
+#    variables:
+#        ownerPhone: '154789555119' #车主手机号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'手机号码长度需要为11位']
+#
+#- test:
+#    name: 异常场景_车主电话为10位新建订单
+#    variables:
+#        ownerPhone: '1547895551' #车主手机号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'手机号码长度需要为11位']
+#
+#- test:
+#    name: 异常场景_车主电话为非数字的11位新建订单---有bug
+#    variables:
+#        ownerPhone: '18%sfe14ae7' #车主手机号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#
+#- test:
+#    name: 异常场景_车主电话以11开头新建订单  -- 有bug
+#    variables:
+#        ownerPhone: 11798596483 #车主手机号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#
+#- test:
+#    name: 异常场景_车主电话以12开头新建订单
+#    variables:
+#        ownerPhone: 12798596483 #车主手机号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '服务器异常']
+#        - eq: [content.status, 'error']
+
+###车牌号检验
+#- test:
+#    name: 异常场景_车牌号为空新建订单 --有bug
+#    variables:
+#        carNo: '' #车牌号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'车牌号不能为空']
+
+#- test:
+#    name: 正常场景_车牌号为无牌新建订单
+#    variables:
+#        carNo: '无牌' #车牌号
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#
+###就诊医院的省市区检验
+#- test:
+#    name: 异常场景_provinceCode为空新建订单
+#    variables:
+#        provinceCode: ''
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'就诊地区省编码provinceCode不能为空']
+#
+#- test:
+#    name: 异常场景_cityCode为空新建订单
+#    variables:
+#        cityCode: ''
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'就诊地区城市编码cityCode不能为空']
+#
+#- test:
+#    name: 异常场景_countryCode为空新建订单  --- 有bug
+#    variables:
+#        countryCode: ''
+#    api: api/pc/add.yaml
+#    validate:
+#        - eq: [status_code, 400]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '请检查输入内容，内容不符合要求']
+#        - eq: [content.status, 'error']
+#        - eq: [content.data.0.message,'就诊地区区编码countryCode不能为空']

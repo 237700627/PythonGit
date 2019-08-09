@@ -1,0 +1,23 @@
+- config:
+      name: 单接口测试 test_query.yaml 查询任务列表
+      request:
+          token: $token
+      base_url: ${base_url}
+# 入参检查
+- test:
+      name: 入参正确
+      variables:
+          caseNo: $caseNo
+          ownerName: $ownerName
+          orderNo: $orderNo
+          creator: $creator
+          subCompanyId: $subCompanyId
+          thiCompanyId: $thiCompanyId
+          createTime: $createTime
+          CompanyId: $CompanyId
+          pageNum: $pageNum
+          pageSize: $pageSize
+          orderStatus: $orderStatus
+      api: api/injury/tasklist/query.yaml
+      validate:
+          eq: [status_code, 200]

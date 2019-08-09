@@ -1,0 +1,12 @@
+- test:
+    name: 提交事故现场确认单
+    api: api/web_order/pc/saveAcceptance.yaml
+    variables:
+      token: $pc_session_token
+      pc_user_id: ${get_user_id($pc_login)}
+      order_no: ${get_order_no($report_no)}
+    teardown_hooks:
+      - ${sleep_time($sleep_second)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["${get_confirm($order_no)}", $confirm]

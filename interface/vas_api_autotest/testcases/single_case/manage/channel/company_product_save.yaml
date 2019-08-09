@@ -1,0 +1,172 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 渠道商产品新增_正常用例
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 渠道商产品新增_id为非法类型
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      id: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 渠道商产品新增_渠道商和产品已经存在绑定关系，创建失败
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      id:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "指定的渠道商产品设置已存在，创建失败"]
+
+- test:
+    name: 渠道商产品新增_id不存在
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      id: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "id不存在"]
+
+- test:
+    name: 渠道商产品新增_CompanyId为空
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      companyId:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司ID不能为空"]
+
+- test:
+    name: 渠道商产品新增_CompanyId为非法类型
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      companyId: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 渠道商产品新增_CompanyId为不存在
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      companyId: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司ID不存在"]
+
+- test:
+    name: 渠道商产品新增_productId为空
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      productId:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "产品ID不能为空"]
+
+- test:
+    name: 渠道商产品新增_productId为非法类型
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      productId: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 渠道商产品新增_productId为不存在
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      productId: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司ID不存在"]
+
+- test:
+    name: 渠道商产品新增_salePrice为空
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      salePrice:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "销售价不能为空"]
+
+- test:
+    name: 渠道商产品新增_salePrice为非法类型
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      salePrice: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 渠道商产品新增_salePrice为负数
+    api: api/manage/channel/company_product_save.yaml
+    variables:
+      salePrice: -1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "销售价不可以小于0"]
+
+

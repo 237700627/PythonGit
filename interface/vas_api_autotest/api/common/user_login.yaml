@@ -1,0 +1,15 @@
+name: PC端的统一登录接口
+variables:
+  pc_login_name: portos
+  pc_login_pwd: '123456'
+  appType: '1'
+
+request:
+  url: public/common/user/login
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: $appType
+  json:
+    userName: $pc_login_name  # 必填，登录名
+    password: $pc_login_pwd  # 必填，密码

@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/resetPwd   用户管理列表查询接口
+    api_path: api/injury/user/resetPwd.yaml
+    uri: /injury/user/resetPwd?userName=$userName
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    token: $token
+    method: POST
+    url: $uri

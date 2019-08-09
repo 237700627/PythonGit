@@ -1,0 +1,11 @@
+name: 返回险公司列表，优先返回客户当前购买保险的保险公司  # 接口描述
+variables:  # 变量
+  carNo:
+
+request:
+  url: $uri/wxapp/insurance/list
+  method: GET
+  headers:
+    Content-Type: application/json
+  json:
+    carNo: $carNo  # 车牌号，非必填

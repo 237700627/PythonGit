@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/searchArea  搜索区域
+    api_path: api/injury/resource/searchArea.yaml
+    uri: /injury/resource/searchArea?keywords=keywords
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri

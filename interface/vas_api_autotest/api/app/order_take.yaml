@@ -1,0 +1,17 @@
+name: 接单接口  # 接口描述
+variables:  # 变量
+  taskId:
+  Cookie:
+
+
+request:
+  url: /app/order/take
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    taskId: $taskId  # 任务id
+
+

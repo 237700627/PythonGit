@@ -1,0 +1,17 @@
+name: 删除图片  # 接口描述
+variables:  # 变量
+  id:
+  Cookie:
+
+request:
+  url: /app/order/detail/image/delete
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    id: $id #图片信息id
+
+
+

@@ -1,0 +1,12 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/setting/getLists  订单状态
+    api_path: api/injury/resource/setting/getLists.yaml
+    uri: /injury/resource/setting/getLists
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: post
+    url: $uri
+    json:
+        _root_=$_root_

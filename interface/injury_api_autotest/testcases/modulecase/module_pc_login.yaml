@@ -1,0 +1,30 @@
+# pc正常登录
+- test:
+    name: pc端账号登录
+    api: api/pc/login.yaml
+    variables:
+        userName: 'AutoTest'  #录单人用户名
+        userPwd: 'iUEOhjEaiewdakp8o/LbgA=='
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+    extract:
+        -   pc_token: json.data.token
+
+#pc登录账号的个人中心信息
+- test:
+    name: pc登录账号的个人中心信息
+    api: api/user/getUserInfo.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+#        - eq: [content.data.companyName,$companyName] #录单人所在保险公司
+#        - eq: [content.data.email,$email]  #录单人邮箱
+#        - eq: [content.data.mobile,$creatorMobile] #录单人电话
+#        - eq: [content.data.name,$creatorName] #录单人姓名
+#        - eq: [content.data.permission,$permission] #录单人权限
+#        - eq: [content.data.userName,$userName] #录单人用户名

@@ -1,0 +1,9 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/h5/sendValidateCode.yaml   h5端验证码获取
+    api_path: api/injury/user/h5/sendValidateCode.yaml
+    uri: /injury/user/h5/sendValidateCode?mobile=$mobile
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    method: GET
+    url: $uri

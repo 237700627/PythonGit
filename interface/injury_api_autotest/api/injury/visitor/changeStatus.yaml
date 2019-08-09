@@ -1,0 +1,13 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/visitor/changeStatus  修改探视员状态
+    api_path: api/injury/visitor/changeStatus.yaml
+    uri: /injury/visitor/changeStatus
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        userId: $userId
+        status: $status

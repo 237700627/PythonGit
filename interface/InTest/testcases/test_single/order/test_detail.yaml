@@ -1,0 +1,44 @@
+- config:
+      name: 单接口测试  test_detail.yaml  测试web获取订单详情
+      request:
+          token: $token
+      base_url: ${base_url()}
+# 入参测试
+
+# 入参准确，查询到正确数据
+- test:
+      name: test_detail 入参正确
+      variables:
+          orderId: orderId: ${queryOrderId()}
+      api: api/injury/order/detail.yaml
+      validate:
+          eq: [status_code, 200]
+
+
+# 入参为空
+- test:
+      name: test_detail 入参orderId为空
+      variables:
+          orderId: ""
+      api: api/injury/order/detail.yaml
+      validate:
+          eq: [status_code, 200]
+# 入参不存在
+- test:
+      name: test_detail 入参orderId不存在
+      variables:
+          orderId: "00"
+      api: api/injury/order/detail.yaml
+      validate:
+          eq: [status_code, 200]
+
+# 其他情况下出参检查
+
+# 出参
+- test:
+      name: test_detail 入参orderId不存在
+      variables:
+          orderId: $orderId
+      api: api/injury/order/detail.yaml
+      validate:
+          eq: [status_code, 200]

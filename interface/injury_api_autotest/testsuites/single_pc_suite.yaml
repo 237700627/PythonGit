@@ -1,0 +1,38 @@
+config:
+    name: pc单接口的case
+    variables:
+        #pc登录系统的用户信息
+        companyName: '华安财产保险股份有限公司云南分公司'  #录单人所在保险公司
+        creatorName: '自动化测试'  #录单人姓名
+        email: 'qiucaixia@cias.cn' #录单人邮箱
+        creatorMobile: '18618561458'  #录单人电话
+        # userId: 77 #录单人id
+        permission: '管理员'
+        userName: 'AutoTest'  #录单人用户名
+        userPwd: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: 'tude'
+
+
+testcases:
+    pc登录单接口:
+        testcase: testcases/singlecase/single_pc_login.yaml
+
+#    pc新建订单单接口:
+#        testcase: testcases/singlecase/single_add_order.yaml
+
+#    pc查看订单详情单接口:
+#        testcase: testcases/singlecase/single_order_detail.yaml
+
+#    pc撤单单接口:
+#        testcase: testcases/singlecase/single_order_cancel.yaml
+#    pc关单重派单接口:
+#        testcase: testcases/singlecase/single_order_resend.yaml
+
+#    pc修改密码:
+#        testcase: testcases/singlecase/single_user_modifiedPwd.yaml
+
+#    pc重置密码:
+#        testcase: testcases/singlecase/single_user_resetPwd.yaml
+
+#    pc修改账号状态:
+#        testcase: testcases/singlecase/single_user_changeAccountStatus.yaml

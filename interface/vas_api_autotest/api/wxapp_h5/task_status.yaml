@@ -1,0 +1,15 @@
+name: 任务状态查询  # 接口描述
+variables:  # 变量
+  orderDetailId:
+  serviceType:
+
+request:
+  url: $uri/wxapp/task/status
+  method: GET
+  headers:
+    Content-Type: application/json
+  json:
+    orderDetailId: $orderDetailId  # 任务详情id
+    serviceType: $serviceType  # 服务类型 0100代驾 0200机动车年检 0300道路救援
+
+

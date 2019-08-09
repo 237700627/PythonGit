@@ -1,0 +1,11 @@
+name: 查询区域名称  # 接口描述
+variables:  # 变量
+  areaCode:
+
+request:
+  url: $uri/common/adcode/names
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    areaCode: $areaCode

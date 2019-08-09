@@ -1,0 +1,11 @@
+name: 订单提审
+varialbes:
+  orderNo:
+
+request:
+  url: $uri/manage/order/complete
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderNo: $orderNo  # 订单编号

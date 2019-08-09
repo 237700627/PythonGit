@@ -1,0 +1,17 @@
+name: 代驾费用预估 # 接口描述
+variables:  # 变量
+  startLongitude:
+  startLatitude:
+  endLongitude:
+  endLatitude:
+
+request:
+  url: $uri/wxapp/driving/fee/estimate
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    startLongitude: $startLongitude  # 起始经度
+    startLatitude: $startLatitude  # 起始纬度
+    endLongitude: $endLongitude  # 结束经度
+    endLatitude: $endLatitude  # 结束纬度

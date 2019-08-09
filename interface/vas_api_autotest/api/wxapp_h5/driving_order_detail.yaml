@@ -1,0 +1,11 @@
+name: 根据订单详情id查询代驾订单详情  # 接口描述
+variables:  # 变量
+  orderDetailId:
+
+request:
+  url: $uri/wxapp/driving/order/detail
+  method: GET
+  headers:
+    Content-Type: application/json
+  json:
+    orderDetailId: $orderDetailId  # 订单详情Id

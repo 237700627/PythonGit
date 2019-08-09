@@ -1,0 +1,15 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/h5/login   h5端授权码登录
+    api_path: api/injury/user/h5/login.yaml
+    uri: /injury/user/h5/login
+
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    method: POST
+    url: $uri
+    json:
+        name: $visitorSignature
+        mobile: $visitorPhone
+        validateCode: '123456'
+        accessCode: $accessCode

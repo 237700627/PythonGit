@@ -1,0 +1,47 @@
+#委托派案接口
+variables: #变量
+    reportNo: 07010303012019611262 #报案号
+    companyId: HAIC #公司编号
+    subordinateCode: 1000000001 #保险公司分支机构代码
+    taskType: 001 #委托任务类型
+    sceneType: "1"  #现场类型
+    accidentTime: "2019-02-28 14:20:05" #出险时间
+    reportTime: "2018-12-12 10:31:37"  #报案时间
+    address: 广东省深圳市福田区莲花村地铁站C口路口处 #出险地点
+    workAddress: 广东省深圳市购物公园 #派工地点
+    contactName: 自动化测试 #联系人
+    contactPhone: 18888888888 #联系人手机
+    accidentDesc:  这是一个自动化测试派单，有一辆车出了事故怎么办 #出险经过说明
+    reportType: "1" #案件类型（单车、双车、人伤）
+    lossType: 001 #损失类型
+    coordinateSystem: 03  #坐标系类型
+    longitude: "114.077309" #查勘地点坐标经度
+    latitude: "22.561127" #查勘地点坐标纬度
+    insuredName: 自动化被保险人 #被保险人姓名
+    carNo: "粤A87532" #车牌号码
+    vin: "LFMARE0C070003247" #vin码
+    engineNo: "453453543543453001" #发动机号
+    firstRegisterDate: "2018-06-22" #车辆初始登记日期
+    ratedPassengerCapacity: 5 #核定载客人数
+    tonnage: "1000" #核定载质量(千克)
+    modelCode: "KLD1007TJF" #行业车型编码
+    carName: '丰田TV7181GLX-iAD轿车'  #车款名称
+    replacementValue: "210000" #新车购置价
+    licensePlateType: "97"   #号牌种类代码
+    motorTypeCode: "11"   #车辆种类代码
+    motorUsageTypeCode:  "210" #使用性质代码
+    vehicleOwnerNature: "21"  #车主性质代码
+    vehicleOwnerName: "自动化车主"   #车主名称
+    insuranceBillCode: "6050101030120180000352" #保单号
+    insuranceTypeCode: "01" #险种代码
+    effectiveDate: "2018-08-22 11:00" #起保日期；格式：精确到分钟
+    expireDate: "2019-08-22 11:00" #终保日期；格式：精确到分钟
+
+
+request:
+  url: /public/case/takeCase
+  method: POST
+  headers:
+    Content-Type: application/json
+
+  json: ${loaddata(takecase.json)}

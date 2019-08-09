@@ -1,0 +1,100 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/save   任务保存接口
+    api_path: api/injury/task/save.yaml
+    uri: /injury/task/save
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        orderId: $orderId
+#        orderNo: $orderNo
+#        operationId: $operationId
+        injured:
+            name: $name
+            sex: $sex
+            birthday: $birthday
+            idType: $idType
+            idNo: $idNo
+            phone: $phone
+            censusRegisterType: $censusRegisterType
+            censusRegisterAddress: $censusRegisterAddress
+            injuryIdentity: $injuryIdentity
+            treatment: $treatment
+            treatWays: $treatWays
+            referralWays: $referralWays
+#        accidentInfoList:
+#            trafficSituation: $trafficSituation
+#            isPeccancy: $isPeccancy
+#            belongtype: $belong_type
+#            orderNum: $orderNum
+        accidentInfo:
+            isIllegal: $isIllegal
+            otherIllegal: $otherIllegal
+            injuryIdentity: $injuryIdentity
+            injuryType: $injuryType
+            travelModel: $travelModel
+            position: $position
+            accTime: $accTime
+            address: $address
+            accDesc: $accDesc
+        work:
+            hasWork: $hasWork
+            workInfoList:
+                companyName: $companyName
+                workPlace: $workAddress
+                beginDate: $beginDate
+                endDate: $endDate
+                orderNum: $orderNum
+                areaCode: $areaCode
+                provinceCode: $provinceCode
+                cityCode: $cityCode
+                workAddress: $workAddress
+                wage: $wage
+                wageType: $wageType
+        mediaInfoList:
+            taskId: $taskId
+            picId: $picId
+            picName: $picName
+            type: $type
+            seq: $seq
+            orderNum: $orderNum
+        injuredInfo:
+            operationName: $operationName
+            diagnoseName: $diagnoseName
+            mentalStatus: $mentalStatus
+            factVisitingDepartment: $factVisitingDepartment
+            factVisitingHospital: $factVisitingHospital
+            hospitalizedDate: $hospitalizedDate
+            leaveDate: $leaveDate
+            alreadySpent: $alreadySpent
+            remainSpent: $remainSpent
+        livingInfoList:
+            provinceCode: $provinceCode
+            cityCode: $cityCode
+            areaCode: $areaCode
+            homeAddress: $homeAddress
+            beginDate: $beginDate
+            endDate: $endDate
+            orderNum: $orderNum
+        familyDto:
+            hasFamily: $hasFamily
+            familyInfoList:
+                dependType: $dependType
+                age: $age
+                typeDesc: $typeDesc
+                censusRegisterType: $censusRegisterType
+                dependCount: $dependCount
+                orderNum: $orderNum
+        caregiversDto:
+            caregiversInfoList:
+                caregiversIdentity: $caregiversIdentity
+                caregiversName: $caregiversName
+                workingPlace: $workingPlace
+                nursingCost: $nursingCost
+                orderNum: $orderNum
+                jobName: $jobName
+                remark: $remark
+            hasCaregivers: $hasCaregivers

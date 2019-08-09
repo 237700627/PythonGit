@@ -1,0 +1,95 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      sps_login_name: ${get_config(sps_login_name)}
+      sps_login_pwd: ${get_config(sps_login_pwd)}
+      cookie: ${get_cookie($sps_login_name, $sps_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 服务人员新增
+    api: api/provider/setting/worker_save.yaml
+    variables:
+      cookie: $cookie
+      id:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 服务人员修改
+    api: api/provider/setting/worker_save.yaml
+    variables:
+      cookie: $cookie
+      id: 219
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_usercenter_test.t_person, mobile, $mobile, name)}", $name]
+
+- test:
+    name: id 校验：id 输入不存在的
+    api: api/provider/setting/worker_save.yaml
+    variables:
+      cookie: $cookie
+      id: 200
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务人员id不存在"]
+
+- test:
+    name: name 校验：name 不输入
+    api: api/provider/setting/worker_save.yaml
+    variables:
+      cookie: $cookie
+      name:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "名称不能为空"]
+
+- test:
+    name: name 校验：name 输入：测
+    api: api/provider/setting/worker_save.yaml
+    variables:
+      cookie: $cookie
+      name: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_usercenter_test.t_person, mobile, $mobile, name)}", "测"]
+
+- test:
+    name: name 校验：name 输入：测试姓名@8#aA位
+    api: api/provider/setting/worker_save.yaml
+    variables:
+      cookie: $cookie
+      name: 测试姓名@8#aA位
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_usercenter_test.t_person, mobile, $mobile, name)}", "测试姓名@8#aA位"]
+

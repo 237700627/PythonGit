@@ -1,0 +1,26 @@
+name: 查询标准产品列表
+variables:
+  productName:
+  productId:
+  searchType: 1
+  areaCode: '000000'
+  pageNum: 1
+  pageSize: 20
+  appType: '1'
+
+request:
+  url: manage/product/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: ${get_cookie_str($token)}
+    appType: $appType
+  json:
+    productName: $productName  # 选填，产品名称，查询不超过30位，模糊搜索参数
+    productId: $productId  # 选填，产品编号，非负长整型，搜索参数
+    searchType: $searchType  # 选填，关键字类型 1-产品名称 2-产品编号， 为空时搜索关键字无效
+    areaCode: $areaCode  # 选填，区域编码，长度6字符，左侧树查询参数
+    pageNum: $pageNum  # 非必填，页码，从1开始
+    pageSize: $pageSize  # 非必填，每页最大返回数目，默认20
+#    order: $order  # 非必填，排序，asc-升序，desc-降序（暂时没用）
+#    orderField: $orderField  # 非必填，排序字段（暂时没用）

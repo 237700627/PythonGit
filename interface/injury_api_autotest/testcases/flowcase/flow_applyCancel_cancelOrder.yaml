@@ -1,0 +1,43 @@
+- config:
+      name: C端新建订单，h5作业提交订单，C端审核通过case
+      variables:
+          censusRegisterType_injured: '02'
+          idType: '02'
+          idNo: '123456789'
+          sex: '0'
+          treatment: '01'
+          treatWays: '01'
+          referralWays: '01'
+          mentalStatus: '01'
+          isIllegal: '01'
+          injuryType: '01'
+          travelModel: '01'
+          position: '01'
+          hasCaregivers: '0'
+          caregiversIdentity: ''
+          orderNum_caregivers: ''
+          hasWork: '1'
+          wageType: '01'
+          orderNum_work: '0'
+          hasFamily: '1'
+          dependType: '01'
+          typeDesc: '18岁以下子女'
+          age: '17'
+          orderNum_depend: '0'
+
+#pc新建订单 -- h5申请撤单 -- 申请驳回 -- h5开始作业 -- h5提交任务 -- PC审核通过
+- test:
+    name: pc新建订单，h5登录查看订单
+    testcase: testcases/modulecase/module_addOrder_h5Login.yaml
+    output:
+        - h5_token
+        - pc_suptoken
+        - pc_token
+        - orderNo
+        - orderId
+        - operationId
+
+- test:
+    name: 申请撤单通过审核
+    testcase: testcases/modulecase/module_applyCancelTask_auditPass.yaml
+

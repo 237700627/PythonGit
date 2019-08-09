@@ -1,0 +1,11 @@
+name: 订单撤销
+varialbes:
+  orderNo:
+
+request:
+  url: $uri/manage/order/cancel
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderNo: $orderNo  # 订单编号

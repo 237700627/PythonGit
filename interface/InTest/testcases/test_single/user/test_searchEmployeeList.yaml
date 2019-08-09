@@ -1,0 +1,32 @@
+- config:
+    name: 单接口测试 test_login.yaml 用户管理列表查询接口
+    request:
+        token: $token
+    base_url: ${base_url()}
+#入参检查
+
+
+# 入参正确
+- test:
+    name: searchEmployeeList   入参正确
+    variables:
+        name: ''
+        mobile: ''
+        partnerId: '1'
+        pageNum: '1'
+        pageSize: '10'
+    api: api/injury/user/searchEmployeeList.yaml
+    validate:
+        -   eq: [status_code, 200]
+# 入参不对应
+- test:
+    name: searchEmployeeList   入参正确
+    variables:
+        name: ''
+        mobile: ''
+        partnerId: '1'
+        pageNum: '1'
+        pageSize: '10'
+    api: api/injury/user/searchEmployeeList.yaml
+    validate:
+        -   eq: [status_code, 200]

@@ -1,0 +1,18 @@
+name: 提交图片备注  # 接口描述
+variables:  # 变量
+  id:
+  Cookie:
+
+request:
+  url: /app/order/detail/image/remark
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    id: $id #图片信息id
+    remark: "自动化标注备注信息"
+
+
+

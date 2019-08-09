@@ -1,0 +1,14 @@
+- test:
+    name: 保险公司销案接口
+    api: api/case_center/cancelCase.yaml
+    variables:
+      uri: $base_url_out
+      company_id: ${get_company_id($report_no)}
+      report_no: $report_no
+      cancel_time: ${get_local_time_format()}
+      cancel_reason: $cancel_reason
+    setup_hooks:
+      - ${get_security_code($request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.status", $status]

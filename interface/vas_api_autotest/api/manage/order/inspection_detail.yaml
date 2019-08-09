@@ -1,0 +1,13 @@
+name: 年检订单详情
+variables:
+  orderNo:
+
+request:
+  url: /manage/order/inspection/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    orderNo: $orderNo  # 订单编号

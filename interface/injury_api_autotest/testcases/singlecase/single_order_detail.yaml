@@ -1,0 +1,86 @@
+- config:
+    name: pc查看订单详情case
+    base_url: ${base_url()}
+    variables:
+        #pc新建订单需要的相关数据
+        L1: ['1','5']
+        L2: ['黑','B']
+        L3: []
+
+        #pc新建订单需要的相关数据
+        L1: ['1','5']
+        L2: ['黑','B']
+        L3: []
+        caseNo: ${random_Num(9)}
+        ownerPhone: ${random_Num(9, $L1)} #车主手机号
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: '13200780881' #pc维护的伤者电话
+
+        visitorPhone: '15112313347'  #探视员手机号
+        visitorSignature: '小小点'  #探视员签名
+        injuredSignature: '伤者的名字'  #伤者签名
+
+        birthday: 50653440000  #1986-01-20
+        phone: '18681461457'  #h5维护的伤者电话
+        beginDate: 1555344000000 #2019-04-16
+        endDate: 1556035200000  #2019-04-24
+        hospitalizedDate: 1557676800000 #2019-05-13
+        leaveDate: 1557763200000  #2019-05-14
+        accTime: '1554694924000'
+
+- test:
+    name: 前置条件-pc新建订单
+    testcase: testcases/modulecase/module_addOrder_h5Login.yaml
+    output:
+        - pc_token
+        - orderId
+
+#- test:
+#    name: 正常查看
+#    api: api/pc/detail.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '成功']
+#        - eq: [content.status, 'success']
+#
+#- test:
+#    name: 异常场景_订单号为空查看订单
+#    api: api/pc/detail.yaml
+#    variables:
+#        orderId: ''
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '查询订单详情失败']
+#        - eq: [content.status, 'error']
+
+#- test:
+#    name: 异常场景_订单号为str的订单
+#    api: api/pc/detail.yaml
+#    variables:
+#        orderId: '1187'
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 503]
+#        - eq: [content.message, '成功']
+#        - eq: [content.status, 'success']
+
+- test:
+    name: 前置条件-另一个账号登录
+    variables:
+        loginName:  'AuditOneShen'
+        loginPass: 'Y2lhczEyMzQ1Ng=='
+    testcase: testcases/modulecase/module_pc_login.yaml
+    output:
+        - pc_token
+
+- test:
+    name: 异常场景_另一个账号登录查看前面账号的订单
+    api: api/pc/detail.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 503]
+        - eq: [content.message, '查询订单详情失败']
+        - eq: [content.status, 'error']
+

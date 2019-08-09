@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/token  消息中心token获取
+    api_path: api/injury/resource/token.yaml
+    uri: /injury/resource/token?orderNo=$orderNo&userType=$userType
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri

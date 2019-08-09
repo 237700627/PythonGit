@@ -1,0 +1,14 @@
+name: 标准产品详情
+variables:
+  id: 28
+  appType: '1'
+
+request:
+  url: manage/product/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: ${get_cookie_str($token)}
+    appType: $appType
+  json:
+    id: $id  # 必填，长整型，产品ID

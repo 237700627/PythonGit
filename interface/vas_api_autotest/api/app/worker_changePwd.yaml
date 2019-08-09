@@ -1,0 +1,20 @@
+name: 密码修改接口  # 接口描述
+variables:  # 变量
+  Cookie:
+  currentPwd:
+  newPwd:
+
+request:
+  url: /app/worker/info
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+
+  json:
+    currentPwd: $currentPwd #当前密码
+    newPwd: $newPwd #新密码
+
+
+

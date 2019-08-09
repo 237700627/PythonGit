@@ -1,0 +1,89 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 权益列表_正常用例
+    api: api/manage/right/list.yaml
+    variables:
+      pageNum: 1
+      pageSize: 10
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 权益列表_不输入入参，默认返回20条
+    api: api/manage/right/list.yaml
+    variables:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 权益列表_pageNum为-1
+    api: api/manage/right/list.yaml
+    variables:
+      pageNum: -1
+      pageSize: 10
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 权益列表_pageNum超出页数
+    api: api/manage/right/list.yaml
+    variables:
+      pageNum: 10
+      pageSize: 10
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 权益列表_pagesize为负数
+    api: api/manage/right/list.yaml
+    variables:
+      pageNum: 1
+      pageSize: -1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 权益列表_pageNum为字符型
+    api: api/manage/right/list.yaml
+    variables:
+      pageNum: 'a'
+      pageSize: 10
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]

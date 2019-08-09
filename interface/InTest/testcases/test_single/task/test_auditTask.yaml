@@ -1,0 +1,26 @@
+- config:
+      name: 单接口测试 test_auditTask.yaml 订单任务审核接口
+      base_url: ${base_url()}
+      request:
+          token: $token
+
+- test:
+      name: 入参正确(审核通过)
+      variables:
+          id: ${queryOperationId()}   # 这个参数不知怎么填？？operationId？？
+          orderId: ${queryOrderId()}
+          status: '04'
+          orderStatus: '01'
+          comment: '审核通过'
+      api: api/injury/task/auditTask.yaml
+- test:
+      name: 入参正确(审核取消)
+      variables:
+          id: id: ${queryOperationId()}
+          orderId: ${queryOrderId()}
+          status: '01'
+          orderStatus: '05'
+          comment: '审核取消，审核通过这两个状态怎么回事？？'
+      api: api/injury/task/auditTask.yaml
+- test:
+      name:

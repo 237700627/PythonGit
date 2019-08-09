@@ -1,0 +1,11 @@
+name: 根据订单详情id查询年检订单详情  # 接口描述
+variables:  # 变量
+  orderDetailId:
+
+request:
+  url: $uri/wxapp/annual/inspection/order/detail
+  method: GET
+  headers:
+    Content-Type: application/json
+  json:
+    orderDetailId: $orderDetailId

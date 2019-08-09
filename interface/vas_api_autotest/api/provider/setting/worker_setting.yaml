@@ -1,0 +1,13 @@
+name: 服务人员设置  # 接口描述
+variables:  # 变量
+  id:
+  enable:
+
+request:
+  url: $uri/provider/worker/setting
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    id: $id  # 必填，长整型，服务人员ID
+    enable: $enable  # 必填，若设值，则更新

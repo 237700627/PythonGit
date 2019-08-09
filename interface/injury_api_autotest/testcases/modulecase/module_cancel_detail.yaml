@@ -1,0 +1,11 @@
+#pc取消任务
+- test:
+    name: pc端取消任务
+    api: api/pc/cancel.yaml
+    variables:
+        reason: '无效的订单，不需要作业，故取消(自动化测试)'
+    validate:
+        -   eq: [status_code, 200]
+        -   eq: [content.code, $code]
+        -   eq: [content.message, $message]
+        -   eq: [content.status, $req_status]

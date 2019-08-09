@@ -1,0 +1,11 @@
+name: 代驾重新请求  # 接口描述
+variables:  # 变量
+  orderDetailId:
+
+request:
+  url: $uri/wxapp/driving/order/retry
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    orderDetailId: $orderDetailId  # 订单详情id

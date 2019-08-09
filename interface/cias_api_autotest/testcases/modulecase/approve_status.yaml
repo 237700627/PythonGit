@@ -1,0 +1,12 @@
+- test:
+    name: 中台审核结果
+    api: api/web_order/pc/saveAuditOpinion.yaml
+    variables:
+      userId: ${get_user_id($pc_login)}
+      token: $pc_session_token
+      orderNo: ${get_order_no($report_no)}
+      workId: ${get_work_id($orderNo)}
+      workStatus: '09'
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", "成功"]

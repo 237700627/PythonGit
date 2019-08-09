@@ -1,0 +1,19 @@
+# 调度系统登录接口
+variables: #变量
+  loginName: ddadmin
+  loginPass: voabacQre7jMqNIxsRg1S+892N2OSEWTzKx9bGr1kextL7FBjqY23kQpQ+2rxXeBfC9vQqNz3ICqYq1wDIY9Ly1b5WAXfrmAhUCe+x4w0TeoT2nJachz6vITNsLtm31lja+lbdf+TDOYdruZ/vd8xTmBTEEHzHFAeQLXw5EI0F8=
+  verifyCode: kquy
+  Cookie:
+
+request:
+  url: http://testchakan.cias.cn/zbcf-web-callcenter/user/login.jhtml
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    Cookie: $Cookie
+
+  data:
+    loginName: $loginName
+    loginPass: $loginPass
+    verifyCode: $verifyCode
+

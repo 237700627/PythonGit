@@ -1,0 +1,44 @@
+- config:
+      name: 单接口测试 test_detail.yaml 测试H5获取订单详情
+      request:
+          token: $token
+      base_url: ${base_url()}
+
+
+# 测试入参准确时查询成功
+- test:
+      name: test_detial  入参准确查询成功
+      variables:
+          orderId: ${queryOrderId()}
+      api: api/injury/order/h5/detail.yaml
+      validate:
+          eq: [status_code, 200]
+ # 入参为空
+- test:
+      name: test_detial  入参orderid为空
+      variables:
+          orderid: ''
+      api: api/injury/order/h5/detail.yaml
+      validate:
+          eq: [status_code, 400]
+# 入参不存在
+- test:
+        name: test_detail 入参orderid不存在
+        variables:
+            orderid: '00'
+        api: api/injury/order/h5/detail.yaml
+        validate:
+            eq: [status_code, 200]
+
+
+#其他情况下出参检查
+
+
+# 出参
+- test:
+      name: 出参
+      variables:
+          orderId: ${queryOrderId()}
+      api: api/injury/order/h5/detail.yaml
+      validate:
+          eq: [status_code, 200]

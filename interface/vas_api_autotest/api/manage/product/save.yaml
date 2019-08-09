@@ -1,0 +1,38 @@
+name: 标准产品创建/更新
+variables:
+  id: 100
+  productName: ${get_customize_name(自动化产品修改)}
+  areaCode: ["440304"]
+  productType: "0100"
+  basePrice: 50
+  remark: 自动化产品test
+  autoDispatch: True
+  enable: True
+
+request:
+  url: manage/product/save
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: ${get_cookie_str($token)}
+    appType: '1'
+  json:
+    id: $id  # 非必填，产品ID，若有值，表示更新产品信息，若为null，则新增产品
+    productName: $productName  # 必填，长度1~30字符，产品名称
+    areaCode: $areaCode  # 非必填，长度6字符，区域编码
+    productType: $productType  # 必填，长度4字符，产品分类编码，定义见字典表PRODUCT_TYPE：
+#      0100	代驾
+#      0200	机动车年检
+#      0201	免上线年检
+#      0202	上线年检
+#      0300	道路救援
+#      0301	更换轮胎
+#      0302	送油送水送防冻液
+#      0303	拖车
+#      0304	困境救援
+#      0305	搭电
+#      0306	取送备用钥匙
+    basePrice: $basePrice  # 必填，基础价格
+    remark: $remark  # 非必填，长度1~100，备注
+    autoDispatch: $autoDispatch  # 非必填，是否自动分单
+    enable: $enable  # 非必填，是否启用

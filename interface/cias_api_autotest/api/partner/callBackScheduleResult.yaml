@@ -1,0 +1,30 @@
+#顺丰返回调度结果回传接口
+variables: #变量
+   taskId_partner:   #partner 根据taskid生成的内部id
+   status: "1" #调度状态 1：调度成功；-1：调度失败（无快递小哥接单）；-2：调度失败（快递小哥拒绝接单）
+   staffTeam: "1" #所属团队 当status为1或-2时必填,1：顺丰大网收派员；2：顺丰同城骑士
+   userId:    '16000000112'    #小哥ID(手机号)
+   time: "15"  #到达现场所需时间
+
+request:
+  url: http://testinsapi.cias.cn/zbcf-partner-service/public/sf/callBackScheduleResult
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+      {
+          "taskId":$taskId_partner,
+          "status":$status,
+          "data":[
+              {
+                  "staffTeam":$staffTeam,
+                  "userId":$userId,
+                  "time":$time,
+                  "coordinateSystem":"1",
+                  "longitude":"114.075957",
+                  "latitude":"22.546245"
+              }
+          ],
+          "receiveTime":"2019-03-06 12:00:00",
+          "serviceProvideId":"SHUNFENG"
+      }

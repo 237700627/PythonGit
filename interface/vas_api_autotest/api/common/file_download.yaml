@@ -1,0 +1,13 @@
+name: 文件下载  # 接口描述
+variables:  # 变量
+  key:
+  fileId:
+
+request:
+  url: $uri/common/file/download
+  method: GET
+  headers:
+    Content-Type: application/json
+  json:
+    key: $key  # 文件URL的md5值
+    fileId: $fileId  # 文件ID

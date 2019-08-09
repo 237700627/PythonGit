@@ -1,0 +1,2 @@
+operationName,diagnoseName,mentalStatus,factVisitingHospital,factVisitingDepartment,alreadySpent,remainSpent,csv_msg
+肿瘤切除手术,肿瘤过大，切除有一定的风险性！,02,深圳市龙岗区第二人民医院,肿瘤科,6666,8888,伤情信息和费用情况接口参数

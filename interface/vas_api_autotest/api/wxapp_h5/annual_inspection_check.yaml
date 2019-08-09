@@ -1,0 +1,17 @@
+name: 年检规则查询  # 接口描述
+variables:  # 变量
+  plateType:
+  operationType:
+  registerDate:
+  seatType:
+
+request:
+  url: $uri/wxapp/annual/inspection/check
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    plateType: $plateType  # 号牌类型 01小型蓝牌车、02大型黄牌车、03小型新能源车、04大型新能源车
+    operationType: $operationType  # 营运性质：00非营运、01营运
+    registerDate: $registerDate  # 注册日期
+    seatType: $seatType  # 车座数：00-7座以下，01-7座及以上

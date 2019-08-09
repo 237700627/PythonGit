@@ -1,0 +1,15 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/searchEmployeeList   用户管理列表查询接口
+    api_path: api/injury/user/searchEmployeeList.yaml
+    uri: /injury/user/searchEmployeeList
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    method: POST
+    url: $uri
+    json:
+        name: ''
+        mobile: ''
+        partnerId: ''
+        pageNum: ''
+        pageSize: ''

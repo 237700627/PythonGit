@@ -1,0 +1,11 @@
+name: 服务人员删除  # 接口描述
+variables:  # 变量
+  ids:
+
+request:
+  url: $uri/provider/worker/delete
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    ids: $ids  # 作业人员ID列表

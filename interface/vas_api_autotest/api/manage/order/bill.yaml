@@ -1,0 +1,22 @@
+name: 订单费用详情
+varialbes:
+  rightId:
+  serviceType:
+  longitude:
+  latitude:
+  destLongitude:
+  destLatitude:
+
+request:
+  url: $uri/manage/order/bill
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    rightId: $carNo  # 必填，权益id
+    serviceType: $vinNo  # 必填，服务类型 0100代驾 0200送检 0300救援
+    longitude: $longitude  # 服务类型为0100时必填，起始地经度
+    latitude: $latitude  # 服务类型为0100时必填，起始地纬度
+    destLongitude: $destLongitude  # 服务类型为0100时必填，目的地经度
+    destLatitude: $destLatitude  # 服务类型为0100时必填，目的地纬度
+

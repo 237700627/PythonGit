@@ -1,0 +1,12 @@
+- test:
+    name: 完成拍摄提交
+    api: api/web_order/app/compeletedImage.yaml
+    variables:
+      token: $app_token
+      userId: ${get_user_id($app_login)}
+      originType: $origin_type
+      orderNo: ${get_order_no($report_no)}
+      operationType: $operation_type
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", $result_msg]

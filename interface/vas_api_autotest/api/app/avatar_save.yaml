@@ -1,0 +1,19 @@
+name: 头像更新接口  # 接口描述
+variables:  # 变量
+  Cookie:
+  picId:
+
+request:
+  url: /app/worker/info
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+
+  json:
+    picId: $picId #影像服务返回的ID
+
+
+
+

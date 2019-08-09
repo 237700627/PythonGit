@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/static/import_visitor.xlsx  探视员评分信息
+    api_path: api/injury/static/import_visitor.xlsx.yaml
+    uri: /injury/static/import_visitor.xlsx
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri

@@ -1,0 +1,1685 @@
+[32m[47mINFO    [0m [32mStart to run testcase: 0¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥h5Ö±½ÓÌá½»[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 159.2 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 137.6 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 535.78 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 18.95 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 1¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥h5Ö±½ÓÉóºËÍ¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 168.55 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 137.64 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 542.56 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 30.92 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 2¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥h5Ö±½ÓÉóºË²»Í¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 162.57 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 174.57 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 497.64 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 14.96 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 3¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥pcÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 159.55 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 165.32 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 573.76 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 14.96 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 4¡¢pcÔö¼Ó¶©µ¥ -- ×÷ÒµÖÐµÄ¶©µ¥h5Ö±½ÓÉóºËÍ¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 156.58 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 160.57 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 567.28 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.0 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 5¡¢pcÔö¼Ó¶©µ¥ -- ×÷ÒµÖÐµÄ¶©µ¥h5Ö±½ÓÉóºË²»Í¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 168.09 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 136.14 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 634.37 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 19.92 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 6¡¢pcÔö¼Ó¶©µ¥ -- ×÷ÒµÖÐµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 159.64 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 153.56 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 569.55 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 15.94 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 7¡¢pcÔö¼Ó¶©µ¥ -- ´ýÉóºËµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 152.79 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 162.56 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 617.94 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.96 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 8¡¢pcÔö¼Ó¶©µ¥ -- ÉóºËÍ¨¹ýµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 169.53 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 146.62 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 588.43 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.93 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 9¡¢pcÔö¼Ó¶©µ¥ -- ÉóºË²»Í¨¹ýµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 152.6 ms, response_length: 383 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 146.61 ms, response_length: 388 bytes
+[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 562.01 ms, response_length: 128 bytes
+[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.96 ms, response_length: 814 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to render Html report ...[0m
+[32m[47mINFO    [0m [32mGenerated Html report: C:\python_\interface\injury_api_autotest\reports\1563352194.html[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 0¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥h5Ö±½ÓÌá½»[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:18 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:18', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 152.6 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:18 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUadYnDv58ZqDEuD1qezA2HCTZHPD0wbb+V7KlUsc0lE4nzyC+YLsZ90Y5WqRXSSuXVc=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:18', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 141.14 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUadYnDv58ZqDEuD1qezA2HCTZHPD0wbb+V7KlUsc0lE4nzyC+YLsZ90Y5WqRXSSuXVc=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:19 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2176}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:19', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 539.53 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2176[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6FoM/gMpGK3/Z02aLXFP+g5zl6QPThlAMY5N0gWtoF8CR5FJh690zUesB/F8J+6mM='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:19 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:19', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 14.04 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 1¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥h5Ö±½ÓÉóºËÍ¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:19 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:19', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 169.52 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:19 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaeyahxKdReyjKFrt8+VSA87XTEzGqBNE4hJffqCuvgKieKcdJof596ND/r/dwXgxXE=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:19', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 138.63 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaeyahxKdReyjKFrt8+VSA87XTEzGqBNE4hJffqCuvgKieKcdJof596ND/r/dwXgxXE=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:20 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2177}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:20', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 717.63 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2177[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4cpDS8P6IV883MQAEUh/Le/pLX8TKzQHrlAP+D0HBh6lqaGTKfQ+397BL2OVk9MEE='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:20 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:20', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 17.92 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 2¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥h5Ö±½ÓÉóºË²»Í¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:20 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:20', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 147.87 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:20 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUadnw8jYMrHpefgEQCaBXphnGhF87vE1QyRGR9ud3WLIU/bNM+mCIi1M415HFXp1Hoo=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:20', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 139.71 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUadnw8jYMrHpefgEQCaBXphnGhF87vE1QyRGR9ud3WLIU/bNM+mCIi1M415HFXp1Hoo=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:21 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2178}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:21', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 524.86 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2178[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5cntbBKyd+CmljBdRntkobT4VQ58xSNlttRrz3i14DkjhQknT8bOymVg4ZTH7nNsA='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:21 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:21', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.96 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 3¡¢pcÔö¼Ó¶©µ¥ -- ´ý×÷ÒµµÄ¶©µ¥pcÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:21 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:21', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 158.58 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:21 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaf4TzAfjPNR2PVjD9+lVJOtG9X2MVQhUT/+YMkQfyL3UJfGycwSAL5+efe/MzUQS7c=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:21', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 149.6 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaf4TzAfjPNR2PVjD9+lVJOtG9X2MVQhUT/+YMkQfyL3UJfGycwSAL5+efe/MzUQS7c=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:22 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2179}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:22', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 523.63 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2179[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4nzF/NvH3BTWBLw7ebbmywcDM7YqpgsE8f84/GEj00sYFpL1IsWmm35tQFNzkYsE4='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:22 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:22', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.93 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 4¡¢pcÔö¼Ó¶©µ¥ -- ×÷ÒµÖÐµÄ¶©µ¥h5Ö±½ÓÉóºËÍ¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:22 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:22', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 145.61 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:22 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUacKfAlvNdJXYeqYQtWkYnjt0zdb0vkAyK0kuAMnbrzST7rWLgGsIJUoYpTSCQkRa4U=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:22', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 151.65 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUacKfAlvNdJXYeqYQtWkYnjt0zdb0vkAyK0kuAMnbrzST7rWLgGsIJUoYpTSCQkRa4U=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:23 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2180}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:23', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 550.62 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2180[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4z8bPaYLlJYE4GVhlYio+eTqNVG7+LJJ66FgJ/DfBppaNN1/qd3Vbt21MadyNqZRw='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:23 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:23', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.01 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 5¡¢pcÔö¼Ó¶©µ¥ -- ×÷ÒµÖÐµÄ¶©µ¥h5Ö±½ÓÉóºË²»Í¨¹ý[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:23 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:23', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 148.6 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:23 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUafvQZnTzmoKsX4VuBJha3IOsNtBZxBXPzAcyOfJwGYY6u+eUz4Mu+F9odIXbNaI5E8=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:23', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 138.63 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUafvQZnTzmoKsX4VuBJha3IOsNtBZxBXPzAcyOfJwGYY6u+eUz4Mu+F9odIXbNaI5E8=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:23 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2181}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:23', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 504.23 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2181[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7OXkEwx0roawoxM72y91CqL2NX3Tw0rBuCP3kUADVFuniBA9Rq0VbWDirTVeV9ss0='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:23 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:23', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 13.94 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 6¡¢pcÔö¼Ó¶©µ¥ -- ×÷ÒµÖÐµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:24 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:24', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 146.89 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:24 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUacOPAvmPUa0L4LdC1nPIJRL2C0qG2Sf6m6R2YI7P5wM7MIXUiMFY6ZBrmC5rOZRsLc=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:24', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 138.6 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUacOPAvmPUa0L4LdC1nPIJRL2C0qG2Sf6m6R2YI7P5wM7MIXUiMFY6ZBrmC5rOZRsLc=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:24 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2182}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:24', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 517.89 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2182[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX6MBct2NDJa8zWBQJfSeA9efYvTCyNiEzQPxcXuAUFwZXpHt3j6/E85r1Fzq5ZuGi8='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:24 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:24', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 15.96 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 7¡¢pcÔö¼Ó¶©µ¥ -- ´ýÉóºËµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:25 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:25', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 159.57 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:25 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaew8IfuvDoaqoteXd6SnvmrLPNSGaKYrta1YVNw4+idqXfXUAV4uyNh76BptigXeTI=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:25', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 169.55 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaew8IfuvDoaqoteXd6SnvmrLPNSGaKYrta1YVNw4+idqXfXUAV4uyNh76BptigXeTI=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:25 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2183}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:25', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 523.57 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2183[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4DVFDvgNsgpVByLE8PksQ4hG4rje+p9DAxpG88g4JIFZbZZS4x8xus91VCI6j9Rtw='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:25 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:25', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 14.96 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 8¡¢pcÔö¼Ó¶©µ¥ -- ÉóºËÍ¨¹ýµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:25 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:25', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 157.58 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:26 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUafEGInlMgmQR2HkRZJAZyewIOKmP30kGlXvqyeCv6HlOphPqLZr3sT4Zynyo/BxY8s=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:26', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 147.16 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUafEGInlMgmQR2HkRZJAZyewIOKmP30kGlXvqyeCv6HlOphPqLZr3sT4Zynyo/BxY8s=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:26 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2184}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:26', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 557.05 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2184[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX4INU9mnVXwSccOpv9BywaGxuXHBSgWSYPZcjugWkfl6ntqrlDi1gCrGHnsaCjnVfU='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:26 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:26', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 17.96 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[32m[47mINFO    [0m [32mStart to run testcase: 9¡¢pcÔö¼Ó¶©µ¥ -- ÉóºË²»Í¨¹ýµÄ¶©µ¥h5ÖØÐÂÅÉµ¥[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=AutoTest&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:26 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '383', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 3, 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo=', 'userId': '77', 'userName': 'AutoTest'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:26', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 148.57 ms, response_length: 383 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'verifyCode': 'tude', 'Content-Length': '0'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/pc/login?loginName=supadmin001&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=tude'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:27 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '388', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'level': 1, 'name': '³¬¼¶¹ÜÀíÔ±001', 'orderNo': '', 'originType': '', 'roles': ['10000'], 'token': 'rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaf4bL0B/p2OgrcmTxHdl/GO2W2yJBAydvx5QM+RBBTk9Pg+ZQoTLcLTAZVzf4tuNco=', 'userId': '1', 'userName': 'supadmin001'}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:27', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 144.58 ms, response_length: 388 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.token	=> rTSHrzZxg7w90lz7NbVDmyKdW9XvX8Mdh9OHWjbJUaf4bL0B/p2OgrcmTxHdl/GO2W2yJBAydvx5QM+RBBTk9Pg+ZQoTLcLTAZVzf4tuNco=[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mPOST http://testrenshang.cias.cn/injury/order/add[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> POST http://testrenshang.cias.cn/injury/order/add
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo='}, 'json': {'caseNo': '629209951', 'ownerName': 'Çñ²ÊÏ¼', 'ownerPhone': '13706648354', 'carNo': 'ºÚB310319', 'provinceCode': 440000, 'cityCode': 440300, 'countryCode': 440307, 'hospital': 'ÉîÛÚÊÐÁú¸ÚÇøµÚ¶þÈËÃñÒ½Ôº', 'department': '¾«Éñ¿Æ', 'injuredName': 'ÁõÄþÏã', 'injuredPhone': '13200780881', 'visitRequest': 'ÇëÅÄÕÕÇå³þ£¬ÐÅÏ¢×¼È·£¬¿ìËÙÍê³É×÷Òµ£¡', 'taskType': 1}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+method           : 'POST'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo=', 'Content-Length': '515'}
+body             : b'{"caseNo": "629209951", "ownerName": "\\u90b1\\u5f69\\u971e", "ownerPhone": "13706648354", "carNo": "\\u9ed1B310319", "provinceCode": 440000, "cityCode": 440300, "countryCode": 440307, "hospital": "\\u6df1\\u5733\\u5e02\\u9f99\\u5c97\\u533a\\u7b2c\\u4e8c\\u4eba\\u6c11\\u533b\\u9662", "department": "\\u7cbe\\u795e\\u79d1", "injuredName": "\\u5218\\u5b81\\u9999", "injuredPhone": "13200780881", "visitRequest": "\\u8bf7\\u62cd\\u7167\\u6e05\\u695a\\uff0c\\u4fe1\\u606f\\u51c6\\u786e\\uff0c\\u5feb\\u901f\\u5b8c\\u6210\\u4f5c\\u4e1a\\uff01", "taskType": 1}'
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/order/add'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'UTF-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:27 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '128', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=UTF-8'
+json             : {'code': 200, 'data': {'id': 2185}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:27', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 506.9 ms, response_length: 128 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: json.data.id	=> 2185[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[32m[47mINFO    [0m [32mGET http://testrenshang.cias.cn/injury/user/getUserInfo[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo='}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET http://testrenshang.cias.cn/injury/user/getUserInfo
+> kwargs: {'headers': {'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo='}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+method           : 'GET'
+headers          : {'User-Agent': 'python-requests/2.21.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json;charset=UTF-8', 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX7dHBHHg1h8N/yrNv/DZM2X5fO6DK3SQGqIwrtXgJlEujhpuZCTYY8RYKCJ0B4FYMo='}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'http://testrenshang.cias.cn/injury/user/getUserInfo'
+status_code      : 200
+reason           : ''
+cookies          : {}
+encoding         : 'utf-8'
+headers          : {'Server': 'openresty/1.13.6.2', 'Date': 'Wed, 17 Jul 2019 08:31:27 GMT', 'Content-Type': 'application/json;charset=utf-8', 'Content-Length': '814', 'Connection': 'keep-alive'}
+content_type     : 'application/json;charset=utf-8'
+json             : {'code': 200, 'data': {'areaCode': '530000', 'authToken': '', 'cityCode': '', 'companyId': 4, 'companyName': '»ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾', 'email': 'qiucaixia@cias.cn', 'mobile': '18618561458', 'name': '×Ô¶¯»¯²âÊÔ', 'orderNo': '', 'permission': '¹ÜÀíÔ±', 'permissionCode': '20000', 'proviceCode': '', 'role': [{'code': '20000', 'createBy': '', 'createTime': '', 'description': 'ÈËÉËÌ½ÊÓ¹ÜÀíÔ±', 'keyword': '', 'name': '¹ÜÀíÔ±', 'pageNum': 1, 'pageSize': 10, 'systemName': '', 'updateBy': '', 'updateTime': ''}], 'roleCode': ['20000'], 'treePath': '1/2/4', 'userId': 77, 'userName': 'AutoTest', 'userType': 1}, 'message': '´¦Àí³É¹¦', 'responseTime': '2019-07-17 16:31:27', 'status': 'success'}
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 14.0 ms, response_length: 814 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: status_code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.code	=> 200[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.code equals 200(int)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.message	=> ´¦Àí³É¹¦[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.message equals ´¦Àí³É¹¦(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.status	=> success[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.status equals success(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.companyName	=> »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.companyName equals »ª°²²Æ²ú±£ÏÕ¹É·ÝÓÐÏÞ¹«Ë¾ÔÆÄÏ·Ö¹«Ë¾(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.email	=> qiucaixia@cias.cn[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.email equals qiucaixia@cias.cn(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.mobile	=> 18618561458[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.mobile equals 18618561458(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.name	=> ×Ô¶¯»¯²âÊÔ[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.name equals ×Ô¶¯»¯²âÊÔ(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.permission	=> ¹ÜÀíÔ±[0m
+[36m[47mDEBUG   [0m [36mvalidate: content.data.permission equals ¹ÜÀíÔ±(str)	==> pass[0m
+[36m[47mDEBUG   [0m [36mextract: content.data.userName	=> AutoTest[0m
+[36m[47mDEBUG   [0m [36mNo html report template specified, use default.[0m
+[32m[47mINFO    [0m [32mStart to render Html report ...[0m
+[32m[47mINFO    [0m [32mGenerated Html report: C:\python_\interface\injury_api_autotest\reports\1563352278.html[0m

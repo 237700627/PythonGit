@@ -1,0 +1,142 @@
+- config:
+    name: 审核不通过，12小时未开始作业，订单重新调度给第二家资源公司，重新作业，审核通过case
+    variables:
+        wait_5m: 301
+        wait5m_desc: '任务超时后，待等5分钟以便重新调度任务'
+        censusRegisterType_injured: '02'
+        idType: '02'
+        idNo: '123456789'
+        sex: '0'
+        treatment: '01'
+        treatWays: '01'
+        referralWays: '01'
+        mentalStatus: '01'
+        isIllegal: '01'
+        injuryType: '01'
+        travelModel: '01'
+        position: '01'
+        hasCaregivers: '0'
+        caregiversIdentity: ''
+        orderNum_caregivers: ''
+        hasWork: '1'
+        wageType: '01'
+        orderNum_work: '0'
+        hasFamily: '1'
+        dependType: '01'
+        typeDesc: '18岁以下子女'
+        age: '17'
+        orderNum_depend: '0'
+
+
+
+#pc新建订单 -- h5开始作业 -- h5提交任务 -- pc审核不通过 -- 12小时内未开始作业 -- 任务超时调度给第二家资源公司 -- h5开始作业 -- h5提交任务 -- pc审核通过
+- test:
+    name: pc新建订单，h5登录查看订单
+    testcase: testcases/modulecase/module_addOrder_h5Login.yaml
+    output:
+        - h5_token
+        - pc_suptoken
+        - pc_token
+        - orderNo
+        - orderId
+        - operationId
+
+- test:
+    name: h5开始作业
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_beginTask_detail.yaml
+
+- test:
+    name: h5提交任务
+    variables:
+        code: 200
+        message_autoSave: '处理成功'
+        message_save: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_subimtTask_detail.yaml
+
+# 此处添加一个初审的接口
+- test:
+    name: pc初审核通过
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+        token: $pc_suptoken
+#        userName: 'supadmin001'  #录单人用户名
+#        userPwd: 'Y2lhczEyMzQ1Ng=='
+    testcase: testcases/modulecase/module_checkTaskInfo_pass.yaml
+
+- test:
+    name: pc审核不通过
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_auditTask_fail_detail.yaml
+
+- test:
+    name: 审核不通过查看订单的状态
+    variables:
+        code: 200
+        message: '成功'
+        req_status: 'success'
+        orderStatus: '02'  #审核不通过重新待作业
+        operationStatus: '01'   #待作业
+    testcase: testcases/modulecase/module_pc_detail.yaml
+    teardown_hooks:  #登录码的end_effect_time修改为当前时间，从而让登录码失效，从而订单会被重新调度
+          - ${orderTimeOut($orderId)}
+          - ${sleep($wait_5m,$wait5m_desc)}  #调度任务每5分钟执行一次
+
+#- test:
+#    name: h5退出
+#    testcase: testcases/modulecase/module_pclogout_h5logout.yaml
+
+- test:
+    name: h5使用新登录码开始作业
+    testcase: testcases/modulecase/module_h5_login.yaml
+    output:
+        - h5_token
+        - orderId
+        - operationId
+
+- test:
+    name: h5开始作业
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_beginTask_detail.yaml
+
+- test:
+    name: h5提交任务
+    variables:
+        code: 200
+        message_autoSave: '处理成功'
+        message_save: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_subimtTask_detail.yaml
+
+# 此处添加一个初审的接口
+- test:
+    name: pc初审核通过
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+        token: $pc_suptoken
+#        userName: 'supadmin001'  #录单人用户名
+#        userPwd: 'Y2lhczEyMzQ1Ng=='
+    testcase: testcases/modulecase/module_checkTaskInfo_pass.yaml
+
+- test:
+    name: pc重新审核通过
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_auditTask_pass_detail.yaml
+

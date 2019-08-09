@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/area  个人中心信息展示
+    api_path: api/injury/user/getUserInfo.yaml
+    uri: /injury/user/getUserInfo
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri

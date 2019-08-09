@@ -1,0 +1,23 @@
+name: 服务商产品列表  # 接口描述
+variables:  # 变量
+  productType:
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+  companyId:
+
+request:
+  url: $uri/manage/provider/company/product/list
+  method: POST
+  headers:
+    Content-Type: application/json
+    cookie: ${get_cookie_str($token)}
+    appType: "1"  # "1" 为PC登陆  "0"为APP登陆
+  json:
+    productType: $productType  # 必填，长度4字符，产品类型
+    pageNum: $pageNum
+    pageSize: $pageSize
+    order: $order
+    orderField: $orderField
+    companyId: $companyId  # 服务商ID

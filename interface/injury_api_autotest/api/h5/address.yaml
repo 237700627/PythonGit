@@ -1,0 +1,13 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/address   获取水印地址
+    uri: /injury/task/address
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $h5_token
+    method: POST
+    url: $uri
+    json:
+        longitude: $longitude
+        latitude: $latitude
+

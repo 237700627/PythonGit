@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/area  订单状态
+    api_path: api/injury/resource/getUserInfo.yaml
+    uri: /injury/resource/area?parentCode=$parentCode
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri

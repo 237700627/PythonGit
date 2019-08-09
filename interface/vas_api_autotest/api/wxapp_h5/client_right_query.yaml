@@ -1,0 +1,15 @@
+name: 客户权益查询：救援、送检、代驾  # 接口描述
+variables:  # 变量
+  carNo:
+  serviceType:
+  insuranceCompanyId:
+
+request:
+  url: $uri/wxapp/client/right/query
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    carNo: $carNo  # 车牌号
+    serviceType: $serviceType  #  服务类型 0100代驾 0200机动车年检 0300道路救援
+    insuranceCompanyId: $insuranceCompanyId  #  保险公司id

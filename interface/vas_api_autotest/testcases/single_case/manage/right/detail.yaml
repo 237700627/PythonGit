@@ -1,0 +1,78 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 权益列表_正常用例
+    api: api/manage/right/list.yaml
+    variables:
+      pageNum: 1
+      pageSize: 10
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+    extract:
+      - id: content.data.list.0.id
+
+- test:
+    name: 权益详情_正常用例
+    api: api/manage/right/detail.yaml
+    variables:
+      id: $id
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+
+- test:
+    name: 权益详情_权益id不存在
+    api: api/manage/right/detail.yaml
+    variables:
+      id: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 权益详情_权益id为负数
+    api: api/manage/right/detail.yaml
+    variables:
+      id: -1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 权益详情_权益id为空
+    api: api/manage/right/detail.yaml
+    variables:
+      id:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]

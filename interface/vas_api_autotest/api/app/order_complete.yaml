@@ -1,0 +1,16 @@
+name: 提交图片备注  # 接口描述
+variables:  # 变量
+  taskId:
+  returnLogisticsNo: ""
+  Cookie:
+
+request:
+  url: /app/order/complete
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    taskId: $taskId #任务id
+    returnLogisticsNo: $returnLogisticsNo #回寄物流单号

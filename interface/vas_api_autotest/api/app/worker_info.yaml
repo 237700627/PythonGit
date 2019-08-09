@@ -1,0 +1,15 @@
+name: 个人信息查询接口  # 接口描述
+variables:  # 变量
+  Cookie:
+
+
+request:
+  url: /app/worker/info
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+
+
+

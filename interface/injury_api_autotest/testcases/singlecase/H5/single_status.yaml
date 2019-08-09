@@ -1,0 +1,9 @@
+- config:
+    name: 查询订单状态
+    base_url: ${base_url()}
+#    variables:
+#        #module中有，放在这方便看
+
+
+
+# 此接口为订单查询接口，比较适合在流程测试中检查订单状态，不适合做单接口测试

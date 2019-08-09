@@ -1,0 +1,114 @@
+- config:
+    name: 录单-跳过开始作业-提交审核
+    base_url: ${base_url()}
+
+#    本用例操作场景：
+#1.pc登录
+#2.录单2个完成
+#3.H5登录
+#4.使用order1 单的token作业order2 的单
+#    待补充的验证项：
+# 1、订单状态验证
+# 2、过期时间验证
+
+# 1 PC登录
+- test:
+    name: pc_login
+    variables:
+        loginName: 'haadmin003'
+        loginPass: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: '1234'
+    api: api/injury/user/pc/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+    extract:
+        - pc_token: json.data.token
+
+# 2 PC录单
+- test:
+    name: add_order
+    variables:
+        token: $pc_token
+        L1: ['1','3']
+        L2: ['粤','B']
+        L3: []
+        caseNo: ${random_Num(9, $L3)}
+        ownerPhone: ${random_Num(9, $L1)}
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: ${random_Num(9, $L1)}
+        ownerName: 'Tom'
+        provinceCode: '440000'
+        cityCode: '440300'
+        countryCode: '440307'
+        hospital: '南山医院'
+        department: '精神病科'
+        injuredName: '器测试'
+        visitRequest: '南山医院去看看'
+        taskType: 1
+    api: api/injury/order/add.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+#        -   eq: [验证订单状态为待作业]
+    extract:
+        - orderId1: json.data.id
+        - orderNo1: json.data.orderNo
+
+
+# 2 PC录单
+- test:
+    name: add_order
+    variables:
+        token: $pc_token
+        L1: ['1','3']
+        L2: ['粤','B']
+        L3: []
+        caseNo: ${random_Num(9, $L3)}
+        ownerPhone: ${random_Num(9, $L1)}
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: ${random_Num(9, $L1)}
+        ownerName: 'Tom'
+        provinceCode: '440000'
+        cityCode: '440300'
+        countryCode: '440307'
+        hospital: '南山医院'
+        department: '精神病科'
+        injuredName: '器测试'
+        visitRequest: '南山医院去看看'
+        taskType: 1
+    api: api/injury/order/add.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+#        -   eq: [验证订单状态为待作业]
+    extract:
+        - orderId2: json.data.id
+        - orderNo2: json.data.orderNo
+
+# 3 获取登录码H5登录
+- test:
+    name: H5_login
+    variables:
+        accessCode: ${queryLoginNum($orderId1)}
+    api: api/injury/user/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+    extract:
+        - h5_token: json.data.token
+#       -   orderId: json.data.orderId
+        - operationId: json.data.operationId
+
+#  用order1的登录码token去作业order2的单
+- test:
+    name: beginTask
+    variables:
+        token: $h5_token
+        orderId: $orderId2
+        id: $operationId
+    api: api/injury/task/beginTask.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "任务开始失败，作业任务状态更新失败，当前作业任务状态："]
+#        -   eq: [验证订单状态为作业中]

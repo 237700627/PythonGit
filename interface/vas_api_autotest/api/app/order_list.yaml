@@ -1,0 +1,20 @@
+name: 我的订单列表  # 接口描述
+variables:  # 变量
+  taskStatus: "01" #任务状态 01待接单 02已接单（处理中） 03已处理
+  pageNum: "1"
+  carNo: ""
+  pageSize: "15"
+  Cookie:
+request:
+  url: /app/order/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    taskStatus: $taskStatus  # 任务状态
+    carNo: $carNo #车牌号
+    pageNum: $pageNum #页码
+    pageSize: $pageSize #每页最大返回条数
+

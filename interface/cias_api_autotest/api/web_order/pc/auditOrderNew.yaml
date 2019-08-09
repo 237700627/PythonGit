@@ -1,0 +1,25 @@
+# 专业品管审核案件
+variables: #变量
+  caseNo: 案件号
+  token:
+  userId:
+  orderNo: ${get_order_no($caseNo)}
+  checkResult: "1" #审核结果，1 审核通过，-1 审核不通过
+  workType: "1" # 查勘作业类型： 1 现场查勘 2 现场查勘+现核 3 微信查勘 4 微信查勘+现核 5未勘
+
+
+
+request:
+  url: /zbcf-web-order/order/auditOrderNew.jhtml
+  method: POST
+  headers:
+    token: $token
+    userId: $userId
+    originType: PC
+    Content-Type: "application/json"
+  json:
+    auditOpinion: "自动化专业案件审核"
+    checkResult: $checkResult
+    orderNo: $orderNo
+    userId: $userId
+    workType: $workType

@@ -1,0 +1,12 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/snapshot/getLists  搜索区域
+    api_path: api/injury/resource/resource/snapshot/getLists.yaml
+    uri: /injury/resource/setting/snapshot/getLists
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri
+    json:
+        key: $key

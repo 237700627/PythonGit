@@ -1,0 +1,65 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 年检订单详情_正常用例
+    api: api/manage/order/inspection_detail.yaml
+    variables:
+      orderNo: 1144879235509391360
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["content.data.baseInfo.orderNo", "1151419693312118784"]
+
+- test:
+    name: 年检订单详情_orderNo不存在
+    api: api/manage/order/inspection_detail.yaml
+    variables:
+      orderNo: 9999999999999999999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "订单编号不存在"]
+
+- test:
+    name: 年检订单详情_orderNo为空
+    api: api/manage/order/inspection_detail.yaml
+    variables:
+      orderNo:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "订单编号不能为空"]
+
+- test:
+    name: 年检订单详情_orderNo为非法类型
+    api: api/manage/order/inspection_detail.yaml
+    variables:
+      orderNo: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "订单编号不合法"]
+

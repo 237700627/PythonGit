@@ -1,0 +1,49 @@
+name: 服务商创建/更新  # 运营管理员登录系统，维护服务商信息
+variables:  # 变量
+  id:
+  companyNo:
+  companySubNo:
+  companyName:
+  loginName:
+  loginPwd:
+  areaCode:
+  productType:
+  officeTel:
+  officeAddr:
+  contactName:
+  contactTel:
+  bank:
+  account:
+  agreementDocId:
+  agreementValidDate:
+  agreementInvalidDate:
+
+request:
+  url: $uri/manage/provider/company/save
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    cookie: ${get_cookie_str($token)}
+    appType: "1"  # "1" 为PC登陆  "0"为APP登陆
+  json:
+    id: $id  # 非必填，长整型，服务商ID
+    companyNo: $companyNo  # 必填，长度20字符，公司编号
+    companySubNo: $companySubNo  # 必填，长度20字符，分支机构编号
+    companyName: $companyName  # 必填，长度50字符，公司名称
+    loginName: $loginName  # 新增必填 ，长度20字符，管理员登录名称
+    loginPwd: $loginPwd  # 新增必填，长度20字符，管理员登录密码
+    areaCode: $areaCode  # 必填，长度6字符，服务区域
+    productType: $productType  # 必填，长度4字符，服务内容
+    officeTel: $officeTel  # 必填，长度20字符，办公电话
+    officeAddr: $officeAddr  # 必填，长度50字符，办公地址
+    contactName: $contactName  # 必填，长度20字符，联系人
+    contactTel: $contactTel  # 必填 ，长度20字符，联系方式
+    bank: $bank  # 必填 ，长度20字符，开户银行名称
+    account: $account  # 必填，长度20字符，银行账号
+    agreementDocId: $agreementDocId  # 必填 ，长整型，协议文档ID
+    agreementValidDate: $agreementValidDate  # 必填，日期类型，协议生效日期
+    agreementInvalidDate: $agreementInvalidDate  # 必填，日期类型，协议失效日期
+
+
+
+

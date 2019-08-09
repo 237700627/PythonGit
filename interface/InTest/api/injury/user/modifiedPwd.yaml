@@ -1,0 +1,13 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/modifiedPwd   修改密码
+    api_path: api/injury/user/modifiedPwd.yaml
+    uri: /injury/user/modifiedPwd
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        oldPwd: $oldPwd
+        newPwd: $newPwd

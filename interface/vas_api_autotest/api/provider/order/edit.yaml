@@ -1,0 +1,38 @@
+name: 订单修改  # 接口描述
+variables:  # 变量
+  taskId:
+  serviceDate:
+  serviceTime:
+  vinNo:
+  engineNo:
+  plateType:
+  seatType:
+  operationType:
+  registeDate:
+  inspectionDate:
+  returnLogisticsNo:
+  providerCompanyRemark:
+
+request:
+  url: $uri/provider/order/edit
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    taskId: $taskId  # 任务id
+    serviceDate: $serviceDate  # 服务日期
+    serviceTime: $serviceTime  # 服务时间
+    vinNo: $vinNo  # 车架号
+    engineNo: $engineNo  # 发动机号
+    plateType: $plateType  # 号牌类型
+    seatType: $seatType  # 车座数
+    operationType: $operationType  # 营运性质
+    registeDate: $registeDate  # 注册日期
+    inspectionDate: $inspectionDate  # 年检日期
+    returnLogisticsNo: $returnLogisticsNo   # 回寄物流单号
+    providerCompanyRemark: $returnLogisticsNo  # 服务商留言
+
+
+
+
+

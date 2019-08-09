@@ -1,0 +1,23 @@
+#查勘终审回传接口
+variables: #变量
+      companyId: HAIC
+      requestTime: "2019-02-22 18:00:00"
+      reviewResult: "1" #1：成功 2：失败退回 3：处理中
+      cancelReason: ""  #如果审核结果为“失败退回”，则必传
+      audioInfoList: []  #如果是影像不通过，提供对应的影像编号
+      report_no: ""
+
+request:
+  url: $uri/zbcf-casecenter/public/case/reviewResult
+  method: POST
+  headers:
+    Content-Type: application/json
+
+  json:
+    requestTime: $requestTime
+    companyId: $companyId
+    initiator: autotest
+    reportNo: $report_no
+    reviewResult: $reviewResult
+    cancelReason: $cancelReason
+    audioInfoList: $audioInfoList

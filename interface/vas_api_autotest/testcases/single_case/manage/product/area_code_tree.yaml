@@ -1,0 +1,26 @@
+- config:
+    name: 产品地区编码树，全局变量：base_url,userName,password
+    base_url: ${get_config(web_url)}
+    variables:
+      userName: ${get_config(cms_login_name)}
+      password: ${get_config(cms_login_pwd)}
+
+- test:
+    name: 获取登录token/密钥：token/signKey
+    testcase: testcases/module_case/pc_user_login.yaml
+    output:
+      - token
+      - signKey
+
+- test:
+    name: 产品地区编码树
+    api: api/manage/product/area_code_tree.yaml
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["content.data.0.label", "全国"]

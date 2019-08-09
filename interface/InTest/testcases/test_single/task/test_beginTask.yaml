@@ -1,0 +1,13 @@
+- config:
+      name: 单接口测试  beginTask.yaml 订单任务开始作业接口
+      request:
+          token: $token
+      base_url: ${base_url()}
+- test:
+      name: 入参正确
+      variables:
+          id: id: ${queryOperationId()}
+          orderId: ${queryOrderId()}
+      api: api/injury/task/beginTask.yaml
+      validate:
+          eq: [status_code, 200]

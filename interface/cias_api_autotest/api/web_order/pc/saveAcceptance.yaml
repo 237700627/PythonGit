@@ -1,0 +1,32 @@
+#提交事故现场确认单
+variables: #变量
+  order_no:
+  accidentTarget: [0]
+  token:
+  pc_user_id:
+  accidentDuty: '0'
+  dutyWay: 'it-police'
+  directPayOther: '0'
+  thirdPartyCars: []
+request:
+  url: /zbcf-web-order/order/parttime/saveAcceptance.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: PC
+    token: $token
+    userId: $pc_user_id
+  json:
+    {
+      "orderNo": $order_no,
+      "accidentCause": "刹车不及",
+      "accidentTarget": $accidentTarget,
+      "accidentLossDesc": "前保险杠",
+      "accidentNote": "",
+      "accidentDuty": $accidentDuty,
+      "dutyWay": $dutyWay,
+      "directPayOther": $directPayOther,
+      "dutyNote": "",
+      "thirdPartyCars": $thirdPartyCars,
+      "accidentFullDesc": "上述时间地点，标的车因刹车不及发生碰撞，事故导致本车前保险杠受损/受伤。备注：事故单提交后显示"
+    }

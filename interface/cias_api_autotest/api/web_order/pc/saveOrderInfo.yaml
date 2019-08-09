@@ -1,0 +1,107 @@
+name: 中台兼业审核员转录
+request:
+  method: POST
+  url: /zbcf-web-order/order/saveOrderInfo.jhtml
+  headers:
+    token: $token
+    userId: $userId
+    originType: PC
+    Content-Type: "application/json"
+  json:
+    orderNo: $orderNo
+    orderType: 0
+    userId: $userId
+    isTemporary: false
+    surveyModel:
+      id: $survey_model_id
+      guid: ""
+      caseNo: $caseNo
+      dealStat: 04
+      serviceCode: 2
+      serviceName: 查勘
+      principalCode: 130
+      companyName: 自动化深圳分公司
+      principalTimeFor: "2019-05-05 18:02:02"
+      principalAuth: 5000
+      contactName: 车先生
+      contactPhone: 13144835618
+      addressPlace: 广东省深圳市福田区深业上城-Portos
+      principalInfo: "【自动化深圳分公司】报案号：AutoPortosHA20190505180158，联系人：车先生，牌照：粤B180158，2019-01-12 10:10:10 广东省深圳市福田区深业上城-Portos"
+      supportLinkman: ""
+      supportLinktel: ""
+      baseFee: 0
+      travelFee: 0
+      mileage: 0
+      overFee: ""
+      extraReward: ""
+      powerFee: ""
+      isVin: 2
+      isCarmodel: 2
+      isDrivingLicense: 2
+      isDriverCard: 2
+      accidentType: 0
+      accidentDuty: 0
+      estimateLossAmount: ""
+      isInjured: 0
+      injuredReason: ""
+      isLoss: 0
+      damageType: ""
+      damageReason: ""
+      damageName: ""
+      damageEstimate: ""
+      isCali: 0
+      surveyPlace: 广东省深圳市福田区深业上城-Portos
+      surveyDespType: 0
+      surveyDesp: 查勘描述
+      workType: 1
+      signaturePath: ""
+      accountName: ""
+      bankName: ""
+      insuredAccount: ""
+      orderNo: $orderNo
+      extraType: 1
+      signatureResult: ""
+      bankCardLink: ""
+      xsError: 0
+      jsError: 0
+      yhkError: 0
+      isLiveCheck: 1
+      identifyType: ""
+      dutyPercent: 100
+      injuredType: ""
+      driverRelation: ""
+      injuredName: ""
+      sex: ""
+      age: ""
+      phone: ""
+      isToHospital: ""
+      hospital: ""
+    mainCarModel:
+      id: $car_model_id
+      caseNo: $caseNo
+      orderNo: $orderNo
+      carNo: 粤B180158
+      driverName: 徐达
+      driverPhone: 13144835618
+      isMain: 1
+      remark: ""
+      isGarage: 1
+      vinNo: 4001001112
+      engineNo: 12312332
+      driverLicenNo: 440204199205225019
+      driverType: C1
+      isDetain: ""
+      isDrivingDetain: 0
+      isVehicleDetain: 0
+      driverCardLink: http://testmedia.cias.cn/9b588465ff024899babd594c32c4f678/c625041da3ff48eda9ab7ebfff6d9d9e
+      licenseCardLink: ""
+      lossEstimate: 666
+      carType: ct-small
+    threeCarList: []
+    simpleDamageList: []
+    injuredList: []
+    auditModel:
+      reply: ""
+      auditOpinion: ""
+      orderNo: $orderNo
+    extra: ""

@@ -1,0 +1,130 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 服务商产品设置
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 36  # 服务商产品管理关系ID
+      enable: 1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: enable校验:enable为空
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 778
+      enable:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "enable值不能为空"]
+
+- test:
+    name: enable校验:enable为0
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 772
+      enable: 0
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: enable校验:enable为1
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 772
+      enable: 1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: enable校验:enable修改为ture
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 778
+      enable: ture
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: enable校验:enable修改为flase
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 778
+      enable: flase
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: enable校验:enable为特殊字符
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 778
+      enable: ！
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: enable校验:enable修改为汉字
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 828
+      enable: 二恶
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: enable校验:enable修改为null
+    api: api/manage/provider/company_product_setting.yaml
+    variables:  # 变量
+      id: 828
+      enable: null
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "enable值不能为空"]

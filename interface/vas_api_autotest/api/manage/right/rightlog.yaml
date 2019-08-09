@@ -1,0 +1,16 @@
+name: 权益使用记录  # 示例接口描述
+variables:  # 变量
+  pageNum:
+  pageSize:
+
+
+request:
+  url: /manage/right/rightlog
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    pageNum: $pageNum
+    pageSize: $pageSize

@@ -1,0 +1,23 @@
+#app 登录
+variables: #变量
+  loginstr_app: '15816873869' # app登录手机号
+  loginPass_app: "123456"  #app登录密码
+  timestamp: ${get_current_time()}
+request:
+  method: POST
+  url: /zbcf-web-api/app/gateWay.do
+  headers:
+    originType: APP
+    reqIp: '127.0.0.1'
+    Content-Type: "application/json"
+  json:
+    appKey: spg8kkw65ljtuzp0hr
+    charset: UTF-8
+    format: json
+    loginIP: '127.0.0.1'
+    loginStr: $loginstr_app
+    loginType: APP
+    serviceName: 'userService_pc.login'
+    loginPass: $loginPass_app
+    timestamp: $timestamp
+    version: '1.0.0'

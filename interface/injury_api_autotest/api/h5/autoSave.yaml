@@ -1,0 +1,278 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/save   任务保存接口
+    api_path: api/injury/task/autoSave.yaml
+    uri: /injury/task/autoSave
+    #伤者信息参数化
+    name: 张小五  #姓名（必填）
+#    idType: '04'  #证件类型（必填） 01--身份证 02--护照 03--港澳台通行证 04--军官证 05--出生证
+#    idNo: '563974268668'  #证件号码（必填）
+#    sex: '0'  #性别（必填）0--男 1--女
+#    treatment: '02'  #治疗情况（必填） 01--门诊 02--住院 03--死亡
+#    treatWays: '01'  #治疗方式（必填） 01--手术 02--非手术 03--尚未确定
+#    referralWays: '01'  #送诊方式（必填） 01--120送医 02--自行就医
+    censusRegisterType_injured: '02'  #户籍类型（必填） 01--城镇 02--农村
+    censusRegisterAddress: '江西九江市吉华路65号'  #户籍地址
+
+    #伤情信息和费用情况参数化
+    operationName: '肿瘤切除手术'  #手续名称（必填）
+    diagnoseName: '肿瘤过大，切除有一定的风险性！'  #诊断名称（必填）
+    #mentalStatus: '02'  #精神状态（必填） 01--清醒 02--昏迷
+    factVisitingHospital: '深圳市龙岗区第二人民医院'  #实际就诊科室（必填）
+    factVisitingDepartment: '肿瘤科'  #实际就诊医院（必填）
+    alreadySpent: 6666  #已花费（必填）
+    remainSpent: 8888  #剩余费用（必填）
+
+    #交通事故参数化
+    isIllegal: '04'  #自身有无违章(必填) 01--无违法 02--酒驾 03--逃逸 04--无证驾驶 05--不清楚
+    otherIllegal: '02'  #对方有无违章（必填） 01--无违法 02--酒驾 03--逃逸 04--无证驾驶 05--不清楚
+    address: '深圳龙岗区坂田街道返雪岗大道12路'  #事故发生地点
+    accDesc: '2019.4.20在返雪岗大道，伤者刘先生自东向西驾驶时，与自南向北的机动车发生碰撞！'  #事故描述
+#    injuryType: '01'  #伤者身份（必填） 01--第三者(出行方式有机动车，非机动车，行人) 02--本车车上人员(出行方式只有机动车)
+#    travelModel: '01'  #出行方式（必填） 01--机动车 02--非机动车 03--行人 04--步行(已删除)
+#    position: '01'  #位置（必填，值则必须在01，02，03之间） 01--驾驶员 02--乘客 03--行人
+
+    #护理人参数化
+#    hasCaregivers: '1'  #是否有护理人详情（0无，1有）
+#    caregiversIdentity: '01'  #护理人身份 01--家属护理 02--护工护理
+    caregiversName: '彭流栋'  #护理人姓名
+    jobName_caregivers: '会计员'  #工作岗位
+    nursingCost: 555  #护理费
+    workingPlace: '深圳市小黄狗科技公司'  #工作单位
+    remark: '按对方的日工资计算出来的'  #备注
+    #orderNum_caregivers: 0  #序列
+
+    #工作经历参数化
+    #hasWork: '1'  #是否有工作（必填） 0--无 1--有
+    provinceCode_work: '440000'  #省代码
+    areaCode_work: '440304'  #市代码
+    cityCode_work: '440300'  #区县代码
+    companyName: '深圳市开思科技公司'  #
+    jobName_work: '项目经理'  #工作岗位
+    wage: 28000  #工资，最小0
+    #wageType: '02'  #工作发放形式 01--现金 02--转账
+    workAddress: '广东省深圳市罗湖区'  #工作地址（省市区）
+    workPlace: '同乐路13号'
+    #orderNum_work: '0'
+
+    #居住经历参数化
+    provinceCode_living: '440000'
+    areaCode_living: '440300'
+    cityCode_living: '440307'
+    provinceCode: '440000'  #省代码
+    areaCode: '440304'  #市代码
+    cityCode: '440300'  #区县代码
+    homeAddress: '广东省深圳市福田区'
+    detailAddress: '莲花一村'
+    orderNum_living: '0'
+    spentPredictType: '01'
+    #被扶养人参数化
+#    hasFamily: '1'  #是否有家庭信息(0无，1有)（必填）
+#    dependType: '02'  #被扶养人类型 01--18岁以下子女 02--60岁以上父母 03--其他
+#    typeDesc: '60岁以上父母'  #被扶养人类型描述
+#    age: 62  #年龄
+    censusRegisterType_depend: '02' #户籍类型
+    dependCount: 4  #共同扶养人
+    #orderNum_depend: '0'  #序号
+    #影像信息参数化
+    orderNum_media: '0'
+    taskId: '01'
+    picId: '43c30f6941d549e2aa0a4305fb6721f5'
+    picName: '身份证'
+    picUrl: 'http://testmedia.cias.cn/43c30f6941d549e2aa0a4305fb6721f5/9029f626078e437ca47ef6d5ebbca223'
+    type: '0001'
+
+    bedNo: '123456789'  #床位号
+
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $h5_token
+    method: POST
+    url: $uri
+    json:
+        orderId: $orderId
+        injured:
+            name: $name
+            sex: $sex
+            birthday: $birthday
+            idType: $idType
+            idNo: $idNo
+            phone: $phone
+            censusRegisterType: $censusRegisterType_injured
+            censusRegisterAddress: $censusRegisterAddress
+            treatment: $treatment
+            treatWays: $treatWays
+            referralWays: $referralWays
+            injuredSignature: $injuredSignature
+        accidentInfo:
+            isIllegal: $isIllegal
+            otherIllegal: $otherIllegal
+            injuryType: $injuryType
+            travelModel: $travelModel
+            position: $position
+            accTime: $accTime
+            address: $address
+            accDesc: $accDesc
+        work:
+            hasWork: $hasWork
+            workInfoList:
+                companyName: $companyName
+                workPlace: $workAddress
+                beginDate: $beginDate
+                endDate: $endDate
+                orderNum: $orderNum_work
+                areaCode: $areaCode_work
+                provinceCode: $provinceCode_work
+                cityCode: $cityCode_work
+                jobName: $jobName_work
+                workAddress: $workAddress
+                wage: $wage
+                wageType: $wageType
+        mediaInfoList:
+#            taskId: $taskId
+#            picId: $picId
+#            picName: $picName
+#            type: $type
+#            orderNum: $orderNum_media
+            [{
+                "orderNum": 1,
+                "picId": "c6a2595dfebe4342b7d76d2e89f91fe7",
+                "picName": "探视员和床头卡合照",
+                "picUrl": "http://testmedia.cias.cn/c6a2595dfebe4342b7d76d2e89f91fe7/c8fd6518b8034bd9bf5548710d75c909",
+                "type": "0401"
+            }, {
+                "picId": "43c30f6941d549e2aa0a4305fb6721f5",
+                "type": "0001",
+                "picUrl": "http://testmedia.cias.cn/43c30f6941d549e2aa0a4305fb6721f5/9029f626078e437ca47ef6d5ebbca223",
+                "orderNum": 1,
+                "picName": "身份证"
+            }, {
+                "picId": "f82b092f20894dba8f72b238c0fbacfa",
+                "type": "0001",
+                "picUrl": "http://testmedia.cias.cn/f82b092f20894dba8f72b238c0fbacfa/629ae429528b4c56944f65095269478c",
+                "orderNum": 2,
+                "picName": "身份证"
+            }, {
+                "picId": "377aa4e560a449dcba2bf948dfaca479",
+                "type": "0002",
+                "picUrl": "http://testmedia.cias.cn/377aa4e560a449dcba2bf948dfaca479/16fc4ef7101b4df785b1dfcd04199ffb",
+                "orderNum": 1,
+                "picName": "对比照"
+            }, {
+                "picId": "e9a35a1464734797934ca6f4c5cb5da9",
+                "type": "0101",
+                "picUrl": "http://testmedia.cias.cn/e9a35a1464734797934ca6f4c5cb5da9/5aeb83d4ba77454ba41b09441d3e6073",
+                "orderNum": 1,
+                "picName": "科室门牌照"
+            }, {
+                "picId": "b7b7e23dc40747aea6da4f2c6e0f6302",
+                "type": "0102",
+                "picUrl": "http://testmedia.cias.cn/b7b7e23dc40747aea6da4f2c6e0f6302/151c355922564f5ca4d5e6a98a6db464",
+                "orderNum": 1,
+                "picName": "病房门牌照"
+            }, {
+                "picId": "14bad18b15404a588677374933c2a0d3",
+                "type": "0103",
+                "picUrl": "http://testmedia.cias.cn/14bad18b15404a588677374933c2a0d3/cf85b084b8f64d57abbab5ef8eaed5eb",
+                "orderNum": 1,
+                "picName": "床头卡"
+            }, {
+                "picId": "157b091a9d8a4eb0868b7165a506bc6e",
+                "type": "0104",
+                "picUrl": "http://testmedia.cias.cn/157b091a9d8a4eb0868b7165a506bc6e/55d29bf8f3254dbf85b1277483df265d",
+                "orderNum": 1,
+                "picName": "伤者全身照"
+            }, {
+                "picId": "a02c035643bd49d799d62376d566adcc",
+                "type": "0105",
+                "picUrl": "http://testmedia.cias.cn/a02c035643bd49d799d62376d566adcc/09c8f55187e74ba68f91ed12897cea51",
+                "orderNum": 1,
+                "picName": "受伤局部照"
+            }, {
+                "picId": "f041d51736ec43e7a478d6b0cada8c32",
+                "type": "0201",
+                "picUrl": "http://testmedia.cias.cn/f041d51736ec43e7a478d6b0cada8c32/211ac3263f9344fc9cf0dd2b4eedf740",
+                "orderNum": 1,
+                "picName": "诊断证明"
+            }, {
+                "picId": "067f7277fd0a4ae6a02f38c51129b2ab",
+                "type": "0202",
+                "picUrl": "http://testmedia.cias.cn/067f7277fd0a4ae6a02f38c51129b2ab/be79b8e94da447efaef26e291a7b8242",
+                "orderNum": 1,
+                "picName": "门诊病历本"
+            }, {
+                "picId": "dc4ddf2416fe4f4f9c588666981034c4",
+                "type": "0203",
+                "picUrl": "http://testmedia.cias.cn/dc4ddf2416fe4f4f9c588666981034c4/331ebc4c9b90428a9608168ac84b5c9e",
+                "orderNum": 1,
+                "picName": "检查报告"
+            }, {
+                "picId": "b34943b6c0af4f69b3c6447487618b69",
+                "type": "0501",
+                "picUrl": "http://testmedia.cias.cn/b34943b6c0af4f69b3c6447487618b69/0178f3dde62c439e93051da2fb89268a",
+                "orderNum": 1,
+                "picName": "影像片"
+            }, {
+                "picId": "5f123348f4904258b2884bc825191a7d",
+                "type": "0601",
+                "picUrl": "http://testmedia.cias.cn/5f123348f4904258b2884bc825191a7d/8de8db63a9e14be88bbb98fbe0ec128a",
+                "orderNum": 1,
+                "picName": "银行卡正面"
+            }, {
+                "picId": "4f41434f392c4feaa5b40cef26d851b8",
+                "type": "0301",
+                "picUrl": "http://testmedia.cias.cn/4f41434f392c4feaa5b40cef26d851b8/f65c6c6876fc4c1d98a793d8bd994d29",
+                "orderNum": 1,
+                "picName": "伤者/家属"
+            }, {
+                "picId": "9b6b9583ddbc4769b88e4d5907572ea9",
+                "type": "0302",
+                "picUrl": "http://testmedia.cias.cn/9b6b9583ddbc4769b88e4d5907572ea9/4bc3099eb10f492081e85999f54024c9",
+                "orderNum": 1,
+                "picName": "探视人员"
+            }]
+        injuredInfo:
+            operationName: $operationName
+            diagnoseName: $diagnoseName
+            mentalStatus: $mentalStatus
+            factVisitingDepartment: $factVisitingDepartment
+            factVisitingHospital: $factVisitingHospital
+            hospitalizedDate: $hospitalizedDate
+            leaveDate: $leaveDate
+            alreadySpent: $alreadySpent
+            remainSpent: $remainSpent
+            spentPredictType: $spentPredictType  # 新增
+            bedNo: $bedNo  # 新增
+        livingInfoList:
+            provinceCode: $provinceCode_living
+            cityCode: $cityCode_living
+            areaCode: $areaCode_living
+            homeAddress: $homeAddress
+            beginDate: $beginDate
+            endDate: $endDate
+            orderNum: $orderNum_living
+        familyDto:
+            hasFamily: $hasFamily
+            familyInfoList:
+                name: $name #1.4新增
+                dependType: $dependType
+                age: $age
+                typeDesc: $typeDesc
+                censusRegisterType: $censusRegisterType_depended
+                dependCount: $dependCount
+                orderNum: $orderNum_depend
+                remark: $remark #1.4新增
+                provinceCode: $provinceCode #1.4新增
+                cityCode: $cityCode #1.4新增
+                areaCode: $areaCode #1.4新增
+                detailAddress: $detailAddress #1.4新增
+        caregiversDto:
+            caregiversInfoList:
+                caregiversIdentity: $caregiversIdentity
+                caregiversName: $caregiversName
+                workingPlace: $workingPlace
+                nursingCost: $nursingCost
+                orderNum: $orderNum_caregivers
+                jobName: $jobName_caregivers
+                remark: $remark
+            hasCaregivers: $hasCaregivers

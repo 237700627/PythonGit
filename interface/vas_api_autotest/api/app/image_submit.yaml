@@ -1,0 +1,28 @@
+name: 提交图片信息  # 接口描述
+variables:  # 变量
+  taskId:
+  id:
+  imgTime:
+  imgSource: '01' #01 手机相册 02 APP离线拍照 03 APP在线拍照 04 PC上传 05 微信小程序
+  Cookie:
+
+request:
+  url: /app/order/detail/image/submit
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+    Cookie: $Cookie
+  json:
+    id: $id #图片信息id，如果为空则新增，如果不空则修改
+    taskId: $taskId  # 任务id
+    imgId: $imgId #影像服务返回的图片id
+    imgName: "" #图片名称
+    seq: "0" #当前图片在该组的排序（使用时间戳）
+    imgTime: $imgTime #图片拍摄时间
+    imgSource: $imgSource # 照片来源
+    imgAddress: "深圳市福田区上梅林" #图片拍摄地址
+    imgLongitude: "114.134096" #图片拍摄经度，当获取经纬度失败时不传值/传空值/大于等于9999的数值（仅限当前接口）
+    imgLatitude: "22.607915" #图片拍摄纬度，当获取经纬度失败时不传值/传空值/大于等于9999的数值（仅限当前接口）
+
+

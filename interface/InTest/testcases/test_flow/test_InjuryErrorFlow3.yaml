@@ -1,0 +1,85 @@
+- config:
+    name: 录单-跳过开始作业-跳过提交审核-审核通过
+    base_url: ${base_url()}
+
+#    本用例操作场景：
+#1.pc登录
+#2.录单完成
+#3.审核通过
+#    待补充的验证项：
+#    1、订单状态验证
+#    2、过期时间验证
+
+# 1 PC登录
+- test:
+    name: pc_login
+    variables:
+        loginName: 'haadmin003'
+        loginPass: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: '1234'
+    api: api/injury/user/pc/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+    extract:
+        -   pc_token: json.data.token
+
+# 2 PC录单
+- test:
+    name: add_order
+    variables:
+        token: $pc_token
+        L1: ['1','3']
+        L2: ['粤','B']
+        L3: []
+        caseNo: ${random_Num(9, $L3)}
+        ownerPhone: ${random_Num(9, $L1)}
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: ${random_Num(9, $L1)}
+        ownerName: 'Tom'
+        provinceCode: '440000'
+        cityCode: '440300'
+        countryCode: '440307'
+        hospital: '南山医院'
+        department: '精神病科'
+        injuredName: '器测试'
+        visitRequest: '南山医院去看看'
+        taskType: 1
+    api: api/injury/order/add.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+#        -   eq: [验证订单状态为待作业]
+    extract:
+        -   orderId: json.data.id
+        -   orderNo: json.data.orderNo
+# H5登录一下
+- test:
+    name: H5_login
+    variables:
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/injury/user/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+    extract:
+        -   h5_token: json.data.token
+#        -   orderId: json.data.orderId
+        -   operationId: json.data.operationId
+#    setup_hooks:
+#        - ${sleep(300)}
+
+# 审核退回
+- test:
+      name: audit_work
+      variables:
+          token: $pc_token
+          orderId: $orderId
+          id: $operationId
+          status: '04'
+          orderStatus: '05'
+          comment: '审核测试通过'
+      api: api/injury/task/auditTask.yaml
+      validate:
+          - eq: [status_code, 200]
+          - eq: [json.message, "任务审核失败，订单状态更新失败，当前订单状态：待作业"]

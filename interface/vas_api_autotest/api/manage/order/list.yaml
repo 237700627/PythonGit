@@ -1,0 +1,19 @@
+name: 订单列表
+varialbes:
+  orderStatus:
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+
+request:
+  url: $uri/manage/order/list
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderStatus: $orderStatus  # 非必填，订单状态 00待派单、01处理中、02待初审、03初审退回、04待终审、05终审退回、06已审核 07已办结
+    pageNum: $pageNum  # 非必填，页码，从1开始
+    pageSize: $pageSize  # 非必填，每页最大返回数目，默认20
+    order: $order  # 非必填，排序，asc-升序，desc-降序
+    orderField: $orderField  # 非必填，排序字段

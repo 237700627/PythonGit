@@ -1,0 +1,13 @@
+- test:
+    name: 公估APP提交作业
+    api: api/web_order/app/saveOrderInfo.yaml
+    variables:
+      caseNo: $report_no
+      token: $app_token
+      userId: ${toString($APP_userId)}
+      orderNo: ${get_order_no($report_no)}
+      workid: ${get_survey_model_id($report_no)}
+      carid: ${get_car_model_id($report_no)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", $result_msg]

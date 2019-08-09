@@ -1,0 +1,65 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取秘钥
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    extract:
+      - aesKey: content.data.aesKey
+      - signKey: content.data.signKey
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+# 非加签接口：目前只做非空校验，无长度、幂等性、类型等校验
+- test:
+    name: requestId校验：requestId为空
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    variables:
+      requestId: ""
+    validate:
+      - eq: ["content.code", 705]
+      - eq: ["content.message", "参数校验不通过，原因：requestId不能为空"]
+
+- test:
+    name: requestTime校验：requestTime为空
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    variables:
+      requestTime: ""
+    validate:
+      - eq: ["content.code", 705]
+      - eq: ["content.message", "参数校验不通过，原因：requestTime不能为空"]
+
+- test:
+    name: version校验：version为空
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    variables:
+      version: ""
+    validate:
+      - eq: ["content.code", 705]
+      - eq: ["content.message", "参数校验不通过，原因：version不能为空"]
+
+- test:
+    name: data校验：data为空
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    variables:
+      data: ""
+    validate:
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]

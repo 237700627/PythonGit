@@ -1,0 +1,43 @@
+name: 代驾订单提交  # 接口描述
+variables:  # 变量
+   carNo:
+    contactPhone:
+    departureProvinceCode:
+    departureCityCode:
+    departureAreaCode:
+    departure:
+    startLongitude:
+    startLatitude:
+    destinationProvinceCode:
+    destinationCity:
+    destinationAreaCode:
+    destination:
+    endLongitude:
+    endLatitude:
+    productType:
+
+request:
+  url: $uri/wxapp/driving/order/submit
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    carNo: $carNo  # 车牌号
+    contactPhone: $contactPhone # 联系电话
+    departureProvinceCode: $departureProvinceCode  # 出发地省代码
+    departureCityCode: $departureCityCode  # 出发地市代码
+    departureAreaCode: $departureAreaCode  # 出发地区/县代码
+    departure: $departure  # 出发地
+    startLongitude: $startLongitude  # 起始经度
+    startLatitude: $startLatitude  # 起始纬度
+    destinationProvinceCode: $destinationProvinceCode  # 目的地省代码
+    destinationCity: $destinationCity  # 目的地市代码
+    destinationAreaCode: $destinationAreaCode  # 目的地区/县代码
+    destination: $destination  # 结束经度
+    endLongitude: $endLongitude  # 车牌号
+    endLatitude: $endLatitude  # 结束纬度
+    productType: $productType  # 产品类型 0100 代驾
+
+
+
+

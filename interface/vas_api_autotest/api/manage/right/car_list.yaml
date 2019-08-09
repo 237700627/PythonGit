@@ -1,0 +1,36 @@
+name: 享权车辆列表  # 接口描述
+variables:  # 变量
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+  carNo:
+  rightId:
+  channelCompanyIds:
+  createTimeFrom:
+  createTimeTo:
+  updateTimeFrom:
+  updateTimeTo:
+  creatorIds:
+
+request:
+  url: /manage/right/car/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    pageNum: $pageNum
+    pageSize: $pageSize
+    order: $order
+    orderField: $orderField
+    carNo: $carNo  # 非必填，长度10字符，车牌号，模糊搜索
+    rightId: $rightId  # 非必填，长整型，权益ID
+    channelCompanyIds: $channelCompanyIds  # 非必填，渠道商id列表，筛选
+    createTimeFrom: $createTimeFrom  # 非必填，起始添加时间，筛选
+    createTimeTo: $createTimeTo  # 非必填，终止添加时间，筛选
+    updateTimeFrom: $updateTimeFrom  # 非必填，起始更新时间，筛选
+    updateTimeTo: $updateTimeTo  # 非必填，终止添加时间，筛选
+    creatorIds: $creatorIds  # 非必填，添加人id列表，筛选
+

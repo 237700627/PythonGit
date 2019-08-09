@@ -1,0 +1,43 @@
+name: 渠道商创建/更新  # 接口描述
+variables:  # 变量
+  id:
+  companyNo: ${gen_random_string(6)}
+  companySubNo: ${gen_random_string(6)}
+  companyName: ${get_customize_name(AUTO渠道商)}
+  areaCode: ["440000", "440300", "440304"]
+  officeTel: '13013013012'
+  officeAddr: '广东省深圳市福田区深业上城T2-4401'
+  contactName: '自动化测试'
+  contactTel: '13013013011'
+  bank:
+  account:
+  agreementValidDate:
+  agreementInvalidDate:
+  agreementDocId:
+  logoId:
+  shortName:
+
+request:
+  url: /manage/channel/company/save
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    id: $id  # 非必填，长整型，渠道商ID
+    companyNo: $companyNo  # 必填，长度20字符，渠道商公司编码
+    companySubNo: $companySubNo  # 必填，长度20字符，渠道商分支机构编码
+    companyName: $companyName  # 必填，长度50字符，渠道商名称
+    areaCode: $areaCode  # 必填，长度6字符，区域编码
+    officeTel: $officeTel   # 必填，长度20字符，办公电话
+    officeAddr: $officeAddr  # 必填，长度50字符，公司地址
+    contactName: $contactName  # 必填，长度20字符，联系人
+    contactTel: $contactTel  # 必填，长度20字符，联系方式
+    bank: $bank  #
+    account: $account  #
+    agreementValidDate: $agreementValidDate  # 必填，日期类型，有效日期
+    agreementInvalidDate: $agreementInvalidDate  # 必填，日期类型，失效日期
+    agreementDocId: $agreementDocId  # 必填，长整型，协议文档ID
+    logoId: $logoId  # 非必填，长整型，logo ID
+    shortName: $shortName  #非必填，公司简称

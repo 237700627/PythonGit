@@ -1,0 +1,149 @@
+- config:
+    name: 待作业的订单，3家资源公司48小时超时，关单重派case
+    base_url: ${base_url()}
+
+    variables:
+        wait_5m: 301
+        wait5m_desc: '任务超时后，待等5分钟以便重新调度任务'
+        del_flag: '1' #无效标识
+        censusRegisterType_injured: '02'
+        idType: '02'
+        idNo: '123456789'
+        sex: '0'
+        treatment: '01'
+        treatWays: '01'
+        referralWays: '01'
+        mentalStatus: '01'
+        isIllegal: '01'
+        injuryType: '01'
+        travelModel: '01'
+        position: '01'
+        hasCaregivers: '0'
+        caregiversIdentity: ''
+        orderNum_caregivers: ''
+        hasWork: '1'
+        wageType: '01'
+        orderNum_work: '0'
+        hasFamily: '1'
+        dependType: '01'
+        typeDesc: '18岁以下子女'
+#        age: '17'
+        orderNum_depend: '0'
+
+
+#pc新建订单 -- h5在48小时内未开始作业 -- 任务超时调度给第二家资源公司 -- h5在48小时内未开始作业 -- 任务超时调度给第三家资源公司 -- h5在48小时内未开始作业 -- 关单重派
+
+##########第一家资源公司48小时内未开始作业
+- test:
+    name: pc新建订单，h5登录查看订单(第一家资料公司)
+    testcase: testcases/modulecase/module_addOrder_h5Login.yaml
+    output:
+        - h5_token
+        - pc_suptoken
+        - pc_token
+        - orderNo
+        - orderId
+        - operationId
+    teardown_hooks:  #登录码的end_effect_time修改为当前时间，从而让登录码失效，从而订单会被重新调度
+          - ${orderTimeOut($orderId)}
+          - ${sleep($wait_5m,$wait5m_desc)}  #调度任务每5分钟执行一次
+
+- test:
+    name: 待作业的订单48小时超时后，用原登录码无法登录
+    variables:
+        accessCode: ${queryLoginNum($orderId,$del_flag)}
+        code: 503
+        message: '登录码已失效'
+        req_status: 'error'
+    testcase: testcases/modulecase/module_h5login_invalid.yaml
+
+#- test:
+#    name: 退出登录
+#    testcase: testcases/modulecase/module_pclogout_h5logout.yaml
+
+###########第二家资源公司48小时内未开始作业
+- test:
+    name: h5登录查看订单(第二家资料公司)
+    testcase: testcases/modulecase/module_h5_login.yaml
+    output:
+        - h5_token
+        - orderId
+        - operationId
+    teardown_hooks:  #登录码的end_effect_time修改为当前时间，从而让登录码失效，从而订单会被重新调度
+          - ${orderTimeOut($orderId)}
+          - ${sleep($wait_5m,$wait5m_desc)}  #调度任务每5分钟执行一次
+
+- test:
+    name: 待作业的订单48小时超时后，用原登录码无法登录
+    variables:
+        accessCode: ${queryLoginNum($orderId,$del_flag)}
+        code: 503
+        message: '登录码已失效'
+        req_status: 'error'
+    testcase: testcases/modulecase/module_h5login_invalid.yaml
+
+#- test:
+#    name: 退出登录
+#    testcase: testcases/modulecase/module_pclogout_h5logout.yaml
+
+##########第三家资源公司48小时内未开始作业
+- test:
+    name: h5登录查看订单(第三家资料公司)
+    testcase: testcases/modulecase/module_h5_login.yaml
+    output:
+        - h5_token
+        - orderId
+        - operationId
+    teardown_hooks:  #登录码的end_effect_time修改为当前时间，从而让登录码失效，从而订单会被重新调度
+          - ${orderTimeOut($orderId)}
+          - ${sleep($wait_5m,$wait5m_desc)}  #调度任务每5分钟执行一次
+
+- test:
+    name: 待作业的订单48小时超时后，用原登录码无法登录
+    variables:
+        accessCode: ${queryLoginNum($orderId,$del_flag)}
+        code: 503
+        message: '登录码已失效'
+        req_status: 'error'
+    testcase: testcases/modulecase/module_h5login_invalid.yaml
+
+- test:
+    name: 查看订单状态为已关单
+    variables:
+        code: 200
+        message: '成功'
+        req_status: 'success'
+        orderStatus: '07'  #已关单
+        operationStatus: '01'  #待作业
+    testcase: testcases/modulecase/module_pc_detail.yaml
+
+#- test:
+#    name: pc登录
+#    testcase: testcases/modulecase/module_pc_login.yaml
+#    output:
+#        - pc_token
+
+- test:
+    name: pc重新派单
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_resend.yaml
+
+- test:
+    name: 查看订单状态为待作业
+    variables:
+        code: 200
+        message: '成功'
+        req_status: 'success'
+        orderStatus: '02'  #待作业
+        operationStatus: '01'  #待作业
+    testcase: testcases/modulecase/module_pc_detail.yaml
+
+- test:
+    name: 退出登录
+    testcase: testcases/modulecase/module_pclogout_h5logout.yaml
+
+
+

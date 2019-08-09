@@ -1,0 +1,25 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      sps_login_name: ${get_config(sps_login_name)}
+      sps_login_pwd: ${get_config(sps_login_pwd)}
+      cookie: ${get_cookie($sps_login_name, $sps_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 服务人员列表
+    api: api/provider/setting/worker_list.yaml
+    variables:
+      cookie: $cookie
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]

@@ -1,0 +1,19 @@
+#专业版APP查询订单列表
+variables: #变量
+  token:
+  userId:
+  originType: APP
+
+request:
+  url: /zbcf-web-order/appOrder/queryMyOrder.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: $originType
+    token: $token
+    userId: $userId
+  json:
+    userId: $userId
+    pageNo: '1'
+    pageSize: '20'
+    isSimple: ''

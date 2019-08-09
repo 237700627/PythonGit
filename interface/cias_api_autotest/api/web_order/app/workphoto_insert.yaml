@@ -1,0 +1,37 @@
+#专业公估上传影像
+variables: #变量
+      caseNo:
+      orderNo: ${get_order_no($caseNo)}
+      token:
+      userId:
+      originType: APP
+      imageTime: ${get_timestamp()}
+      imageSource: "is-app-online" #照片来源。is-phone-album/手机相册, is-app-offline/APP离线拍照, is-app-online/APP在线拍照, is-pc/PC上传
+      imgName: '1558582595407503.jpg'
+      imgUrl: '5f8deebb399f4ca99edb57bea8acd915'
+      parentId: '1243'  #图片分类
+
+request:
+  url: /zbcf-web-order/workphoto/insert.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: $originType
+    token: $token
+    userId: $userId
+  json:
+    userId: $userId
+    name: $imgName
+    orderNo: $orderNo
+    caseNo:  $caseNo
+    imageUrl: $imgUrl
+    parentId: $parentId
+    fileSize: "161342"
+    taskType: "0"
+    takephotoTime: "2019-05-23 11:36:34"
+    serviceCode: "1"
+    imageLongitude: 114.07931
+    imageLatitude: 22.554126
+    imageTime: $imageTime
+    imageAddress: "中国广东省深圳市福田区笋岗西路4003号"
+    imageSource: $imageSource

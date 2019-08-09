@@ -1,0 +1,73 @@
+- config:
+    name: 发送验证码
+    base_url: ${base_url()}
+#    variables:
+#        #module中有，放在这方便看
+
+#获取验收码
+- test:
+    name: 正确手机号获取验证码
+    variables:
+      visitorPhone: '15112313345'
+    api: api/h5/sendValidateCode.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+
+- test:
+    name: 手机号获取验证码时间小于10分钟
+    variables:
+      visitorPhone: '15112313345'
+    api: api/h5/sendValidateCode.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 503]
+        - eq: [content.message, '短信获取间隔不能小于10分钟，原短信验证码有效期为120分钟']
+        - eq: [content.status, 'error']
+
+
+- test:
+    name: 错误手机号获取验证码
+    variables:
+      visitorPhone: '1511231334'
+    api: api/h5/sendValidateCode.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 503]
+        - eq: [content.message, '手机号码错误']
+        - eq: [content.status, 'error']
+
+- test:
+    name: 错误手机号获取验证码
+    variables:
+      visitorPhone: '11112313340'
+    api: api/h5/sendValidateCode.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 503]
+        - eq: [content.message, '手机号码错误']
+        - eq: [content.status, 'error']
+
+- test:
+    name: 错误手机号获取验证码
+    variables:
+      visitorPhone: '12112313340'
+    api: api/h5/sendValidateCode.yaml
+    validate:
+    - eq: [status_code, 200]
+    - eq: [content.code, 503]
+    - eq: [content.message, '手机号码错误']
+    - eq: [content.status, 'error']
+
+- test:
+    name: 空手机号获取验证码
+    variables:
+      visitorPhone: ''
+    api: api/h5/sendValidateCode.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 503]
+        - eq: [content.message, '手机号码错误']
+        - eq: [content.status, 'error']

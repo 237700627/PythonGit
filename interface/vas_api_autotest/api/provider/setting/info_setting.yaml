@@ -1,0 +1,31 @@
+name: 服务商基础信息设置  # 接口描述
+variables:  # 变量
+    companyName: 自动化啾啾救援
+    officeTel: '0755-88888888'
+    officeAddr: 深圳深业上城T2
+    contactName: 啾啾自动化
+    contactTel: '13144835620'
+    bank: 中国工商银行
+    account: '622202190400500'
+    appType: '1'
+
+request:
+  url: provider/info/setting
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: $appType
+  json:
+    companyName: $companyName  # 公司名称
+    officeTel: $officeTel  # 必填，长度20字符，办公电话
+    officeAddr: $officeAddr  # 必填，长度250字符，办公地址
+    contactName: $contactName  # 必填，长度10字符，联系人姓名
+    contactTel: $contactTel  # 必填，长度20字符，联系人电话
+    bank: $bank  # 必填，长度30字符，开户银行名称
+    account: $account  # 必填，长度50字符，开户银行账号
+
+
+
+
+

@@ -1,0 +1,14 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/visitor/update  修改探视员
+    api_path: api/injury/visitor/update.yaml
+    uri: /injury/visitor/update
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        name: $name
+        mobile: $mobile
+        companyId: $companyId

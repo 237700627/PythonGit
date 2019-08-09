@@ -1,0 +1,21 @@
+name: 订单列表  # 服务商订单列表
+variables:  # 变量
+  taskStatus:
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+
+request:
+  url: $uri/provider/order/list
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    taskStatus: $taskStatus  # 任务状态 00待派工、01待接单、02已接单、03已处理、04已撤销
+    pageNum: $pageNum  # 页码，从1开始
+    pageSize: $pageSize  # 每页最大返回条目数
+    order: $order  # 排序规则：【asc|desc】
+    orderField: $orderField  # 排序字段
+
+

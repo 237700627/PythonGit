@@ -1,0 +1,148 @@
+- config:
+    name: 录单-跳过开始作业-提交审核
+    base_url: ${base_url()}
+
+#    本用例操作场景：
+#1.pc登录
+#2.录单完成
+#3.H5登录
+#4.提交审核
+#    待补充的验证项：
+#    1、订单状态验证
+#    2、过期时间验证
+
+# 1 PC登录
+- test:
+    name: pc_login
+    variables:
+        loginName: 'haadmin003'
+        loginPass: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: '1234'
+    api: api/injury/user/pc/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+    extract:
+        - pc_token: json.data.token
+
+# 2 PC录单
+- test:
+    name: add_order
+    variables:
+        token: $pc_token
+        L1: ['1','3']
+        L2: ['粤','B']
+        L3: []
+        caseNo: ${random_Num(9, $L3)}
+        ownerPhone: ${random_Num(9, $L1)}
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: ${random_Num(9, $L1)}
+        ownerName: 'Tom'
+        provinceCode: '440000'
+        cityCode: '440300'
+        countryCode: '440307'
+        hospital: '南山医院'
+        department: '精神病科'
+        injuredName: '器测试'
+        visitRequest: '南山医院去看看'
+        taskType: 1
+    api: api/injury/order/add.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+#        -   eq: [验证订单状态为待作业]
+    extract:
+        - orderId: json.data.id
+        - orderNo: json.data.orderNo
+
+# 3 获取登录码H5登录
+- test:
+    name: H5_login
+    variables:
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/injury/user/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [json.message, "处理成功"]
+    extract:
+        -   h5_token: json.data.token
+#        -   orderId: json.data.orderId
+        -   operationId: json.data.operationId
+
+# 提交审核
+- test:
+    name: submit_work
+    variables:
+        L1: ['1','3']
+        token: $h5_token
+        orderId: $orderId
+        name: 'Tom'
+        sex: '0'
+        dd: ${generator()}
+        birthday: ${returnTimestamp()}
+        idType: '01'
+        idNo: ${returnId()}
+        phone: ${random_Num(9, $L1)}
+        censusRegisterType: '01'
+        injuryIdentity: '01'
+        treatment: '01'
+        treatWays: '01'
+        referralWays: '01'
+        trafficSituation: '01'
+        isPeccancy: '01'
+        belong_type: '2'
+        orderNum: '0'
+        hasWork: '是'
+        companyName: '花花公司'
+        workPlace: '南山大道100号'
+        beginDate: 1554694924000
+        endDate: 1554694924000
+        provinceCode: '440000'
+        cityCode: '440300'
+        areaCode: '440307'
+        workAddress: '南山大道99号'
+        wage: 10000
+        homeAddress: '南山大道99号'
+        taskId: '01'
+        picId: '560431ad9ba44f27bce624ead0605c90'
+        picName: '身份证'
+        seq: '1'
+        type: '0001'
+        operationName: '小王'
+        diagnoseName: '开肌肉手术'
+        mentalStatus: '良好'
+        factVisitingDepartment: '手术科'
+        factVisitingHospital: '南山医院'
+        hospitalizedDate: 1554694924000
+        leaveDate: 1554694924000
+        alreadySpent: 5000
+        remainSpent: 5000
+        caregiversIdentity:  '01'
+        caregiversName: '小李'
+        workingPlace: '南山医院'
+        nursingCost: 2000
+        hasFamily: '1'
+        relationship: '02'
+        detailAddress: '109房间'
+        relationshipDesc: '子女'
+        isIllegal: "01"
+        otherIllegal: "01"
+        accTime: "1554694924000"
+        address: "南山大道99号"
+        accDesc: "哐哐哐哐哐哐哐"
+        wageType: "02"
+        dependType: "01"
+        age: "9"
+        typeDesc: "老年人"
+        dependCount: "1"
+        jobName: '政治家'
+        remark: '备注一下二代大佬'
+        hasCaregivers: '1'
+        censusRegisterAddress: '北京路4号'
+        injuryType: '01'
+        travelModel: '01'
+        position: '02'
+    api: api/injury/task/save.yaml
+    validate:
+        -    eq: [status_code, 200]
+        -    eq: [json.message, "任务保存失败，当前订单状态为待作业"]

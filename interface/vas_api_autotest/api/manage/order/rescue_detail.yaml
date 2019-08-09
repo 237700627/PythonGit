@@ -1,0 +1,13 @@
+name: 救援订单详情
+variables:
+  orderNo:
+
+request:
+  url: /manage/order/rescue/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    orderNo: $orderNo  # 订单编号

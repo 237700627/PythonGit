@@ -1,0 +1,19 @@
+name: 订单分派  # 接口描述
+variables:  # 变量
+  taskId:
+  providerWorkerId:
+  generateCourier:
+
+request:
+  url: $uri/provider/order/dispatch
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    taskId: $taskId  # 任务id
+    providerWorkerId: $providerWorkerId  # 服务人员用户Id
+    generateCourier: $generateCourier  # 是否生成快递单
+
+
+
+

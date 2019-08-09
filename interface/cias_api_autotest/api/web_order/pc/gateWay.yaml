@@ -1,0 +1,15 @@
+name: 获取PC端登录token
+variables: #默认变量
+      loginPass: '123456'
+      loginStr: '17000000002'
+request:
+  method: POST
+  url: /zbcf-web-api/h5/gateWay.do
+  headers:
+    originType: PC
+    reqIp: "1"
+    Content-Type: "application/json"
+  json:
+    "serviceName": "userService_pc.login"
+    "timestamp": $timestamp
+    "data": "{'loginPass': '$login_pass','loginStr': '$login_str'}"

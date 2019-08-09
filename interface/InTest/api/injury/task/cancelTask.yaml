@@ -1,0 +1,13 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/cancelTask   取消订单任务接口
+    api_path: api/injury/task/cancelTask.yaml
+    uri: /injury/task/cancelTask
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        id: $id
+        orderId: $orderId

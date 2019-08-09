@@ -1,0 +1,21 @@
+name: 服务商查询  # 接口描述
+variables:  # 变量
+  page:
+  limit:
+  order:
+  orderField:
+  companyName:
+
+request:
+  url: /manage/asistance/company/query
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    page: $page
+    limit: $limit
+    order: $order
+    orderField: $orderField
+    companyName: $companyName

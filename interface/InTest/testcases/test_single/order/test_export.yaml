@@ -1,0 +1,17 @@
+- config:
+      name: 单接口测试 test_export.yaml 订单导出
+      request:
+            token: $token
+      base_url: ${base_url()}
+
+# 测试入参
+
+#入参正确时，导出成功
+- test:
+      name: 入参正确
+      variables:
+            orderId: ${queryOrderId()}
+      api: api_path: api/injury/order/export.yaml
+      validate:
+          eq: [status_code, 200]
+

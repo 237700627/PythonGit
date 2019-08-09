@@ -1,0 +1,10 @@
+- test:
+    name: 校验调度回传结果
+    api: api/case_center/querymockdata.yaml
+    variables:
+      queryurl: $queryurl
+      uri: $base_url_mock
+    setup_hooks:
+      - ${sleep_time($sleep_second)}
+    teardown_hooks:
+      - ${handle_mockdata($response)}

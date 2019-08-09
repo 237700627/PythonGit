@@ -1,0 +1,22 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/tasklist/query  任务列表查询接口
+    api_path: api/injury/tasklist/query.yaml
+    uri: /injury/tasklist/query
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: POST
+    url: $uri
+    json:
+        caseNo: $caseNo
+        ownerName: $ownerName
+        orderNo: $orderNo
+        creator: $creator
+        subCompanyId: $subCompanyId
+        thiCompanyId: $thiCompanyId
+        createTime: $createTime
+        CompanyId: $CompanyId
+        pageNum: $pageNum
+        pageSize: $pageSize
+        orderStatus: $orderStatus

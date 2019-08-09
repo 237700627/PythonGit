@@ -1,0 +1,33 @@
+- config:
+    name: APP 登录获取token,获取秘钥
+    base_url: ${get_config(app_url)}
+    variables:
+      app_phone: '17800000001'
+      app_password: '123456'
+- test:
+    name: 获取APP登录Token
+    api: api/app/loginBypwd.yaml
+    setup_hooks:
+      - ${login_encrypt_app($request)}
+    teardown_hooks:
+      - ${resonse_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+    extract:
+      app_token: content.data.token
+      aesKey: content.data.aesKey
+      signKey: content.data.signKey
+#
+#- test:
+#    name: 获取订单列表
+#    api: api/app/order_list.yaml
+#    variables:
+#      Cookie: token=$app_token
+#    setup_hooks:
+#    - ${request_encrypt($request,$aesKey,$signKey)}
+#    teardown_hooks:
+#    - ${response_decrypt($response,$aesKey)}
+#    validate:
+#    - eq: ["status_code", 200]
+#    - eq: ['content.data.total',0]
+

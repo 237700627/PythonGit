@@ -1,0 +1,13 @@
+- config:
+      name: 单接口测试 test_resend.yaml 关单重派
+      request:
+            token: $token
+      base_url: ${base_url()}
+
+- test:
+      name: 入参正确
+      variables:
+            orderId: ${queryOrderId()}
+      api: api/injury/order.resend.yaml
+      validate:
+          eq: [status_code, 200]

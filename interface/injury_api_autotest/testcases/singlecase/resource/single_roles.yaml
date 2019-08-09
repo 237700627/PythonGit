@@ -1,0 +1,100 @@
+- config:
+    name: 查询公司角色列表
+    base_url: ${base_url()}
+    variables:
+        #pc登录系统的用户信息
+        companyName: '华安财产保险股份有限公司云南分公司'  #录单人所在保险公司
+        creatorName: '自动化测试'  #录单人姓名
+        email: 'qiucaixia@cias.cn' #录单人邮箱
+        creatorMobile: '18618561458'  #录单人电话
+        userId: 77 #录单人id
+        permission: '管理员'
+        userName: 'AutoTest'  #录单人用户名
+        userPwd: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: 'tude'
+
+        #        companyName: '华安财产保险股份有限公司云南分公司'  #录单人所在保险公司
+        #        creatorName: '小邱'  #录单人姓名
+        #        email: 'gegfe@126.ijhn' #录单人邮箱
+        #        creatorMobile: '18681561455'  #录单人电话
+        #        userId: 77 #录单人id
+        #        permission: '普通用户'
+        #        userName: 'xiaoqiu2'  #录单人用户名
+        #        userPwd: 'Y2lhczEyMzQ1Ng=='
+        #        verifyCode: 'tude'
+
+        #pc新建订单需要的相关数据
+        L1: ['1','5']
+        L2: ['黑','B']
+        L3: []
+        caseNo: ${random_Num(9,[])}
+        ownerPhone: ${random_Num(9, $L1)} #车主手机号
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: '13200780881' #pc维护的伤者电话
+        #mobile: ${random_Num(9, $L1)} #探视员手机号
+        visitorPhone: '15112313347'  #探视员手机号
+        visitorSignature: '小数点'  #探视员签名
+        injuredSignature: '伤者的名字'  #伤者签名
+
+        birthday: 50653440000  #1986-01-20
+        phone: '18681461457'  #h5维护的伤者电话
+        beginDate: 1555344000000 #2019-04-16
+        endDate: 1556035200000  #2019-04-24
+        hospitalizedDate: 1557676800000 #2019-05-13
+        leaveDate: 1557763200000  #2019-05-14
+        accTime: '1554694924000'
+        otherIllegal: '02'
+        censusRegisterType_depended: '02'
+        dependCount: 4
+        age: '48'
+
+
+
+# 需要两个待作业的任务订单生成
+# 需要登录成功的一个token
+# 需要H5的登录Token
+- test:
+    name: 辅助脚本输出pc_token、h5_token、orderId、operationId
+    testcase: testcases/modulecase/module_singleUpToStepH5Login.yaml
+    output:
+        - pc_token
+        - orderId
+        - h5_token
+        - operationId
+
+
+- test:
+    name: companyId为空
+    variables:
+        token: $pc_token
+        companyId: ''
+    api: api/resource/roles.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '成功']
+        - eq: [content.status, 'success']
+
+- test:
+    name: companyId不存在
+    variables:
+        token: $pc_token
+        companyId: '66666'
+    api: api/resource/roles.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '成功']
+        - eq: [content.status, 'success']
+
+- test:
+    name: 存在的companyId
+    variables:
+        token: $pc_token
+        companyId: '6'
+    api: api/resource/roles.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '成功']
+        - eq: [content.status, 'success']

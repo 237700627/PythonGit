@@ -1,0 +1,61 @@
+- config:
+      name: C端新建订单，h5作业提交订单，C端审核通过case
+      base_url: ${base_url()}
+
+# 此脚本输出一个pc_token、orderId、h5_token、operationId；
+
+
+# pc正常登录
+- test:
+    name: 1-pc端账号登录
+    api: api/pc/login.yaml
+    extract:
+        -   pc_token: json.data.token
+
+- test:
+    name: pc登录账号的个人中心信息
+    api: api/user/getUserInfo.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+        - eq: [content.data.companyName,$companyName] #录单人所在保险公司
+        - eq: [content.data.email,$email]  #录单人邮箱
+        - eq: [content.data.mobile,$creatorMobile] #录单人电话
+        - eq: [content.data.name,$creatorName] #录单人姓名
+        - eq: [content.data.permission,$permission] #录单人权限
+#        - eq: [content.data.userName,$userName] #录单人用户名
+    extract:
+        - contact: content.data.name
+        - contactPhone: content.data.mobile
+
+#新建订单
+- test:
+      name: 2-pc端新建订单
+      api: api/pc/add.yaml
+      extract:
+          - orderId: json.data.id
+
+#获取验收码
+- test:
+    name: 3-获取验证码
+    api: api/h5/sendValidateCode.yaml
+    validate:
+        -   eq: [status_code, 200]
+
+#h5登录
+- test:
+    name: 4-h5登录
+    variables:
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    extract:
+        -   h5_token: json.data.token
+        -   operationId: json.data.operationId
+
+- test:
+    name: 5-开始作业
+    variables:
+        id: $operationId
+    api: api/h5/beginTask.yaml

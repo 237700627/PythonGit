@@ -1,0 +1,14 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/update   个人中心信息展示
+    api_path: api/injury/user/update.yaml
+    uri: /injury/user/update
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri
+    json:
+        employeeId: $employeeId
+        roleCodes: $roleCodes
+        partnerId: $partnerId

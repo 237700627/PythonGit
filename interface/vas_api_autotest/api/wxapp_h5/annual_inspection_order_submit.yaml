@@ -1,0 +1,41 @@
+name: 年检订单提交  # 接口描述
+variables:  # 变量
+   carNo:
+   insuranceCompanyId:
+   plateType:
+   operationType:
+   seatType:
+   registerDate:
+   productType:
+   contactName:
+   contactPhone:
+   provinceCode:
+   cityCode:
+   areaCode:
+   contactAddress:
+   longitude:
+   latitude:
+   serviceTime:
+
+request:
+  url: $uri/wxapp/annual/inspection/order/submit
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    carNo: $carNo  # 车牌号
+    insuranceCompanyId: $insuranceCompanyId  # 保险公司Id
+    plateType: $plateType  # 车牌类型：01小型蓝牌车、02大型黄牌车、03小型新能源车、04大型新能源车
+    operationType: $operationType  # 营运性质：00非营运、01营运
+    seatType: $seatType  # 车座数：00-7座以下，01-7座及以上
+    registerDate: $registerDate  # 注册日期 yyyy-MM-dd
+    productType: $productType  # 年检类型 0201免上线年检 0202上线年检
+    contactName: $contactName  # 联系人
+    contactPhone: $contactPhone  # 联系电话
+    provinceCode: $provinceCode  # 省代码
+    cityCode: $cityCode  # 市代码
+    areaCode: $areaCode  # 区/县代码
+    contactAddress: $contactAddress  # 服务地址
+    longitude: $longitude  # 经度
+    latitude: $latitude  # 纬度
+    serviceTime: $serviceTime  # 服务时间

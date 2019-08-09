@@ -1,0 +1,16 @@
+name: 订单撤销  # 接口描述
+variables:  # 变量
+  taskId:
+
+request:
+  url: $uri/provider/order/cancel
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    taskId: $taskId  # 任务id
+
+
+
+
+

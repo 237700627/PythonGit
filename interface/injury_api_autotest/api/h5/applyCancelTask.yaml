@@ -1,0 +1,12 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/applyCancelTask   审核接口
+    api_path: api/injury/task/applyCancelTask.yaml
+    uri: /injury/task/applyCancelTask?reason=$reason
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $h5_token
+    method: POST
+    url: $uri
+
+

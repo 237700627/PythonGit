@@ -1,0 +1,24 @@
+- test:
+    name: 中台手工派单
+    api: api/case_center/manualCase.yaml
+    variables:
+      userId: ${get_user_id($pc_login)}
+      token: $pc_session_token
+      originType: $originType
+      caseNo: $report_no
+      insureId: ${get_company_id_value($insureName)}
+      insureName: $insureName
+      carNo: ${get_car_no()}
+      accidentTime: ${get_current_time()}
+      accidentLinkMan: $accidentLinkMan
+      accidentLinkTel: $accidentLinkTel
+      accidentAddress: $accidentAddress
+      accidentLongitude: $accidentLongitude
+      accidentLatitude: $accidentLatitude
+      headInsureId: ${get_company_id_value($headInsureName)}
+      headInsureName: $headInsureName
+      reportType: $reportType
+    teardown_hooks:
+      - ${is_order_taked($report_no)}
+    validate:
+      - eq: ["status_code", 200]

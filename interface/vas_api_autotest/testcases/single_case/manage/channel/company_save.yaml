@@ -1,0 +1,344 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 渠道商创建_正常用例
+    api: api/manage/channel/company_save.yaml
+    variables:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+
+- test:
+    name: 渠道商创建_companyNo为空
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyNo: ''
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司编号不能为空"]
+
+- test:
+    name: 渠道商创建_companyNo为超过20个字符
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyNo: ${gen_random_string(21)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司编号不能超过20个字"]
+
+- test:
+    name: 渠道商创建_companyNo和companySubNo为重复，创建失败
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyNo: 'HAIC'
+      companySubNo: '011507'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司已存在，请不要重复创建"]
+
+
+- test:
+    name: 渠道商创建_companySubNo为空
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companySubNo: ''
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "分支机构编号不能为空"]
+
+- test:
+    name: 渠道商创建_companySubNo为超过20个字符
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companySubNo: ${gen_random_string(21)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "分支机构编号不能超过20个字"]
+
+- test:
+    name: 渠道商创建_companyNo和companySubNo长度和超过20，创建失败
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyNo: ${gen_random_string(11)}
+      companySubNo: ${gen_random_string(10)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "运营系统中公司编码和子编码长度之和不能超过20！"]
+
+ - test:
+    name: 渠道商创建_companyName为空
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyName: ''
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司名称不能为空"]
+
+- test:
+    name: 渠道商创建_companyName为超过31个字符
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyName: ${gen_random_string(31)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司名称不能超过30字"]
+
+- test:
+    name: 渠道商创建_companyName为重复
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyName: '华安财产保险测试七'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "公司名重复"]
+
+- test:
+    name: 渠道商创建_areaCode为空,区域为全国
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyName: 'areacode无数据'
+      areaCode: []
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: 渠道商创建_areaCode类型不同
+    api: api/manage/channel/company_save.yaml
+    variables:
+      companyName: 'areacode无数据4'
+      areaCode: ''
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: 渠道商创建_contactName为空
+    api: api/manage/channel/company_save.yaml
+    variables:
+      contactName: ''
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人不能为空"]
+
+- test:
+    name: 渠道商创建_contactName为超过10个字符
+    api: api/manage/channel/company_save.yaml
+    variables:
+      contactName: ${gen_random_string(11)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人不能超过10字"]
+
+- test:
+    name: 渠道商创建_contactTel为空
+    api: api/manage/channel/company_save.yaml
+    variables:
+      contactTel: ''
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话不能为空"]
+
+- test:
+    name: 渠道商创建_contactTel超过11位
+    api: api/manage/channel/company_save.yaml
+    variables:
+      contactTel: ${get_timestamp(12)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话不能超过11字"]
+
+- test:
+    name: 渠道商创建_contactTel只有10位
+    api: api/manage/channel/company_save.yaml
+    variables:
+      contactTel: ${get_timestamp(10)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话应该是11位字符"]
+
+- test:
+    name: 渠道商创建_contactTel非数字，创建失败
+    api: api/manage/channel/company_save.yaml
+    variables:
+      contactTel: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话应该是11位字符"]
+
+- test:
+    name: 渠道商创建_bank超过20个字
+    api: api/manage/channel/company_save.yaml
+    variables:
+      bank: ${gen_random_string(21)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "银行不能超过20字"]
+
+- test:
+    name: 渠道商创建_account超过20个字符
+    api: api/manage/channel/company_save.yaml
+    variables:
+      account: ${get_timestamp(21)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "银行账号不能超过20字"]
+
+- test:
+    name: 渠道商创建_bank为字母，创建失败
+    api: api/manage/channel/company_save.yaml
+    variables:
+      account: ${gen_random_string(20)}
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "银行账号应该是数字"]
+
+- test:
+    name: 渠道商创建_有效日期大于失效日期，创建失败
+    api: api/manage/channel/company_save.yaml
+    variables:
+      agreementValidDate: '1561972280000' #2019-07-01 17:11:20
+      agreementInvalidDate: '1530436280000' #2018-07-01 17:11:20
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "有效日期应该小于失效日期"]
+
+- test:
+    name: 渠道商创建_日期格式不对，创建失败
+    api: api/manage/channel/company_save.yaml
+    variables:
+      agreementValidDate: '2019-07-01' #2019-07-01 17:11:20
+      agreementInvalidDate: '2099-07-01' #2099-07-01 17:11:20
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "日期格式不对"]
+
+- test:
+    name: 渠道商创建_agreementDocId为非法类型
+    api: api/manage/channel/company_save.yaml
+    variables:
+      agreementDocId: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]

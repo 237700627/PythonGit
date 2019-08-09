@@ -1,0 +1,21 @@
+name: 权益关联公司查询 # 接口描述
+variables:  # 变量
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+  productId:
+
+request:
+  url: /manage/right/channelsbyproductid
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    pageNum: $pageNum
+    pageSize: $pageSize
+    order: $order
+    orderField: $orderField
+    productId: $productId

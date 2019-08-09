@@ -1,0 +1,12 @@
+name: 产品地区编码树
+variables:
+  appType: '1'
+
+request:
+  url: manage/product/areaCodeTree
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: ${get_cookie_str($token)}
+    appType: $appType
+  json:

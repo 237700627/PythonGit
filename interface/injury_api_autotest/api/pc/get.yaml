@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/tasklog/get  根据报案号查询任务日志
+    api_path: api/injury/tasklog/get.yaml
+    uri: /injury/tasklog/get?orderId=$orderId
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri

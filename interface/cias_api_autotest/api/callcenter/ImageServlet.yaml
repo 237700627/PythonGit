@@ -1,0 +1,7 @@
+# 调度系统首页获取验证码
+variables: #变量
+  timestamp: ${get_timestamp()}
+
+request:
+  method: GET
+  url: http://testchakan.cias.cn/zbcf-web-callcenter/ImageServlet?time=$timestamp

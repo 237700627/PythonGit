@@ -1,0 +1,165 @@
+- config:
+    name: h5登录
+    base_url: ${base_url()}
+    variables:
+        #module中有，放在这方便看
+        userName: 'AutoTest'
+        userPwd: 'Y2lhczEyMzQ1Ng=='
+        verifyCode: 'tude'
+        #pc新建订单需要的相关数据
+        L1: ['1','5']
+        L2: ['黑','B']
+        L3: []
+        caseNo: ${random_Num(9)}
+        ownerPhone: ${random_Num(9, $L1)} #车主手机号
+        carNo: ${random_Num(6, $L2)}
+        injuredPhone: '13200780881' #pc维护的伤者电话
+        injuredSignature: '伤者的名字'  #伤者签名
+        birthday: 50653440000  #1986-01-20
+        phone: '18681461457'  #h5维护的伤者电话
+        beginDate: 1555344000000 #2019-04-16
+        endDate: 1556035200000  #2019-04-24
+        hospitalizedDate: 1557676800000 #2019-05-13
+        leaveDate: 1557763200000  #2019-05-14
+        accTime: '1554694924000'
+
+
+#- test:
+#    name: pc端账号登录
+#    api: api/pc/login.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#    extract:
+#        -   pc_token: json.data.token
+#
+##新建订单
+#- test:
+#      name: pc端新建订单
+#      api: api/pc/add.yaml
+#      validate:
+#          - eq: [status_code, 200]
+#          - eq: [content.code, 200]
+#          - eq: [content.message, '处理成功']
+#          - eq: [content.status, 'success']
+#      extract:
+#          - orderId: json.data.id
+#
+##获取验收码
+#- test:
+#    name: 获取验证码
+#    api: api/h5/sendValidateCode.yaml
+#    variables:
+#        visitorPhone: '15112313347'
+
+#登录接口有4个入参：  电话号string、验证码string、登录码string、姓名string
+#1、必填参数校验：任意一个为空，4 case
+#2、长度校验：姓名长度校验，1 case
+#3、特殊值校验：手机号，1 case
+#4、基本类型校验：非字符串传参
+#5、数据安全校验：测试环境验证码不发短信，统一设定为123456，没有必要测试
+
+# 依赖
+# 1、录单完成有一个登录码
+# 2、应用的探视员准入总开关 关闭：任意探视员都可以登录； 打开：系统存在的探视员才能登录作业
+
+# 需要登录成功的token
+- test:
+    name: 辅助脚本输出pc_token、h5_token、orderId、operationId
+    testcase: testcases/modulecase/module_singleUpToStepCreateOrder.yaml
+    output:
+        - pc_token
+        - orderId
+        - h5_token
+        - operationId
+
+
+# 入参正确
+- test:
+    name: 1、入参正确登录成功
+    variables:
+        visitorPhone: '15112313347'
+        visitorSignature: '小数点'
+        validateCode: '123456'
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+# 入参为空
+- test:
+    name: 2、入参name为空
+    variables:
+        visitorPhone: '15112313347'
+        visitorSignature: ''
+        validateCode: '123456'
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 400]
+        - eq: [content.code, 503]
+        - eq: [content.message, '请检查输入内容，内容不符合要求']
+        - eq: [content.status, 'error']
+
+- test:
+    name: 3、入参mobile为空
+    variables:
+        visitorPhone: ''
+        visitorSignature: '小数点'
+        validateCode: '123456'
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 400]
+        - eq: [content.code, 503]
+        - eq: [content.message, '请检查输入内容，内容不符合要求']
+        - eq: [content.status, 'error']
+
+- test:
+    name: 4、入参validate为空(测试环境为方便测试验证码不做校验)
+    variables:
+        visitorPhone: '15112313347'
+        visitorSignature: '小数点'
+        validateCode: ''
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+
+- test:
+    name: 5、入参accessCode为空
+    variables:
+        visitorPhone: '15112313347'
+        visitorSignature: '小数点'
+        validateCode: '123456'
+        accessCode: ''
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 400]
+        - eq: [content.code, 503]
+        - eq: [content.message, '请检查输入内容，内容不符合要求']
+        - eq: [content.status, 'error']
+
+# 入参边界值校验
+- test:
+    name: 6、入参validate不对(测试环境为方便测试验证码不做校验)
+    variables:
+        visitorPhone: '15112313347'
+        visitorSignature: '小数点'
+        validateCode: '000000'
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+
+

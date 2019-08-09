@@ -1,0 +1,17 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/visitor/import  探视员评分信息
+    api_path: api/injury/visitor/import.yaml
+    uri: /injury/visitor/import
+request:
+    headers:
+        Content-Type: multipart/form-data
+        token: $token
+    method: POST
+    url: $uri
+    files:
+        sysCode: [null,'S04']
+        subSysCode: [null,'S0401']
+        fileType: [null,'xlsx' ]
+        filePermission: [null,'PUBLIC']
+        file: ['import_visitor.xlsx',$file,'xlsx']
+files = {'name': (<filename>, <file object>,<content type>, <per-part headers>)}

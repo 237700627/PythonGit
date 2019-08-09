@@ -1,0 +1,116 @@
+name: 获取接口派单的加密报文
+request:
+  method: POST
+  url: $uri/zbcf-casecenter/public/case/takeCase
+  headers:
+    Content-Type: "application/json"
+  json:
+    "requestTime": "2018-11-12 10:10:10"
+    "companyId": $company_id
+    "reportNo": $report_no
+    "taskType": $task_type
+    "sceneType": $scene_type
+    "accidentTime": "2019-01-12 10:10:10"
+    "reportTime": "2019-10-12 10:10:10"
+    "address": "深圳市福田区深业上城东A座2不用这个出险地址"
+    "workAddress": $work_address
+    "contactName": "车先生"
+    "contactPhone": "13144835618"
+    "accidentDesc": "请保持现场拍照，可自助查勘！"
+    "reportType": $report_type
+    "lossType": $loss_type
+    "reporterName": "胡思思"
+    "reporterPhone": "13144835611"
+    "coordinateSystem": "03"
+    "longitude": $longitude
+    "latitude": $latitude
+    "isAlarm": "0"
+    "carColor": "红色"
+    "isInsurant": "1"
+    "insuredName": "Portos测试"
+    "carNo": ${get_car_no()}
+    "vin": "4001001112"
+    "engineNo": "12312332"
+    "firstRegisterDate": "2019-01-10"
+    "ratedPassengerCapacity": "5"
+    "tonnage": "1000"
+    "modelCode": "A123"
+    "carName": "蒙迪欧"
+    "replacementValue": "180000"
+    "licensePlateType": "2"
+    "motorTypeCode": "11"
+    "motorUsageTypeCode": "0"
+    "vehicleOwnerNature": "1"
+    "vehicleOwnerName": "胡思思"
+    "insuranceBillList": [
+      {
+        "subordinateCode": $subordinate_code,
+        "insuranceBillCode": "123456",
+        "insuranceTypeCode": "01",
+        "effectiveDate": "2019-01-11 10:10",
+        "expireDate": "2020-01-12 10:11",
+        "specialAgreement": "",
+        "coverageItemList": [
+        {
+          "coverageCode": "0101928",
+          "sumLimit": "1888881",
+          "deductibleExcess": "1000",
+          "deductibleRate": "10"
+        },
+        {
+          "coverageCode": "100",
+          "sumLimit": "888881",
+          "deductibleExcess": "1000",
+          "deductibleRate": "10"
+        }
+        ]
+      },
+      {
+        "subordinateCode": $subordinate_code,
+        "insuranceBillCode": "1234567",
+        "insuranceTypeCode": "02",
+        "effectiveDate": "2019-01-11 10:10",
+        "expireDate": "2020-01-12 10:11",
+        "specialAgreement": "",
+        "coverageItemList": [
+        {
+          "coverageCode": "0101928",
+          "sumLimit": "1888881",
+          "deductibleExcess": "1000",
+          "deductibleRate": "10"
+        },
+        {
+          "coverageCode": "100",
+          "sumLimit": "888881",
+          "deductibleExcess": "1000",
+          "deductibleRate": "10"
+        },
+        {
+          "coverageCode": "221",
+          "sumLimit": "99998881",
+          "deductibleExcess": "1000",
+          "deductibleRate": "10"
+        },
+        {
+          "coverageCode": "0101004",
+          "sumLimit": "8888888",
+          "deductibleExcess": "1000",
+          "deductibleRate": "10"
+        }
+        ]
+      }
+    ]
+    "garageInfoList": [
+      {
+        "garageName": "平湖龙岗维修厂",
+        "garageAddress": "平湖华南城一号交易广场平湖",
+        "garageContact": "王维修",
+        "garagePhone": "18700000001",
+        "landmarkBuilding": "肯德基广场",
+        "valueAddService": "买水"
+      }
+    ]
+validate:
+  - eq: ["status_code", 200]
+output:
+  - data_list

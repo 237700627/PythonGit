@@ -1,0 +1,57 @@
+name: 代驾订单创建
+varialbes:
+  orderUserId:
+  rightDetailId:
+  carNo:
+  vinNo:
+  engineNo:
+  contactName:
+  contactPhone:
+  contactAddress:
+  longitude:
+  latitude:
+  province:
+  city:
+  area:
+  providerCompanyId:
+  providerWorkerId:
+  destination:
+  destLongitude:
+  destLatitude:
+  destProvince:
+  destCity:
+  destArea:
+  estimateCost:
+  channelCompanyId:
+  productId:
+
+request:
+  url: $uri/manage/order/driving/create
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderUserId: $orderUserId
+    rightDetailId: $rightDetailId  # 权益券id，用于记录本次订单扣减具体权益
+    carNo: $carNo  # 车牌号
+    vinNo: $vinNo  # 车架号
+    engineNo: $engineNo  # 发动机号
+    contactName: $contactName  # 联系人
+    contactPhone: $contactPhone  # 联系电话
+    contactAddress: $contactAddress  # 服务地址
+    longitude: $longitude  # 经度
+    latitude: $latitude  # 纬度
+    province: $province  # 省
+    city: $city  # 市
+    area: $area  # 区
+    providerCompanyId: $providerCompanyId  # 非必填，服务商id
+    providerWorkerId: $providerWorkerId  # 非必填，服务人员id
+    destination: $destination  # 目的地地址
+    destLongitude: $destLongitude  # 目的地经度
+    destLatitude: $destLatitude  # 目的地纬度
+    destProvince: $destProvince  # 目的省
+    destCity: $destCity  # 目的市
+    destArea: $destArea  # 目的区
+    estimateCost: $estimateCost  # 预估费用
+    channelCompanyId: $channelCompanyId  # 非必填，渠道商id
+    productId: $productId  # 产品id

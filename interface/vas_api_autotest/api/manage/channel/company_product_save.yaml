@@ -1,0 +1,20 @@
+name: 渠道商产品新增/更新  # 接口描述
+variables:  # 变量
+  id: 125
+  companyId: 833
+  productId: 37
+  salePrice: 400
+
+request:
+  url: /manage/channel/company/product/save
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    id: $id  # 非必填，关联ID
+    companyId: $companyId # 必填，渠道商ID
+    productId: $productId  # 必填，产品ID
+    salePrice: $salePrice  # 必填，销售价
+

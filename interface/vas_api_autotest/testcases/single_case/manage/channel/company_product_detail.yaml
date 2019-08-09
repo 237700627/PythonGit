@@ -1,0 +1,71 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      cms_login_name: ${get_config(cms_login_name)}
+      cms_login_pwd: ${get_config(cms_login_pwd)}
+      cookie: ${get_cookie($cms_login_name, $cms_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 渠道商产品明细_正常用例
+    api: api/manage/channel/company_product_detail.yaml
+    variables:
+      id: 77
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["content.data.id", 77]
+      - eq: ["content.data.companyId", 832]
+      - eq: ["content.data.productId", 37]
+      - eq: ["content.data.salePrice", 300.00]
+      - eq: ["content.data.productName", "华安深圳救援_更换轮胎"]
+      - eq: ["content.data.productType", "0301"]
+      - eq: ["content.data.productTypeName", "更换轮胎"]
+      - eq: ["content.data.basePrice", 200.00]
+
+- test:
+    name: 渠道商产品明细_id不存在
+    api: api/manage/channel/company_product_detail.yaml
+    variables:
+      id: 9999
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "指定的渠道商产品关系不存在"]
+
+- test:
+    name: 渠道商产品明细_id为空
+    api: api/manage/channel/company_product_detail.yaml
+    variables:
+      id:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "ID不能为空"]
+
+- test:
+    name: 渠道商产品明细_id为非法类型
+    api: api/manage/channel/company_product_detail.yaml
+    variables:
+      id: 'a'
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]

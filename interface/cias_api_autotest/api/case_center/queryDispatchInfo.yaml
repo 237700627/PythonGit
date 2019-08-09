@@ -1,0 +1,16 @@
+#调度状态查询接口
+variables: #变量
+      companyId: HAIC
+      report_no: 报案号
+      requestTime: "2019-02-22 18:00:00"
+request:
+  url: /public/case/queryDispatchInfo
+  method: POST
+  headers:
+    Content-Type: application/json
+
+  json:
+    requestTime: $requestTime
+    companyId: $companyId
+    reportNo: $report_no
+

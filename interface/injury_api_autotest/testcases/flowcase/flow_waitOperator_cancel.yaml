@@ -1,0 +1,57 @@
+- config:
+      name: 待作业的订单，C端取消订单case
+      variables:
+          censusRegisterType_injured: '02'
+          idType: '02'
+          idNo: '123456789'
+          sex: '0'
+          treatment: '01'
+          treatWays: '01'
+          referralWays: '01'
+          mentalStatus: '01'
+          isIllegal: '01'
+          injuryType: '01'
+          travelModel: '01'
+          position: '01'
+          hasCaregivers: '0'
+          caregiversIdentity: ''
+          orderNum_caregivers: ''
+          hasWork: '1'
+          wageType: '01'
+          orderNum_work: '0'
+          hasFamily: '1'
+          dependType: '01'
+          typeDesc: '18岁以下子女'
+          age: '17'
+          orderNum_depend: '0'
+
+#pc新建订单 -- pc撤单
+- test:
+    name: pc新建订单，h5登录查看订单
+    testcase: testcases/modulecase/module_addOrder_h5Login.yaml
+    output:
+        - h5_token
+        - pc_suptoken
+        - pc_token
+        #- orderNo
+        - orderId
+        - operationId
+
+- test:
+    name: pc端取消订单
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_cancel_detail.yaml
+
+#h5查看任务详情-02待作业
+- test:
+    name: pc查看任务详情-02待作业
+    variables:
+        code: 200
+        message: '成功'
+        req_status: 'success'
+        orderStatus: '06' #已取消
+        operationStatus: '01'  #待作业
+    testcase: testcases/modulecase/module_pc_detail.yaml

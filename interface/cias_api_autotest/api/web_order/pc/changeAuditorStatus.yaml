@@ -1,0 +1,11 @@
+name: 变更中台登录中台
+request:
+  method: POST
+  url: /zbcf-web-order/order/parttime/changeAuditorStatus.jhtml
+  headers:
+    token: $token
+    userId: $user_id
+    originType: PC
+    Content-Type: "application/json"
+  json:
+    "auditorStatus": $auditor_status

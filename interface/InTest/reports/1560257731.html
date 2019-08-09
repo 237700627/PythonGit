@@ -1,0 +1,5136 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2019-06-11 20:55:31</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">626.473 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 2.0.2 </td>
+      <td>CPython 3.7.1 </td>
+      <td colspan="2">Windows-10-10.0.17134-SP0</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (1/0)</td>
+      <td colspan="2">19 (19/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>覆盖最长路径，轮询到第三家作业两次，作业完成</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 19</td>
+      <td>SUCCESS: 19</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">pc_login</td>
+      <td style="text-align:center;width:6em;">245.38 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: pc_login</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/pc/login?loginName=quyong&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=1234
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>verifyCode</strong>: 1234
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 0
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/pc/login?loginName=quyong&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=1234
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 12:55:31 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 372
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'level': 3, 'name': 'quyong', 'orderNo': '', 'originType': '', 'roles': ['30000'], 'token': 'rTSHrzZxg7w90lz7NbVDm0El9rp+BkGOTxtD7/ULooPDo6qzMKNdJuMqcFnec5pX5At1AhhxPKTJ13w8ym4nGHzLL3DsiOq6bYBVDxR7O4g=', 'userId': '64', 'userName': 'quyong'}, 'message': '处理成功', 'responseTime': '2019-06-11 20:55:31', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>372</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>245.38</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>232.871</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">add_order</td>
+      <td style="text-align:center;width:6em;">1445.27 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: add_order</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/order/add
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDm0El9rp+BkGOTxtD7/ULooPDo6qzMKNdJuMqcFnec5pX5At1AhhxPKTJ13w8ym4nGHzLL3DsiOq6bYBVDxR7O4g=
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 399
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;caseNo&#34;: &#34;901229633&#34;, &#34;ownerName&#34;: &#34;Tom&#34;, &#34;ownerPhone&#34;: &#34;13782546935&#34;, &#34;carNo&#34;: &#34;\u7ca4B400186&#34;, &#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;countryCode&#34;: &#34;440307&#34;, &#34;hospital&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;department&#34;: &#34;\u7cbe\u795e\u75c5\u79d1&#34;, &#34;injuredName&#34;: &#34;\u5668\u6d4b\u8bd5&#39;&#34;, &#34;injuredPhone&#34;: &#34;13928322762&#34;, &#34;visitRequest&#34;: &#34;\u5357\u5c71\u533b\u9662\u53bb\u770b\u770b&#34;, &#34;taskType&#34;: 1}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/order/add
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 12:55:33 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 128
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'id': 1121}, 'message': '处理成功', 'responseTime': '2019-06-11 20:55:33', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>128</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>1445.27</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>443.842</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">sendValidateCode</td>
+      <td style="text-align:center;width:6em;">78.83 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: sendValidateCode</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/h5/sendValidateCode?mobile=13333333333
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/h5/sendValidateCode?mobile=13333333333
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 12:55:33 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 20:55:33', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>78.83</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>77.571</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_4">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">H5_login</td>
+      <td style="text-align:center;width:6em;">684.16 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_4_1">log-1</a>
+        <div id="popup_log_1_4_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_4_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: H5_login</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/h5/login
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 107
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;mobile&#34;: &#34;13333333333&#34;, &#34;validateCode&#34;: &#34;123456&#34;, &#34;accessCode&#34;: &#34;30765838&#34;, &#34;name&#34;: &#34;\u81ea\u5df1\u73a9&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/h5/login
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 12:55:34 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 415
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'name': '', 'operationId': 1112, 'orderId': 1121, 'orderNo': '100144030019061100001598', 'originType': '', 'roles': [], 'token': 'rTSHrzZxg7w90lz7NbVDm/e9FhpiCDRJstmv7RmMAIb4bKL/UqF1wRdmueioj9Mdf3Xxx5ihOv3G2scthY6uuQ8XkLJpzE/EgLyuSqiNkcJfqPShysv8t0pPvRIuHM/A', 'userId': '', 'userName': ''}, 'message': '处理成功', 'responseTime': '2019-06-11 20:55:34', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>415</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>684.16</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>682.762</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_5">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">use pc_login wait 310 sec</td>
+      <td style="text-align:center;width:6em;">168.55 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_5_1">log-1</a>
+        <div id="popup_log_1_5_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_5_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: use pc_login wait 310 sec</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/pc/login?loginName=haadmin003&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=1234
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>verifyCode</strong>: 1234
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 0
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/pc/login?loginName=haadmin003&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=1234
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:00:44 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 381
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'level': 2, 'name': '管理员003', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5h/h/ENbxiUXl3kLSzyZIxfr4hq3aZ6TlzfGX2/XmMu9txJAqbmDqGUXY6pA0P3cg=', 'userId': '7', 'userName': 'haadmin003'}, 'message': '处理成功', 'responseTime': '2019-06-11 21:00:44', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>381</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>168.55</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>167.317</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_6">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">sendValidateCode</td>
+      <td style="text-align:center;width:6em;">11.97 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_6_1">log-1</a>
+        <div id="popup_log_1_6_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_6_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: sendValidateCode</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/h5/sendValidateCode?mobile=13333333333
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/h5/sendValidateCode?mobile=13333333333
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:00:44 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 168
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 503, 'message': '短信获取间隔不能小于10分钟，原短信验证码有效期为120分钟', 'responseTime': '2019-06-11 21:00:44', 'status': 'error'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>168</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>11.97</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>10.873</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_7">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">H5_login</td>
+      <td style="text-align:center;width:6em;">124.67 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_7_1">log-1</a>
+        <div id="popup_log_1_7_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_7_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: H5_login</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/h5/login
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 107
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;mobile&#34;: &#34;13333333333&#34;, &#34;validateCode&#34;: &#34;123456&#34;, &#34;accessCode&#34;: &#34;10890337&#34;, &#34;name&#34;: &#34;\u81ea\u5df1\u73a9&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/h5/login
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:00:44 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 415
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'name': '', 'operationId': 1112, 'orderId': 1121, 'orderNo': '100144030019061100001598', 'originType': '', 'roles': [], 'token': 'rTSHrzZxg7w90lz7NbVDm/e9FhpiCDRJstmv7RmMAIbzdHdtLs5MN6n8M/oWsAI+7wja2y2hskqgvG8XYHiuAid3Fm2EUKbdsJvYH5ptFaoCBDyhnvsbYKLEBExF/Gcl', 'userId': '', 'userName': ''}, 'message': '处理成功', 'responseTime': '2019-06-11 21:00:44', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>415</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>124.67</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>123.672</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_8">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">beginTask</td>
+      <td style="text-align:center;width:6em;">43.93 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_8_1">log-1</a>
+        <div id="popup_log_1_8_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_8_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: beginTask</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/beginTask
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDm/e9FhpiCDRJstmv7RmMAIbzdHdtLs5MN6n8M/oWsAI+7wja2y2hskqgvG8XYHiuAid3Fm2EUKbdsJvYH5ptFaoCBDyhnvsbYKLEBExF/Gcl
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 29
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 1112, &#34;orderId&#34;: 1121}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/beginTask
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:00:44 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:00:44', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>43.93</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>42.608</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_9">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">submit_work</td>
+      <td style="text-align:center;width:6em;">400.93 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_9_1">log-1</a>
+        <div id="popup_log_1_9_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_9_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: submit_work</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/save
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDm/e9FhpiCDRJstmv7RmMAIbzdHdtLs5MN6n8M/oWsAI+7wja2y2hskqgvG8XYHiuAid3Fm2EUKbdsJvYH5ptFaoCBDyhnvsbYKLEBExF/Gcl
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 2276
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;orderId&#34;: 1121, &#34;injured&#34;: {&#34;name&#34;: &#34;Tom&#34;, &#34;sex&#34;: &#34;0&#34;, &#34;birthday&#34;: 1554694924000, &#34;idType&#34;: &#34;01&#34;, &#34;idNo&#34;: &#34;340803201904088378&#34;, &#34;phone&#34;: &#34;13497805876&#34;, &#34;censusRegisterType&#34;: &#34;01&#34;, &#34;censusRegisterAddress&#34;: &#34;\u5317\u4eac\u8def4\u53f7&#34;, &#34;injuryIdentity&#34;: &#34;01&#34;, &#34;treatment&#34;: &#34;01&#34;, &#34;treatWays&#34;: &#34;01&#34;, &#34;referralWays&#34;: &#34;01&#34;, &#34;injuredSignature&#34;: &#34;\u738b\u5c0f\u660e&#34;}, &#34;accidentInfo&#34;: {&#34;isIllegal&#34;: &#34;01&#34;, &#34;otherIllegal&#34;: &#34;01&#34;, &#34;injuryType&#34;: &#34;01&#34;, &#34;travelModel&#34;: &#34;01&#34;, &#34;position&#34;: &#34;02&#34;, &#34;accTime&#34;: &#34;1554694924000&#34;, &#34;address&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;accDesc&#34;: &#34;\u54d0\u54d0\u54d0\u54d0\u54d0\u54d0\u54d0&#34;}, &#34;work&#34;: {&#34;hasWork&#34;: &#34;\u662f&#34;, &#34;workInfoList&#34;: {&#34;companyName&#34;: &#34;\u82b1\u82b1\u516c\u53f8&#34;, &#34;workPlace&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;beginDate&#34;: 1554694924000, &#34;endDate&#34;: 1554694924000, &#34;orderNum&#34;: &#34;0&#34;, &#34;areaCode&#34;: &#34;440307&#34;, &#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;workAddress&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;wage&#34;: 10000, &#34;wageType&#34;: &#34;02&#34;, &#34;jobName&#34;: &#34;\u653f\u6cbb\u5bb6&#34;}}, &#34;mediaInfoList&#34;: {&#34;taskId&#34;: &#34;01&#34;, &#34;picId&#34;: &#34;560431ad9ba44f27bce624ead0605c90&#34;, &#34;picName&#34;: &#34;\u8eab\u4efd\u8bc1&#34;, &#34;type&#34;: &#34;0001&#34;, &#34;orderNum&#34;: &#34;0&#34;}, &#34;injuredInfo&#34;: {&#34;operationName&#34;: &#34;\u5c0f\u738b&#34;, &#34;diagnoseName&#34;: &#34;\u5f00\u808c\u8089\u624b\u672f&#34;, &#34;mentalStatus&#34;: &#34;\u826f\u597d&#34;, &#34;factVisitingDepartment&#34;: &#34;\u624b\u672f\u79d1&#34;, &#34;factVisitingHospital&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;hospitalizedDate&#34;: 1554694924000, &#34;leaveDate&#34;: 1554694924000, &#34;alreadySpent&#34;: 5000, &#34;remainSpent&#34;: 5000, &#34;spentPredictType&#34;: &#34;01&#34;, &#34;bedNo&#34;: &#34;000999&#34;}, &#34;livingInfoList&#34;: {&#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;areaCode&#34;: &#34;440307&#34;, &#34;homeAddress&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;detailAddress&#34;: &#34;109\u623f\u95f4&#34;, &#34;beginDate&#34;: 1554694924000, &#34;endDate&#34;: 1554694924000, &#34;orderNum&#34;: &#34;0&#34;}, &#34;familyDto&#34;: {&#34;hasFamily&#34;: &#34;1&#34;, &#34;familyInfoList&#34;: {&#34;dependType&#34;: &#34;01&#34;, &#34;age&#34;: &#34;9&#34;, &#34;typeDesc&#34;: &#34;\u8001\u5e74\u4eba&#34;, &#34;censusRegisterType&#34;: &#34;01&#34;, &#34;dependCount&#34;: &#34;1&#34;, &#34;orderNum&#34;: &#34;0&#34;}}, &#34;caregiversDto&#34;: {&#34;hasCaregivers&#34;: &#34;1&#34;, &#34;caregiversInfoList&#34;: {&#34;caregiversIdentity&#34;: &#34;01&#34;, &#34;caregiversName&#34;: &#34;\u5c0f\u674e&#34;, &#34;workingPlace&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;nursingCost&#34;: 2000, &#34;orderNum&#34;: &#34;0&#34;, &#34;jobName&#34;: &#34;\u653f\u6cbb\u5bb6&#34;, &#34;remark&#34;: &#34;\u5907\u6ce8\u4e00\u4e0b\u4e8c\u4ee3\u5927\u4f6c&#34;}}}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/save
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:00:45 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:00:45', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>400.93</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>400.492</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_10">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">audit_work</td>
+      <td style="text-align:center;width:6em;">518.61 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_10_1">log-1</a>
+        <div id="popup_log_1_10_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_10_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: audit_work</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/auditTask
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5h/h/ENbxiUXl3kLSzyZIxfr4hq3aZ6TlzfGX2/XmMu9txJAqbmDqGUXY6pA0P3cg=
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 117
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 1112, &#34;orderId&#34;: 1121, &#34;status&#34;: &#34;01&#34;, &#34;orderStatus&#34;: &#34;02&#34;, &#34;comment&#34;: &#34;\u5ba1\u6838\u6d4b\u8bd5\u9000\u56de&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/auditTask
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:00:45 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:00:45', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>518.61</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>517.919</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_11">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">use pc_login wait 310 sec</td>
+      <td style="text-align:center;width:6em;">180.13 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_11_1">log-1</a>
+        <div id="popup_log_1_11_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_11_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: use pc_login wait 310 sec</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/pc/login?loginName=haadmin003&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=1234
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>verifyCode</strong>: 1234
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 0
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/pc/login?loginName=haadmin003&loginPass=Y2lhczEyMzQ1Ng==&verifyCode=1234
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:55 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 381
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'level': 2, 'name': '管理员003', 'orderNo': '', 'originType': '', 'roles': ['20000'], 'token': 'rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5oacj+FO9v/3s+MnmVCswzqu4RQJhv4ZPC5X2/xokdVyNCbaVu6KOhfJJIVMDV0WA=', 'userId': '7', 'userName': 'haadmin003'}, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:55', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>381</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>180.13</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>177.28</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_12">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">sendValidateCode</td>
+      <td style="text-align:center;width:6em;">46.88 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_12_1">log-1</a>
+        <div id="popup_log_1_12_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_12_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: sendValidateCode</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/h5/sendValidateCode?mobile=13333333333
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/h5/sendValidateCode?mobile=13333333333
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:55 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:55', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>46.88</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>46.12</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_13">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">H5_login</td>
+      <td style="text-align:center;width:6em;">110.70 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_13_1">log-1</a>
+        <div id="popup_log_1_13_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_13_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: H5_login</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/user/h5/login
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 107
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;mobile&#34;: &#34;13333333333&#34;, &#34;validateCode&#34;: &#34;123456&#34;, &#34;accessCode&#34;: &#34;37827427&#34;, &#34;name&#34;: &#34;\u81ea\u5df1\u73a9&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/user/h5/login
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:56 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 415
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'data': {'name': '', 'operationId': 1112, 'orderId': 1121, 'orderNo': '100144030019061100001598', 'originType': '', 'roles': [], 'token': 'rTSHrzZxg7w90lz7NbVDmyj+vFBjFonaeKASgp1TcQKZU2HyGaHRydtOXjqQyvDDr+qyobeuNPlgK5qc50RsomOd6WLY0xHoJ3DgYoVEZq0eXb6jWjUsMSxJjgIl5tA9', 'userId': '', 'userName': ''}, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:56', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>415</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>110.7</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>109.45</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_14">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">beginTask</td>
+      <td style="text-align:center;width:6em;">44.91 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_14_1">log-1</a>
+        <div id="popup_log_1_14_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_14_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: beginTask</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/beginTask
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmyj+vFBjFonaeKASgp1TcQKZU2HyGaHRydtOXjqQyvDDr+qyobeuNPlgK5qc50RsomOd6WLY0xHoJ3DgYoVEZq0eXb6jWjUsMSxJjgIl5tA9
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 29
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 1112, &#34;orderId&#34;: 1121}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/beginTask
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:56 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:56', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>44.91</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>44.34</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_15">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">submit_work</td>
+      <td style="text-align:center;width:6em;">249.31 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_15_1">log-1</a>
+        <div id="popup_log_1_15_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_15_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: submit_work</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/save
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmyj+vFBjFonaeKASgp1TcQKZU2HyGaHRydtOXjqQyvDDr+qyobeuNPlgK5qc50RsomOd6WLY0xHoJ3DgYoVEZq0eXb6jWjUsMSxJjgIl5tA9
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 2276
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;orderId&#34;: 1121, &#34;injured&#34;: {&#34;name&#34;: &#34;Tom&#34;, &#34;sex&#34;: &#34;0&#34;, &#34;birthday&#34;: 1554694924000, &#34;idType&#34;: &#34;01&#34;, &#34;idNo&#34;: &#34;340803201904088378&#34;, &#34;phone&#34;: &#34;13824531937&#34;, &#34;censusRegisterType&#34;: &#34;01&#34;, &#34;censusRegisterAddress&#34;: &#34;\u5317\u4eac\u8def4\u53f7&#34;, &#34;injuryIdentity&#34;: &#34;01&#34;, &#34;treatment&#34;: &#34;01&#34;, &#34;treatWays&#34;: &#34;01&#34;, &#34;referralWays&#34;: &#34;01&#34;, &#34;injuredSignature&#34;: &#34;\u738b\u5c0f\u660e&#34;}, &#34;accidentInfo&#34;: {&#34;isIllegal&#34;: &#34;01&#34;, &#34;otherIllegal&#34;: &#34;01&#34;, &#34;injuryType&#34;: &#34;01&#34;, &#34;travelModel&#34;: &#34;01&#34;, &#34;position&#34;: &#34;02&#34;, &#34;accTime&#34;: &#34;1554694924000&#34;, &#34;address&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;accDesc&#34;: &#34;\u54d0\u54d0\u54d0\u54d0\u54d0\u54d0\u54d0&#34;}, &#34;work&#34;: {&#34;hasWork&#34;: &#34;\u662f&#34;, &#34;workInfoList&#34;: {&#34;companyName&#34;: &#34;\u82b1\u82b1\u516c\u53f8&#34;, &#34;workPlace&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;beginDate&#34;: 1554694924000, &#34;endDate&#34;: 1554694924000, &#34;orderNum&#34;: &#34;0&#34;, &#34;areaCode&#34;: &#34;440307&#34;, &#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;workAddress&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;wage&#34;: 10000, &#34;wageType&#34;: &#34;02&#34;, &#34;jobName&#34;: &#34;\u653f\u6cbb\u5bb6&#34;}}, &#34;mediaInfoList&#34;: {&#34;taskId&#34;: &#34;01&#34;, &#34;picId&#34;: &#34;560431ad9ba44f27bce624ead0605c90&#34;, &#34;picName&#34;: &#34;\u8eab\u4efd\u8bc1&#34;, &#34;type&#34;: &#34;0001&#34;, &#34;orderNum&#34;: &#34;0&#34;}, &#34;injuredInfo&#34;: {&#34;operationName&#34;: &#34;\u5c0f\u738b&#34;, &#34;diagnoseName&#34;: &#34;\u5f00\u808c\u8089\u624b\u672f&#34;, &#34;mentalStatus&#34;: &#34;\u826f\u597d&#34;, &#34;factVisitingDepartment&#34;: &#34;\u624b\u672f\u79d1&#34;, &#34;factVisitingHospital&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;hospitalizedDate&#34;: 1554694924000, &#34;leaveDate&#34;: 1554694924000, &#34;alreadySpent&#34;: 5000, &#34;remainSpent&#34;: 5000, &#34;spentPredictType&#34;: &#34;01&#34;, &#34;bedNo&#34;: &#34;000999&#34;}, &#34;livingInfoList&#34;: {&#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;areaCode&#34;: &#34;440307&#34;, &#34;homeAddress&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;detailAddress&#34;: &#34;109\u623f\u95f4&#34;, &#34;beginDate&#34;: 1554694924000, &#34;endDate&#34;: 1554694924000, &#34;orderNum&#34;: &#34;0&#34;}, &#34;familyDto&#34;: {&#34;hasFamily&#34;: &#34;1&#34;, &#34;familyInfoList&#34;: {&#34;dependType&#34;: &#34;01&#34;, &#34;age&#34;: &#34;9&#34;, &#34;typeDesc&#34;: &#34;\u8001\u5e74\u4eba&#34;, &#34;censusRegisterType&#34;: &#34;01&#34;, &#34;dependCount&#34;: &#34;1&#34;, &#34;orderNum&#34;: &#34;0&#34;}}, &#34;caregiversDto&#34;: {&#34;hasCaregivers&#34;: &#34;1&#34;, &#34;caregiversInfoList&#34;: {&#34;caregiversIdentity&#34;: &#34;01&#34;, &#34;caregiversName&#34;: &#34;\u5c0f\u674e&#34;, &#34;workingPlace&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;nursingCost&#34;: 2000, &#34;orderNum&#34;: &#34;0&#34;, &#34;jobName&#34;: &#34;\u653f\u6cbb\u5bb6&#34;, &#34;remark&#34;: &#34;\u5907\u6ce8\u4e00\u4e0b\u4e8c\u4ee3\u5927\u4f6c&#34;}}}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/save
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:56 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:56', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>249.31</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>248.281</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_16">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">audit_work</td>
+      <td style="text-align:center;width:6em;">469.71 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_16_1">log-1</a>
+        <div id="popup_log_1_16_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_16_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: audit_work</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/auditTask
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5oacj+FO9v/3s+MnmVCswzqu4RQJhv4ZPC5X2/xokdVyNCbaVu6KOhfJJIVMDV0WA=
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 117
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 1112, &#34;orderId&#34;: 1121, &#34;status&#34;: &#34;01&#34;, &#34;orderStatus&#34;: &#34;02&#34;, &#34;comment&#34;: &#34;\u5ba1\u6838\u6d4b\u8bd5\u9000\u56de&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/auditTask
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:56 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:56', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>469.71</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>469.004</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_17">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">begin_Task</td>
+      <td style="text-align:center;width:6em;">40.89 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_17_1">log-1</a>
+        <div id="popup_log_1_17_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_17_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: begin_Task</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/beginTask
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmyj+vFBjFonaeKASgp1TcQKZU2HyGaHRydtOXjqQyvDDr+qyobeuNPlgK5qc50RsomOd6WLY0xHoJ3DgYoVEZq0eXb6jWjUsMSxJjgIl5tA9
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 29
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 1112, &#34;orderId&#34;: 1121}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/beginTask
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:56 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:56', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>40.89</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>39.625</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_18">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">submit_work</td>
+      <td style="text-align:center;width:6em;">343.09 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_18_1">log-1</a>
+        <div id="popup_log_1_18_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_18_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: submit_work</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/save
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmyj+vFBjFonaeKASgp1TcQKZU2HyGaHRydtOXjqQyvDDr+qyobeuNPlgK5qc50RsomOd6WLY0xHoJ3DgYoVEZq0eXb6jWjUsMSxJjgIl5tA9
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 2276
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;orderId&#34;: 1121, &#34;injured&#34;: {&#34;name&#34;: &#34;Tom&#34;, &#34;sex&#34;: &#34;0&#34;, &#34;birthday&#34;: 1554694924000, &#34;idType&#34;: &#34;01&#34;, &#34;idNo&#34;: &#34;340803201904088378&#34;, &#34;phone&#34;: &#34;13226386285&#34;, &#34;censusRegisterType&#34;: &#34;01&#34;, &#34;censusRegisterAddress&#34;: &#34;\u5317\u4eac\u8def4\u53f7&#34;, &#34;injuryIdentity&#34;: &#34;01&#34;, &#34;treatment&#34;: &#34;01&#34;, &#34;treatWays&#34;: &#34;01&#34;, &#34;referralWays&#34;: &#34;01&#34;, &#34;injuredSignature&#34;: &#34;\u738b\u5c0f\u660e&#34;}, &#34;accidentInfo&#34;: {&#34;isIllegal&#34;: &#34;01&#34;, &#34;otherIllegal&#34;: &#34;01&#34;, &#34;injuryType&#34;: &#34;01&#34;, &#34;travelModel&#34;: &#34;01&#34;, &#34;position&#34;: &#34;02&#34;, &#34;accTime&#34;: &#34;1554694924000&#34;, &#34;address&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;accDesc&#34;: &#34;\u54d0\u54d0\u54d0\u54d0\u54d0\u54d0\u54d0&#34;}, &#34;work&#34;: {&#34;hasWork&#34;: &#34;\u662f&#34;, &#34;workInfoList&#34;: {&#34;companyName&#34;: &#34;\u82b1\u82b1\u516c\u53f8&#34;, &#34;workPlace&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;beginDate&#34;: 1554694924000, &#34;endDate&#34;: 1554694924000, &#34;orderNum&#34;: &#34;0&#34;, &#34;areaCode&#34;: &#34;440307&#34;, &#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;workAddress&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;wage&#34;: 10000, &#34;wageType&#34;: &#34;02&#34;, &#34;jobName&#34;: &#34;\u653f\u6cbb\u5bb6&#34;}}, &#34;mediaInfoList&#34;: {&#34;taskId&#34;: &#34;01&#34;, &#34;picId&#34;: &#34;560431ad9ba44f27bce624ead0605c90&#34;, &#34;picName&#34;: &#34;\u8eab\u4efd\u8bc1&#34;, &#34;type&#34;: &#34;0001&#34;, &#34;orderNum&#34;: &#34;0&#34;}, &#34;injuredInfo&#34;: {&#34;operationName&#34;: &#34;\u5c0f\u738b&#34;, &#34;diagnoseName&#34;: &#34;\u5f00\u808c\u8089\u624b\u672f&#34;, &#34;mentalStatus&#34;: &#34;\u826f\u597d&#34;, &#34;factVisitingDepartment&#34;: &#34;\u624b\u672f\u79d1&#34;, &#34;factVisitingHospital&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;hospitalizedDate&#34;: 1554694924000, &#34;leaveDate&#34;: 1554694924000, &#34;alreadySpent&#34;: 5000, &#34;remainSpent&#34;: 5000, &#34;spentPredictType&#34;: &#34;01&#34;, &#34;bedNo&#34;: &#34;000999&#34;}, &#34;livingInfoList&#34;: {&#34;provinceCode&#34;: &#34;440000&#34;, &#34;cityCode&#34;: &#34;440300&#34;, &#34;areaCode&#34;: &#34;440307&#34;, &#34;homeAddress&#34;: &#34;\u5357\u5c71\u5927\u905399\u53f7&#34;, &#34;detailAddress&#34;: &#34;109\u623f\u95f4&#34;, &#34;beginDate&#34;: 1554694924000, &#34;endDate&#34;: 1554694924000, &#34;orderNum&#34;: &#34;0&#34;}, &#34;familyDto&#34;: {&#34;hasFamily&#34;: &#34;1&#34;, &#34;familyInfoList&#34;: {&#34;dependType&#34;: &#34;01&#34;, &#34;age&#34;: &#34;9&#34;, &#34;typeDesc&#34;: &#34;\u8001\u5e74\u4eba&#34;, &#34;censusRegisterType&#34;: &#34;01&#34;, &#34;dependCount&#34;: &#34;1&#34;, &#34;orderNum&#34;: &#34;0&#34;}}, &#34;caregiversDto&#34;: {&#34;hasCaregivers&#34;: &#34;1&#34;, &#34;caregiversInfoList&#34;: {&#34;caregiversIdentity&#34;: &#34;01&#34;, &#34;caregiversName&#34;: &#34;\u5c0f\u674e&#34;, &#34;workingPlace&#34;: &#34;\u5357\u5c71\u533b\u9662&#34;, &#34;nursingCost&#34;: 2000, &#34;orderNum&#34;: &#34;0&#34;, &#34;jobName&#34;: &#34;\u653f\u6cbb\u5bb6&#34;, &#34;remark&#34;: &#34;\u5907\u6ce8\u4e00\u4e0b\u4e8c\u4ee3\u5927\u4f6c&#34;}}}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/save
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:57 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:57', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>343.09</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>342.715</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_19">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">audit_work</td>
+      <td style="text-align:center;width:6em;">681.18 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_19_1">log-1</a>
+        <div id="popup_log_1_19_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_19_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: audit_work</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://testrenshang.cias.cn/injury/task/auditTask
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.21.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json;charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>token</strong>: rTSHrzZxg7w90lz7NbVDmz+f4KtXwkltSUQK8XpjVX5oacj+FO9v/3s+MnmVCswzqu4RQJhv4ZPC5X2/xokdVyNCbaVu6KOhfJJIVMDV0WA=
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 117
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;id&#34;: 1112, &#34;orderId&#34;: 1121, &#34;status&#34;: &#34;04&#34;, &#34;orderStatus&#34;: &#34;05&#34;, &#34;comment&#34;: &#34;\u5ba1\u6838\u6d4b\u8bd5\u901a\u8fc7&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://testrenshang.cias.cn/injury/task/auditTask
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Server</strong>: openresty/1.13.6.2
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Tue, 11 Jun 2019 13:05:57 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; chaset=utf-8;charset=UTF-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 102
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; chaset=utf-8;charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                            {'code': 200, 'message': '处理成功', 'responseTime': '2019-06-11 21:05:57', 'status': 'success'}
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>eq</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        json.message
+                      </td>
+                      <td>eq</td>
+                      <td>处理成功</td>
+                      <td>处理成功</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>102</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>681.18</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>680.414</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

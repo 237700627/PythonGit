@@ -1,0 +1,11 @@
+- test:
+    name: 获取秘钥
+    api: api/common/key_get.yaml
+    teardown_hooks:
+      - ${response_to_obj($response)}
+    extract:
+      - signKey: content.data.signKey
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", $code]
+      - eq: ["content.message", $message]

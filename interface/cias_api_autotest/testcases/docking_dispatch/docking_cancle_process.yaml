@@ -1,0 +1,58 @@
+- config:
+    name: 对接调度，兼业人员接单，保险公司销案
+    base_url: ${get_config(base_url)}
+    variables:
+      report_no: ${get_report_no()}
+      app_login: ${get_config(parttimeworker)}
+      pc_login: ${get_config(parttimeauditor)}
+      login_pass: ${get_config(parttimeauditorpwd)}
+      base_url_out: ${get_config(base_url_out)}
+      base_url_mock: ${get_config(base_url_mock)}
+      company_id: ${get_config(compayId)}
+      subordinate_code: ${get_config(subordinateCode)}
+
+- test:
+    name: 获取PC登录token
+    testcase: testcases/modulecase/pc_login.yaml
+    variables:
+      result_msg: 成功
+    output:
+      - pc_session_token
+
+- test:
+    name: PC在线
+    testcase: testcases/modulecase/change_auditor_status.yaml
+    variables:
+      auditor_status: lsp-online
+      result_msg: 成功
+
+- test:
+    name: 对接派单
+    testcase: testcases/modulecase/take_case.yaml
+    variables:
+      task_type: 001
+      scene_type: 1
+      report_type: 1
+      work_address: 广东省深圳市福田区深业上城-Portos
+      longitude: 114.076562
+      latitude: 22.562197
+      loss_type: 001
+      status: success
+
+- test:
+    name: 校验调度回传结果
+    testcase: testcases/modulecase/send_back_result.yaml
+    variables:
+      queryurl: call42/zbcf/schedulingBackWrite
+      sleep_second: 1
+    validate:
+      - eq: ["content.status", 1]
+      - eq: ["content.surveyorPhone", $app_login]
+      - eq: ["content.auditorPhone", $pc_login]
+
+- test:
+    name: 保险公司销案接口
+    testcase: testcases/modulecase/cancel_case.yaml
+    variables:
+      cancel_reason: "04"
+      status: success

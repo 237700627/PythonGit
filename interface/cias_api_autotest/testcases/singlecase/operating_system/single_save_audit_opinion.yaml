@@ -1,0 +1,9 @@
+- test:
+    name: 中台审核通过
+    api: api/web_order/pc/saveAuditOpinion.yaml
+    variables:
+      workId:
+      orderNo:
+      workStatus: 09 # 订单审核状态：02-关单注销，03-关单转派， 06-审核退回， 09-审核通过，11-关单转自助
+      token:
+      userId:

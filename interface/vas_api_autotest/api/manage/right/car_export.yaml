@@ -1,0 +1,23 @@
+name: 享权车辆导出  # 接口描述
+variables:  # 变量
+  page:
+  limit:
+  order:
+  orderField:
+  rightId:
+  carNo:
+
+request:
+  url: /manage/right/car/export
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    page: $page
+    limit: $limit
+    order: $order
+    orderField: $orderField
+    rightId: $rightId
+    carNo: $carNo

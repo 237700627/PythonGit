@@ -1,0 +1,13 @@
+- test:
+    name: 兼业转录
+    api: api/web_order/pc/saveOrderInfo.yaml
+    variables:
+      token: $pc_session_token
+      userId: ${get_user_id($pc_login)}
+      orderNo: ${get_order_no($report_no)}
+      survey_model_id: ${get_survey_model_id($report_no)}
+      caseNo: $report_no
+      car_model_id: ${get_car_model_id($report_no)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", $result_msg]

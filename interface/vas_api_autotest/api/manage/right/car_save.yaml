@@ -1,0 +1,22 @@
+name: 享权车辆创建/更新  # 接口描述
+variables:  # 变量
+  id:
+  rightId:
+  carNo:
+  startDate:
+  remark:
+
+request:
+  url: /manage/right/car/save
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    id: $id
+    rightId: $rightId
+    carNo: $carNo
+    startDate: $startDate
+    remark: $remark
+

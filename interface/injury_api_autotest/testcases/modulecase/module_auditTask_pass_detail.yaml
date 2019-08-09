@@ -1,0 +1,14 @@
+#pc审核订单-审核通过
+- test:
+      name: pc端审核订单-审核通过
+      variables:
+          id: $operationId
+          status: '04'  #代表是否审核通过：04-通过  01-审核退回
+          orderStatus: '05'  #审核通过后，将订单的状态由04(待审核)修改为05(已完成)
+          comment: '提交的信息核对没有问题，故审核通(自动化测试)！'
+      api: api/pc/auditTask.yaml
+      validate:
+         - eq: [status_code, 200]
+         - eq: [content.code, $code]
+         - eq: [content.message, $message]
+         - eq: [content.status, $req_status]

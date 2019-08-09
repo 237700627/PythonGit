@@ -1,0 +1,14 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/auditCancelTask   审核接口
+    api_path: api/injury/task/auditCancelTask.yaml
+    uri: /injury/task/auditCancelTask
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: POST
+    url: $uri
+    json:
+        orderId: $orderId
+        pass: $pass
+        comment: $comment

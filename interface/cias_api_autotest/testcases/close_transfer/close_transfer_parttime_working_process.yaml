@@ -1,0 +1,159 @@
+- config:
+    name: 对接调度，兼业人员接单，中台审核员关单并重派，重新走兼业调度，兼业人员接单，兼业人员作业，中台审核通过，回传保险公司
+    base_url: ${get_config(base_url)}
+    variables:
+      report_no: ${get_report_no()}
+      app_login: ${get_config(parttimeworker)}
+      app_pwd: ${get_config(parttimeworkerpwd)}
+      pc_login: ${get_config(parttimeauditor)}
+      login_pass: ${get_config(parttimeauditorpwd)}
+      base_url_out: ${get_config(base_url_out)}
+      base_url_mock: ${get_config(base_url_mock)}
+      company_id: ${get_config(compayId)}
+      subordinate_code: ${get_config(subordinateCode)}
+
+- test:
+    name: 获取PC登录token
+    testcase: testcases/modulecase/pc_login.yaml
+    variables:
+
+      result_msg: 成功
+    output:
+      - pc_session_token
+
+- test:
+    name: PC在线
+    testcase: testcases/modulecase/change_auditor_status.yaml
+    variables:
+      auditor_status: lsp-online
+      result_msg: 成功
+
+- test:
+    name: 对接派单
+    testcase: testcases/modulecase/take_case.yaml
+    variables:
+
+      task_type: 001
+      scene_type: 1
+      report_type: 1
+      work_address: 广东省深圳市福田区深业上城-Portos
+      longitude: 114.076562
+      latitude: 22.562197
+      loss_type: 001
+      status: success
+
+- test:
+    name: 校验调度回传结果
+    testcase: testcases/modulecase/send_back_result.yaml
+    variables:
+      queryurl: call42/zbcf/schedulingBackWrite
+      sleep_second: 1
+    validate:
+      - eq: ["content.status", 1]
+      - eq: ["content.surveyorPhone", $app_login]
+      - eq: ["content.auditorPhone", $pc_login]
+
+- test:
+    name: 中台审核结果：关单重派
+    testcase: testcases/modulecase/save_audit_opinion.yaml
+    variables:
+      work_status: "03"
+      result_msg: 成功
+    teardown_hooks:
+      - ${is_order_taked($report_no)}
+
+- test:
+    name: APP在线
+    testcase: testcases/modulecase/app_login.yaml
+    variables:
+
+      result_code: "0000"
+      auth_status: "2"
+    output:
+      - app_token
+      - APP_userId
+
+- test:
+    name: 上传或替换图片
+    testcase: testcases/modulecase/save_or_update_photo.yaml
+    variables:
+      origin_type: APP
+      operation_type: 0
+      img_id: 0
+      img_name: 1557125334866211.jpg
+      tag_id: "0101"
+      img_url: 3aef4dc53c6d400eb93b59dbea698af2
+      seq: 1
+      thumb_url: 3aef4dc53c6d400eb93b59dbea698af2
+      result_msg: 成功
+
+- test:
+    name: 提交事故现场确认单
+    testcase: testcases/modulecase/save_acceptance.yaml
+    variables:
+      sleep_second: 1
+      confirm: 1
+
+- test:
+    name: 是否提供证件照，默认不提供
+    testcase: testcases/modulecase/checked_unavailable.yaml
+    variables:
+      origin_type: APP
+      has_driver_licen_no: false
+      has_driving_licen_no: false
+      has_id_card: false
+      has_bank_card: false
+      result_msg: 成功
+
+- test:
+    name: 完成拍摄提交
+    testcase: testcases/modulecase/compeleted_image.yaml
+    variables:
+      origin_type: APP
+      operation_type: 0
+      result_msg: 成功
+
+- test:
+    name: 中台审核结果
+    testcase: testcases/modulecase/save_audit_opinion.yaml
+    variables:
+      work_status: 09
+      result_msg: 成功
+
+- test:
+    name: 提交签名
+    testcase: testcases/modulecase/compeleted_image.yaml
+    variables:
+      origin_type: APP
+      operation_type: 2
+      result_msg: 成功
+
+- test:
+    name: 兼业转录
+    testcase: testcases/modulecase/save_order_info.yaml
+    variables:
+      result_msg: 操作成功
+
+- test:
+    name: 校验调度回传结果
+    testcase: testcases/modulecase/send_back_result.yaml
+    variables:
+      queryurl: claim42/InserClaimStartServlet
+      sleep_second: 1
+    validate:
+      - len_gt: ["content.audioInfoList",0]
+      - ne: ["content.driverLicenceNo",""]
+      - ne: ["content.permitCarType",""]
+
+- test:
+    name: 案件进行终审
+    testcase: testcases/modulecase/review_result.yaml
+    variables:
+      status: "09"
+
+- test:
+    name: 中台审核人下线
+    testcase: testcases/modulecase/change_auditor_status.yaml
+    variables:
+      auditor_status: lsp-offline
+      result_msg: 成功

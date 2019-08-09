@@ -1,0 +1,15 @@
+#h5端查看任务详情
+- test:
+      name: h5端查看任务详情
+      api: api/h5/detail.yaml
+      validate:
+          -   eq: [status_code, 200]
+          -   eq: [content.code, $code]
+          -   eq: [content.message, $message]
+          -   eq: [content.status, $req_status]
+          -   eq: [json.data.order.orderStatus,$orderStatus] #订单状态：01待调度，02-待作业，03-作业中，04-待审核，05-已完成，06-已取消，07-已关单
+          -   eq: [json.data.order.operationStatus,$operationStatus] #任务状态：01-待作业，02-作业中，03-待审核，04-已完成
+          -   eq: [json.data.order.orderNo,$orderNo]
+          -   eq: [json.data.order.operationId,$operationId]
+      extract:
+          -   operationId: json.data.order.operationId

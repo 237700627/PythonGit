@@ -1,0 +1,27 @@
+name: 渠道商列表  # 接口描述
+variables:  # 变量
+  companyName:
+  areaCode:
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+  companyNo:
+  searchType:
+
+request:
+  url: /manage/channel/company/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    companyName: $companyName  # 非必填，长度20字符，渠道商名称，模糊搜索
+    areaCode: $areaCode  # 非必填，区域编码搜索范围
+    pageNum: $pageNum  # 页码，从1开始
+    pageSize: $pageSize  # 每页最大返回条目数
+    order: $order  # 排序规则：【asc|desc】
+    orderField: $orderField  # 排序字段
+    companyNo: $companyNo #非必填，公司编号，模糊搜索
+    searchType: $searchType #1-渠道商名称 2-渠道商编号

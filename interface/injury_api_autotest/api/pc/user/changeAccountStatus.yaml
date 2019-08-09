@@ -1,0 +1,17 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/changeAccountStatus   修改账户状态
+    # api_path: api/injury/user/changeAccountStatus.yaml
+    aip_path: api/injury/user/changeAccountStatus.yaml
+    uri: /injury/user/changeAccountStatus
+    userId: 77
+    enable: 1
+
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: GET
+    url: $uri
+    json:
+        userId: $userId
+        enable: $enable

@@ -1,0 +1,12 @@
+- config:
+    name: 单接口测试 test_get.yaml 任务日志查询接口
+    request:
+         token: $token
+    base_url: ${base_url}
+- test:
+    name: 入参正确
+         variables:
+         orderId: ${queryOrderId()}
+    api: api/injury/tasklog/get.yaml
+    validate:
+         - eq: [status_code, 200]

@@ -1,0 +1,118 @@
+- config:
+      name: C端新建订单--h5作业提交订单--C端审核不通过--h5重新作业--h5重新提交--pc重新审核通过case
+      variables:
+          censusRegisterType_injured: '02'
+          idType: '02'
+          idNo: '123456789'
+          sex: '0'
+          treatment: '01'
+          treatWays: '01'
+          referralWays: '01'
+          mentalStatus: '01'
+          isIllegal: '01'
+          injuryType: '01'
+          travelModel: '01'
+          position: '01'
+          hasCaregivers: '0'
+          caregiversIdentity: ''
+          orderNum_caregivers: ''
+          hasWork: '1'
+          wageType: '01'
+          orderNum_work: '0'
+          hasFamily: '1'
+          dependType: '01'
+          typeDesc: '18岁以下子女'
+          age: '17'
+          orderNum_depend: '0'
+
+#pc新建订单 -- h5开始作业 -- h5提交任务 -- pc审核不通过 -- pc关单重派
+- test:
+    name: pc新建订单，h5登录查看订单
+    testcase: testcases/modulecase/module_addOrder_h5Login.yaml
+    output:
+        - h5_token
+        - pc_suptoken
+        - pc_token
+        - orderNo
+        - orderId
+        - operationId
+
+- test:
+    name: h5开始作业
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_beginTask_detail.yaml
+
+- test:
+    name: h5提交任务
+    variables:
+        code: 200
+        message_autoSave: '处理成功'
+        message_save: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_subimtTask_detail.yaml
+
+# 此处添加一个初审的接口
+- test:
+    name: pc初审核通过
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+        token: $pc_suptoken
+        userName: 'supadmin001'  #录单人用户名
+        userPwd: 'Y2lhczEyMzQ1Ng=='
+    testcase: testcases/modulecase/module_checkTaskInfo_pass.yaml
+
+- test:
+    name: pc审核不通过
+    variables:
+        code: 200
+        message: '处理成功'
+        req_status: 'success'
+    testcase: testcases/modulecase/module_auditTask_fail_detail.yaml
+
+- test:
+    name: 审核不通过查看订单的状态
+    variables:
+        code: 200
+        message: '成功'
+        req_status: 'success'
+        orderStatus: '02'  #审核不通过重新待作业
+        operationStatus: '01'   #待作业
+    testcase: testcases/modulecase/module_pc_detail.yaml
+
+- test:
+    name: pc重新派单
+    variables:
+        code: 503
+        message: '订单状态错误'
+        req_status: 'error'
+    testcase: testcases/modulecase/module_resend.yaml
+
+- test:
+    name: 查看订单状态仍为待作业
+    variables:
+        code: 200
+        message: '成功'
+        req_status: 'success'
+        orderStatus: '02'  #待作业
+        operationStatus: '01'  #待作业
+    testcase: testcases/modulecase/module_pc_detail.yaml
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.message, '成功']  #不规范？？
+#        - eq: [content.status, 'success']
+#        - eq: [json.data.order.orderStatus,'02'] #订单状态：01待调度，02-待作业，03-作业中，04-待审核，05-已完成，06-已取消，07-已关单
+#        - eq: [json.data.order.operationStatus,'01'] #任务状态：01-待作业，02-作业中，03-待审核，04-已完成
+#        - eq: [json.data.order.orderNo,$orderNo]  #订单号
+#        - eq: [json.data.order.operationId,$operationId]  #任务ID
+#        - eq: [json.data.injured.visitorInfo.visitorPhone,$visitorPhone] #探视员电话
+#        - eq: [json.data.injured.visitorInfo.visitorSignature,$visitorSignature]  #探视员姓名
+#        - eq: [json.data.order.orderNo,$orderNo]  #订单号
+#        - eq: [json.data.order.carNo,$carNo] #车牌号
+#        - eq: [json.data.order.caseNo,$caseNo] #报案号
+#        - eq: [json.data.order.ownerPhone,$ownerPhone] #车主电话
+#        - eq: [json.data.order.injuredPhone,$injuredPhone] #pc维护的伤者电话

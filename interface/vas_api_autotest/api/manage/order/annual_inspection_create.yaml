@@ -1,0 +1,55 @@
+name: 年检订单创建
+varialbes:
+  orderUserId:
+  rightDetailId:
+  carNo:
+  vinNo:
+  engineNo:
+  plateType:
+  operationType:
+  registerDate:
+  seatType:
+  contactName:
+  contactPhone:
+  contactAddress:
+  longitude:
+  latitude:
+  province:
+  city:
+  area:
+  serviceDate:
+  serviceTime:
+  providerCompanyId:
+  providerWorkerId:
+  channelCompanyId:
+  productId:
+
+request:
+  url: $uri/manage/order/annual/inspection/create
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderUserId: $orderUserId
+    rightDetailId: $rightDetailId  # 权益券id，用于记录本次订单扣减具体权益
+    carNo: $carNo  # 车牌号
+    vinNo: $vinNo  # 车架号
+    engineNo: $engineNo  # 发动机号
+    plateType: $plateType  # 号牌类型 01小型蓝牌车、02大型黄牌车、03小型新能源车、04大型新能源车
+    operationType: $operationType  # 营运性质 00非营运、01营运
+    registerDate: $registerDate  # 注册日期 yyyy-MM-dd
+    seatType: $seatType  # 车座数 00-7座以下，01-7座及以上
+    contactName: $contactName  # 联系人
+    contactPhone: $contactPhone  # 联系电话
+    contactAddress: $contactAddress  # 服务地址
+    longitude: $longitude  # 经度
+    latitude: $latitude  # 纬度
+    province: $province  # 省
+    city: $city  # 市
+    area: $area  # 区
+    serviceDate: $serviceDate  # 上门服务日期
+    serviceTime: $serviceTime  # 上门服务时间
+    providerCompanyId: $providerCompanyId  # 非必填，服务商id
+    providerWorkerId: $providerWorkerId  # 非必填，服务人员id
+    channelCompanyId: $channelCompanyId  # 非必填，渠道商id
+    productId: $productId  # 服务商不为空时为必填，产品id

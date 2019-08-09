@@ -1,0 +1,41 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/order/add  新增任务
+    api_path: api/pc/add.yaml
+    uri: /injury/order/add
+    ownerName: 邱彩霞
+    provinceCode: 440000
+    cityCode: 440300
+    countryCode: 440307
+    hospital: 深圳市龙岗区第二人民医院
+    department: 精神科
+    injuredName: '刘宁香'
+    injuredPhone: '17896569965,15656666853,15978628522'
+    visitRequest: '请拍照清楚，信息准确，快速完成作业！'
+    taskType: 1
+
+    #caseNo: 'v123456789'
+    caseNo: ${random_Num(9)}
+    ownerPhone: '13123456789'
+    carNo: '黑B716365'
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $pc_token
+    method: POST
+    url: $uri
+    json:
+        caseNo: $caseNo
+        ownerName: $ownerName
+        ownerPhone: $ownerPhone
+        carNo: $carNo
+        provinceCode: $provinceCode
+        cityCode: $cityCode
+        countryCode: $countryCode
+        hospital: $hospital
+        department: $department
+        injuredName: $injuredName
+        injuredPhone: $injuredPhone
+        visitRequest: $visitRequest
+        taskType: $taskType
+        contact: $contact
+        contactPhone: $contactPhone

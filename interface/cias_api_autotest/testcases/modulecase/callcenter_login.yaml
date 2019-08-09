@@ -1,0 +1,16 @@
+# 调度系统登录获取cookie
+- test:
+    name: 获取验证码cookie
+    api: api/callcenter/ImageServlet.yaml
+    extract:
+      cookies: headers.Set-Cookie
+
+- test:
+    name: 调度系统登录
+    api: api/callcenter/user_login.yaml
+    variables:
+      Cookie: $cookies
+      verifyCode: ${get_verifyCode($cookies)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", "成功"]

@@ -1,0 +1,21 @@
+#h5自动保存数据
+- test:
+    name: h5自动保存数据
+    api: api/h5/autoSave.yaml
+    validate:
+         - eq: [status_code, 200]
+         - eq: [content.code, $code]
+         - eq: [content.message, $message_autoSave]
+         - eq: [content.status, $req_status]
+
+
+#h5提交任务
+- test:
+    name: 8-h5提交任务
+    api: api/h5/save.yaml
+    validate:
+         - eq: [status_code, 200]
+         - eq: [content.code, $code]
+         - eq: [content.message, $message_save]
+         - eq: [content.status, $req_status]
+

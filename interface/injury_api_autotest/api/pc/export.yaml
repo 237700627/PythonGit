@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/order/export 导出功能
+    api_path: api/injury/order/export.yaml
+    uri: /injury/order/export?orderId=$orderId&token=$token
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    method: GET
+    url: $uri
+

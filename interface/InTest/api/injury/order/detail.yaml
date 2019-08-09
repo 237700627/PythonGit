@@ -1,0 +1,11 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/order/detail  web获取订单详情
+    api_path: api/injury/order/detail.yaml
+    uri: /injury/order/detail?orderId=$orderId
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri
+

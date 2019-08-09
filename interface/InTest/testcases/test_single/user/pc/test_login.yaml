@@ -1,0 +1,71 @@
+- config:
+    name: 单接口测试 test_login.yaml Web端登录接口
+    base_url: ${base_url()}
+
+#   入参检查
+
+
+# 入参正确  此处需要调用数据库查询有待优化
+- test:
+    name: 入参正确
+    variables:
+        loginName: 'test'
+        loginPass: 'YWJjMzQ1'
+        verifyCode: '1234'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# 入参为空
+# 用户名空
+- test:
+    name: 入参loginName为空
+    variables:
+        loginName: ''
+        loginPass: 'YWJjMzQ1'
+        verifyCode: '1234'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+# 密码空
+- test:
+    name: 入参loginPass为空
+    variables:
+        loginName: 'test'
+        loginPass: ''
+        verifyCode: '1234'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+
+
+#####   测试环境验证码不做校验   #####
+
+
+# 入参不正确
+- test:
+    name: pc_login
+    variables:
+        loginName: 'test'
+        loginPass: 'YWJjMzQ1'
+        verifyCode: '1234'
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]
+
+# 出参检查
+
+
+
+#code 0000
+
+# code B001
+
+# code B005
+
+# message 描述
+
+# status
+
+# data检查
+
+

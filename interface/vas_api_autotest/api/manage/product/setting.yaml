@@ -1,0 +1,18 @@
+name: 标准产品设置
+variables:
+  id: 34
+  autoDispatch: True
+  enable: True
+  appType: '1'
+
+request:
+  url: manage/product/setting
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: ${get_cookie_str($token)}
+    appType: $appType
+  json:
+    id: $id  # 必填，长整型，产品ID
+    autoDispatch: $autoDispatch  # 非必填，若为空，则不设置该值（暂无此字段）
+    enable: $enable  # 非必填，若为空，则不设置该值：保持原值不变

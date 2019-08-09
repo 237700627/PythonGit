@@ -1,0 +1,17 @@
+- test:
+    name: 是否提供证件照，默认不提供
+    api: api/web_order/app/checkedUnavailable.yaml
+    variables:
+      token: $app_token
+      userId: ${get_user_id($app_login)}
+      originType: $origin_type
+      orderNo: ${get_order_no($report_no)}
+      hasDriverLicenNo: $has_driver_licen_no
+      hasDrivingLicenNo: $has_driving_licen_no
+      hasIdCard: $has_id_card
+      hasBankCard: $has_bank_card
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", $result_msg]
+#    setup_hooks:
+#      - ${get_message($request)}

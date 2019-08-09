@@ -1,0 +1,13 @@
+name: 渠道商模糊搜索(用户中心搜索)  # 接口描述
+variables:  # 变量
+  keyword:
+request:
+  url: /manage/channel/company/search
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    keyword: $keyword  # 必填，关键字
+

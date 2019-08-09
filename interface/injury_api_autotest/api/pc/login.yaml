@@ -1,0 +1,20 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/user/pc/login   pc端，保险公司员工登录
+    api_path: api/injury/user/pc/login.yaml
+    uri: /injury/user/pc/login?loginName=$loginName&loginPass=$loginPass&verifyCode=$verifyCode
+#    userName: 'AutoTest'
+#    userPwd: 'Y2lhczEyMzQ1Ng=='
+    verifyCode: 'tude'
+    loginName: $userName
+    loginPass: $userPwd
+#    verifyCode: $verifyCode
+#    loginName: 'AutoTest'
+#    loginPass: 'Y2lhczEyMzQ1Ng=='
+#    verifyCode: 'tude'
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        verifyCode: $verifyCode
+    method: POST
+    url: $uri
+

@@ -1,0 +1,11 @@
+name: 订单状态查询  # 接口描述
+variables:  # 变量
+  orderNo:
+
+request:
+  url: $uri/wxapp/order/status
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    orderNo: $orderNo  # 订单编号

@@ -1,0 +1,11 @@
+name: 订单办结
+varialbes:
+  orderNo:
+
+request:
+  url: $uri/manage/order/conclude
+  method: POST
+  hearders:
+    Content-Type: application/json
+  json:
+    orderNo: $orderNo  # 订单编号

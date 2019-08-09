@@ -1,0 +1,27 @@
+name: 权益列表  # 示例接口描述
+variables:  # 变量
+  pageNum:
+  pageSize:
+  rightName:
+  rightId:
+  channelCompanyIds:
+  productIds:
+  cycleTypes:
+  rightTypes:
+
+request:
+  url: manage/right/list
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    pageNum: $pageNum
+    pageSize: $pageSize
+    rightName: $rightName   #非必填，权益名称
+    rightId: $rightId   #非必填，权益id
+    channelCompanyIds: $channelCompanyIds   #非必填，渠道商id列表
+    productIds: $productIds   #非必填，产品id列表
+    cycleTypes: $cycleTypes   #非必填，使用限制列表
+    rightTypes: $rightTypes   #非必填，优惠方式列表

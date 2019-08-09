@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/order/h5/detail  H5获取任务详情
+    api_path: api/injury/order/h5/detail.yaml
+    uri: /injury/order/h5/detail?orderId=$orderId
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri

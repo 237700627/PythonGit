@@ -1,0 +1,376 @@
+- config:
+    name: 获取登录cookie
+    base_url: ${get_config(web_url)}
+    variables:
+      sps_login_name: ${get_config(sps_login_name)}
+      sps_login_pwd: ${get_config(sps_login_pwd)}
+      cookie: ${get_cookie($sps_login_name, $sps_login_pwd)}
+
+- test:
+    name: 获取登录密钥：signKey
+    testcase: testcases/module_case/oss_pc_login.yaml
+    output:
+      - signKey
+
+- test:
+    name: 服务商基础信息设置
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeTel校验，不输入
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeTel: ""
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeTel校验，输入：测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeTel: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeTel校验，输入8位：0755-8测试ab@88
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeTel: 0755-8测试ab@88
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeTel校验，输入9位：0755-888888889
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeTel: 0755-888888889
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "办公电话不能超过13字"]
+
+- test:
+    name: officeAddr校验，不输入
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeAddr: ""
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeAddr校验，输入：测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeAddr: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeAddr校验，输入40位：0-8ab@88PP!@#$%^&*()_+=-[]P{}|\';/?><,.测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeAddr: 0-8ab@88PP!@#$%^&*()_+=-[]P{}|\';/?><,.测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: officeAddr校验，输入41位：12345678901234567890123456789012345678901
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      officeAddr: 12345678901234567890123456789012345678901
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "办公地址不能超过40字"]
+
+- test:
+    name: contactName校验，不输入
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactName: ""
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人不能为空"]
+
+- test:
+    name: contactName校验，输入：测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactName: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: contactName校验，输入8位：自动化~`1@3
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactName: 自动化~`1@3
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: contactName校验，输入9位：自动化测试1234
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactName: 自动化测试1234
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人不能超过8字"]
+
+- test:
+    name: contactTel 校验，不输入
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: ""
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话不能为空"]
+
+- test:
+    name: contactTel 校验，输入：测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话格式不正确"]
+
+- test:
+    name: contactTel 校验，输入11位：13345678901
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: 13345678901
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: contactTel 校验，输入11位非1开头：23345678901
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: 23345678901
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话格式不正确"]
+
+- test:
+    name: contactTel 校验，输入11位12开头：12345678901
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: 12345678901
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话格式不正确"]
+
+- test:
+    name: contactTel 校验，输入11位11开头：11345678901
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: 11345678901
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话格式不正确"]
+
+- test:
+    name: contactTel 校验，输入12位：123456789012
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      contactTel: 123456789012
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "负责人电话不能超过11字"]
+
+- test:
+    name: bank校验，不输入
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      bank: ""
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: bank校验，输入：测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      bank: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: bank 校验，输入20位：0-a@!^*(_[{|\';/?<.测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      bank: 0-a@!^*(_[{|\';/?<.测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: bank 校验，输入21位：0-a@!^*(_[{|\';/?<.测1
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      bank: 0-a@!^*(_[{|\';/?<.测1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "银行不能超过20字"]
+
+- test:
+    name: account校验，不输入
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      account: ""
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: account校验，输入：测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      account: 测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: account 校验，输入20位：0-a@!^*(_[{|\';/?<.测
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      account: 0-a@!^*(_[{|\';/?<.测
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: account 校验，输入21位：0-a@!^*(_[{|\';/?<.测1
+    api: api/provider/setting/info_setting.yaml
+    variables:
+      cookie: $cookie
+      account: 0-a@!^*(_[{|\';/?<.测1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "银行账号不能超过20字"]

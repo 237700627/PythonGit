@@ -1,0 +1,113 @@
+- config:
+    name: 中台下单，兼业人员接单，兼业人员作业，中台审核通过，回传保险公司
+    base_url: ${get_config(base_url)}
+    variables:
+      report_no: ${get_report_no()}
+      app_login: ${get_config(parttimeworker)}
+      app_pwd: ${get_config(parttimeworkerpwd)}
+      pc_login: ${get_config(auditororder)}
+      login_pass: ${get_config(parttimeauditorpwd)}
+      base_url_out: ${get_config(base_url_out)}
+      base_url_mock: ${get_config(base_url_mock)}
+
+- test:
+    name: 获取PC登录token
+    testcase: testcases/modulecase/pc_login.yaml
+    variables:
+      result_msg: 成功
+    output:
+      - pc_session_token
+
+- test:
+    name: PC在线
+    testcase: testcases/modulecase/change_auditor_status.yaml
+    variables:
+      auditor_status: lsp-online
+      result_msg: 成功
+
+- test:
+    name: 中台手工派单
+    testcase: testcases/modulecase/manual_case.yaml
+    variables:
+      originType: PC
+      insureName: 中国太平洋财产保险股份有限深圳分公司
+      accidentLinkMan: 车先生
+      accidentLinkTel: 13666666666
+      accidentAddress: 深圳市福田区深业上城
+      accidentLongitude: 114.076562
+      accidentLatitude: 22.562197
+      headInsureName: 中国太平洋财产保险股份有限公司
+      reportType: 2
+
+- test:
+    name: APP在线
+    testcase: testcases/modulecase/app_login.yaml
+    variables:
+
+      result_code: "0000"
+      auth_status: "2"
+    output:
+      - app_token
+      - APP_userId
+
+- test:
+    name: 上传或替换图片
+    testcase: testcases/modulecase/save_or_update_photo.yaml
+    variables:
+      origin_type: APP
+      operation_type: 0
+      img_id: 0
+      img_name: 1557125334866211.jpg
+      tag_id: "0101"
+      img_url: 3aef4dc53c6d400eb93b59dbea698af2
+      seq: 1
+      thumb_url: 3aef4dc53c6d400eb93b59dbea698af2
+      result_msg: 成功
+
+- test:
+    name: 提交事故现场确认单
+    testcase: testcases/modulecase/save_acceptance.yaml
+    variables:
+      sleep_second: 1
+      confirm: 1
+
+- test:
+    name: 是否提供证件照，默认不提供
+    testcase: testcases/modulecase/checked_unavailable.yaml
+    variables:
+      origin_type: APP
+      has_driver_licen_no: false
+      has_driving_licen_no: false
+      has_id_card: false
+      has_bank_card: false
+      result_msg: 成功
+
+- test:
+    name: 完成拍摄提交
+    testcase: testcases/modulecase/compeleted_image.yaml
+    variables:
+      origin_type: APP
+      operation_type: 0
+      result_msg: 成功
+
+- test:
+    name: 中台审核结果
+    testcase: testcases/modulecase/save_audit_opinion.yaml
+    variables:
+      work_status: 09
+      result_msg: 成功
+
+- test:
+    name: 提交签名
+    testcase: testcases/modulecase/compeleted_image.yaml
+    variables:
+      origin_type: APP
+      operation_type: 2
+      result_msg: 成功
+
+- test:
+    name: 中台审核人下线
+    testcase: testcases/modulecase/change_auditor_status.yaml
+    variables:
+      auditor_status: lsp-offline
+      result_msg: 成功

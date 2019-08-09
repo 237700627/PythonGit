@@ -1,0 +1,541 @@
+- config:
+      name: 单接口测试  test_add.yaml 新增订单
+      variables:
+          L1: ['1','3']
+          L2: ['粤','B']
+          token: qbUQan86UdO2Vxb+k3Mds/Ew4YJ5+CaF//6yxoFYzk6kD8UDyKs0KkuNAeo5e3NBf2W2bMnILcGmIjh26wWq1Q==
+      request:
+          token: $token
+      base_url: ${base_url()}
+
+# 测试入参必填项
+
+# 入参正确，添加订单成功
+- test:
+      name: test_add  入参正确
+      variables:
+          ownerName: 'Tomy'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+
+
+# ownerName为空
+- test:
+      name: test_add  入参ownerName为空
+      variables:
+          ownerName: ''
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+
+# ownerPhone 为空
+- test:
+      name: test_add  入参ownerPhone 为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ''
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  carNo为空
+- test:
+      name: test_add  入参carNo为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ''
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  provinceCode为空
+- test:
+      name: test_add  入参provinceCode为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: ''
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  cityCode为空
+- test:
+      name: test_add  入参cityCode为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: ''
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  countryCode为空
+- test:
+      name: test_add  入参countryCode为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: ''
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  hospital为空
+- test:
+      name: test_add  入参hospital为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: ''
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  department 为空
+- test:
+      name: test_add  入参department 为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: ''
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  injuredName为空
+- test:
+      name: test_add  入参injuredName为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: ''
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  injuredPhone为空
+- test:
+      name: test_add  入参injuredPhone为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ''
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  visitRequest为空
+- test:
+      name: test_add  入参visitRequest为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: ''
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+#  taskType 为空
+- test:
+      name: test_add  入参taskType 为空
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: ${random_Num(9, $L1)}
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType:
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 400]
+
+# 测试入参 边界值    检查了表结构设计，字段设定的长度普遍偏大，比如姓名上限为30个字，手术名称等为50个字，地址等为100个字，因此此项测试可设定为低优先级来进行，时间关系暂时跳过；
+#  测试入参 字符串类型   一般服务端不做输入类型校验：比如#、* 等，这种由web表单验证时来做校验 只做数据类型校验，因此下面对Num型字符串做校验；
+# ownerName 为int型
+- test:
+      name: test_add  入参ownerName 为int型
+      variables:
+          ownerName: 123
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# ownerPhone 为int型
+- test:
+      name: test_add  入参ownerPhone 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: 13655555555
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# carNo 为int型
+- test:
+      name: test_add  入参carNo 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: 253656
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# caseNo 为int型
+- test:
+      name: test_add  入参caseNo 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: 12345567
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# provinceCode 为int型
+- test:
+      name: test_add  入参provinceCode 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: 43
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# cityCode 为int型
+- test:
+      name: test_add  入参cityCode 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: 04
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# countryCode 为int型
+- test:
+      name: test_add  入参countryCode 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: 07
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# hospital 为int型
+- test:
+      name: test_add  入参hospital 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: 123456
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# department 为int型
+- test:
+      name: test_add  入参department 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: 123456
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# injuredName 为int型
+- test:
+      name: test_add  入参injuredName 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: 123456
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# injuredPhone 为int型
+- test:
+      name: test_add  入参injuredPhone 为int型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: 13625124512
+          visitRequest: '南山医院去看看'
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+# visitRequest 为String型
+- test:
+      name: test_add  入参visitRequest 为String型
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: 123456
+          taskType: '12'
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]
+
+# 其他情况下出参检查
+
+# 出参为
+- test:
+      name: 其他情况下出参检查？？？
+      variables:
+          ownerName: 'Tom'
+          ownerPhone: $ownerPhone
+          carNo: ${random_Num(6, $L2)}
+          caseNo: ${random_Num(9)}
+          provinceCode: '43'
+          cityCode: '04'
+          countryCode: '07'
+          hospital: '南山医院'
+          department: '精神病科'
+          injuredName: '器测试'
+          injuredPhone: ${random_Num(9, $L1)}
+          visitRequest: 123456
+          taskType: 1
+      api: api/injury/order/add.yaml
+      validate:
+          - eq: [status_code, 200]

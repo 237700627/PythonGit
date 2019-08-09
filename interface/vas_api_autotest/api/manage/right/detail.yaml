@@ -1,0 +1,14 @@
+name: 权益详情  # 示例接口描述
+variables:  # 变量
+  id:
+
+request:
+  url: /manage/right/detail
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    id: $id  # 必填，权益ID
+

@@ -1,0 +1,11 @@
+name: 文件上传  # 接口描述
+variables:  # 变量
+  file:
+
+request:
+  url: $uri/common/file/upload
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    file: $file  # 文件表单，注意限定文件类型

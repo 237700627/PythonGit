@@ -1,0 +1,16 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/task/auditTask   审核接口，审核通过不通过
+    api_path: api/injury/task/auditTask.yaml
+    uri: /injury/task/auditTask
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: POST
+    url: $uri
+    json:
+        id: $id
+        orderId: $orderId
+        status: $status
+        orderStatus: $orderStatus
+        comment: $comment

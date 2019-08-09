@@ -1,0 +1,11 @@
+- test:
+    name: 变更审核人在线状态：在线
+    api: api/web_order/pc/changeAuditorStatus.yaml
+    variables:
+      mobile: $pc_login
+      auditor_status: $auditor_status
+      token: $pc_session_token
+      user_id: ${get_user_id($mobile)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg", $result_msg]

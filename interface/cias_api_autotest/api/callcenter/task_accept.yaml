@@ -1,0 +1,15 @@
+# 调度系统坐席认领任务
+variables: #变量
+  report_no:
+  taskid: ${get_task_id($report_no)}
+  Cookie:
+
+request:
+  url: http://testchakan.cias.cn/zbcf-web-callcenter/task/accept.jhtml
+  method: POST
+  headers:
+    Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    Cookie: $Cookie
+
+  data:
+    taskId: $taskid

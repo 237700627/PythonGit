@@ -1,0 +1,20 @@
+#中台审核结果
+variables: #变量
+      workId:
+      orderNo:
+      workStatus: 09 # 订单审核状态：02-关单注销，03-关单转派， 06-审核退回， 09-审核通过，11-关单转自助
+      token:
+      userId:
+request:
+  url: /zbcf-web-order/order/parttime/saveAuditOpinion.jhtml
+  method: POST
+  headers:
+    Content-Type: application/json
+    originType: PC
+    token: $token
+    userId: $userId
+  json:
+    workId: $workId
+    orderNo: $orderNo
+    workStatus: $workStatus
+    auditOpinion: ""

@@ -1,0 +1,19 @@
+name: 服务商产品新增/更新  # 接口描述
+variables:  # 变量
+  id:
+  providerCompanyId:
+  productId:
+  purchasePrice:
+
+request:
+  url: manage/provider/company/product/save
+  method: POST
+  headers:
+    Content-Type: application/json
+    cookie: ${get_cookie_str($token)}
+    appType: "1"  # "1" 为PC登陆  "0"为APP登陆
+  json:
+    id: $id  # 非必填，关联ID
+    providerCompanyId: $providerCompanyId  # 必填，服务商ID
+    productId: $productId  # 必填，产品ID
+    purchasePrice: $purchasePrice  # 必填，采购价

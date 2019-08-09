@@ -1,0 +1,25 @@
+name: 服务人员新增/更新  # 接口描述
+variables:  # 变量
+  id:
+  name:
+  mobile:
+  password:
+  areaCode:
+  productId:
+  carNo:
+  address:
+
+request:
+  url: $uri/provider/worker/save
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    id: $id  # 非必填，长整型，若有值，则更新，否则新增
+    name: $name  # 必填，长度20字符，服务人员姓名
+    mobile: $mobile  # 必填，长度11字符，服务人员手机号
+    password: $password  # 新增必填，长度20字符，服务人员登录密码，md5值
+    areaCode: $areaCode  # 必填，服务区域列表
+    productId: $productId  # 必填，产品ID列表
+    carNo: $carNo  # 非必填，长度10字符，车牌号
+    address: $address  # 非必填，长度200字符，地址

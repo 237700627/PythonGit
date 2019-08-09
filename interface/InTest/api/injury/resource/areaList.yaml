@@ -1,0 +1,10 @@
+variables:
+    api_name: http://testchakan.cias.cn/injury/resource/areaList  行政区列表（建议使用省、市、区列表接口）
+    api_path: api/injury/resource/areaList.yaml
+    uri: /injury/resource/areaList?parentCode=$parentCode
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: $token
+    method: GET
+    url: $uri

@@ -1,0 +1,18 @@
+name: 我的订单列表  # 接口描述
+variables:  # 变量
+  pageNum:
+  pageSize:
+  order:
+  orderField:
+
+request:
+  url: $uri/wxapp/order/list
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    pageNum: $pageNum  # 页码，从1开始
+    pageSize: $pageSize  # 每页最大返回条目数
+    order: $order  # 排序规则：【asc|desc】
+    orderField: $orderField  # 排序字段
+

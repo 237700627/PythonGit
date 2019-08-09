@@ -1,0 +1,124 @@
+- config:
+    name: 标准产品设置，全局变量：base_url,userName,password
+    base_url: ${get_config(web_url)}
+    variables:
+      userName: ${get_config(cms_login_name)}
+      password: ${get_config(cms_login_pwd)}
+
+- test:
+    name: 获取登录token/密钥：token/signKey
+    testcase: testcases/module_case/pc_user_login.yaml
+    output:
+      - token
+      - signKey
+
+- test:
+    name: 标准产品设置：是否自动派单/是否启用
+    api: api/manage/product/setting.yaml
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_vas_test.t_product, id, $id, auto_dispatch)}", '1']
+      - eq: ["${get_column_value(zbcf_vas_test.t_product, id, $id, enable)}", '1']
+
+- test:
+    name: id校验：id输入不存在的
+    api: api/manage/product/setting.yaml
+    variables:
+      id: 1
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "该产品ID不存在"]
+
+- test:
+    name: id校验：id输入为空
+    api: api/manage/product/setting.yaml
+    variables:
+      id:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "id不能为空"]
+
+- test:
+    name: autoDispatch校验：autoDispatch输入False
+    api: api/manage/product/setting.yaml
+    variables:
+      autoDispatch: False
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_vas_test.t_product, id, $id, auto_dispatch)}", '0']
+
+- test:
+    name: autoDispatch校验：autoDispatch输入为空
+    api: api/manage/product/setting.yaml
+    variables:
+      autoDispatch:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: autoDispatch校验：autoDispatch输入xxxxx
+    api: api/manage/product/setting.yaml
+    variables:
+      autoDispatch: xxxxx
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]
+
+- test:
+    name: enable校验：enable输入False
+    api: api/manage/product/setting.yaml
+    variables:
+      enable: False
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+      - eq: ["${get_column_value(zbcf_vas_test.t_product, id, $id, enable)}", '0']
+
+- test:
+    name: enable校验：enable输入为空
+    api: api/manage/product/setting.yaml
+    variables:
+      id: 30
+      enable:
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", 0]
+      - eq: ["content.message", "请求成功"]
+
+- test:
+    name: enable校验：enable输入xxxxx
+    api: api/manage/product/setting.yaml
+    variables:
+      enable: xxxxx
+    setup_hooks:
+      - ${sign_api($signKey, $request)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.code", -1]
+      - eq: ["content.message", "服务器异常"]

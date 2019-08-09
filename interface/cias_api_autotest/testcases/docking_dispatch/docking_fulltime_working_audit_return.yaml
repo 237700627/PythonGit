@@ -1,0 +1,164 @@
+- config:
+    name: 对接派单：对接调度，专业人员接单，专业人员作业，品管审核退回，重新提交作业，审核通过，回传保险公司，保险公司终审
+    base_url: ${get_config(base_url)}
+    variables:
+      report_no: ${get_report_no()}
+      app_login: ${get_config(fulltimeworker)}
+      app_pwd: ${get_config(fulltimeworkerpwd)}
+      base_url_out: ${get_config(base_url_out)}
+      base_url_mock: ${get_config(base_url_mock)}
+      auditorPhone: '16600000011'
+      pc_login: ${get_config(fulltimeauditor)}
+      company_id: ${get_config(compayId)}
+      subordinate_code: ${get_config(subordinateCode)}
+      login_pass: ${get_config(fulltimeauditorpwd)}
+
+
+
+- test:
+    name: 对接保险公司派案
+    testcase: testcases/modulecase/take_case.yaml
+    variables:
+      task_type: 002
+      scene_type: 1
+      report_type: 1
+      work_address: 广东省深圳市福田区购物公园
+      longitude: 114.076562
+      latitude: 22.562197
+      loss_type: 001
+      status: success
+
+- test:
+    name: 登录调度系统获取token
+    testcase: testcases/modulecase/callcenter_login.yaml
+    output:
+      - cookies
+
+- test:
+    name: 调度坐席人工线下派单到公估
+    testcase: testcases/modulecase/callcenter_sendofflinetask.yaml
+
+- test:
+    name: 校验调度回传结果
+    api: api/case_center/querymockdata.yaml
+    variables:
+      queryurl: call42/zbcf/schedulingBackWrite
+      uri: $base_url_mock
+    teardown_hooks:
+    - ${handle_mockdata($response)}
+
+    validate:
+      - eq: ["content.status", 1]
+      - eq: ["content.surveyorPhone", $app_login]
+      - ne: ["content.surveyorName", '']
+
+
+- test:
+    name: APP在线
+    testcase: testcases/modulecase/app_login.yaml
+    variables:
+      result_code: "0000"
+      auth_status: "2"
+    output:
+      - app_token
+      - APP_userId
+
+- test:
+    name: 查询订单列表
+    api: api/web_order/app/queryMyOrder.yaml
+    variables:
+      token: $app_token
+      userId: ${toString($APP_userId)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg","成功"]
+      - len_gt: ["content.resultObject",0]
+      - contains: ["content.resultObject",$report_no]
+
+- test:
+    name: 公估作业提交
+    testcase: testcases/modulecase/app_save_order_info.yaml
+    variables:
+      result_msg: "操作成功"
+
+- test:
+    name: 公估上传影像
+    api: api/web_order/app/workphoto_insert.yaml
+    variables:
+      caseNo: $report_no
+      token: $app_token
+      userId: ${toString($APP_userId)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultMsg","成功"]
+
+- test:
+    name: PC 作业登录获取token
+    testcase: testcases/modulecase/pc_login.yaml
+    variables:
+      login_str: $pc_login
+      login_pass: Yy123456
+      result_msg: 成功
+    output:
+      - pc_session_token
+- test:
+    name: 品管审核退回
+    api: api/web_order/pc/auditOrderNew.yaml
+    variables:
+       caseNo: $report_no
+       token: $pc_session_token
+       userId: ${get_user_id($pc_login)}
+       checkResult: "-1"
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.resultMsg","成功"]
+
+- test:
+    name: 公估再次作业提交
+    testcase: testcases/modulecase/app_save_order_info.yaml
+    variables:
+      result_msg: "操作成功"
+
+- test:
+    name: 品管审核退回
+    api: api/web_order/pc/auditOrderNew.yaml
+    variables:
+       caseNo: $report_no
+       token: $pc_session_token
+       userId: ${get_user_id($pc_login)}
+    validate:
+     - eq: ["status_code", 200]
+     - eq: ["content.resultMsg","成功"]
+
+- test:
+    name: 校验查勘回传结果
+    api: api/case_center/querymockdata.yaml
+    variables:
+      queryurl: claim42/InserClaimStartServlet
+      uri: $base_url_mock
+    setup_hooks:
+      - ${sleep_time(3)}
+    teardown_hooks:
+    - ${handle_mockdata($response)}
+    validate:
+      - len_gt: ["content.audioInfoList",0]
+      - ne: ["content.driverLicenceNo",""]
+      - ne: ["content.permitCarType",""]
+
+- test:
+    name: 案件进行终审
+    testcase: testcases/modulecase/review_result.yaml
+    variables:
+      company_id: UTIC
+      status: "09"
+      uri: $base_url_out
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,137 @@
+- config:
+      name: C端新建订单，h5作业提交订单，C端审核通过case
+      base_url: ${base_url()}
+
+# pc正常登录
+- test:
+    name: 1-pc端账号登录
+    api: api/pc/login.yaml
+    variables:
+        userName: 'AutoTest'  #录单人用户名
+        userPwd: 'iUEOhjEaiewdakp8o/LbgA=='
+#        userName: 'liyinyin'  #录单人用户名
+#        userPwd: 'iUEOhjEaiewdakp8o/LbgA=='
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+    extract:
+        -   pc_token: json.data.token
+
+# pc正常登录
+- test:
+    name: 2-pc超级管理员账号登录
+    api: api/pc/login.yaml
+    variables:
+        userName: 'supadmin001'  #录单人用户名
+        userPwd: 'iUEOhjEaiewdakp8o/LbgA=='
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+    extract:
+        -   pc_suptoken: json.data.token
+
+- test:
+    name: 3-pc登录账号的个人中心信息
+    api: api/user/getUserInfo.yaml
+# 开发环境临时注释一下
+#    validate:
+#        - eq: [status_code, 200]
+#        - eq: [content.code, 200]
+#        - eq: [content.message, '处理成功']
+#        - eq: [content.status, 'success']
+#        - eq: [content.data.companyName,$companyName] #录单人所在保险公司
+#        - eq: [content.data.email,$email]  #录单人邮箱
+#        - eq: [content.data.mobile,$creatorMobile] #录单人电话
+#        - eq: [content.data.name,$creatorName] #录单人姓名
+#        - eq: [content.data.permission,$permission] #录单人权限
+##        - eq: [content.data.userName,$userName] #录单人用户名
+    extract:
+        - contact: content.data.name
+        - contactPhone: content.data.mobile
+#新建订单
+- test:
+      name: 4-pc端新建订单
+      api: api/pc/add.yaml
+      validate:
+          - eq: [status_code, 200]
+          - eq: [content.code, 200]
+          - eq: [content.message, '处理成功']
+          - eq: [content.status, 'success']
+      extract:
+          - orderId: json.data.id
+
+#查看任务详情
+- test:
+      name: 5-pc端查看任务详情
+      api: api/pc/detail.yaml
+      validate:
+          - eq: [status_code, 200]
+          - eq: [content.code, 200]
+          - eq: [content.message, '成功']
+          - eq: [content.status, 'success']
+          - eq: [json.data.order.orderStatus,'02'] #订单状态：01待调度，02-待作业，03-作业中，04-待审核，05-已完成，06-已取消，07-已关单
+          - eq: [json.data.order.operationStatus,'01'] #任务状态：01-待作业，02-作业中，03-待审核，04-已完成
+          #- eq: [json.data.order.orderNo,$orderNo]  #订单号
+
+          - eq: [json.data.order.carNo,$carNo] #车牌号
+          - eq: [json.data.order.caseNo,$caseNo] #报案号
+          - eq: [json.data.order.ownerPhone,$ownerPhone] #车主电话
+          - eq: [json.data.order.injuredPhone,$injuredPhone] #伤者电话
+
+      extract:
+          -   operationId: json.data.order.operationId
+          -   orderNo: json.data.order.orderNo
+
+#获取验收码
+- test:
+    name: 6-获取验证码
+    api: api/h5/sendValidateCode.yaml
+    variables:
+        wait_1m: 61
+        wait1m_desc: '手机获取验证码1分钟只能获取一次'
+#    setup_hooks:
+#        - ${sleep($wait_1m,$wait1m_desc)} #手机获取验证码1分钟只能获取一次
+    validate:
+        -   eq: [status_code, 200]
+
+#h5登录
+- test:
+    name: 7-h5登录
+    variables:
+        accessCode: ${queryLoginNum($orderId)}
+    api: api/h5/login.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+        - eq: [content.data.orderId, $orderId] #订单ID
+        #- eq: [content.data.orderNo, $orderNo] #订单号
+        - eq: [content.data.operationId, $operationId]  #任务ID
+    extract:
+        -   h5_token: json.data.token
+        -   orderId: json.data.orderId
+        -   operationId: json.data.operationId
+
+#h5查看任务详情-02待作业
+- test:
+    name: 8-h5查看任务详情-02
+    api: api/h5/detail.yaml
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.message, '成功']  #不规范？？
+        - eq: [content.status, 'success']
+        - eq: [json.data.order.orderStatus,'02'] #订单状态：01待调度，02-待作业，03-作业中，04-待审核，05-已完成，06-已取消，07-已关单
+        - eq: [json.data.order.operationStatus,'01'] #任务状态：01-待作业，02-作业中，03-待审核，04-已完成
+        #- eq: [json.data.order.orderNo,$orderNo]  #订单号
+        - eq: [json.data.order.operationId,$operationId]  #任务ID
+        - eq: [json.data.injured.visitorInfo.visitorPhone,$visitorPhone] #探视员电话
+        - eq: [json.data.injured.visitorInfo.visitorSignature,$visitorSignature]  #探视员姓名
+        - eq: [json.data.order.carNo,$carNo] #车牌号
+        - eq: [json.data.order.caseNo,$caseNo] #报案号
+        - eq: [json.data.order.ownerPhone,$ownerPhone] #车主电话
+        - eq: [json.data.order.injuredPhone,$injuredPhone] #pc维护的伤者电话

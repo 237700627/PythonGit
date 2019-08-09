@@ -1,0 +1,29 @@
+- config:
+      name: 探视员申请撤单，保险公司审核驳回
+      base_url: ${base_url()}
+
+# 申请撤单
+- test:
+    name: 探视员申请撤单
+    api: api/h5/applyCancelTask.yaml
+    variables:
+        reason: '人不在医院，看不见人啊~~~'  #录单人用户名
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']
+
+# 审核驳回
+- test:
+    name: 保险公司审核驳回
+    api: api/pc/auditCancelTask.yaml
+    variables:
+        orderId: $orderId
+        pass: 0
+        comment: '人一会就回来了，耐心等等~'
+    validate:
+        - eq: [status_code, 200]
+        - eq: [content.code, 200]
+        - eq: [content.message, '处理成功']
+        - eq: [content.status, 'success']

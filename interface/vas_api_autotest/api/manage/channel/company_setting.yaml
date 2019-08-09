@@ -1,0 +1,16 @@
+name: 渠道商设置  # 接口描述
+variables:  # 变量
+  id:
+  enable:
+
+request:
+  url: /manage/channel/company/setting
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    Cookie: $cookie
+    appType: '1'
+  json:
+    id: $id  # 必填，渠道商ID
+    enable: $enable  #必填，布尔类型，是否启用
+

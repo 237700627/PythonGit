@@ -1,0 +1,17 @@
+- test:
+    name: 获取APP登录Token
+    api: api/web_order/app/gateWay.yaml
+    variables:
+      loginstr_app: $app_login
+      loginPass_app: $app_pwd
+    setup_hooks:
+      - ${login_encrypt_app($request)}
+    teardown_hooks:
+      - ${login_decrypt_app($response)}
+    validate:
+      - eq: ["status_code", 200]
+      - eq: ["content.resultCode", $result_code]
+      - eq: ["content.resultObject.authStatus", $auth_status]
+    extract:
+      app_token: content.resultObject.loginToken
+      APP_userId: content.resultObject.userId

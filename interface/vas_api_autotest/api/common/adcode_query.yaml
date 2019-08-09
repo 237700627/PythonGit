@@ -1,0 +1,11 @@
+name: 省市区查询  # 接口描述
+variables:  # 变量
+  areaCode:
+
+request:
+  url: $uri/common/adcode/query
+  method: POST
+  headers:
+    Content-Type: application/json
+  json:
+    areaCode: $areaCode  # 必填，长度6字符，区域编码，后4位“0000”表示省级别，后2位“00”表示市级别，其他为市区级别

@@ -1,0 +1,22 @@
+name: 账号密码登录接口  # 接口描述
+variables:  # 变量
+  app_phone:
+  app_password:
+
+request:
+  url: /public/app/worker/loginByPwd
+  method: POST
+  headers:
+    Content-Type: application/json;charset=UTF-8
+    appType: "0"
+
+  json:
+    password: $app_password
+    userName: $app_phone
+
+
+
+
+
+
+
