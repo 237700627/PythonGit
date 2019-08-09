@@ -1,0 +1,17 @@
+variables:
+    api_name: 发送短信验证码-C端(H5)
+    api_path: api/b&c/Account.Manager/sendMsgCodeUsingPOST.yml
+    imgAuthCode: ${get_redis_imgcode($cookie)}    # 图片验证码
+    mobile: $mobile  # 手机号
+    type: $type  # 短信验证码类型，1-注册，2-绑卡，3-更换手机号，4-验证码登录
+    uri: /web/account/msgcodeC
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        imgAuthCode: $imgAuthCode
+        mobile: $mobile
+        type: $type

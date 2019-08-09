@@ -1,0 +1,19 @@
+variables:
+    api_name: 绑卡鉴权
+    api_path: api/b&c/Account.Manager/cardBindUsingPOST.yml
+    bankName: 银行名称缩写
+    cardNo: 银行卡号
+    end: '访问端，B C'
+    mobile: 手机号
+    uri: /web/account/card
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        bankName: $bankName
+        cardNo: $cardNo
+        end: $end
+        mobile: $mobile

@@ -1,0 +1,11 @@
+variables:
+    api_name: 下载电子保单
+    api_path: api/b&c/insurance-controller/viewFileUsingGET_1.yml
+    uri: /web/insurance/download/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

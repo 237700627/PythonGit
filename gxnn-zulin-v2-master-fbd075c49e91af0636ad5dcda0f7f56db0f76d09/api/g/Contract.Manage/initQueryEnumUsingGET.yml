@@ -1,0 +1,11 @@
+variables:
+    api_name: 合同查询类型枚举初始化
+    api_path: api/g/Contract.Manage/initQueryEnumUsingGET.yml
+    uri: /gm/api/contract/initQueryEnum
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

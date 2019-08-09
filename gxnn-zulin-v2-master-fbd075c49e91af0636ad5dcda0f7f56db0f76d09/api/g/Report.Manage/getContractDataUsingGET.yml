@@ -1,0 +1,11 @@
+variables:
+    api_name: 查询最近14天签约数据
+    api_path: api/g/Report.Manage/getContractDataUsingGET.yml
+    uri: /gm/api/report/contract/data
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

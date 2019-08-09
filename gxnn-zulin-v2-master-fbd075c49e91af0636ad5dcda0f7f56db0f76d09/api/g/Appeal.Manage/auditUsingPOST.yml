@@ -1,0 +1,11 @@
+variables:
+    api_name: 申诉审核
+    api_path: api/g/Appeal.Manage/auditUsingPOST.yml
+    uri: /gm/api/appeal/audit/{id}?id=id&appealAddForm=appealAddForm
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

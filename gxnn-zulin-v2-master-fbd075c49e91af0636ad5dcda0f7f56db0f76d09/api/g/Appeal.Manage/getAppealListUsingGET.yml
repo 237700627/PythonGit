@@ -1,0 +1,11 @@
+variables:
+    api_name: 申诉列表
+    api_path: api/g/Appeal.Manage/getAppealListUsingGET.yml
+    uri: /gm/api/appeal/list?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&status=是否审核状态：0-待审核；1-已审核&result=审核结果状态：0-审核通过；1-审核驳回&keyword=姓名或者身份证号&startTime=提交时间起始日期&endTime=提交时间截止日期
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

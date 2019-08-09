@@ -1,0 +1,11 @@
+variables:
+    api_name: 合同备案审核日志列表
+    api_path: api/g/ContractFilling.Manage/logListUsingGET.yml
+    uri: /gm/api/contract/filling/log/list/{id}?id=合同备案id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 通过状态查询退租明细
+    api_path: api/b&c/ContractEvict.Manage/queryUsingGET_1.yml
+    uri: /web/contract/evict/query?status=status
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

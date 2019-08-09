@@ -1,0 +1,17 @@
+variables:
+    api_name: 重置时基本信息校验&&发送短信验证码-C端(H5)
+    api_path: api/b&c/Account.Manager/resetSendMsgCodeUsingPOST.yml
+    bizType: $bizType    # 重置类型，PAY_PASSWORD/RESET_PAY_PASSWORD/LOGIN_PASSWORD/MOBILE
+    identity: $identity # 身份证号
+    name: $name # 姓名
+    uri: /web/account/reset/msgcodeC
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        bizType: $bizType
+        identity: $identity
+        name: $name

@@ -1,0 +1,11 @@
+variables:
+    api_name: 读取文件
+    api_path: api/g/File.View/viewFileUsingGET.yml
+    uri: /gm/api/file/secret/{key}.{ext}?key=key&ext=ext
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 角色详情
+    api_path: api/g/Role.Manage/getRoleDetailUsingGET.yml
+    uri: /gm/api/role/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

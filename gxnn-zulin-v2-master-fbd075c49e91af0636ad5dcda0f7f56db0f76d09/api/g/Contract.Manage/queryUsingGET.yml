@@ -1,0 +1,12 @@
+variables:
+    api_name: 合同查询
+    api_path: api/g/Contract.Manage/queryUsingGET.yml
+    uri: '/gm/api/contract?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&keyword=搜索关键字&tenancyBegin=合同开始时间&tenancyEnd=合同结束时间&fillingStart=备案提交开始时间&fillingEnd=备案提交结束时间&districtId=区域Id&status=合同状态&isRecord=是否备案
+        0否 1是&isAudit=审核状态 2备案中（待审核） 3已备案（已审核） 4备案失败（审核驳回）&auditor=审核人id'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

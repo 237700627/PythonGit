@@ -1,0 +1,11 @@
+variables:
+    api_name: 预约详情
+    api_path: api/b&c/Tenant.Manage/getTenantDetailUsingGET.yml
+    uri: /web/tenant/detail/$tenantId
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

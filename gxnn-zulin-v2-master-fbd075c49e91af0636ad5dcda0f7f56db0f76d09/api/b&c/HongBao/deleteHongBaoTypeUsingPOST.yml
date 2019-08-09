@@ -1,0 +1,11 @@
+variables:
+    api_name: 删除红包类型数据
+    api_path: api/b&c/HongBao/deleteHongBaoTypeUsingPOST.yml
+    uri: /web/hongbao/db/type/{hongBaoTypeId}?hongBaoTypeId=hongBaoTypeId&token=token
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

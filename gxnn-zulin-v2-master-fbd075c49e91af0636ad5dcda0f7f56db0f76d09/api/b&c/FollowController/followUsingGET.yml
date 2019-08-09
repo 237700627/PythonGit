@@ -1,0 +1,10 @@
+variables:
+    api_name: 是否关注
+    api_path: api/b&c/FollowController/followUsingGET.yml
+    uri: /pc/api/follow/isfollow?objectId=$objectId&type=$type  # objectId:房源ID, type-关注类型:1-租房,2-公租房,3-小区
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie

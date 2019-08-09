@@ -1,0 +1,32 @@
+# 任务列表查询接口
+name: http://testchakan.cias.cn/tasklist/query  任务列表查询接口
+variables:
+    caseNo: ''
+    ownerName: ''
+    orderNo: ''
+    creator: ''
+    subCompanyId: ''
+    thiCompanyId: ''
+    createTime: ''
+    CompanyId: ''
+    pageNum: ''
+    pageSize: ''
+    orderStatus: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: ''
+    json:
+        caseNo: '$caseNo'
+        ownerName: '$ownerName'
+        orderNo: '$orderNo'
+        creator: '$creator'
+        subCompanyId: '$subCompanyId'
+        thiCompanyId: '$thiCompanyId'
+        createTime: '$createTime'
+        CompanyId: '$CompanyId'
+        pageNum: '$pageNum'
+        pageSize: '$pageSize'
+        orderStatus: '$orderStatus'
+    method: POST
+    url: http://testchakan.cias.cn/injury/order/add

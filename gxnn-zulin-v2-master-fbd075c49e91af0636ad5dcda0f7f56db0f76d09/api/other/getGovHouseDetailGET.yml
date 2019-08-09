@@ -1,0 +1,7 @@
+variables:
+    api_name: 获取非国有房源列表
+    api_path: api/other/getGovHouseDetailGET.yml
+    uri: /pc/main/gov/detail.id.$houseId.html
+request:
+    url: $uri
+    method: get

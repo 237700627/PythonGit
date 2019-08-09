@@ -1,0 +1,27 @@
+variables:
+    api_name: 信用免押申请
+    api_path: api/b&c/insurance-controller/accountCreditUsingPOST.yml
+    education: '教育程度 1-博士及以上、2-硕士、3-本科、4-大专、5-高中/中专、6-初中及以下'
+    gender: '性别 M-男、F-女'
+    hasFunds: '是否有公积金 1-有、2-无'
+    incomeIdentity: '雇佣类型 1-受薪、2-自雇、3-自由职业、4-无业'
+    isWork: '是否有工作 Y-有、N-无'
+    maritalStatus: '婚姻状况 1-已婚有子女、2-已婚无子女、3-未婚、4-其他'
+    monthlyIncome: '月收入, 精确到分'
+    residenceArea: '户口所在地 1-本市、2-非本市'
+    uri: /web/insurance/accountCredit
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        education: $education
+        gender: $gender
+        hasFunds: $hasFunds
+        incomeIdentity: $incomeIdentity
+        isWork: $isWork
+        maritalStatus: $maritalStatus
+        monthlyIncome: $monthlyIncome
+        residenceArea: $residenceArea

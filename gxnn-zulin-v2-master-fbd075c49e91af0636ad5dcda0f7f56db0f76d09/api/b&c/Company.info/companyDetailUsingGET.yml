@@ -1,0 +1,11 @@
+variables:
+    api_name: 企业详情查看
+    api_path: api/b&c/Company.info/companyDetailUsingGET.yml
+    uri: /web/company/detail/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

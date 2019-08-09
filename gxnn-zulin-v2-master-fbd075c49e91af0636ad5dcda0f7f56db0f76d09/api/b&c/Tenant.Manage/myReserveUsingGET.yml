@@ -1,0 +1,12 @@
+variables:
+    api_name: C端看房日程
+    api_path: api/b&c/Tenant.Manage/myReserveUsingGET.yml
+    #uri: /web/tenant/reserve?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&tabType=tabType=1:我发起的预约;2:我收到的预约
+    uri: /web/tenant/reserve?pageNo=1&pageSize=15&tabType=$tabType
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源图表
+    api_path: api/g/Report.Manage/getChartUsingGET.yml
+    uri: /gm/api/report/housing/chart
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

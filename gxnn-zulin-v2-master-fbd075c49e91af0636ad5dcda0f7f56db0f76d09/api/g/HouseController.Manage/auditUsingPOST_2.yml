@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源审核
+    api_path: api/g/HouseController.Manage/auditUsingPOST_2.yml
+    uri: /gm/api/api/house/audit/{id}?id=id&form=form
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

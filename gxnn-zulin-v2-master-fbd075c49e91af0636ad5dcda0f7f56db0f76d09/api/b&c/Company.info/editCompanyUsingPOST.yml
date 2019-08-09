@@ -1,0 +1,11 @@
+variables:
+    api_name: 编辑房行信息
+    api_path: api/b&c/Company.info/editCompanyUsingPOST.yml
+    uri: /web/company/{id}?id=id&companyAddForm=companyAddForm
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

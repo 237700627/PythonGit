@@ -1,0 +1,17 @@
+variables:
+    api_name: 公司认证审核
+    api_path: api/g/Company.Manage/companyAuthUsingPOST.yml
+    certificateStatus: '认证状态 1未认证 2认证通过 3审核中 4认证驳回 '
+    id: 公司ID
+    rejection: 备注
+    uri: /gm/api/company/auth
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        certificateStatus: $certificateStatus
+        id: $id
+        rejection: $rejection

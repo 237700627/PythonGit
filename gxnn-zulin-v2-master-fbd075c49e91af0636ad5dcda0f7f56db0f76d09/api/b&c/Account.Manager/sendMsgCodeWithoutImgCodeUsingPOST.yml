@@ -1,0 +1,16 @@
+variables:
+    api_name: 发送短信验证码（不带图片验证码）
+    api_path: api/b&c/Account.Manager/sendMsgCodeWithoutImgCodeUsingPOST.yml
+    mobile: $mobile # 手机号
+    type: $type  # 短信验证码类型，1-注册，2-绑卡，3-更换手机号，4-验证码登录，5-重置登录密码
+    cookie: ''
+    uri: /web/account/msgcodewithoutimgcode
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        mobile: $mobile
+        type: $type

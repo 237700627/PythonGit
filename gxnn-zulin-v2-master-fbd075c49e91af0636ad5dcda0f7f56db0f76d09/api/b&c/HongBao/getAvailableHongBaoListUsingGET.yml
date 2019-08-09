@@ -1,0 +1,11 @@
+variables:
+    api_name: 可抢红包列表
+    api_path: api/b&c/HongBao/getAvailableHongBaoListUsingGET.yml
+    uri: /web/hongbao/available
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

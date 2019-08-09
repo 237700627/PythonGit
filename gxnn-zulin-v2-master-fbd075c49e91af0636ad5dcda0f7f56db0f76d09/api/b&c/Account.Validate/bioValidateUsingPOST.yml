@@ -1,0 +1,19 @@
+variables:
+    api_name: 活体识别
+    api_path: api/b&c/Account.Validate/bioValidateUsingPOST.yml
+    device: 设备信息
+    file: 人脸图片
+    personId: 证件号
+    personName: 姓名
+    uri: /web/validate/bioValidate
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        device: $device
+        file: $file
+        personId: $personId
+        personName: $personName

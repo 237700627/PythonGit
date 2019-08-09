@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源核验详情
+    api_path: api/b&c/ERP.House/houseVerifyDetailUsingGET.yml
+    uri: /web/goverp/api/house/verify/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

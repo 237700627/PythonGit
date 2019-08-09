@@ -1,0 +1,12 @@
+variables:
+    api_name: 平台资金流水列表
+    api_path: api/g/Bill.Manage/paymentListUsingGET.yml
+    uri: '/gm/api/bill/payment/list?page=页码数&pageSize=每页大小&type=1:代扣[默认],2: 代付&seqNo=代付/代扣流水号&acctNo=银行卡号&status=交易状态&startCreateTime=创建时间
+        开始&endCreateTime=创建时间 结束'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

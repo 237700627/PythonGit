@@ -1,0 +1,11 @@
+variables:
+    api_name: 企业渠道号申请列表
+    api_path: api/b&c/Ca/channelCodeListUsingGET.yml
+    uri: /web/ca/channelCodeList?companyId=companyId
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

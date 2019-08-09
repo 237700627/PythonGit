@@ -1,0 +1,11 @@
+variables:
+    api_name: 抢红包
+    api_path: api/b&c/HongBao/pickupUsingGET.yml
+    uri: /web/hongbao/pickup/{hongBaoId}?hongBaoId=hongBaoId
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,81 @@
+# 查勘作业提交
+name: saveOrderInfo
+parameters: {}
+variables:
+    orderNo:
+    orderType:
+    isTemporary: False
+    extra:
+    surveyModel:
+        id:
+        dealStat:
+        userCode:
+        sendOrderCost:
+        auditEntrustCost:
+        isSimple:
+        supportLinkman:
+        supportLinktel:
+        tWkSimpleOrder:
+        principalCode:
+    auditModel:
+        reply:
+        auditOpinion:
+        orderNo:
+    mainCarModel:
+        caseNo:
+        orderNo:
+        carNo:
+        driverName:
+        driverPhone:
+        isMain:
+        remark:
+        vinNo:
+        engineNo:
+        driverLicenNo:
+        driverType:
+        isDetain:
+        carType: 'ct-small'
+        driverRelation:
+request:
+    base_url: http://testckapp.cias.cn
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token:
+        userId:
+        originType:
+    json:
+        orderNo:
+        orderType:
+        isTemporary: False
+        extra:
+        surveyModel:
+            id:
+            dealStat:
+            userCode:
+            sendOrderCost:
+            auditEntrustCost:
+            isSimple:
+            supportLinkman:
+            supportLinktel:
+            tWkSimpleOrder:
+            principalCode:
+        auditModel:
+            reply:
+            auditOpinion:
+            orderNo:
+        mainCarModel:
+            caseNo:
+            orderNo:
+            carNo:
+            driverName:
+            driverPhone:
+            isMain:
+            remark:
+            vinNo:
+            engineNo:
+            driverLicenNo:
+            driverType:
+            isDetain:
+            carType: 'ct-small'
+            driverRelation:
+output: {}

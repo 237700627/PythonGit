@@ -1,0 +1,11 @@
+variables:
+    api_name: 搜索小区
+    api_path: api/g/Dict.Manage/communitySearchUsingGET.yml
+    uri: /gm/api/dict/community/search?name=搜索关键字&page=页码&pageSize=每页显示记录数
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

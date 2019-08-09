@@ -1,0 +1,11 @@
+variables:
+    api_name: 检查用户是否登录
+    api_path: api/b&c/HongBao/checkLoginUsingGET.yml
+    uri: /web/hongbao/checklogin
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,15 @@
+variables:
+    api_name: 用户登陆
+    api_path: api/g/Account.Login.Register/loginUsingPOST.yml
+    loginNo: 登录号
+    password: 密码
+    uri: /gm/api/account/login
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        loginNo: $loginNo
+        password: $password

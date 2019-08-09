@@ -1,0 +1,11 @@
+variables:
+    api_name: 获取房源字典
+    api_path: api/b&c/Dict.Erp/houseDictUsingGET.yml
+    uri: /web/goverp/api/dict/house/all
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,39 @@
+variables:
+    api_name: 添加流水
+    api_path: api/b&c/Transaction.Manage/addTransactionUsingPOST.yml
+    expenses: 费用
+    houseId: 套间id
+    ownerName: 交易方名称
+    payTime: 交易时间
+    payWay: 支付方式
+    remark: 备注
+    roomId: 间id
+    scheduleBegin: 账单周期开始时间
+    scheduleEnd: 账单周期结束时间
+    transactionMedias: 交易凭证
+    transactionNo: 交易流水号
+    transactionOwnerType: 交易方，1：业主，2：租客，3：其他
+    transactionType: 流水类型，1：收入，2：支出
+    type: 流水来源，1：账单生成，2：添加
+    uri: /web/transaction
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        expenses: $expenses
+        houseId: $houseId
+        ownerName: $ownerName
+        payTime: $payTime
+        payWay: $payWay
+        remark: $remark
+        roomId: $roomId
+        scheduleBegin: $scheduleBegin
+        scheduleEnd: $scheduleEnd
+        transactionMedias: $transactionMedias
+        transactionNo: $transactionNo
+        transactionOwnerType: $transactionOwnerType
+        transactionType: $transactionType
+        type: $type

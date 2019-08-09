@@ -1,0 +1,49 @@
+config:
+    name: 预约看房流程
+    variables:
+        tenant_type: 1 # 预约类型:1-租房,2-公租房,3-小区
+        gy_tenant_type: 4
+        gr_type: 3
+        zj_type: 4
+        zlqy_type: 2
+        kfqy_type: 6
+        gyqy_type: 5
+    base_url: ${base_url()}
+
+testcases:
+    C端用户预约个人房源-房东确认带看:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+            -   fd_mobile-fd_password: ${P(csv/fd_login.csv)}
+        testcase: testcases/c_tenant_house_gr_confirm_case.yml
+    C端用户预约个人房源-租客取消:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+            -   fd_mobile-fd_password: ${P(csv/fd_login.csv)}
+        testcase: testcases/c_tenant_house_gr_cancle_case.yml
+    C端用户预约个人房源-房东拒绝:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+            -   fd_mobile-fd_password: ${P(csv/fd_login.csv)}
+        testcase: testcases/c_tenant_house_gr_reject_case.yml
+    C端用户预约个人房源-房东修改时间-带看:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+            -   fd_mobile-fd_password: ${P(csv/fd_login.csv)}
+        testcase: testcases/c_tenant_house_gr_changetime_case.yml
+#    C端用户预约个人房源-房东修改时间-租客取消:   #有问题，调用接口不允许取消，c端租客前端显示等待查看，房东前端显示已结束，实际流程未结束，id=114 房源id590，预约数据需要清除
+#        parameters:
+#            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+#            -   fd_mobile-fd_password: ${P(csv/fd_login.csv)}
+#        testcase: testcases/c_tenant_house_gr_changetime_cancle_case.yml
+    C端用户预约个人房源-房东确认-租客取消:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+            -   fd_mobile-fd_password: ${P(csv/fd_login.csv)}
+        testcase: testcases/c_tenant_house_gr_confirm_cancle_case.yml
+#    C端用户预约中介房源:
+
+#        parameters:
+#            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+#        testcase: testcases/c_tenant_house_zj_case.yml
+#

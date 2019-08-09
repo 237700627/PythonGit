@@ -1,0 +1,11 @@
+variables:
+    api_name: 合同备案详情
+    api_path: api/g/ContractFilling.Manage/detailsUsingGET.yml
+    uri: /gm/api/contract/filling/details/{contractId}?contractId=合同id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

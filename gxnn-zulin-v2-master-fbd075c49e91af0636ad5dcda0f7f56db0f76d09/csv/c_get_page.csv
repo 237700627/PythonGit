@@ -1,0 +1,11 @@
+uri,ex_result
+/pc,租赁主页
+/pc/gov/list,5000元以上
+/pc/common/list,5000元以上
+/pc/main/gov/detail.id.16.html,100㎡
+/pc/main/detail.id.219.html,90.28㎡
+/pc/commuting/list/pe-pe?destinationLng=108.307937&destinationLat=22.845072&trafficTime=90&trafficType=4&adress=广西工业职业技术学院分析测试中心,通勤找房
+/pc/commuting/list?trafficType=1&trafficTime=45&destinationLng=108.307937&destinationLat=22.845072&adress=广西工业职业技术学院分析测试中心,通勤找房
+/pc/common/list/ar450103-rm2-re1-pe0_1500,全部清空
+/pc/common/list?kw=测试,5000元以上
+/pc/gov/list/ar450103-pe0_1500,5000元以上

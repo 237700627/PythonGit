@@ -1,0 +1,11 @@
+variables:
+    api_name: 城市字典
+    api_path: api/b&c/Dict.Api/getCityDictUsingGET.yml
+    uri: /web/goverp/api/dict/city
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

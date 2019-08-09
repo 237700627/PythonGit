@@ -1,0 +1,11 @@
+variables:
+    api_name: B端经纪人列表
+    api_path: api/b&c/Account.info/blistUsingGET.yml
+    uri: /web/account/info/BList?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&accountName=经纪人姓名
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

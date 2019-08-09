@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源验证
+    api_path: api/g/HouseController.Manage/verifyUsingGET.yml
+    uri: /gm/api/api/house/verify/{id}/{type}?id=id&type=type
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

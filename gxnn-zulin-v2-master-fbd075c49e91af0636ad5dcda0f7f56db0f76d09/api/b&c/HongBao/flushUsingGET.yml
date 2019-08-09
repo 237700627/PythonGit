@@ -1,0 +1,11 @@
+variables:
+    api_name: 从数据库同步红包到Redis
+    api_path: api/b&c/HongBao/flushUsingGET.yml
+    uri: /web/hongbao/flush
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 关注市场房源列表
+    api_path: api/b&c/FollowController/houseListUsingGET.yml
+    uri: /pc/api/follow/list?page=1&pageSize=10&type=$type   # type=关注类型：1：租房，2：公租房，3：小区
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户登出
+    api_path: api/b&c/Account.Manager/logoutUsingGET.yml
+    uri: /web/account/logout
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

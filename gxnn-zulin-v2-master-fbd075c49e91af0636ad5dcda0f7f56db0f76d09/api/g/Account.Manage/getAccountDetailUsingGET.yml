@@ -1,0 +1,11 @@
+variables:
+    api_name: 账户详情
+    api_path: api/g/Account.Manage/getAccountDetailUsingGET.yml
+    uri: /gm/api/account/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

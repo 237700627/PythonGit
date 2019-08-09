@@ -1,0 +1,11 @@
+variables:
+    api_name: 房间审核
+    api_path: api/g/HouseController.Manage/auditRoomUsingPOST.yml
+    uri: /gm/api/api/house/room/audit/{roomId}?roomId=roomId&form=form
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

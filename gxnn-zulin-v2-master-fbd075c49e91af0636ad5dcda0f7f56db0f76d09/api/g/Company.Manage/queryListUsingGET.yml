@@ -1,0 +1,12 @@
+variables:
+    api_name: 查询列表
+    api_path: api/g/Company.Manage/queryListUsingGET.yml
+    uri: '/gm/api/company/query/list?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&dealStatus=处理状态/认证状态：1-待处理/未认证，
+        2-已处理/已认证&certificateStatus=审核状态 1未认证 2认证通过 3审核中 4认证驳回 &companyType=公司类型:(1-房地产经纪机构,2-长/短租公寓)&companyName=公司名称、法人姓名、营业执照编号&accountId=处理人'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 注册账号
+    api_path: api/b&c/test.payController/TestPayRegionRegisterUsingPOST.yml
+    uri: /test/pay/regionRegister?openReceivables=openReceivables
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

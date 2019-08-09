@@ -1,0 +1,17 @@
+variables:
+    api_name: 人脸识别(已废弃)
+    api_path: api/b&c/Account.Manager/faceValidateUsingPOST_1.yml
+    device: 设备信息
+    ext: 图片后缀
+    key: 图片key
+    uri: /web/account/validate
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        device: $device
+        ext: $ext
+        key: $key

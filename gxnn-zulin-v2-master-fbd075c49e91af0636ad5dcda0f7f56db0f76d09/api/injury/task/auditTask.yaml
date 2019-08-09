@@ -1,0 +1,19 @@
+# 审核接口，审核通过不通过
+name: http://testchakan.cias.cn/injury/task/auditTask   审核接口，审核通过不通过
+variables:
+    id: ''
+    orderId: ''
+    status: ''
+    orderStatus: ''
+    comment: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    json:
+        id: '$id'
+        orderId: '$orderId'
+        status: '$status'
+        orderStatus: '$orderStatus'
+        comment: '$comment'
+    method: POST
+    url: http://testchakan.cias.cn/injury/task/auditTask

@@ -1,0 +1,11 @@
+variables:
+    api_name: 预览咨询详情
+    api_path: api/g/article-controller/articlePreviewUsingGET.yml
+    uri: /gm/api/article/preview/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

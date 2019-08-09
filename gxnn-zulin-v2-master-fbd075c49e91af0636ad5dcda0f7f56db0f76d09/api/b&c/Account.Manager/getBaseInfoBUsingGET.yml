@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户基本信息B端
+    api_path: api/b&c/Account.Manager/getBaseInfoBUsingGET.yml
+    uri: /web/account/B/baseinfoB
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

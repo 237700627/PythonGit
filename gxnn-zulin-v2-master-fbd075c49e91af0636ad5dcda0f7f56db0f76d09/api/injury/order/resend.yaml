@@ -1,0 +1,19 @@
+# 关单重派
+name: http://testchakan.cias.cn/injury/order/resend   关单重派
+variables:
+    code: ''
+    status: ''
+    message: ''
+    responseTime: ''
+    data: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    json:
+        code: ''
+        status: ''
+        message: ''
+        responseTime: ''
+        data: ''
+    method: POST
+    url: http://testchakan.cias.cn/injury/order/resend

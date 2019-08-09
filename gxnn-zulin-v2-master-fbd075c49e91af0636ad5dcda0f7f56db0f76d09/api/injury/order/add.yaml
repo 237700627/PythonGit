@@ -1,0 +1,36 @@
+# 新增任务
+name: http://testchakan.cias.cn/injury/order/add  新增任务
+variables:
+    caseNo: ''
+    ownerName: ''
+    ownerPhone: ''
+    carNo: ''
+    provinceCode: ''
+    cityCode: ''
+    countryCode: ''
+    hospital: ''
+    department: ''
+    injuredName: ''
+    injuredPhone: ''
+    visitRequest: ''
+    taskType: '1'
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: ''
+    json:
+        caseNo: '$caseNo'
+        ownerName: '$ownerName'
+        ownerPhone: '$ownerPhone'
+        carNo: '$carNo'
+        provinceCode: '$provinceCode'
+        cityCode: '$cityCode'
+        countryCode: '$countryCode'
+        hospital: '$hospital'
+        department: '$department'
+        injuredName: '$injuredName'
+        injuredPhone: '$injuredPhone'
+        visitRequest: '$visitRequest'
+        taskType: '1'
+    method: POST
+    url: /injury/order/add

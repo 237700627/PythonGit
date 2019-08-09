@@ -1,0 +1,27 @@
+variables:
+    api_name: 资讯添加/修改
+    api_path: api/g/article-controller/editUsingPOST.yml
+    attachment: 资讯附件信息
+    categoryId: 分类id
+    content: 资讯内容
+    picExt: 封面图片扩展名
+    picKey: 封面图片key
+    publishedAt: '发布时间 YYYYMMDD hh:mm:ss'
+    source: 来源
+    title: 标题
+    uri: /gm/api/article/edit/{id}
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        attachment: $attachment
+        categoryId: $categoryId
+        content: $content
+        picExt: $picExt
+        picKey: $picKey
+        publishedAt: $publishedAt
+        source: $source
+        title: $title

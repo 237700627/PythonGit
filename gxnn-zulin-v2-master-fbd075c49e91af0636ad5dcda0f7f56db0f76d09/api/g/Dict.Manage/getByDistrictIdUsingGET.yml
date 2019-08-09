@@ -1,0 +1,11 @@
+variables:
+    api_name: 根据区域获取板块列表
+    api_path: api/g/Dict.Manage/getByDistrictIdUsingGET.yml
+    uri: /gm/api/dict/blocklist/{district_id}?district_id=district_id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

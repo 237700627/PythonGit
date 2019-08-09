@@ -1,0 +1,11 @@
+variables:
+    api_name: 申诉详情
+    api_path: api/g/Appeal.Manage/appealDetailUsingGET.yml
+    uri: /gm/api/appeal/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

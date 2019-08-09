@@ -1,0 +1,11 @@
+variables:
+    api_name: 经纪人信息修改
+    api_path: api/b&c/Account.info/editUsingPOST.yml
+    uri: '/web/account/info/edit/{id}?id=id&accountStatus=经纪人状态:1-启用    2-停用    3-离职&accountType=经纪人类型'
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

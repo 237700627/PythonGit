@@ -1,0 +1,11 @@
+variables:
+    api_name: 签约量地图
+    api_path: api/g/Report.Manage/getMapUsingGET.yml
+    uri: /gm/api/report/overview/map
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

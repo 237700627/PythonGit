@@ -1,0 +1,11 @@
+variables:
+    api_name: 评分查看
+    api_path: api/b&c/Score/getScoreUsingGET.yml
+    uri: /web/score/query?objectId=被评分对象Id（如企业id）&type=评分类型，默认1
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

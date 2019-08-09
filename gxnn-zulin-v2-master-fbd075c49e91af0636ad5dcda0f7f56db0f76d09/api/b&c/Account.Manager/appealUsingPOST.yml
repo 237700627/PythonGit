@@ -1,0 +1,25 @@
+variables:
+    api_name: 账号申诉
+    api_path: api/b&c/Account.Manager/appealUsingPOST.yml
+    backExt: 身份证反面后缀
+    backKey: 身份证反面Key
+    frontExt: 身份证正面后缀
+    frontKey: 身份证正面Key
+    handheldExt: 手持身份证后缀
+    handheldKey: string
+    submitPlatform: 申诉平台：0-租赁服务平台；1-企业/机构管理平台
+    uri: /web/account/appeal
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        backExt: $backExt
+        backKey: $backKey
+        frontExt: $frontExt
+        frontKey: $frontKey
+        handheldExt: $handheldExt
+        handheldKey: $handheldKey
+        submitPlatform: $submitPlatform

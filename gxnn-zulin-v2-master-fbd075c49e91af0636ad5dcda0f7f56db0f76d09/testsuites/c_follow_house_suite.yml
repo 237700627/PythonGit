@@ -1,0 +1,37 @@
+config:
+    name: C端用户注册suite
+    variables:
+        follow_type: 1 # 关注类型:1-租房,2-公租房,3-小区
+        gy_follow_type: 4
+        gr_type: 3
+        zj_type: 4
+        zlqy_type: 2
+        kfqy_type: 6
+        gyqy_type: 5
+    base_url: ${base_url()}
+
+testcases:
+    C端用户关注个人房源:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_follow_house_gr_case.yml
+
+    C端用户关注中介房源:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_follow_house_zj_case.yml
+
+    C端用户关注租赁企业房源:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_follow_house_zlqy_case.yml
+
+    C端用户关注开发企业房源:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_follow_house_kfqy_case.yml
+
+    C端用户关注国有企业房源:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_follow_house_gov_case.yml

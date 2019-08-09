@@ -1,0 +1,13 @@
+variables:
+    api_name: 银行卡OCR识别
+    api_path: api/b&c/Account.Manager/ocrBankCardRecognaizeUsingPOST.yml
+    data: sImg
+    uri: /web/account/bank/ocr
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        data: $data

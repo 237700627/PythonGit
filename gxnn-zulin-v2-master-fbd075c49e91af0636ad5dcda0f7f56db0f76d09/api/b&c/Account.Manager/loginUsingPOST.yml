@@ -1,0 +1,15 @@
+variables:
+    api_name: 用户名密码登陆
+    api_path: api/b&c/Account.Manager/loginUsingPOST.yml
+    loginNo: $loginNo    # 登录名
+    encrypt_password: ${password_encrypt($password)} # 登录密码
+    uri: /web/account/login
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: ''
+    json:
+        loginNo: $loginNo
+        password: $encrypt_password

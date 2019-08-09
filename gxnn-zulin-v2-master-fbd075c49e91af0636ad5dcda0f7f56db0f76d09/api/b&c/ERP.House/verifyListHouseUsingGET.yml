@@ -1,0 +1,11 @@
+variables:
+    api_name: 我的核验房源列表（用于H5/WEB）包含独立核验/个人发房核验
+    api_path: api/b&c/ERP.House/verifyListHouseUsingGET.yml
+    uri: /web/goverp/api/house/verifyListHouse
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

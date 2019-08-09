@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户登出
+    api_path: api/g/Account.Login.Register/logoutUsingGET.yml
+    uri: /gm/api/account/logout
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

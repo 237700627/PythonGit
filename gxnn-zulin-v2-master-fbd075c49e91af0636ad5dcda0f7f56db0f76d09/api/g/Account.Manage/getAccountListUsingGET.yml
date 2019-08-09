@@ -1,0 +1,11 @@
+variables:
+    api_name: 账户列表
+    api_path: api/g/Account.Manage/getAccountListUsingGET.yml
+    uri: /gm/api/account?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&keyword=string&isDeleted=integer&department=string
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

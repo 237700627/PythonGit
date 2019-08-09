@@ -1,0 +1,11 @@
+variables:
+    api_name: 保险详情
+    api_path: api/b&c/insurance-controller/queryUsingGET_2.yml
+    uri: /web/insurance/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 性别画像
+    api_path: api/g/Report.Manage/portraitGenderUsingGET.yml
+    uri: /gm/api/report/user/portrait/gender
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

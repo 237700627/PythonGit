@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源上下架日志
+    api_path: api/g/HouseAuditLogController.Manage/upLogListUsingGET.yml
+    uri: /gm/api/house/up/log?code=操作的CODE标识&house_id=查询对象ID&pageNo=页码（第几页）&pageSize=每页数量
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

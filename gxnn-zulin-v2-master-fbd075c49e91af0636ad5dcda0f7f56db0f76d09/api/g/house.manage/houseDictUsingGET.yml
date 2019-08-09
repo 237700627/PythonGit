@@ -1,0 +1,11 @@
+variables:
+    api_name: 获取房源字典
+    api_path: api/g/house.manage/houseDictUsingGET.yml
+    uri: /gm/api/api/dict/house/all
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

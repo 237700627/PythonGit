@@ -1,0 +1,11 @@
+variables:
+    api_name: 流水详情查询
+    api_path: api/b&c/Transaction.Manage/transactionDetailQueryUsingGET.yml
+    uri: /web/transaction/detail/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 同步房源大宽表
+    api_path: api/g/HouseController.Manage/syncIndexHousingUsingGET_1.yml
+    uri: /gm/api/api/house/sync/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: previewContractFillingPdf
+    api_path: api/b&c/Contract/previewContractFillingPdfUsingGET.yml
+    uri: /web/contract/preview/contractFillingPdf/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

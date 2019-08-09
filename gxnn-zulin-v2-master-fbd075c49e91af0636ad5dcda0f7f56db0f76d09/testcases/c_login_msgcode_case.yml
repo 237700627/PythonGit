@@ -1,0 +1,59 @@
+- config:
+    name: C端用户通过短信验证码登录case
+
+- test:
+    name: 获取登录的短信验证码
+    variables:
+        mobile: $zk_mobile
+        type: $msg_type
+    api: api/b&c/Account.Manager/sendMsgCodeWithoutImgCodeUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        - cookie: headers.Set-Cookie
+
+- test:
+    name: 验证短信验证码
+    variables:
+        mobile: $zk_mobile
+        cookie: $cookie
+    api: api/b&c/Account.Manager/validateMsgCodeUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: C端短信验证码登陆
+    variables:
+        mobile: $zk_mobile
+    api: api/b&c/Account.Manager/codeLoginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+        -   accountId: content.data.accountId
+
+- test:
+    name: 获取个人信息
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/getBaseInfoCUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.id', $accountId]
+    extract:
+        -   mobile: content.data.mobile
+        -   name: content.data.name
+        -   identity: content.data.identity
+
+- test:
+    name: 登出
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/logoutUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]

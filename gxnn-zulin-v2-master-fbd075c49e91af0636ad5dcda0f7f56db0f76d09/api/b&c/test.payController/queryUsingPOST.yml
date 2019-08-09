@@ -1,0 +1,11 @@
+variables:
+    api_name: 测试查询
+    api_path: api/b&c/test.payController/queryUsingPOST.yml
+    uri: /test/query?pageNum=页码数&pageSize=页面大小&orderBy=排序字段&orderType=排序类型：desc/asc&id=integer&source=string&objectId=string&mercOrderNo=string&orderTraceNo=string&status=string&amount=integer&currency=string&unit=string&syncError=string&payCompleteTime=string&createTime=string&modifyTime=string&isDelete=string
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

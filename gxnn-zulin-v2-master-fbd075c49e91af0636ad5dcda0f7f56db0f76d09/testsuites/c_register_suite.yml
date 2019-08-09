@@ -1,0 +1,11 @@
+config:
+    name: C端用户注册suite
+    variables:
+        type: 1
+    base_url: ${base_url()}
+
+testcases:
+    C端用户注册:
+        parameters:
+            - reg_mobile-reg_password-reg_name-reg_identity: ${P(csv/c_register.csv)}
+        testcase: testcases/c_register_case.yml

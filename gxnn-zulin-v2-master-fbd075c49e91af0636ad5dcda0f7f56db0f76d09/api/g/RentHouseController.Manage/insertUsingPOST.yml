@@ -1,0 +1,65 @@
+variables:
+    address: 项目地址
+    api_name: 添加公租房
+    api_path: api/g/RentHouseController.Manage/insertUsingPOST.yml
+    applicationDate: 项目申请开始日期-时间戳
+    applicationEndDate: 项目申请结束日期-时间戳
+    applicationStatus: 项目申请状态
+    blockId: 板块ID
+    cityId: 城市ID
+    desc: 项目介绍
+    developers: 开发商
+    districtId: 项目所属地区
+    greeningRate: 绿化率
+    images: 项目图片-json格式
+    isPublic: 是否是公租房
+    latitude: 纬度
+    layoutDesc: 项目主力户型
+    licensingName: 项目备案名
+    longitude: 经度
+    name: 项目名称
+    parkingNum: 车位数
+    plotRate: 容积率
+    propertyCompany: 物业公司
+    propertyFee: 物业费
+    rentAvailableTotal: 可租房源数
+    rentTotal: 总房源数
+    roomStr: 室数:1,2,3
+    situation: '装修情况 请选择、精装、普装、毛坯'
+    tag: 项目特色json格式数据
+    typeAndPrice: 项目价格json数据
+    uri: /gm/api/public/house/insert
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        address: $address
+        applicationDate: $applicationDate
+        applicationEndDate: $applicationEndDate
+        applicationStatus: $applicationStatus
+        blockId: $blockId
+        cityId: $cityId
+        desc: $desc
+        developers: $developers
+        districtId: $districtId
+        greeningRate: $greeningRate
+        images: $images
+        isPublic: $isPublic
+        latitude: $latitude
+        layoutDesc: $layoutDesc
+        licensingName: $licensingName
+        longitude: $longitude
+        name: $name
+        parkingNum: $parkingNum
+        plotRate: $plotRate
+        propertyCompany: $propertyCompany
+        propertyFee: $propertyFee
+        rentAvailableTotal: $rentAvailableTotal
+        rentTotal: $rentTotal
+        roomStr: $roomStr
+        situation: $situation
+        tag: $tag
+        typeAndPrice: $typeAndPrice

@@ -1,0 +1,11 @@
+variables:
+    api_name: 租客or房东确认
+    api_path: api/b&c/Contract/rentConfirmUsingPOST.yml
+    uri: '/web/contract/confirm/{id}?contractId=合同Id&initiate=发起方：0系统 1租客 2房东 3中介&reason=理由&useCA=是否使用电子签章'
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

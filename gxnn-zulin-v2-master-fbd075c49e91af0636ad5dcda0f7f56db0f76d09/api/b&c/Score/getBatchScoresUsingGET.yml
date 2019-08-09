@@ -1,0 +1,11 @@
+variables:
+    api_name: 评分批量查询
+    api_path: api/b&c/Score/getBatchScoresUsingGET.yml
+    uri: /web/score/query/batch?objectIds=objectIds&type=type
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

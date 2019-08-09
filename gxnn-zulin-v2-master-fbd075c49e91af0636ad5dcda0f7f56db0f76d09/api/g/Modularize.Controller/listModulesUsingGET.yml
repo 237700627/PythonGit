@@ -1,0 +1,11 @@
+variables:
+    api_name: 模块列表
+    api_path: api/g/Modularize.Controller/listModulesUsingGET.yml
+    uri: /gm/api/module
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

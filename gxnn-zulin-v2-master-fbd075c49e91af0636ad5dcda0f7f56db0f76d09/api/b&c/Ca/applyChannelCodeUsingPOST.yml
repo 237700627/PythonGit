@@ -1,0 +1,17 @@
+variables:
+    api_name: 申请企业渠道号
+    api_path: api/b&c/Ca/applyChannelCodeUsingPOST.yml
+    companyId: 公司ID
+    companyName: 公司名称
+    enterpriseCode: 企业组织机构代码
+    uri: /web/ca/applyChannelCode
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        companyId: $companyId
+        companyName: $companyName
+        enterpriseCode: $enterpriseCode

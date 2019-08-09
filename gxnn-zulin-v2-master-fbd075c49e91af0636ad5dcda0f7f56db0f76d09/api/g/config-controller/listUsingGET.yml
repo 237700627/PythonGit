@@ -1,0 +1,11 @@
+variables:
+    api_name: 获取view及upload的domain列表
+    api_path: api/g/config-controller/listUsingGET.yml
+    uri: /gm/api/config/list?callback=回调方法
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

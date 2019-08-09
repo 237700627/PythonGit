@@ -1,0 +1,24 @@
+variables:
+    api_name: 人脸识别
+    api_path: api/b&c/Account.Validate/faceValidateUsingPOST.yml
+    device: huawei   # 设备信息
+    file_path: images/faceValidate/$imageName    # 人脸图片
+    personId: 证件号
+    personName: 姓名
+    uri: /web/validate/faceValidate
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        device:
+            model: vivo
+            plat: 1
+            version: 10.0.0
+        file:
+            data: ${base64key($file_path)}
+            type: jpg
+#        personId: $personId
+#        personName: $personName

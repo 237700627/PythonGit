@@ -1,0 +1,11 @@
+variables:
+    api_name: 停用账号
+    api_path: api/g/Account.Manage/frozenAccountUsingPOST.yml
+    uri: /gm/api/account/frozen/{id}?id=id
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

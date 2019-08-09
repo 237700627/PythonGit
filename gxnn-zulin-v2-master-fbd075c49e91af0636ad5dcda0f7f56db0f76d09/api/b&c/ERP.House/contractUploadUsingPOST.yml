@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源合同上传
+    api_path: api/b&c/ERP.House/contractUploadUsingPOST.yml
+    uri: /web/goverp/api/house/{id}/contract/upload?id=id&houseContractForm=houseContractForm
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

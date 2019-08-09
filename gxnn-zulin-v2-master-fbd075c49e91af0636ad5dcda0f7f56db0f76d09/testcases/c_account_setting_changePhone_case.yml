@@ -1,0 +1,95 @@
+- config:
+    name: C端账号设置，获取实名认证信息case
+
+- test:
+    name: C端账号登陆
+    variables:
+        loginNo: $init_mobile
+        password: $password
+    api: api/b&c/Account.Manager/loginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+        -   accountId: content.data.accountId
+#        -   mobile: content.data.accountInfo.mobile
+#        -   identity: content.data.accountInfo.identity
+#        -   name: content.data.accountInfo.name
+
+- test:
+    name: 获取个人信息
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/getBaseInfoCUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.id', $accountId]
+    extract:
+        -   mobile: content.data.mobile
+        -   name: content.data.name
+        -   identity: content.data.identity
+
+- test:
+    name: 重置时基本信息校验&&发送短信验证码
+    variables:
+        cookie: $cookie
+        bizType: $bizType
+        name: $name
+        identity: $identity
+    api: api/b&c/Account.Manager/resetSendMsgCodeUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 重置时验证短信验证码-init_mobile
+    variables:
+        cookie: $cookie
+        bizType: $bizType
+        mobile: $mobile
+    api: api/b&c/Account.Manager/resetMsgCodeValidateUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 获取图片验证码
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/getImgCodeUsingGET.yml
+    validate:
+        -   eq: ['status_code', 200]
+
+- test:
+    name: 获取短信验证码-new_mobile
+    variables:
+        mobile: $new_mobile
+        type: $type
+        cookie: $cookie
+    api: api/b&c/Account.Manager/sendMsgCodeUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 重置手机号
+    variables:
+        mobile: $new_mobile
+        cookie: $cookie
+    api: api/b&c/Account.Manager/resetMobileUsingPOST_1.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+
+#- test:
+#    name: 登出
+#    variables:
+#        cookie: $cookie
+#    api: api/b&c/Account.Manager/logoutUsingGET.yml
+#    validate:
+#        -   eq: ['content.errorCode', '0']
+#        -   eq: ['content.success', true]

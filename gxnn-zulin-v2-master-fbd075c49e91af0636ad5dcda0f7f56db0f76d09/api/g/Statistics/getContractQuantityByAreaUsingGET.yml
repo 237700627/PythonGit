@@ -1,0 +1,11 @@
+variables:
+    api_name: 城区签约量统计
+    api_path: api/g/Statistics/getContractQuantityByAreaUsingGET.yml
+    uri: /gm/api/statistics/contractQuantity
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 通过合同Id查找退租明细
+    api_path: api/b&c/ContractEvict.Manage/findByContractIdUsingGET.yml
+    uri: /web/contract/evict/find?contractId=contractId
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

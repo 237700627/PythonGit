@@ -1,0 +1,11 @@
+variables:
+    api_name: 从Redis同步抢到的红包到数据库
+    api_path: api/b&c/HongBao/checkoutUsingGET.yml
+    uri: /web/hongbao/checkout
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 获取咨询详情
+    api_path: api/g/article-controller/articleDetailUsingGET.yml
+    uri: /gm/api/article/detail/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

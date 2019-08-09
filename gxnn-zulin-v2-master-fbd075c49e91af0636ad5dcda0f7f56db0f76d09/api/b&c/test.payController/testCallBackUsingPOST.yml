@@ -1,0 +1,55 @@
+variables:
+    api_name: testCallBack
+    api_path: api/b&c/test.payController/testCallBackUsingPOST.yml
+    charset: string
+    errCode: string
+    errMsg: string
+    merReserved: string
+    mercNotifyExt: string
+    mercOrderNo: string
+    mercRetrunPara: string
+    merchantId: string
+    notifyId: string
+    notifyTime: string
+    notifyType: string
+    orderAmount: integer
+    orderCloseTime: string
+    orderCreateTime: string
+    orderCurrency: string
+    orderPayTime: string
+    orderTime: string
+    orderTraceNo: string
+    platMerchantId: string
+    signMethod: string
+    signature: string
+    uri: /test/callBack
+    version: string
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        charset: $charset
+        errCode: $errCode
+        errMsg: $errMsg
+        merReserved: $merReserved
+        mercNotifyExt: $mercNotifyExt
+        mercOrderNo: $mercOrderNo
+        mercRetrunPara: $mercRetrunPara
+        merchantId: $merchantId
+        notifyId: $notifyId
+        notifyTime: $notifyTime
+        notifyType: $notifyType
+        orderAmount: $orderAmount
+        orderCloseTime: $orderCloseTime
+        orderCreateTime: $orderCreateTime
+        orderCurrency: $orderCurrency
+        orderPayTime: $orderPayTime
+        orderTime: $orderTime
+        orderTraceNo: $orderTraceNo
+        platMerchantId: $platMerchantId
+        signMethod: $signMethod
+        signature: $signature
+        version: $version

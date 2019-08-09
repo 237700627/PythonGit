@@ -1,0 +1,11 @@
+variables:
+    api_name: 判断身份证号是否是已注册账号
+    api_path: api/b&c/Account.info/checkUserUsingPOST.yml
+    uri: /web/account/info/checkUser/{idCard}?idCard=idCard
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

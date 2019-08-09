@@ -1,0 +1,11 @@
+variables:
+    api_name: 图片读取
+    api_path: api/b&c/Dict.Api/getImgUsingGET.yml
+    uri: /web/goverp/api/dict/image/{key}/{ext}?key=key&ext=ext
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

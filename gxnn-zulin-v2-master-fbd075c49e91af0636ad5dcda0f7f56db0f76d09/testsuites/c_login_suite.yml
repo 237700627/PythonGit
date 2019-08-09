@@ -1,0 +1,16 @@
+config:
+    name: C端用户登录suite
+    variables:
+        msg_type: 1
+    base_url: ${base_url()}
+
+testcases:
+    C端用户密码登录:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_login_password_case.yml
+
+    C端用户短信验证码登录:
+        parameters:
+            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+        testcase: testcases/c_login_msgcode_case.yml

@@ -1,0 +1,11 @@
+variables:
+    api_name: 企业机构认证
+    api_path: api/b&c/Company.info/companyIdentifyUsingGET.yml
+    uri: /web/company/identify?leaseServicePlatformCode=租赁服务平台代码&companyName=企业名称&adminName=管理员姓名&adminCardNumber=管理员证件号码&adminTel=管理员联系电话
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

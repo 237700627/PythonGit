@@ -1,0 +1,12 @@
+# 任务详情
+name: http://testchakan.cias.cn/injury/order/detail  任务详情
+variables:
+    orderId: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: ''
+    json:
+        orderId: '$orderId'
+    method: POST
+    url: http://testchakan.cias.cn/injury/order/detail

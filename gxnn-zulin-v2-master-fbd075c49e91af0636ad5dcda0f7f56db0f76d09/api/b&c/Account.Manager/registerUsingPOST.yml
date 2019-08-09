@@ -1,0 +1,23 @@
+variables:
+    api_name: 注册用户(带人脸识别)
+    api_path: api/b&c/Account.Manager/registerUsingPOST.yml
+    checkPassword: 确认密码
+    identity: 身份证号
+    mobile: 手机号
+    msgAuthCode: 短信验证码
+    name: 真实姓名
+    password: 密码
+    uri: /web/account/register
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        checkPassword: $checkPassword
+        identity: $identity
+        mobile: $mobile
+        msgAuthCode: $msgAuthCode
+        name: $name
+        password: $password

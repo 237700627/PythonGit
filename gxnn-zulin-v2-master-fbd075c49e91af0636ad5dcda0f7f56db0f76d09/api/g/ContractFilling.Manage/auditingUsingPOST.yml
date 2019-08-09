@@ -1,0 +1,17 @@
+variables:
+    api_name: 合同备案审核
+    api_path: api/g/ContractFilling.Manage/auditingUsingPOST.yml
+    contractId: 合同id
+    remark: 合同备案拒绝原因
+    status: 合同备案状态：同意：yes，拒绝:no
+    uri: /gm/api/contract/filling/auditing
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        contractId: $contractId
+        remark: $remark
+        status: $status

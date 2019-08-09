@@ -1,0 +1,27 @@
+config:
+    name: C端账户设置suite
+    variables:
+        bizType: MOBILE
+        type: 3 # 更换手机号类型
+    base_url: ${base_url()}
+
+testcases:
+#    C端获取个人认证信息:
+#        parameters:
+#            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+#        testcase: testcases/c_account_setting_authinfo_case.yml
+#
+#    C端用户设置/修改通信地址:
+#        parameters:
+#            -   zk_mobile-zk_password: ${P(csv/zk_login.csv)}
+#        testcase: testcases/c_account_setting_postalAddr_case.yml
+
+    C端用户更换手机号码:
+        parameters:
+            -   init_mobile-password-new_mobile: ${P(csv/account_changePhone_init.csv)}
+        testcase: testcases/c_account_setting_changePhone_case.yml
+
+    C端用户更换手机号码后再改回之前的手机号:
+        parameters:
+            -   init_mobile-password-new_mobile: ${P(csv/account_changePhone_reset.csv)}
+        testcase: testcases/c_account_setting_changePhone_case.yml

@@ -1,0 +1,11 @@
+variables:
+    api_name: 申请签约
+    api_path: api/b&c/Contract/applyUsingPOST.yml
+    uri: /web/contract/apply/{houseId}?houseId=houseId&form=form
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

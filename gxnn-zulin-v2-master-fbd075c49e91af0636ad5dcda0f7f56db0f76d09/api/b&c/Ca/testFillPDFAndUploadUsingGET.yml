@@ -1,0 +1,11 @@
+variables:
+    api_name: 生成并上传
+    api_path: api/b&c/Ca/testFillPDFAndUploadUsingGET.yml
+    uri: /web/ca/testFillPDFAndUpload
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

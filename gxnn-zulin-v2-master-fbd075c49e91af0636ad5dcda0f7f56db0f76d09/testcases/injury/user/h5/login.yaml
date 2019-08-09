@@ -1,0 +1,11 @@
+# h5端授权码登录
+name: http://testchakan.cias.cn/injury/user/h5/login   h5端授权码登录
+variables:
+    accessCode: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    json:
+        accessCode: &accessCode
+    method: POST
+    url: http://testchakan.cias.cn/injury/user/h5/login

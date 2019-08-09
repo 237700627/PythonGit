@@ -1,0 +1,15 @@
+
+variables:
+    api_name: 上传图片
+    api_path: api/other/uploadHousePicUsingPOST.yml
+    file_path: images/housePic
+    file_type: image/jpeg
+    multipart_encoder: ${multipart_encoder_auto_files($file_path, $file_type)}
+    uri: /upload/house.html
+request:
+    url: $uri
+    method: POST
+    headers:
+        Content-Type: ${multipart_content_type($multipart_encoder)}
+        Cookie: $cookie
+    data: $multipart_encoder

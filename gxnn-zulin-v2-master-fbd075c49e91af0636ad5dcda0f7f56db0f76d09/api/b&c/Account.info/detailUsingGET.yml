@@ -1,0 +1,11 @@
+variables:
+    api_name: 经纪人详情
+    api_path: api/b&c/Account.info/detailUsingGET.yml
+    uri: /web/account/info/detail/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

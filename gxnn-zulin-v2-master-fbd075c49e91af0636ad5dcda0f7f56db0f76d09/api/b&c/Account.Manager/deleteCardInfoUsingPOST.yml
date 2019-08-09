@@ -1,0 +1,11 @@
+variables:
+    api_name: 删除银行卡
+    api_path: api/b&c/Account.Manager/deleteCardInfoUsingPOST.yml
+    uri: /web/account/card/delete/{id}?id=id
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

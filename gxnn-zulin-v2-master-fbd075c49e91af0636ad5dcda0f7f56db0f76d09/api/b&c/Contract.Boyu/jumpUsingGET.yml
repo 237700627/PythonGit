@@ -1,0 +1,11 @@
+variables:
+    api_name: 跳转到泊寓页面
+    api_path: api/b&c/Contract.Boyu/jumpUsingGET.yml
+    uri: /web/contract/boyu/jump?target=跳转落地页（0-泊寓申请签约，1-泊寓合同确认页面，2-账单列表页面，3-合同待簽字,4-发起预约，5-取消预约）&contractId=合同id，当泊寓合同确认时必传&projectId=项目ID，泊寓申请签约、发起预约时必传&roomTypeId=户型ID，泊寓发起预约时必传
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

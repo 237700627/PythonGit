@@ -1,0 +1,12 @@
+variables:
+    api_name: 我的房源列表
+    api_path: api/b&c/ERP.House/houseListUsingGET.yml
+    uri: '/web/goverp/api/house?page=页码数&pageSize=每页大小&search=小区名&creditStatus=信用免押状态（0:不支持，1:支持）&auditStatus=审核状态（0:待审核,1:审核通过,2:审批驳回）&upStatus=上架状态（0:已下架，2:已上架）&publisherType=发房人类型1.自己
+        0.不限（默认）&count=页记录数量,用于H5兼容模式'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户基本信息
+    api_path: api/g/Account.Login.Register/getBaseInfoUsingGET.yml
+    uri: /gm/api/account/baseinfo
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

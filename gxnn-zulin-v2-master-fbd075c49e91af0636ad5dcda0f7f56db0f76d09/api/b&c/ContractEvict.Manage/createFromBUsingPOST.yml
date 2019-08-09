@@ -1,0 +1,11 @@
+variables:
+    api_name: b端发起退租
+    api_path: api/b&c/ContractEvict.Manage/createFromBUsingPOST.yml
+    uri: /web/contract/evict/retireFromB?contractId=合同id
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

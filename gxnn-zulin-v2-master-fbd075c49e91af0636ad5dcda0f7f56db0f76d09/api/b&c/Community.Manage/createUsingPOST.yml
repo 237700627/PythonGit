@@ -1,0 +1,25 @@
+variables:
+    address: 地址
+    api_name: 新增自建小区信息
+    api_path: api/b&c/Community.Manage/createUsingPOST.yml
+    blockId: 板块id
+    cityId: 城市id
+    districtId: 区域id
+    latitude: 纬度
+    longitude: 经度
+    name: 名称
+    uri: /web/goverp/api/community
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        address: $address
+        blockId: $blockId
+        cityId: $cityId
+        districtId: $districtId
+        latitude: $latitude
+        longitude: $longitude
+        name: $name

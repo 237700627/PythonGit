@@ -1,0 +1,12 @@
+variables:
+    api_name: 账单列表
+    api_path: api/g/Bill.Manage/billListUsingGET.yml
+    uri: '/gm/api/bill/list?page=页码数&pageSize=每页大小&id=账单ID&contractId=合同ID&expenseType=账单类型&transactionNo=交易流水&status=账单状态&startPayTime=还款日期
+        开始&endPayTime=还款日期 结束'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

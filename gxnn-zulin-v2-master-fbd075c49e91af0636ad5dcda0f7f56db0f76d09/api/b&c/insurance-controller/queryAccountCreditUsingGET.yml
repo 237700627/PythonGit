@@ -1,0 +1,11 @@
+variables:
+    api_name: 查询个人信用
+    api_path: api/b&c/insurance-controller/queryAccountCreditUsingGET.yml
+    uri: /web/insurance/credit
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

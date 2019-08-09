@@ -1,0 +1,11 @@
+variables:
+    api_name: 租客统计信息
+    api_path: api/b&c/Tenant.Manage/getTenantSummaryUsingGET.yml
+    uri: /web/tenant/summary
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

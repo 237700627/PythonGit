@@ -1,0 +1,14 @@
+variables:
+    api_name: 创建关注
+    api_path: api/b&c/FollowController/createUsingPOST_4.yml
+    variables:
+        objectId: $objectId
+        type: $type
+    uri: /pc/api/follow/create?objectId=$objectId&type=$type # 关注类型：1：租房，2：公租房，3：小区
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,12 @@
+variables:
+    api_name: B端承接列表
+    api_path: api/b&c/Tenant.Manage/getTenantListUsingGET.yml
+    uri: '/web/tenant?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&keyword=搜索关键字&applyBegin=申请时间-开始时间&applyEnd=申请时间-结束时间&status=处理状态&tenancyBegin=看房日期-开始时间&tenancyEnd=看房日期-结束时间&publishId=房源发布人
+        0.全部;1.仅看自己&houseType=房源类型 1:C端预约列表;2:B端预约列表'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

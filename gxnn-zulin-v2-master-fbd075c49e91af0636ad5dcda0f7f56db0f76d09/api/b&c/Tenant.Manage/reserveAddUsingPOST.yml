@@ -1,0 +1,19 @@
+variables:
+    api_name: 预约新增
+    api_path: api/b&c/Tenant.Manage/reserveAddUsingPOST.yml
+    houseId: 预约房源ID
+    mobile: 用户手机号
+    name: 预约用户名称
+    reserveDate: '预约看房时间yyyy-MM-dd HH:mm:ss'
+    uri: /web/tenant/reserve
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        houseId: $houseId
+        mobile: $mobile
+        name: $name
+        reserveDate: $reserveDate

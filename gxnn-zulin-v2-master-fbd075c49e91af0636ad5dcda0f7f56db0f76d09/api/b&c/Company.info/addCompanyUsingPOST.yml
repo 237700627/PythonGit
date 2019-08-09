@@ -1,0 +1,55 @@
+variables:
+    api_name: 新增房行信息
+    api_path: api/b&c/Company.info/addCompanyUsingPOST.yml
+    cardType: '法人代表证件类型 1居民身份证/2事业单位法人证书/3港澳台通行证/4港澳台身份证/5往来大陆通行证/6护照/7户口簿/8军官证士兵证/9组织机构代码证/10营业执照/11统一社会信用代码/0其他'
+    companyAbbreviation: 公司简称
+    companyAddress: 公司地址
+    companyLogoPics: 公司logo
+    companyName: 公司全称
+    companyProfile: 公司简介
+    companySupervisionId: 企业在监管系统的ID
+    companyType: 公司类型
+    contactNumber: 联系电话
+    coverPics: 封面图
+    enterpriseArea: '企业所在城区 1青秀区/2兴宁区/3西乡塘区/4江南区/5良庆区/6邕宁区'
+    enterpriseCode: 企业统一社会信用代码
+    enterpriseNature: '企业性质 1本地企业/2外地企业/3中央企业/4本地行政事业机构/5外地行政事业机构/6中央行政事业机构/0其他'
+    housePics: 房源照片
+    legalCardNumber: 法人代表证件号码
+    legalContactNumber: 法人代表联系电话
+    legalPerson: 企业法人
+    licenseNum: 营业执照号
+    licensePics: 营业执照照片
+    licenseRegistDate: 营业执照注册时间
+    officialWebsite: 企业官网
+    rectangleLogoPics: 长方形logo
+    uri: /web/company
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        cardType: $cardType
+        companyAbbreviation: $companyAbbreviation
+        companyAddress: $companyAddress
+        companyLogoPics: $companyLogoPics
+        companyName: $companyName
+        companyProfile: $companyProfile
+        companySupervisionId: $companySupervisionId
+        companyType: $companyType
+        contactNumber: $contactNumber
+        coverPics: $coverPics
+        enterpriseArea: $enterpriseArea
+        enterpriseCode: $enterpriseCode
+        enterpriseNature: $enterpriseNature
+        housePics: $housePics
+        legalCardNumber: $legalCardNumber
+        legalContactNumber: $legalContactNumber
+        legalPerson: $legalPerson
+        licenseNum: $licenseNum
+        licensePics: $licensePics
+        licenseRegistDate: $licenseRegistDate
+        officialWebsite: $officialWebsite
+        rectangleLogoPics: $rectangleLogoPics

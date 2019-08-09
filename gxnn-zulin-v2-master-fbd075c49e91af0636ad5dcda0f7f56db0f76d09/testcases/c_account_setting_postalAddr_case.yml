@@ -1,0 +1,50 @@
+- config:
+    name: C端账号设置，获取实名认证信息case
+
+- test:
+    name: C端账号登陆
+    variables:
+        loginNo: $zk_mobile
+        password: $zk_password
+    api: api/b&c/Account.Manager/loginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+        -   accountId: content.data.accountId
+        -   mobile: content.data.accountInfo.mobile
+        -   identity: content.data.accountInfo.identity
+        -   name: content.data.accountInfo.name
+
+#- test:
+#    name: 获取个人信息
+#    variables:
+#        cookie: $cookie
+#    api: api/b&c/Account.Manager/getBaseInfoCUsingGET.yml
+#    validate:
+#        -   eq: ['content.errorCode', '0']
+#        -   eq: ['content.success', true]
+#        -   eq: ['content.data.id', $accountId]
+#    extract:
+#        -   mobile: content.data.mobile
+#        -   name: content.data.name
+#        -   identity: content.data.identity
+
+- test:
+    name: 设置/修改通讯地址
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/regionalUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 登出
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/logoutUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]

@@ -1,0 +1,7 @@
+variables:
+    api_name: 获取非国有房源列表
+    api_path: api/other/getCommonHouseListGET.yml
+    uri: /pc/common/list/tp$type    # type: 3-个人房源 4-中介房源 2-租赁企业房源 6-开发企业自持房源
+request:
+    url: $uri
+    method: get

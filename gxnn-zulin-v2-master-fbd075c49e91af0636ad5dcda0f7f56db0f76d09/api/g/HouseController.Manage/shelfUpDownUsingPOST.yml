@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源上下架
+    api_path: api/g/HouseController.Manage/shelfUpDownUsingPOST.yml
+    uri: /gm/api/api/house/{updown}/{id}?updown=updown&id=id&rejection=rejection
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

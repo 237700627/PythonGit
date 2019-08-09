@@ -1,0 +1,27 @@
+variables:
+    api_name: 添加员工账户
+    api_path: api/g/Account.Manage/addAccountUsingPOST.yml
+    department: 部门
+    districtScope: 二级职能范围
+    identity: 身份证号
+    isDeleted: '状态 0.正常 1.冻结'
+    mobile: 手机号码
+    name: 姓名
+    roleId: 角色ID
+    roleName: 角色名称
+    uri: /gm/api/account
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        department: $department
+        districtScope: $districtScope
+        identity: $identity
+        isDeleted: $isDeleted
+        mobile: $mobile
+        name: $name
+        roleId: $roleId
+        roleName: $roleName

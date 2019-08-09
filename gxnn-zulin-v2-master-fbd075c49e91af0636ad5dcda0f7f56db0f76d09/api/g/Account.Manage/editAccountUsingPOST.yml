@@ -1,0 +1,11 @@
+variables:
+    api_name: 编辑员工账户
+    api_path: api/g/Account.Manage/editAccountUsingPOST.yml
+    uri: /gm/api/account/{id}?id=id&form=form
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

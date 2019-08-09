@@ -1,0 +1,11 @@
+variables:
+    api_name: 根据账单查询流水
+    api_path: api/b&c/Transaction.Manage/transactionDetailByBillUsingGET.yml
+    uri: /web/transaction/bill/{billId}?billId=billId
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

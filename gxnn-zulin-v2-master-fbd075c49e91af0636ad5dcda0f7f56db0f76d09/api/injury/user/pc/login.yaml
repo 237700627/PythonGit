@@ -1,0 +1,15 @@
+# pc端，保险公司员工登录
+name: http://testchakan.cias.cn/injury/user/pc/login   pc端，保险公司员工登录
+variables:
+    loginName: ''
+    loginPass: ''
+    verifyCode: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    json:
+        loginName: ''
+        loginPass: ''
+        verifyCode: ''
+    method: POST
+    url: http://testchakan.cias.cn/injury/user/pc/login

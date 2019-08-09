@@ -1,0 +1,24 @@
+- config:
+        name: http://testchakan.cias.cn/injury/order/add  新增任务
+        variables:
+            caseNo: ''
+            ownerName: ''
+            ownerPhone: ''
+            carNo: ''
+            provinceCode: ''
+            cityCode: ''
+            countryCode: ''
+            hospital: ''
+            department: ''
+            injuredName: ''
+            injuredPhone: ''
+            visitRequest: ''
+            taskType: '1'
+        request:
+            headers:
+                Content-Type: application/json;charset=UTF-8
+                token: ''
+            json:
+                api: api/injury/order/add.yaml
+            method: POST
+            url: http://testchakan.cias.cn/injury/order/add

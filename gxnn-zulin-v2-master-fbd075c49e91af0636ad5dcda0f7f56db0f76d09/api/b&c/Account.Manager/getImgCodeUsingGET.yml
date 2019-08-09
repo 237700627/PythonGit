@@ -1,0 +1,10 @@
+variables:
+    api_name: 获取图片验证码
+    api_path: api/b&c/Account.Manager/getImgCodeUsingGET.yml
+    uri: /web/account/imgcode
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+    

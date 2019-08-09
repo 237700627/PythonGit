@@ -1,0 +1,11 @@
+variables:
+    api_name: 同步小区大宽表
+    api_path: api/g/CommunityController.Manage/syncIndexHousingUsingGET.yml
+    uri: /gm/api/community/sync/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

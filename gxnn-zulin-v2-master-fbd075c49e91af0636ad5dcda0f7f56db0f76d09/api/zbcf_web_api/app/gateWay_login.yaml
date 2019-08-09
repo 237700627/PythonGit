@@ -1,0 +1,36 @@
+# 登入接口响应token
+name: /zbcf-web-api/app/gateWay.do  登入接口响应token
+variables:
+    appKey:
+    timestamp:
+    sign:
+    charset: 'UTF-8'
+    data:
+        loginPass: 'Yy123456'
+        loginStr: '13360080402'
+        imageVeriCode: '234564'
+        imageKey: '3'
+        loginLongitude: '121.234'
+        loginLatitude: '121.234'
+        registrationId: 'aFee3401ff234aeff09891bee'
+    serviceName: 'userService_pc.login'
+request:
+    headers:
+        Content-Type: 'application/json;charset=UTF-8'
+        reqIp: ''
+    json:
+        appKey: '$appKey'
+        timestamp: '$timestamp'
+        sign: '$sign'
+        charset: 'UTF-8'
+        data:
+            loginPass: '$loginPass'
+            loginStr: '$loginStr'
+            imageVeriCode: '$imageVeriCode'
+            imageKey: '$imageKey'
+            loginLongitude: '$loginLongitude'
+            loginLatitude: '$loginLatitude'
+            registrationId: '$registrationId'
+        serviceName: '$serviceName'
+    method: POST
+    url: /zbcf-web-api/app/gateWay.do

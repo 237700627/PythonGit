@@ -1,0 +1,9 @@
+- config:
+      name: test
+- test:
+    name: loginTest
+    variables:
+        accessCode: URAYBN
+    api: api/injury/user/h5/login.yaml
+    validate:
+        -   eq: [status_code, 200]

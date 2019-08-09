@@ -1,0 +1,11 @@
+variables:
+    api_name: 查询
+    api_path: api/b&c/Account.Manager/queryUsingGET_4.yml
+    uri: /web/account/card
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

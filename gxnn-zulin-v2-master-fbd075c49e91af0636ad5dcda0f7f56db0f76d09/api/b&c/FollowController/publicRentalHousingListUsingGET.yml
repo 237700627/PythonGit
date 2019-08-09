@@ -1,0 +1,11 @@
+variables:
+    api_name: 关注公租房列表
+    api_path: api/b&c/FollowController/publicRentalHousingListUsingGET.yml
+    uri: '/web/api/follow/publicHouseList?page=起始页，第一页取值为 1&pageSize=每页数量，默认10&type=关注类型：1：租房，2：公租房，3：小区'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

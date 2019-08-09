@@ -1,0 +1,23 @@
+variables:
+    amount: 红包金额
+    api_name: 插入一条测试红包数据
+    api_path: api/b&c/HongBao/insertHongBaoUsingPOST.yml
+    name: 红包名称
+    startTime: 开始时间
+    totalNumber: 红包个数
+    typeId: 红包类型id
+    uri: /web/hongbao/db
+    vaildThru: 过期时间
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        amount: $amount
+        name: $name
+        startTime: $startTime
+        totalNumber: $totalNumber
+        typeId: $typeId
+        vaildThru: $vaildThru

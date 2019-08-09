@@ -1,0 +1,11 @@
+variables:
+    api_name: 角色列表
+    api_path: api/g/Role.Manage/getRoleListUsingGET.yml
+    uri: /gm/api/role?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

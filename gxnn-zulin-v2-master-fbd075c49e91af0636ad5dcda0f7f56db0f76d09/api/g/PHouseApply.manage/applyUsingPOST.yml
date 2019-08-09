@@ -1,0 +1,11 @@
+variables:
+    api_name: 公租房审核操作
+    api_path: api/g/PHouseApply.manage/applyUsingPOST.yml
+    uri: /gm/api/pHouseApply/apply/{id}/{pass}?id=id&pass=pass&remarks=remarks
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 查询最近14天支付数据
+    api_path: api/g/Report.Manage/getPaymentDataUsingGET.yml
+    uri: /gm/api/report/payment/data
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

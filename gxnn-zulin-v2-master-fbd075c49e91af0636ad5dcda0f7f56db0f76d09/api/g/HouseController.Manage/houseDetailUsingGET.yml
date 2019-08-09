@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源详情
+    api_path: api/g/HouseController.Manage/houseDetailUsingGET.yml
+    uri: /gm/api/api/house/detail/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 发布资讯
+    api_path: api/g/article-controller/publishUsingPOST.yml
+    uri: /gm/api/article/publish/{id}?id=id
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

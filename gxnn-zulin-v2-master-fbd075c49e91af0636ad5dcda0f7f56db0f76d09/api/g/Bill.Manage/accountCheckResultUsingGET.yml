@@ -1,0 +1,12 @@
+variables:
+    api_name: 用户对账列表
+    api_path: api/g/Bill.Manage/accountCheckResultUsingGET.yml
+    uri: '/gm/api/bill/account/list?page=页码数&pageSize=每页大小&channelId=账单交易类型 1:代收 2:代付&startCheckDate=对账时间    开始&endCheckDate=对账时间
+        结束'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

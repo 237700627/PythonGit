@@ -1,0 +1,11 @@
+variables:
+    api_name: 校验短信验证码
+    api_path: api/b&c/Account.Manager/validateMsgCodeToUserUsingPOST.yml
+    uri: /web/account/msgcode/{code}?code=短信验证码
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

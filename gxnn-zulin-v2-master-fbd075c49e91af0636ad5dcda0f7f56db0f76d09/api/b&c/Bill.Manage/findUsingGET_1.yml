@@ -1,0 +1,11 @@
+variables:
+    api_name: 根据合同Id查询指定期数账单
+    api_path: api/b&c/Bill.Manage/findUsingGET_1.yml
+    uri: /web/bill/find/{contractId}/{billOrder}?contractId=contractId&billOrder=billOrder
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

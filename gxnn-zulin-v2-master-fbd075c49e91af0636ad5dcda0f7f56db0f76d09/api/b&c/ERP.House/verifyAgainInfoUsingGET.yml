@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源重新核验,返回出租人/承租人信息
+    api_path: api/b&c/ERP.House/verifyAgainInfoUsingGET.yml
+    uri: /web/goverp/api/house/{houseId}/verify/{contractFillingId}?houseId=房源id&contractFillingId=合同备案id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,17 @@
+variables:
+    api_name: 添加角色
+    api_path: api/b&c/Role.Manage/addRoleUsingPOST.yml
+    department: 部门
+    functionNameList: 权限代码列表
+    roleName: 角色名称
+    uri: /web/role
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        department: $department
+        functionNameList: $functionNameList
+        roleName: $roleName

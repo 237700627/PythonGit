@@ -1,0 +1,21 @@
+variables:
+    api_name: 获取政府房屋信息
+    api_path: api/b&c/ERP.House/getGovUsingPOST.yml
+    companySupervisionId: 企业在监管系统的ID
+    propertyRightCardNo: 权利人证件号码
+    propertyRightName: 权利人姓名
+    propertyRightNo: 房屋有效权利证明号码
+    rightProofType: 房屋有效权利证明类别
+    uri: /web/goverp/api/house/gov
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        companySupervisionId: $companySupervisionId
+        propertyRightCardNo: $propertyRightCardNo
+        propertyRightName: $propertyRightName
+        propertyRightNo: $propertyRightNo
+        rightProofType: $rightProofType

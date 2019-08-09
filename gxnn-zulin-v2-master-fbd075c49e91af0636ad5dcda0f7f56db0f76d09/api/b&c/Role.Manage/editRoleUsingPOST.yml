@@ -1,0 +1,11 @@
+variables:
+    api_name: 编辑角色
+    api_path: api/b&c/Role.Manage/editRoleUsingPOST.yml
+    uri: /web/role/{id}?id=id&form=form
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

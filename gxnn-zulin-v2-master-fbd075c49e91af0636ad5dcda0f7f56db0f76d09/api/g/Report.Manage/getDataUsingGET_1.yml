@@ -1,0 +1,11 @@
+variables:
+    api_name: 支付数据总览
+    api_path: api/g/Report.Manage/getDataUsingGET_1.yml
+    uri: /gm/api/report/payment/numbers
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: test
+    api_path: api/g/CommunityController.Manage/testUsingPOST.yml
+    uri: /gm/api/community/test
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

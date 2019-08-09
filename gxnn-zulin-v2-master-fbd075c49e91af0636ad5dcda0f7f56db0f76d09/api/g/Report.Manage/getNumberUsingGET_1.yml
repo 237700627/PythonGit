@@ -1,0 +1,11 @@
+variables:
+    api_name: 概览数字
+    api_path: api/g/Report.Manage/getNumberUsingGET_1.yml
+    uri: /gm/api/report/overview/number
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

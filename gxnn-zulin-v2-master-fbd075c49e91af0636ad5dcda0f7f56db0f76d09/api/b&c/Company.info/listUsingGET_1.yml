@@ -1,0 +1,11 @@
+variables:
+    api_name: 企业/机构列表
+    api_path: api/b&c/Company.info/listUsingGET_1.yml
+    uri: /web/company/list?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&companyType=公司类型:1-房地产经纪机构,2-长/短租公寓&companyName=公司名称
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

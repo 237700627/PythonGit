@@ -1,0 +1,11 @@
+variables:
+    api_name: 公租房资格详情
+    api_path: api/g/PHouseApply.manage/detailUsingGET.yml
+    uri: /gm/api/pHouseApply/detail/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 租客支付
+    api_path: api/b&c/Contract/rentPayUsingPOST.yml
+    uri: /web/contract/rent/pay/{id}/{billOrder}?id=合同id&billOrder=订单期数
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

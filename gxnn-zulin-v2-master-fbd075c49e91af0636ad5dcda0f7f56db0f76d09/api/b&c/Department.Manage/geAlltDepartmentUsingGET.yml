@@ -1,0 +1,11 @@
+variables:
+    api_name: geAlltDepartment
+    api_path: api/b&c/Department.Manage/geAlltDepartmentUsingGET.yml
+    uri: /web/department
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

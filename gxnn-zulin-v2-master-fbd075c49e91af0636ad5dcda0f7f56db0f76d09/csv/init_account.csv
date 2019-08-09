@@ -1,0 +1,3 @@
+mobile,password,name,identity,del_account,up_sql
+19812345678,abc123,傅强,360502198812214636,delete from t_account where mobile = 19012345678 or identity = 360502198812214636;,"update t_account set identity = 110101199003075779, name='测试一号' where mobile = '19812345678'"
+19822345678,abc123,傅强,360502198812214636,delete from t_account where mobile = 19022345678 or identity = 360502198812214636;,"update t_account set identity = 110101199003070011, name='测试二号' where mobile = '19822345678'"

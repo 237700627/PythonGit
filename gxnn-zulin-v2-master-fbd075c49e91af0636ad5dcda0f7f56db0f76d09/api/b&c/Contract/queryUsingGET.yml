@@ -1,0 +1,12 @@
+variables:
+    api_name: 合同查询(我的租约)
+    api_path: api/b&c/Contract/queryUsingGET.yml
+    uri: '/web/contract/query/{from}?from=from&pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&keyword=搜索关键字&tenancyBegin=合同开始时间&tenancyEnd=合同结束时间&status=合同状态&publisherType=1.自己
+        0.不限（默认）'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

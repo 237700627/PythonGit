@@ -1,0 +1,15 @@
+variables:
+    api_name: 忘记密码时短信验证码验证-C端(H5)
+    api_path: api/b&c/Account.Manager/forgetValidateMsgCodeUsingPOST.yml
+    identity: 身份证号
+    msgCode: 短信验证码
+    uri: /web/account/forget/msgcodevlidate
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        identity: $identity
+        msgCode: $msgCode

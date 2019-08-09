@@ -1,0 +1,12 @@
+variables:
+    api_name: 公租房列表
+    api_path: api/g/RentHouseController.Manage/getListUsingGET_2.yml
+    uri: '/gm/api/public/house/list?isPublic=是否是公租房&nameAddress=项目名称、项目地址&districtId=项目所属地区&blockId=板块ID&cityId=项目城市&roomStr=室数&upStatus=上下架状态:
+        0：下架，1待上架，2上架&applicationStatus=申请状态：1：正在申请，2：即将申请，3：结束申请&publicType=房源性质&pageNo=页码&pageSize=integer'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

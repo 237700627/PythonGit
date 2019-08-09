@@ -1,0 +1,19 @@
+variables:
+    api_name: 更换手机号基本信息校验
+    api_path: api/b&c/Account.Manager/resetMobileUsingPOST.yml
+    identity: 身份证号
+    mobile: 手机号
+    msgAuthCode: 短信验证码
+    name: 真实姓名
+    uri: /web/account/reset/checkmobile
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        identity: $identity
+        mobile: $mobile
+        msgAuthCode: $msgAuthCode
+        name: $name

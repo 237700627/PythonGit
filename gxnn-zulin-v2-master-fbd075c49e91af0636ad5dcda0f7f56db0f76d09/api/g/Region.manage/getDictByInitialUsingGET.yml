@@ -1,0 +1,11 @@
+variables:
+    api_name: 查询区域对象
+    api_path: api/g/Region.manage/getDictByInitialUsingGET.yml
+    uri: /gm/api/region
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

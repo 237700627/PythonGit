@@ -1,0 +1,19 @@
+variables:
+    accountStatus: '经纪人状态:1-启用    2-停用    3-离职'
+    accountType: 经纪人类型
+    api_name: 新增经纪人
+    api_path: api/b&c/Account.info/addToCompanyUsingPOST.yml
+    identity: 身份证号码
+    name: 经纪人姓名
+    uri: /web/account/info/addToCompany
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        accountStatus: $accountStatus
+        accountType: $accountType
+        identity: $identity
+        name: $name

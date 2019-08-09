@@ -1,0 +1,19 @@
+# 用户管理列表查询接口
+name: http://testchakan.cias.cn/injury/user/searchEmployeeList   用户管理列表查询接口
+variables:
+    name: ''
+    mobile: ''
+    partnerId: ''
+    pageNum: ''
+    pageSize: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    json:
+        name: ''
+        mobile: ''
+        partnerId: ''
+        pageNum: ''
+        pageSize: ''
+    method: POST
+    url: http://testchakan.cias.cn/injury/user/searchEmployeeList

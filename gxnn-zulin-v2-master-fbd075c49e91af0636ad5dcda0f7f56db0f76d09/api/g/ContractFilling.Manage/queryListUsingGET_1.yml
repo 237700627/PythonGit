@@ -1,0 +1,20 @@
+variables:
+    api_name: 获取合同备案列表
+    api_path: api/g/ContractFilling.Manage/queryListUsingGET_1.yml
+    uri: '/gm/api/contract/filling/list?createByList=提交人&statusList=备案状态：1未备案 2备案中3已备案，4备案失败，5已注销，6注销失败，7注销中&contractStatusList=合同状态：
+        0:发起签约,1:房东确认,2:租客确认,3:待支付,4:租赁中,5:备案完成,6:到期结束,7:无效状态,8:退租中,9:双方已确认 &contractId=合同id&contractNo=合同编号&archiveNum=合同备案编号&archiveCancelNo=合同备案注销编号&retryFlag=是否重试
+        0不重试1备案重试 2注销重试&pageNo=当前页&pageSize=每页记录数&order=排序字段名&orderDesc=排序顺序&from=请求来源：c/b&id=合同备案id&keyword=复合搜索文本（合同编号/小区名称/地址）&keyword2=复合搜索文本（合同编号/房源编号/出租方/承租方）&district=行政区&districtId=行政区/区域Id&community=项目/小区名称&ownerType=房东类型：个人/企业&tenantType=租客类型：个人/企业&auditor=审批人id&auditorName=审批人姓名&publishId=房源发布人id&publishName=房源发布人姓名&conractStartTime=租赁合同开始时间(时间段，格式：yyyy-dd-MM
+        HH:mm:ss,链接符：~ 示例：2018-06-01 09:22:22~2018-06-02 09:22:22)&conractEndTime=租赁合同结束时间(时间段，格式：yyyy-dd-MM
+        HH:mm:ss,链接符：~ 示例：2018-06-01 09:22:22~2018-06-02 09:22:22)&rentUsage=租赁用途&createTime=创建时间(时间段，格式：yyyy-dd-MM
+        HH:mm:ss,链接符：~ 示例：2018-06-01 09:22:22~2018-06-02 09:22:22)&updateTime=修改时间(时间段，格式：yyyy-dd-MM
+        HH:mm:ss,链接符：~ 示例：2018-06-01 09:22:22~2018-06-02 09:22:22)&status=备案状态：1未备案 2备案中3已备案，4备案失败，5已注销，6注销失败，7注销中&contractStatus=合同状态：
+        0:发起签约,1:房东确认,2:租客确认,3:待支付,4:租赁中,5:备案完成,6:到期结束,7:无效状态,8:退租中,9:双方已确认 &archiveTime=合同备案时间(时间段，格式：yyyy-dd-MM
+        HH:mm:ss,链接符：~ 示例：2018-06-01 09:22:22~2018-06-02 09:22:22)&ignoreUser=是否忽略当前用户影响&fillingType=备案类型：线下合同备案：1/线上合同备案：0    默认：0&pdfStatus=0:未获取备案dpf,
+        1：已获取备案pdf&page=页码'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

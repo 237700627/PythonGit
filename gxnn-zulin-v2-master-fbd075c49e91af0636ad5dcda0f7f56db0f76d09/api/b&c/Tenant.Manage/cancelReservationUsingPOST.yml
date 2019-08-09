@@ -1,0 +1,11 @@
+variables:
+    api_name: C端用户取消预约
+    api_path: api/b&c/Tenant.Manage/cancelReservationUsingPOST.yml
+    uri: /web/tenant/reserve/$tenantId
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

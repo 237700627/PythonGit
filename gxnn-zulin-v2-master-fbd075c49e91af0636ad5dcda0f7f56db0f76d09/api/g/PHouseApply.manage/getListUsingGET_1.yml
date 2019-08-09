@@ -1,0 +1,12 @@
+variables:
+    api_name: 公租房资格审核列表
+    api_path: api/g/PHouseApply.manage/getListUsingGET_1.yml
+    uri: '/gm/api/pHouseApply/list?search=姓名/身份证/申请编号&publicType=房源类型&area=申请地区&operatorId=操作人员id&applyStatus=审核状态&startTime=申请开始时间&endTime=申请结束时间&orderBy=申请时间排序
+        正序:asc 倒序:desc&pageSize=单页条数&page=当前页码'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

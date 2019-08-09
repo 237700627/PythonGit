@@ -1,0 +1,15 @@
+variables:
+    api_name: 重置时验证短信验证码-c端(H5)
+    api_path: api/b&c/Account.Manager/resetMsgCodeValidateUsingPOST.yml
+    bizType: $bizType   # 重置类型，PAY_PASSWORD/RESET_PAY_PASSWORD/LOGIN_PASSWORD/MOBILE
+    msgCode: ${get_redis_imgcode($mobile)}  # 短信验证码
+    uri: /web/account/reset/msgcodevalidate
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        bizType: $bizType
+        msgCode: $msgCode

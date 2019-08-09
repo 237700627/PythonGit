@@ -1,0 +1,19 @@
+variables:
+    api_name: 拒绝签约
+    api_path: api/b&c/Contract/ownerRejectUsingPOST.yml
+    contractId: 合同Id
+    initiate: '发起方：0系统 1租客 2房东 3中介'
+    reason: 理由
+    uri: /web/contract/owner/reject/{id}
+    useCA: 是否使用电子签章
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        contractId: $contractId
+        initiate: $initiate
+        reason: $reason
+        useCA: $useCA

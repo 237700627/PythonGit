@@ -1,0 +1,11 @@
+variables:
+    api_name: 设置人脸识别参数
+    api_path: api/b&c/Account.Manager/setFaceValidatePropertiesUsingGET.yml
+    uri: /web/account/setFaceValidateProperties/{similarity}/{swit}?similarity=本地校验分数&swit=本地校验分数开关
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

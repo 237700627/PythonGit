@@ -1,0 +1,11 @@
+variables:
+    api_name: 获取租客签署的所有合同
+    api_path: api/b&c/eazy-money-controller/whiteListUsingPOST.yml
+    uri: '/web/eazymoney/iloan?channelId=渠道资金池ID 固定值：PAHF_WL&mobileFull=手机号&mobileMask1=手机掩码&idFull=身份证&idMask1=身份证掩码&realName=真实姓名&drawdownAccount=放款账户&invitationCode=邀请码'
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

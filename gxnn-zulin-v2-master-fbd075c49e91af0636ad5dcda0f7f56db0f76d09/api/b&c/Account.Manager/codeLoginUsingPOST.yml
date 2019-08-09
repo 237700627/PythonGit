@@ -1,0 +1,15 @@
+variables:
+    api_name: 验证码登陆
+    api_path: api/b&c/Account.Manager/codeLoginUsingPOST.yml
+    mobile: $mobile # 手机号
+    msgAuthCode: ${get_redis_imgcode($cookie, $mobile)} # 短信验证码
+    uri: /web/account/codeLogin
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        mobile: $mobile
+        msgAuthCode: $msgAuthCode

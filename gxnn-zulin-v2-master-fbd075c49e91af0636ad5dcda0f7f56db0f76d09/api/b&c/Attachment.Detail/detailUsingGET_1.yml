@@ -1,0 +1,11 @@
+variables:
+    api_name: 查看附件
+    api_path: api/b&c/Attachment.Detail/detailUsingGET_1.yml
+    uri: /web/goverp/api/attachment
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

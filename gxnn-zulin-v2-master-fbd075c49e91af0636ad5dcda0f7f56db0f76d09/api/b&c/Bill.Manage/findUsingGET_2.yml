@@ -1,0 +1,11 @@
+variables:
+    api_name: 根据Id查询账单
+    api_path: api/b&c/Bill.Manage/findUsingGET_2.yml
+    uri: /web/bill/find/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

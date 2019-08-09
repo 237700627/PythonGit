@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户核验房源列表
+    api_path: api/g/HouseController.Manage/verifyListUsingGET.yml
+    uri: /gm/api/api/house/verifylist?houseLocation=房屋坐落&districtId=房屋所在区&verifyStatus=核验状态&houseIsMortgage=抵押状态&houseIsLimit=限制状态&houseIsRent=在租状态&createTimeBegin=核验创建开始时间&createTimeEnd=核验创建结束时间&page=页码&pageSize=每页大小
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

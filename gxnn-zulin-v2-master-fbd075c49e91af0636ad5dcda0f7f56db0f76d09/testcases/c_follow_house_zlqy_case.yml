@@ -1,0 +1,124 @@
+- config:
+    name: C端关注租赁企业房源case
+
+- test:
+    name: C端账号登陆
+    variables:
+        loginNo: $zk_mobile
+        password: $zk_password
+    api: api/b&c/Account.Manager/loginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+        -   accountId: content.data.accountId
+
+- test:
+    name: 获取个人信息
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/getBaseInfoCUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.id', $accountId]
+    extract:
+        -   mobile: content.data.mobile
+        -   name: content.data.name
+        -   identity: content.data.identity
+
+- test:
+    name: 查看租赁企业房源列表
+    variables:
+        type: $zlqy_type
+    api: api/other/getCommonHouseListGET.yml
+    validate:
+        -   eq: ['status_code', 200]
+    extract:
+        -   res_html: content
+
+- test:
+    name: 请求mock，获取houseId
+    variables:
+        body: $res_html
+    api: api/other/mockApiPOST.yml
+    validate:
+        -   eq: ['status_code', 200]
+    extract:
+        -   houseId: content.houseId
+
+- test:
+    name: 获取租赁企业房源详情
+    variables:
+        houseId: $houseId
+    api: api/other/getCommonHouseDetailGET.yml
+    validate:
+        -   eq: ['status_code', 200]
+
+- test:
+    name: 检查租赁企业房源是否已关注
+    variables:
+        objectId: $houseId
+        type: $follow_type
+    api: api/b&c/FollowController/followUsingGET.yml
+    validate:
+        -   eq: ['content.code', 0]
+        -   eq: ['content.msg', 'ok']
+    extract:
+        -   isFollow: content.data.followed # false未关注  true已关注
+
+- test:
+    name: 关注租赁企业房源-如果已关注则跳过
+    skipIf: ${skiptest_true($isFollow)}
+    variables:
+        objectId: $houseId
+        type: $follow_type
+    api: api/b&c/FollowController/createUsingPOST_4.yml
+    validate:
+        -   eq: ['content.code', 0]
+        -   eq: ['content.msg', 'ok']
+    extract:
+        -   followId: content.data.id
+
+- test:
+    name: 我的关注列表-提取关注后关注总数量
+    variables:
+        cookie: $cookie
+        type: $follow_type
+    api: api/b&c/FollowController/houseListUsingGET.yml
+    validate:
+        -   eq: ['content.code', 0]
+        -   eq: ['content.msg', 'ok']
+    extract:
+        -   totalCount: content.data.total
+
+- test:
+    name: 取消关注租赁企业房源
+    variables:
+        objectId: $houseId
+        type: $follow_type
+    api: api/b&c/FollowController/cancelUsingPOST.yml
+    validate:
+        -   eq: ['content.code', 0]
+        -   eq: ['content.msg', 'ok']
+
+- test:
+    name: 我的关注列表-小于之前关注的总数量
+    variables:
+        cookie: $cookie
+        type: $follow_type
+    api: api/b&c/FollowController/houseListUsingGET.yml
+    validate:
+        -   eq: ['content.code', 0]
+        -   eq: ['content.msg', 'ok']
+        -   le: ['content.data.total', $totalCount]
+
+- test:
+    name: 登出
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/logoutUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]

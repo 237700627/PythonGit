@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源数字
+    api_path: api/g/Report.Manage/getNumberUsingGET.yml
+    uri: /gm/api/report/housing/number
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

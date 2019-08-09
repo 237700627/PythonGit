@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户基本信息编辑
+    api_path: api/b&c/Account.Manager/editUsingPOST_2.yml
+    uri: /web/account/edit/{id}?id=id&editForm=editForm
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 删除一条测试红包数据
+    api_path: api/b&c/HongBao/deleteUsingPOST_2.yml
+    uri: /web/hongbao/db/{hongBaoId}?hongBaoId=hongBaoId
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

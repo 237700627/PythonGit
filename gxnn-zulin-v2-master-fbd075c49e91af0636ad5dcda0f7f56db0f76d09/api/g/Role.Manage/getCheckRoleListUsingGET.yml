@@ -1,0 +1,11 @@
+variables:
+    api_name: 获取具有相应权限的角色列表
+    api_path: api/g/Role.Manage/getCheckRoleListUsingGET.yml
+    uri: /gm/api/role/checkRoleList?enName=enName
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

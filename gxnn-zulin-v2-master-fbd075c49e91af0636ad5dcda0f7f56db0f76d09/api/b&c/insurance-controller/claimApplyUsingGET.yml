@@ -1,0 +1,11 @@
+variables:
+    api_name: 发起理赔
+    api_path: api/b&c/insurance-controller/claimApplyUsingGET.yml
+    uri: /web/insurance/claimApply/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

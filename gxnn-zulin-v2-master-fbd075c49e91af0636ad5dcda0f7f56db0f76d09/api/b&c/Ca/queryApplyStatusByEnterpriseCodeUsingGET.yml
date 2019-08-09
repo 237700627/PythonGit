@@ -1,0 +1,11 @@
+variables:
+    api_name: 根据企业信用代码查询申请状态
+    api_path: api/b&c/Ca/queryApplyStatusByEnterpriseCodeUsingGET.yml
+    uri: /web/ca/queryApplyStatus?enterpriseCode=enterpriseCode
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

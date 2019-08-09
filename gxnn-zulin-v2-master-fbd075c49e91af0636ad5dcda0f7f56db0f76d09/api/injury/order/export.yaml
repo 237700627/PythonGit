@@ -1,0 +1,14 @@
+# 导出功能
+name: http://testchakan.cias.cn/injury/order/export 导出功能
+variables:
+    orderId: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+        token: ''
+        userId: ''
+        originType: ''
+    json:
+        orderId: '$orderId'
+    method: POST
+    url: http://testchakan.cias.cn/injury/order/export

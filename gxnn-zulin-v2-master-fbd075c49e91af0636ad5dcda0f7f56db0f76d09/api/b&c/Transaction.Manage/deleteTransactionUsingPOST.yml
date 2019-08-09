@@ -1,0 +1,11 @@
+variables:
+    api_name: 流水删除
+    api_path: api/b&c/Transaction.Manage/deleteTransactionUsingPOST.yml
+    uri: /web/transaction/{id}?id=id&form=form
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

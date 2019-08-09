@@ -1,0 +1,88 @@
+-   config:
+        name: /zbcf-web-api/app/gateWay.do
+        parameters: {}
+        variables:
+            data:
+                mobile: ''
+                mobileVeriCode: ''
+                memberName: ''
+                loginType: '3'
+            serviceName: 'userActiveService.activeMember'
+        request:
+            base_url: http://testckapp.cias.cn
+            headers:
+                Content-Type: application/json;charset=UTF-8
+        output: {}
+# 入参测试
+
+
+# 出参测试
+-   test:
+        name: /zbcf-web-api/app/gateWay.do  未导入
+        variables:
+            data:
+                mobile: ''
+                mobileVeriCode: ''
+                memberName: ''
+                loginType: '3'
+            serviceName: 'userActiveService.activeMember'
+        api: api/gateWay_login.yaml
+        validate:
+            -   eq: [resultCode, '0000']
+-   test:
+        name: /zbcf-web-api/app/gateWay.do  兼业或专业导入未激活
+        variables:
+            data:
+                mobile: ''
+                mobileVeriCode: ''
+                memberName: ''
+                loginType: '3'
+            serviceName: 'userActiveService.activeMember'
+        api: api/gateWay_login.yaml
+        validate:
+            -   eq: [status_code, 200]
+            -   eq: [nameAuthStatus, 0]
+            -   eq: [authStatus, 0]
+            -   eq: [isSetPwd, 0]
+            -   contained_by: [isParttimeJob, [0,1]]
+-   test:
+        name: /zbcf-web-api/app/gateWay.do  导入激活兼业
+        variables:
+            data:
+                mobile: ''
+                mobileVeriCode: ''
+                memberName: ''
+                loginType: '3'
+            serviceName: 'userActiveService.activeMember'
+        api: api/gateWay_login.yaml
+        validate:
+            -   eq: [status_code, 200]
+            -   eq: [nameAuthStatus, 0]
+            -   eq: [nameAuthStatus, 0]
+            -   eq: [isSetPwd, 1]
+            -   eq: [isParttimeJob, 1]
+-   test:
+        name: /zbcf-web-api/app/gateWay.do  导入激活专业
+        variables:
+            data:
+                mobile: ''
+                mobileVeriCode: ''
+                memberName: ''
+                loginType: '3'
+            serviceName: 'userActiveService.activeMember'
+        api: api/gateWay_login.yaml
+        validate:
+            - eq: [status_code, 200]
+            - eq: [nameAuthStatus, 1]
+            - eq: [nameAuthStatus, 1]
+            - eq: [isSetPwd, 1]
+            - eq: [isParttimeJob, 1]
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,9 @@
+variables:
+    api_name: 请求mock api
+    api_path: api/other/mockApiPOST.yml
+    id: ${get_house_id_from_html($body)}
+request:
+    url: http://mockapi.ipo.com/mPKeLn0p.mock/json2json
+    method: post
+    json:
+        houseId: $id

@@ -1,0 +1,11 @@
+variables:
+    api_name: 清空
+    api_path: api/b&c/FollowController/clearUsingPOST.yml
+    uri: /web/api/follow/clear?type=关注类型：1：租房，2：公租房，3：小区
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

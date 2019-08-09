@@ -1,0 +1,11 @@
+variables:
+    api_name: 房源编辑
+    api_path: api/b&c/ERP.House/editUsingPOST_1.yml
+    uri: /web/goverp/api/house/{id}?id=id&houseAddForm=houseAddForm
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

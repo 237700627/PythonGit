@@ -1,0 +1,13 @@
+# 取消订单任务接口
+name: http://testchakan.cias.cn/injury/task/cancelTask   取消订单任务接口
+variables:
+    id: ''
+    orderId: ''
+request:
+    headers:
+        Content-Type: application/json;charset=UTF-8
+    json:
+        id: '$id'
+        orderId: '$orderId'
+    method: POST
+    url: http://testchakan.cias.cn/injury/task/cancelTask

@@ -1,0 +1,11 @@
+variables:
+    api_name: 签约数据总览
+    api_path: api/g/Report.Manage/getDataUsingGET.yml
+    uri: /gm/api/report/contract/numbers
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

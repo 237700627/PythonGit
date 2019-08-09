@@ -1,0 +1,11 @@
+variables:
+    api_name: 年龄画像
+    api_path: api/g/Report.Manage/portraitAgeUsingGET.yml
+    uri: /gm/api/report/user/portrait/age
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

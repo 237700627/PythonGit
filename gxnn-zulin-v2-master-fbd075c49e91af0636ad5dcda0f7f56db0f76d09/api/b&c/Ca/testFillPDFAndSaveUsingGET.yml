@@ -1,0 +1,11 @@
+variables:
+    api_name: 生成PDF并且保存本地
+    api_path: api/b&c/Ca/testFillPDFAndSaveUsingGET.yml
+    uri: /web/ca/testFillPDFAndSave
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

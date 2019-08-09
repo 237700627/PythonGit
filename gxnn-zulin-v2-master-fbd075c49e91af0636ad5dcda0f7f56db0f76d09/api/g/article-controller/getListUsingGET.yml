@@ -1,0 +1,12 @@
+variables:
+    api_name: 获取资讯列表
+    api_path: api/g/article-controller/getListUsingGET.yml
+    uri: '/gm/api/article/list?search=搜索关键字&keyType=关键字类别(0:标题, 1:id)&publishStatus=发布状态(0:草稿,
+        1:已发布) &categoryId=发布栏目&startTime=发布开始时间&endTime=发布结束时间&pageSize=单页条数&page=当前页码'
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 区域选择
+    api_path: api/b&c/Account.Manager/regionalUsingGET.yml
+    uri: /web/account/getRegional
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

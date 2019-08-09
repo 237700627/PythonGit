@@ -1,0 +1,11 @@
+variables:
+    api_name: 版块列表
+    api_path: api/b&c/Dict.Api/getBlockListByDistrictUsingGET.yml
+    uri: /web/goverp/api/dict/blocklist/{districtId}?districtId=districtId
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

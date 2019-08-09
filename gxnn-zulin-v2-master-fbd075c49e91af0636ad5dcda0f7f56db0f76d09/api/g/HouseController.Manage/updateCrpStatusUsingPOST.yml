@@ -1,0 +1,11 @@
+variables:
+    api_name: 修改公有房产权状态
+    api_path: api/g/HouseController.Manage/updateCrpStatusUsingPOST.yml
+    uri: '/gm/api/api/house/crpstatus/{id}?id=id&crpStatus=公有产权状态:0.假 1.真'
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

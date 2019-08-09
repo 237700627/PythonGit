@@ -1,0 +1,21 @@
+variables:
+    agencyMobile: 带看人电话
+    api_name: '房东操作预约流程（确认预约、取消预约、 已带看、建议新时间）'
+    api_path: api/b&c/Tenant.Manage/operateTenantUsingPOST.yml
+    followDesc: 租客跟进信息
+    status: 需要更改的租客状态
+    suggestTime: '建议新时间yyyy-MM-dd HH:mm:ss'
+    tenantId: 租客ID
+    uri: /web/tenant/op
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        agencyMobile: $agencyMobile
+        followDesc: $followDesc
+        status: $status
+        suggestTime: $suggestTime
+        tenantId: $tenantId

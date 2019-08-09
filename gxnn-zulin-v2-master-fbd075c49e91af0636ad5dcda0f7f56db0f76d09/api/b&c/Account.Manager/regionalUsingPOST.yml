@@ -1,0 +1,18 @@
+variables:
+    api_name: 通信地址增加
+    api_path: api/b&c/Account.Manager/regionalUsingPOST.yml
+    area_sql: SELECT district_code FROM t_dict_district;
+    area: ${get_value_from_sql($area_sql)}    # 区
+    place: 创业路${gen_random_string(4)}号南方海信大厦${get_random_num(1, 38)}层   # 地址
+    uri: /web/account/regional
+    zipCode: ${get_random_num(100000, 999999)}    # 邮编
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        area: $area
+        place: $place
+        zipCode: $zipCode

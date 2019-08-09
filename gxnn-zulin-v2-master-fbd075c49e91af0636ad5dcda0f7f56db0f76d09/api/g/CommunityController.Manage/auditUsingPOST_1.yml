@@ -1,0 +1,11 @@
+variables:
+    api_name: 小区审核
+    api_path: api/g/CommunityController.Manage/auditUsingPOST_1.yml
+    uri: /gm/api/community/audit?auditId=审核记录的ID&auditStatus=审核状态&auditReason=审核原因
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

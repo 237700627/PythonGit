@@ -1,0 +1,11 @@
+variables:
+    api_name: C端经纪人列表
+    api_path: api/b&c/Account.info/clistUsingGET.yml
+    uri: /web/account/info/CList?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&companyId=公司id&accountName=经纪人姓名&accountNum=执业证号
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

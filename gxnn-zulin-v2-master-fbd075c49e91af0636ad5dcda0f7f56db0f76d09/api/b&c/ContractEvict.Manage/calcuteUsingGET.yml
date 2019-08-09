@@ -1,0 +1,11 @@
+variables:
+    api_name: 计算退租费用
+    api_path: api/b&c/ContractEvict.Manage/calcuteUsingGET.yml
+    uri: /web/contract/evict/calcute?contractId=合同Id&applyDate=退租日期,格式:yyyy-MM-dd
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

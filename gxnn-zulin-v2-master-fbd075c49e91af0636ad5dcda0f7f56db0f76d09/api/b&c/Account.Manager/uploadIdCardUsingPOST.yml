@@ -1,0 +1,19 @@
+variables:
+    api_name: 用户注册提交身份证图片
+    api_path: api/b&c/Account.Manager/uploadIdCardUsingPOST.yml
+    backExt: $imgExt    # 身份证反面后缀
+    backKey: $imgKey    # 身份证反面Key
+    frontExt: $imgExt   # 身份证正面后缀
+    frontKey: $imgKey   # 身份证正面Key
+    uri: /web/account/uploadIdCard
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    json:
+        backExt: $backExt
+        backKey: $backKey
+        frontExt: $frontExt
+        frontKey: $frontKey

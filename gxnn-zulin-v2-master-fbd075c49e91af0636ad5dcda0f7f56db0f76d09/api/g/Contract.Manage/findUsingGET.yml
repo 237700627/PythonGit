@@ -1,0 +1,11 @@
+variables:
+    api_name: 根据Id查询合同
+    api_path: api/g/Contract.Manage/findUsingGET.yml
+    uri: /gm/api/contract/find/{id}?id=id
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

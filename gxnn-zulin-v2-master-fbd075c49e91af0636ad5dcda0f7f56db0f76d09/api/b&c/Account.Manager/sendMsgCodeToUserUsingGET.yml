@@ -1,0 +1,11 @@
+variables:
+    api_name: 发送短信验证码（不带图片验证码,给当前用户发送）
+    api_path: api/b&c/Account.Manager/sendMsgCodeToUserUsingGET.yml
+    uri: /web/account/msgcode/{type}?type=短信类型
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

@@ -1,0 +1,11 @@
+variables:
+    api_name: 退租确认/拒绝
+    api_path: api/b&c/ContractEvict.Manage/auditingUsingPOST.yml
+    uri: /web/contract/evict/auditing?contractId=合同id&status=同意：yes，拒绝:no
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

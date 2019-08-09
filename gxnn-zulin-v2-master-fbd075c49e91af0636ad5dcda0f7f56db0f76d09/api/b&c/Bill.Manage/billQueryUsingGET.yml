@@ -1,0 +1,11 @@
+variables:
+    api_name: 账单查询
+    api_path: api/b&c/Bill.Manage/billQueryUsingGET.yml
+    uri: /web/bill/query/{from}?from=app端：app，pc端：pc&pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&contractId=合同编号&status=0：未激活，1：激活，2：已支付，3：逾期，4：支付中，5：支付失败，6：失效,7:线下已收取&type=类型（owner/tenant/all/companyAll）&isInactive=是否是已激活账单&payTimeBegin=开始时间&payTimeEnd=结束时间
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

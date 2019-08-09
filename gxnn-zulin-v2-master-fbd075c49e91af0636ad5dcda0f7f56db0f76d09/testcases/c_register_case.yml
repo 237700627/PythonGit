@@ -1,0 +1,107 @@
+- config:
+    name: C端用户注册case
+#    parameters:
+#        -   mobile-password: ${P(csv/account_gyqy.csv)}
+
+- test:
+    name: 注册-生成图形验证码
+    api: api/b&c/Account.Manager/getImgCodeUsingGET.yml
+    validate:
+        -   eq: ['status_code', 200]
+    extract:
+        -   cookie: headers.Set-Cookie
+
+- test:
+    name: 注册-获取短信验证码
+    variables:
+        mobile: $reg_mobile
+        type: $type
+        cookie: $cookie
+    api: api/b&c/Account.Manager/sendMsgCodeUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 注册用户第一步（基本信息提交）
+    variables:
+        name: $reg_name
+        identity: $reg_identity
+        mobile: $mobile
+        cookie: $cookie
+        type: $type
+        del_account: delete from t_account where mobile = '$mobile' or identity = '$identity';
+    api: api/b&c/Account.Manager/registerFirstUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    setup_hooks:
+        -   ${conn_mysql($del_account)}
+
+- test:
+    name: 上传身份证图片
+    variables:
+        cookie: $cookie
+    api: api/other/uploadHousePicUsingPOST.yml
+    validate:
+        -   eq: ['status_code', 200]
+    extract:
+        -   imgKey: content.files.sKey
+        -   imgExt: content.files.sExt
+
+- test:
+    name: 用户注册提交身份证图片
+    variables:
+        cookie: $cookie
+        imgKey: $imgKey
+        imgExt: $imgExt
+    api: api/b&c/Account.Manager/uploadIdCardUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 注册-人脸识别
+    variables:
+        cookie: $cookie
+        imgKey: $imgKey
+        imgExt: $imgExt
+        imageName: fq.jpg
+    api: api/b&c/Account.Validate/faceValidateUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+
+- test:
+    name: 注册成功的账号登陆
+    variables:
+        loginNo: $mobile
+        password: $reg_password
+    api: api/b&c/Account.Manager/loginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+
+- test:
+    name: 注册成功后获取个人信息
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/getBaseInfoCUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.mobile', $reg_mobile]
+        -   eq: ['content.data.name', $reg_name]
+        -   eq: ['content.data.identity', $reg_identity]
+
+- test:
+    name: 注册成功的账号登陆
+    variables:
+        loginNo: $mobile
+        password: $reg_password
+    api: api/b&c/Account.Manager/logoutUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]

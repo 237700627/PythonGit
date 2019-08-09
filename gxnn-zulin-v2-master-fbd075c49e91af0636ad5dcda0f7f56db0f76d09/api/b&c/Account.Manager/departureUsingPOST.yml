@@ -1,0 +1,11 @@
+variables:
+    api_name: 用户离职
+    api_path: api/b&c/Account.Manager/departureUsingPOST.yml
+    uri: /web/account/departure/{id}?id=id
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

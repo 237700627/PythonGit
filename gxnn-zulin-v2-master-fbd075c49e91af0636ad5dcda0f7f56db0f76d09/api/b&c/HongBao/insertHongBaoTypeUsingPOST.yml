@@ -1,0 +1,11 @@
+variables:
+    api_name: 插入红包类型数据
+    api_path: api/b&c/HongBao/insertHongBaoTypeUsingPOST.yml
+    uri: /web/hongbao/db/type/{description}?description=description&token=token
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

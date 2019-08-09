@@ -1,0 +1,11 @@
+variables:
+    api_name: 账单支付
+    api_path: api/b&c/Bill.Manage/payUsingPOST.yml
+    uri: /web/bill/pay?ids=支付账单Id&payPassword=支付密码
+request:
+    url: $uri
+    method: post
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

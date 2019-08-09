@@ -1,0 +1,144 @@
+- config:
+    name: 个人房源预约看房流程-房东确认预约-租客取消case
+
+- test:
+    name: C端租客账号登陆
+    variables:
+        loginNo: $zk_mobile
+        password: $zk_password
+    api: api/b&c/Account.Manager/loginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   cookie: headers.Set-Cookie
+        -   accountId: content.data.accountId
+
+- test:
+    name: 获取租客个人信息
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/getBaseInfoCUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.id', $accountId]
+    extract:
+        -   mobile: content.data.mobile
+        -   name: content.data.name
+        -   identity: content.data.identity
+
+- test:
+    name: C端房东账号登陆
+    variables:
+        loginNo: $fd_mobile
+        password: $fd_password
+    api: api/b&c/Account.Manager/loginUsingPOST.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]
+    extract:
+        -   fd_cookie: headers.Set-Cookie
+
+- test:
+    name: 房东查看已发布个人房源列表
+    variables:
+        cookie: $fd_cookie
+    api: api/b&c/ERP.House/houseListH5UsingGET.yml
+    validate:
+        -   eq: ['status_code', 200]
+    extract:
+        -   houseId: content.data.list.1.id
+
+- test:
+    name: C端租客预约看房
+    variables:
+        houseId: $houseId
+        mobile: $mobile
+        name: $name
+        reserveDate:
+    api: api/b&c/Tenant.Manage/reserveAddUsingPOST.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+    extract:
+        -   reserveId: content.data
+
+- test:
+    name: C端租客查看看房日程-1
+    variables:
+        cookie: $cookie
+        tabType: 1 #1:我发起的，2-我收到的
+    api: api/b&c/Tenant.Manage/myReserveUsingGET.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.list.0.id', $reserveId ]
+        -   str_eq: ['content.data.list.0.houseId', $houseId ]
+        -   eq: ['content.data.list.0.tenantStatus', 1 ]
+- test:
+    name: C端房东查看收到的预约列表
+    variables:
+        cookie: $fd_cookie
+        tabType: 2 #1:我发起的，2-我收到的
+    api: api/b&c/Tenant.Manage/myReserveUsingGET.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.list.0.id', $reserveId ]
+        -   str_eq: ['content.data.list.0.houseId', $houseId ]
+        -   eq: ['content.data.list.0.tenantStatus', 1 ]
+- test:
+    name: C端房东查看收到的预约详情
+    variables:
+        cookie: $fd_cookie
+        tenantId: $reserveId
+    api: api/b&c/Tenant.Manage/getTenantDetailUsingGET.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+
+- test:
+    name: C端房东确认预约
+    variables:
+        cookie: $fd_cookie
+        agencyMobile: $mobile
+        followDesc: 确认预约
+        status: 0 #0-已确认，1-待处理，3-已带看，6-拒绝，7-取消，8-建议新时间
+        suggestTime:
+        tenantId: $reserveId
+    api: api/b&c/Tenant.Manage/operateTenantUsingPOST.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+- test:
+    name: C端租客取消预约
+    variables:
+        cookie: $cookie
+        tenantId: $reserveId
+    api: api/b&c/Tenant.Manage/cancelReservationUsingPOST.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+- test:
+    name: C端租客查看看房日程-7
+    variables:
+        cookie: $cookie
+        tabType: 1 #1:我发起的，2-我收到的
+    api: api/b&c/Tenant.Manage/myReserveUsingGET.yml
+    validate:
+        -   str_eq: ['content.errorCode', 0]
+        -   eq: ['content.success', true]
+        -   eq: ['content.data.list.0.id', $reserveId ]
+        -   eq: ['content.data.list.0.id', $reserveId ]
+        -   str_eq: ['content.data.list.0.houseId', $houseId ]
+        -   eq: ['content.data.list.0.tenantStatus', 7 ]
+
+- test:
+    name: C端租客登出
+    variables:
+        cookie: $cookie
+    api: api/b&c/Account.Manager/logoutUsingGET.yml
+    validate:
+        -   eq: ['content.errorCode', '0']
+        -   eq: ['content.success', true]

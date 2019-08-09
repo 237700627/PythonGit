@@ -1,0 +1,11 @@
+variables:
+    api_name: 自建小区查询
+    api_path: api/b&c/Community.Manage/getListUsingGET.yml
+    uri: /web/goverp/api/community?pageNo=页码&pageSize=每页显示记录数&order=排序字段&orderDesc=排序顺序&search=关键字&cityId=城市id&districtId=区域id&blockId=板块id&longitude=经度&latitude=纬度&address=地址&auditStatus=0已提交，1新建成功，2新建失败&selfSubmit=0：非自建，1：自建&orderBy=排序方式：createdAt,updatedAt,auditStatus&orderMode=排序模式：desc,asc
+request:
+    url: $uri
+    method: get
+    headers:
+        Content-Type: application/json
+        Cookie: $cookie
+    

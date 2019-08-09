@@ -1,0 +1,7 @@
+variables:
+    api_name: 获取实名认证信息,返回html
+    api_path: api/other/userAuthInfoUsingGET.yml
+    uri: /pc/user/authinfo    # type: 5-国有房源 104-人才公寓 106-竞配产权房
+request:
+    url: $uri
+    method: get
